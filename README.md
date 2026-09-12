@@ -12,8 +12,9 @@ author-created UCO/STIX/MALOnt annotations, and the packaged ontologies.
 > This file is the GitHub-rendered overview. `README.txt` is the same content in
 > the plain-text form the ACSAC packaging guidelines require.
 
-The accompanying paper is included as [`paper.pdf`](paper.pdf). Repository:
-<https://github.com/seonwookim92/acsac-ANCHOR>
+The accompanying paper is included as [`paper.pdf`](paper.pdf).
+Repository: <https://github.com/seonwookim92/acsac-ANCHOR>
+Permanent archive: <https://doi.org/10.5281/zenodo.22724008>
 
 ## Requested badges
 

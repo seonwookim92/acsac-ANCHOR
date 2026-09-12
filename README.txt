@@ -6,6 +6,7 @@ ACSAC Artifact Evaluation -- top-level overview and execution guide
 
 The accompanying paper is included as paper.pdf.
 Repository: https://github.com/seonwookim92/acsac-ANCHOR
+Permanent archive: https://doi.org/10.5281/zenodo.22724008
 
 REQUESTED BADGES
 

@@ -6,12 +6,14 @@ released after evaluation.
 | | |
 | --- | --- |
 | Public source repository | <https://github.com/seonwookim92/acsac-ANCHOR> |
-| Permanent archive (DOI) | `PENDING_ZENODO_DOI` |
+| Permanent archive (DOI) | <https://doi.org/10.5281/zenodo.22724008> |
 | License — software | Apache-2.0 |
 | License — author-created annotations | CC BY 4.0 |
 
-> The archival DOI is filled in once the Zenodo deposit is published, before the
-> artifact submission is marked ready for review.
+> The DOI above is the Zenodo concept DOI. It represents every version of the
+> deposit and always resolves to the most recent one, so the link stays valid if
+> the artifact is updated during the evaluation period. The DOI for the specific
+> release archived at the time of submission is <https://doi.org/10.5281/zenodo.22724009>.
 
 ## What is released
 

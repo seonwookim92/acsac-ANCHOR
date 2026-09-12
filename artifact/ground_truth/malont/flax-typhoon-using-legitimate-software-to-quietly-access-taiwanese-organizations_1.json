@@ -1,0 +1,100 @@
+{
+  "file": "flax-typhoon-using-legitimate-software-to-quietly-access-taiwanese-organizations_1.json",
+  "text": "Microsoft has identified a nation-state activity group tracked as Flax Typhoon, based in China, that is targeting dozens of organizations in Taiwan with the likely intention of performing espionage. Flax Typhoon gains and maintains long-term access to Taiwanese organizations' networks with minimal use of malware, relying on tools built into the operating system, along with some normally benign software to quietly remain in these networks. Microsoft has not observed Flax Typhoon using this access to conduct additional actions. This blog aims to raise awareness of the techniques used by this threat actor and inform better defenses to protect against future attacks.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Flax Typhoon",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "China",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Taiwan",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Taiwanese organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Operating system built-in tools",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Normally benign software",
+      "class": "http://idea.rpi.edu/malont#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Flax Typhoon",
+      "relation": "has country affiliation",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "China"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Taiwanese organizations"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Operating system built-in tools"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Normally benign software"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "discovered",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Flax Typhoon"
+    },
+    {
+      "subject": "Taiwanese organizations",
+      "relation": "located-at",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Taiwan"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "threat actor type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "nation-state"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "objective",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "espionage"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "characteristic",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DatatypeProperty",
+      "object": "minimal use of malware; relying on built-in OS tools"
+    }
+  ]
+}

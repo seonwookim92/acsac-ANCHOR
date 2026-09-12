@@ -1,0 +1,152 @@
+{
+  "file": "pegasus-forcedentry-protection.json",
+  "text": "The recent iOS 14.8 update fixes a zero-day, zero-click exploit for a vulnerability affecting every mobile iOS device. The flaw, dubbed FORCEDENTRY (CVE-2021-30860), resided in Apple's iMessage and, according to a report by The Citizen Lab, was used to push NSO Group's Pegasus spyware to mobile iOS devices dating back to as far as February 2021. Pegasus has been around for some years now but has been back in the spotlight recently following reports from both The Citizen Lab and Amnesty International about the spyware targeting journalists, activists, and others. One of the main concerns with FORCEDENTRY is that it can be used in what is called a zero-click attack, meaning it requires no user interaction. An attacker exploiting the flaw only needs the Apple ID of a device in order to silently compromise it",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "iOS 14.8 update",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "FORCEDENTRY",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "CVE-2021-30860",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "mobile iOS devices",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+    },
+    {
+      "name": "Apple",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "iMessage",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "The Citizen Lab",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "NSO Group",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Pegasus",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Amnesty International",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "journalists",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "activists",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Zero-click attack",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "FORCEDENTRY",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "CVE-2021-30860"
+    },
+    {
+      "subject": "Apple",
+      "relation": "has application",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "iMessage"
+    },
+    {
+      "subject": "FORCEDENTRY",
+      "relation": "exists in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "iMessage"
+    },
+    {
+      "subject": "iOS 14.8 update",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "FORCEDENTRY"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "created by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "ObjectProperty",
+      "object": "NSO Group"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "spyware"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "FORCEDENTRY"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "mobile iOS devices"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "journalists"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "activists"
+    },
+    {
+      "subject": "FORCEDENTRY",
+      "relation": "has attack pattern",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Zero-click attack"
+    },
+    {
+      "subject": "The Citizen Lab",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Pegasus"
+    },
+    {
+      "subject": "Amnesty International",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Pegasus"
+    }
+  ]
+}

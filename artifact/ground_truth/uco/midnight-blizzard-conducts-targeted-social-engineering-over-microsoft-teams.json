@@ -1,0 +1,120 @@
+{
+  "file": "midnight-blizzard-conducts-targeted-social-engineering-over-microsoft-teams.json",
+  "text": "Microsoft Threat Intelligence has identified highly targeted social engineering attacks using credential theft phishing lures sent as Microsoft Teams chats by the threat actor that Microsoft tracks as Midnight Blizzard (previously tracked as NOBELIUM). This latest attack, combined with past activity, further demonstrates Midnight Blizzard's ongoing execution of their objectives using both new and common techniques. In this latest activity, the threat actor uses previously compromised Microsoft 365 tenants owned by small businesses to create new domains that appear as technical support entities. Using these domains from compromised tenants, Midnight Blizzard leverages Teams messages to send lures that attempt to steal credentials from a targeted organization by engaging a user and eliciting approval of multifactor authentication (MFA) prompts. As with any social engineering lures, we encourage organizations to reinforce security best practices to all users and reinforce that any authentication requests not initiated by the user should be treated as malicious.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Midnight Blizzard",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "NOBELIUM",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Microsoft Teams",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Microsoft 365",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "small businesses",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "targeted organization",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Compromised Microsoft 365 tenants",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Technical-support-lookalike domains",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Social engineering over Microsoft Teams",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Credential theft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "MFA prompt approval elicitation",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "NOBELIUM"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Midnight Blizzard"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Teams"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Social engineering over Microsoft Teams"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Compromised Microsoft 365 tenants"
+    },
+    {
+      "subject": "small businesses",
+      "relation": "owns",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Compromised Microsoft 365 tenants"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "targeted organization"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "MFA prompt approval elicitation"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses modus operandi",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Credential theft"
+    }
+  ]
+}

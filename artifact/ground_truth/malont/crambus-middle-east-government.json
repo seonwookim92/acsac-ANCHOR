@@ -1,0 +1,173 @@
+{
+  "file": "crambus-middle-east-government.json",
+  "text": "The Iranian Crambus espionage group (aka OilRig, APT34) staged an eight-month-long intrusion against a government in the Middle East between February and September 2023. During the compromise, the attackers stole files and passwords and, in one case, installed a PowerShell backdoor (dubbed PowerExchange) that was used to monitor incoming mails sent from an Exchange Server in order to execute commands sent by the attackers in the form of emails, and surreptitiously forwarded results  to the attackers. Malicious activity occurred on at least 12 computers and there is evidence that the attackers deployed backdoors and keyloggers on dozens more. In addition to deploying malware, the attackers made frequent use of the publicly available network administration tool Plink to configure port-forwarding rules on compromised machines, enabling remote access via the Remote Desktop Protocol (RDP). There is also evidence the attackers modified Windows firewall rules in order to enable remote access.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Crambus",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "OilRig",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "APT34",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Iran",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Crambus Middle East Government Intrusion 2023",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Middle East Government",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Middle East",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "PowerExchange",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "PowerShell",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Exchange Server",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Plink",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Remote Desktop Protocol (RDP)",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Windows Firewall",
+      "class": "http://idea.rpi.edu/malont#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Crambus",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "OilRig"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "APT34"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "has country affiliation",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Iran"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Crambus"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Middle East Government"
+    },
+    {
+      "subject": "Middle East Government",
+      "relation": "located in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Middle East"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "PowerExchange"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "backdoor"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "language",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "PowerShell"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "monitors",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Exchange Server"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Plink"
+    },
+    {
+      "subject": "Plink",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "network administration tool"
+    },
+    {
+      "subject": "Plink",
+      "relation": "enables",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Remote Desktop Protocol (RDP)"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "modifies",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Windows Firewall"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "2023-02"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "last seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "2023-09"
+    }
+  ]
+}

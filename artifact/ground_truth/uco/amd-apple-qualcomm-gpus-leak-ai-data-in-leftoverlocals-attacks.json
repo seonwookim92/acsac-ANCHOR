@@ -1,0 +1,145 @@
+{
+  "file": "amd-apple-qualcomm-gpus-leak-ai-data-in-leftoverlocals-attacks.json",
+  "text": "A new vulnerability dubbed 'LeftoverLocals' affecting graphics processing units from AMD, Apple, Qualcomm, and Imagination Technologies allows retrieving data from the local memory space. Tracked as CVE-2023-4969, the security issue enables data recovery from vulnerable GPUs, especially in the context of large language models (LLMs) and machine learning (ML) processes. LeftoverLocals lets attackers launch a 'listener' - a GPU kernel that reads from uninitialized local memory and can dump the data in a persistent location, such as the global memory. If the local memory is not cleared, the attacker can use the listener to read values left behind by the 'writer' - a program that stores values to local memory. The recovered data can reveal sensitive information about the victim's computations, including model inputs, outputs, weights, and intermediate computations.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "LeftoverLocals",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "CVE-2023-4969",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "AMD",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Apple",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Qualcomm",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Imagination Technologies",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Affected graphics processing units",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+    },
+    {
+      "name": "Large language models (LLMs)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Machine learning (ML) processes",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Process"
+    },
+    {
+      "name": "Read uninitialized GPU local memory via listener kernel",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "listener kernel",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "writer program",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "GPU local memory",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Memory"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "LeftoverLocals",
+      "relation": "has CVE ID",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-4969"
+    },
+    {
+      "subject": "LeftoverLocals",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "AMD",
+      "relation": "supplies",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "InverseObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "Apple",
+      "relation": "supplies",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "InverseObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "Qualcomm",
+      "relation": "supplies",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "InverseObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "Imagination Technologies",
+      "relation": "supplies",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "InverseObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "LeftoverLocals",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Large language models (LLMs)"
+    },
+    {
+      "subject": "LeftoverLocals",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Machine learning (ML) processes"
+    },
+    {
+      "subject": "Read uninitialized GPU local memory via listener kernel",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "LeftoverLocals"
+    },
+    {
+      "subject": "Read uninitialized GPU local memory via listener kernel",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "listener kernel",
+      "relation": "reads from",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "GPU local memory"
+    },
+    {
+      "subject": "writer program",
+      "relation": "writes to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "GPU local memory"
+    }
+  ]
+}

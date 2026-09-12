@@ -1,0 +1,137 @@
+{
+  "file": "researchers-release-details-on-two-patched-outlook-zero-click-flaws.json",
+  "text": "Researchers this week disclosed details on two security vulnerabilities in Microsoft Outlook that, when chained together, give attackers a way to execute arbitrary code on affected systems without any user interaction. Unusually, both of them can be triggered using a sound file. One of the flaws, tracked as CVE-2023-35384, is actually the second patch bypass that researchers at Akamai have uncovered for a critical privilege escalation vulnerability in Outlook that Microsoft first patched in March. The second flaw that Akamai disclosed this week (CVE-2023-36710) is a remote code execution (RCE) vulnerability in a feature of Windows Media Foundation, and it has to do with how Windows parses sound files.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "CVE-2023-35384",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "CVE-2023-36710",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Microsoft Outlook",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Windows Media Foundation",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Akamai",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Sound file",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+    },
+    {
+      "name": "privilege escalation",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "remote code execution",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Vulnerability disclosure",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Vulnerability chaining",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Arbitrary code execution",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "CVE-2023-35384",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Outlook"
+    },
+    {
+      "subject": "CVE-2023-36710",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Windows Media Foundation"
+    },
+    {
+      "subject": "Sound file",
+      "relation": "triggers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-35384"
+    },
+    {
+      "subject": "Sound file",
+      "relation": "triggers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-36710"
+    },
+    {
+      "subject": "CVE-2023-35384",
+      "relation": "is a type of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "privilege escalation"
+    },
+    {
+      "subject": "CVE-2023-36710",
+      "relation": "is a type of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "remote code execution"
+    },
+    {
+      "subject": "Vulnerability disclosure",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Akamai"
+    },
+    {
+      "subject": "Vulnerability disclosure",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-35384"
+    },
+    {
+      "subject": "Vulnerability disclosure",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-36710"
+    },
+    {
+      "subject": "Vulnerability chaining",
+      "relation": "instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-35384"
+    },
+    {
+      "subject": "Vulnerability chaining",
+      "relation": "instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-36710"
+    },
+    {
+      "subject": "Vulnerability chaining",
+      "relation": "result",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Arbitrary code execution"
+    }
+  ]
+}

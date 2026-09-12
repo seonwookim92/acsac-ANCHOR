@@ -1,0 +1,68 @@
+{
+  "file": "cl0p-group-distributes-ransomware-data-with-torrents.json",
+  "text": "The CL0P ransomware group recently began using torrents to distribute victim data after a successful campaign stealing data from thousands of companies. We'll cover the reason for this shift in methodology and what this means for visibility to the outside world. CL0P has been one of the ransomware groups most actively posting data about their victims on leak sites tracked by Unit 42 (second only to LockBit in 2023). Unit 42 consultants have recently observed CL0P in about 10 incident response cases.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "CL0P",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "LockBit",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Unit 42",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "torrents",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "victim data",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "CL0P",
+      "relation": "observed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Unit 42"
+    },
+    {
+      "subject": "CL0P",
+      "relation": "tracked by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Unit 42"
+    },
+    {
+      "subject": "CL0P",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "CL0P",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "torrents"
+    },
+    {
+      "subject": "CL0P",
+      "relation": "distributes",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "victim data"
+    }
+  ]
+}

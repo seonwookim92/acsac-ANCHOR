@@ -1,0 +1,68 @@
+{
+  "file": "cl0p-group-distributes-ransomware-data-with-torrents.json",
+  "text": "The CL0P ransomware group recently began using torrents to distribute victim data after a successful campaign stealing data from thousands of companies. We'll cover the reason for this shift in methodology and what this means for visibility to the outside world. CL0P has been one of the ransomware groups most actively posting data about their victims on leak sites tracked by Unit 42 (second only to LockBit in 2023). Unit 42 consultants have recently observed CL0P in about 10 incident response cases.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "CL0P",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "LockBit",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Unit 42",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "ransomware",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "torrents",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "victim data",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "CL0P",
+      "relation": "observed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Unit 42"
+    },
+    {
+      "subject": "CL0P",
+      "relation": "tracked by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Unit 42"
+    },
+    {
+      "subject": "CL0P",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "CL0P",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "torrents"
+    },
+    {
+      "subject": "CL0P",
+      "relation": "distributes",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "victim data"
+    }
+  ]
+}

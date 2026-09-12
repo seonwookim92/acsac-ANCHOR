@@ -1,0 +1,174 @@
+{
+  "file": "ragnar-locker-ransomware.json",
+  "text": "Although Ragnar Locker was discovered by the FBI in April 2020, the group has actually been active since December 2019. Ragnar Locker is both the name of the ransomware group and the name of the ransomware. The gang works as a part of a ransomware family, which means they are associated with several ransomware variants or threat actor groups. Ragnar Locker is known for using the double extortion tactic, which involves threat actors exfiltrating sensitive data, then triggering the encryption attack, and ultimately threatening to leak the data if the demanded ransom isn't paid. To avoid prevention and detection, the threat actor frequently changes their obfuscation techniques. Ragnar Locker initiates their attacks by compromising the networks of companies through RDP service - using brute force to guess passwords or using stolen credentials purchased on the dark web. After compromising their target's network, the threat actor elevates their privileges by exploiting CVE-2017-0213 found in Windows COM Aggregate Marshaler. According to Microsoft, CVE-2017-0213 is an elevation of privilege that allows attackers to run arbitrary code with elevated privileges. To exploit the vulnerability, the attacker runs a specially crafted application.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Ragnar Locker group",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Ragnar Locker ransomware",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "CVE-2017-0213",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Windows COM Aggregate Marshaler",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "RDP service",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Stolen credentials",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Credential"
+    },
+    {
+      "name": "Specially crafted application",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Privilege escalation",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Ransomware attack",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Initial access",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Targeted companies",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "FBI",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Microsoft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Double Extortion",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Dark Web",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Ragnar Locker group",
+      "relation": "start time",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "December 2019"
+    },
+    {
+      "subject": "Ragnar Locker ransomware",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "used instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker ransomware"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "targeted",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Targeted companies"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "description",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DatatypeProperty",
+      "object": "Double extortion tactic involving exfiltration, encryption, and leaking threat"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "used instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "RDP service"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "used instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Stolen credentials"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "exploited",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2017-0213"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "used instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Specially crafted application"
+    },
+    {
+      "subject": "CVE-2017-0213",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Windows COM Aggregate Marshaler"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "reported",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2017-0213"
+    },
+    {
+      "subject": "FBI",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker group"
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "file": "ransomware-spotlight-trigona.json",
+  "text": "The Trigona ransomware is also linked to BlackCat (also known as AlphaVM, AlphaV, or ALPHV); however, there are currently no known similarities between the two groups. It is possible that BlackCat only utilized or collaborated with the threat actors deploying Trigona. A report by Arete confirmed that Trigona had been observed exploiting CVE-2021-40539 for initial access. Once it takes hold of a victim's system and data, threat actors behind Trigona then provide an authorization key for victims to register to the negotiation portal. Trigona published critical data stolen from victims such as documents and contracts on their leak site. The website featured bidding options to acquire access to the leaked data and contained a countdown timer, which could have served to place more pressure on victims to pay up.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Trigona",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "BlackCat",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "AlphaVM",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "AlphaV",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "ALPHV",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Trigona threat actors",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Arete",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "CVE-2021-40539",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Authorization key",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Credential"
+    },
+    {
+      "name": "Victims",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Trigona negotiation portal",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Trigona leak site",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "stolen documents and contracts",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"
+    },
+    {
+      "name": "Data leakage and bidding",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Ransom negotiation",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Trigona",
+      "relation": "linked to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "BlackCat"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "AlphaVM"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "AlphaV"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "ALPHV"
+    },
+    {
+      "subject": "Trigona threat actors",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Trigona"
+    },
+    {
+      "subject": "Arete",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Trigona"
+    },
+    {
+      "subject": "Trigona threat actors",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-40539"
+    },
+    {
+      "subject": "Trigona",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Ransom negotiation",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Trigona threat actors"
+    },
+    {
+      "subject": "Ransom negotiation",
+      "relation": "participant",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Victims"
+    },
+    {
+      "subject": "Ransom negotiation",
+      "relation": "instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Authorization key"
+    },
+    {
+      "subject": "Trigona threat actors",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Trigona negotiation portal"
+    },
+    {
+      "subject": "Trigona threat actors",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Trigona leak site"
+    },
+    {
+      "subject": "Trigona leak site",
+      "relation": "has",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "stolen documents and contracts"
+    },
+    {
+      "subject": "Data leakage and bidding",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Trigona threat actors"
+    },
+    {
+      "subject": "Data leakage and bidding",
+      "relation": "environment",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Trigona leak site"
+    },
+    {
+      "subject": "Data leakage and bidding",
+      "relation": "description",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DatatypeProperty",
+      "object": "Featured bidding options and a countdown timer to pressure victims"
+    }
+  ]
+}

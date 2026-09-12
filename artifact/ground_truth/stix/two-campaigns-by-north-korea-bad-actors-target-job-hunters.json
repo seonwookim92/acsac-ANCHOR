@@ -1,0 +1,137 @@
+{
+  "file": "two-campaigns-by-north-korea-bad-actors-target-job-hunters.json",
+  "text": "Unit 42 researchers recently discovered two separate campaigns targeting job-seeking activities linked to state-sponsored threat actors associated with the Democratic People's Republic of Korea (DPRK), commonly known as North Korea. We call the first campaign “Contagious Interview,” where threat actors pose as employers (often anonymously or with vague identities) to lure software developers into installing malware through the interview process. This malware creates the potential for various types of theft. We attribute with moderate confidence that Contagious Interview is run by a North Korea state-sponsored threat actor. We call the second campaign “Wagemole,” where threat actors seek unauthorized employment with organizations based in the US and other parts of the world, with potential for both financial gain and espionage. We attribute with high confidence that Wagemole is a North Korea state-sponsored threat. Activity from both campaigns remains an ongoing active threat.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Contagious Interview",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Wagemole",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "North Korea state-sponsored threat actor",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "North Korea",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "United States",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Software developers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Unit 42",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "unauthorized employment",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "software developer lure",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Interview malware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Global organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Contagious Interview",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "North Korea state-sponsored threat actor"
+    },
+    {
+      "subject": "Wagemole",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "North Korea state-sponsored threat actor"
+    },
+    {
+      "subject": "North Korea state-sponsored threat actor",
+      "relation": "originates-from",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "North Korea"
+    },
+    {
+      "subject": "Unit 42",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Contagious Interview"
+    },
+    {
+      "subject": "Unit 42",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Wagemole"
+    },
+    {
+      "subject": "Contagious Interview",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Software developers"
+    },
+    {
+      "subject": "Contagious Interview",
+      "relation": "used instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Interview malware"
+    },
+    {
+      "subject": "Contagious Interview",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "software developer lure"
+    },
+    {
+      "subject": "Wagemole",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "unauthorized employment"
+    },
+    {
+      "subject": "Wagemole",
+      "relation": "targeted",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Global organizations"
+    },
+    {
+      "subject": "Contagious Interview",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Campaign luring software developers into installing malware through fake interviews."
+    },
+    {
+      "subject": "Wagemole",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Threat actors seek unauthorized employment for financial gain and espionage"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "file": "uac-0050-group-using-new-phishing.json",
+  "text": "The Computer Emergency Response Team of Ukraine (CERT-UA) warns about new phishing attacks attributed to the threat group UAC-0050. The attackers use phishing emails with malicious attachments, typically archives containing shortcut (LNK) files. Opening these files leads to the execution of a series of payloads, ultimately delivering Remcos RAT or Meduza Stealer. The activity is focused on government agencies and other organizations in Ukraine. CERT-UA has identified that UAC-0050 has been active for several years and continuously updates its tactics to evade detection.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "CERT-UA",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "UAC-0050",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "phishing",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "LNK files",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+    },
+    {
+      "name": "Remcos RAT",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Meduza Stealer",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "government agencies in Ukraine",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Ukraine",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "CERT-UA",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "UAC-0050"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "phishing"
+    },
+    {
+      "subject": "phishing",
+      "relation": "has",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "LNK files"
+    },
+    {
+      "subject": "phishing",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Remcos RAT"
+    },
+    {
+      "subject": "phishing",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Meduza Stealer"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "government agencies in Ukraine"
+    },
+    {
+      "subject": "government agencies in Ukraine",
+      "relation": "located in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Ukraine"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "file": "elusive-toddycat-apt-targets-microsoft-exchange-servers.json",
+  "text": "An advanced persistent threat (APT) group, dubbed ToddyCat, is believed behind a series of attacks targeting Microsoft Exchange servers of high-profile government and military installations in Asia and Europe. The campaigns, according to researchers, began in December 2020, and have been largely poorly understood in their complexity until now. The first wave of attacks exclusively targeted Microsoft Exchange Servers, which were compromised with Samurai, a sophisticated passive backdoor that usually works on ports 80 and 443. The APT leverages two passive backdoors within the Exchange Server environment with malware called Samurai and Ninja, which researchers say are used by the adversaries to take complete control of the victim’s hardware and network.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "ToddyCat",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "ToddyCat Microsoft Exchange Server Campaigns",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Samurai",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Ninja",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Microsoft Exchange Server",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Government installations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Military installations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Asia",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "Europe",
+      "class": "http://idea.rpi.edu/malont#Region"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "ToddyCat",
+      "relation": "is a",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "ThreatActor"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Samurai"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ninja"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Exchange Server"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Government installations"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Military installations"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Asia"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Europe"
+    },
+    {
+      "subject": "ToddyCat Microsoft Exchange Server Campaigns",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ToddyCat"
+    },
+    {
+      "subject": "ToddyCat Microsoft Exchange Server Campaigns",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "2020-12"
+    },
+    {
+      "subject": "Samurai",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "passive backdoor"
+    },
+    {
+      "subject": "Ninja",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "passive backdoor"
+    }
+  ]
+}

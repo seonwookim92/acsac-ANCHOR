@@ -1,0 +1,129 @@
+{
+  "file": "elusive-toddycat-apt-targets-microsoft-exchange-servers.json",
+  "text": "An advanced persistent threat (APT) group, dubbed ToddyCat, is believed behind a series of attacks targeting Microsoft Exchange servers of high-profile government and military installations in Asia and Europe. The campaigns, according to researchers, began in December 2020, and have been largely poorly understood in their complexity until now. The first wave of attacks exclusively targeted Microsoft Exchange Servers, which were compromised with Samurai, a sophisticated passive backdoor that usually works on ports 80 and 443. The APT leverages two passive backdoors within the Exchange Server environment with malware called Samurai and Ninja, which researchers say are used by the adversaries to take complete control of the victim’s hardware and network.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "ToddyCat",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "ToddyCat Microsoft Exchange Server Campaigns",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Samurai",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Ninja",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Microsoft Exchange Server",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Government installations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Military installations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Asia",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Europe",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "ToddyCat",
+      "relation": "is a",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#characterizes",
+      "property_type": "ObjectProperty",
+      "object": "ThreatActor"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Samurai"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ninja"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Exchange Server"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Government installations"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Military installations"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Asia"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Europe"
+    },
+    {
+      "subject": "ToddyCat Microsoft Exchange Server Campaigns",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "ToddyCat"
+    },
+    {
+      "subject": "ToddyCat Microsoft Exchange Server Campaigns",
+      "relation": "first seen",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "ObjectProperty",
+      "object": "2020-12"
+    },
+    {
+      "subject": "Samurai",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "passive backdoor"
+    },
+    {
+      "subject": "Ninja",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "passive backdoor"
+    }
+  ]
+}

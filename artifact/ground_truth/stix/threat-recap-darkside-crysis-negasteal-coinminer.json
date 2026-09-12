@@ -1,0 +1,181 @@
+{
+  "file": "threat-recap-darkside-crysis-negasteal-coinminer.json",
+  "text": "Crysis/Dharma ransomware (detected by Trend Micro as Ransom.Win32.CRYSIS.TIBGGS) has released a hacking toolkit named Toolbox, Sophos reports. Toolbox contains Mimikatz to harvest passwords, NirSoft Remote Desktop PassView to steal remote desktop protocol (RDP) passwords, Hash Suite Tools Free to dump hashes, and other tools to help find target computers and deploy the ransomware payload. With this kit, even rookie hackers can infiltrate networks easily. Crysis operates under a ransomware-as-a-service (RaaS) model, and this hacking tool only makes it easier for affiliates to spread the ransomware to more targets.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Crysis",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Dharma",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Ransom.Win32.CRYSIS.TIBGGS",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Toolbox",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Mimikatz",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "NirSoft Remote Desktop PassView",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Hash Suite Tools Free",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Trend Micro",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Sophos",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "RaaS",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Affiliates",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Target computers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Credential harvesting",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Network infiltration",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Ransomware deployment",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Crysis",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Dharma"
+    },
+    {
+      "subject": "Crysis",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Ransom.Win32.CRYSIS.TIBGGS"
+    },
+    {
+      "subject": "Trend Micro",
+      "relation": "detected",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Crysis"
+    },
+    {
+      "subject": "Sophos",
+      "relation": "reported on",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Toolbox"
+    },
+    {
+      "subject": "Crysis",
+      "relation": "operates as",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "RaaS"
+    },
+    {
+      "subject": "Crysis",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#tool_types",
+      "property_type": "ObjectProperty",
+      "object": "hacking toolkit"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "contains",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Mimikatz"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "contains",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "NirSoft Remote Desktop PassView"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "contains",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Hash Suite Tools Free"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Crysis"
+    },
+    {
+      "subject": "Credential harvesting",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Mimikatz"
+    },
+    {
+      "subject": "Credential harvesting",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "NirSoft Remote Desktop PassView"
+    },
+    {
+      "subject": "Network infiltration",
+      "relation": "used instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Toolbox"
+    },
+    {
+      "subject": "Ransomware deployment",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Affiliates"
+    },
+    {
+      "subject": "Ransomware deployment",
+      "relation": "targeted",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Target computers"
+    }
+  ]
+}

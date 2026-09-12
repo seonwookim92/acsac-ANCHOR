@@ -1,0 +1,25 @@
+CLAIM 3 (Functional, deterministic -- no LLM endpoint required)
+
+The distributed package is internally complete and consistent: every Python
+source parses, the command-line entry point loads and exposes the documented
+pipeline graph, the 149 CTINexus report inputs align one-to-one with 149
+author-created records for each of the three schemas, all packaged UCO, STIX,
+and MALOnt ontology files parse as RDF, and the ACSAC packaging layout is
+present.
+
+Paper connection: the evaluation corpus and author-created labels described in
+Section V.
+Artifact components: artifact/dataset/, artifact/ground_truth/{uco,stix,malont}/,
+artifact/ontology/, artifact/scripts/preflight.py.
+
+This claim is fully deterministic and requires NO LLM endpoint, NO GPU, NO
+network access, and no credentials. A reviewer can validate it immediately after
+./install.sh, before configuring any inference endpoint. It is the recommended
+"kick the tires" check.
+
+SCOPE NOTE. This is a FUNCTIONAL claim about package completeness. It does not
+reproduce any paper metric. The Results Reproduced badge is NOT requested.
+
+RUN:      ./claims/claim3/run.sh
+EXPECTED: claims/claim3/expected/README.txt
+RUNTIME:  under two minutes.

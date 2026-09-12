@@ -1,0 +1,116 @@
+{
+  "file": "ransomware-spotlight-akira.json",
+  "text": "Cisco released a security advisory on Sept. 6, 2023, stating that Akira ransomware operators exploited CVE-2023-20269, a zero-day vulnerability in two of their products' remote access VPN feature: the Cisco Adaptive Security Appliance (ASA) software and Cisco Firepower Thread Defense (FTD) software. Cisco reported that malicious actors who exploit CVE-2023-20269 can identify valid credentials that could be abused to establish unauthorized remote access VPN sessions, and for victims running Cisco ASA Software Release 9.16 or earlier, establish a clientless SSL VPN session. Recently, Sentinel One released a video analyzing an Akira ransomware variant named Megazord that emerged in August 2023. This variant appears to be referencing a Power Rangers formation because it encrypts files with the “POWERRANGES” file extension. The ransom note, which is named “powerranges.txt,” instructs victims to contact the ransomware actor via TOX messenger.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Cisco",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Akira ransomware operators",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Akira",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "CVE-2023-20269",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Cisco Adaptive Security Appliance (ASA)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Cisco Firepower Thread Defense (FTD)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Sentinel One",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Megazord",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "POWERRANGES",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+    },
+    {
+      "name": "powerranges.txt",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+    },
+    {
+      "name": "TOX messenger",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Cisco",
+      "relation": "issued advisory for",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-20269"
+    },
+    {
+      "subject": "Akira ransomware operators",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-20269"
+    },
+    {
+      "subject": "CVE-2023-20269",
+      "relation": "exists in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Cisco Adaptive Security Appliance (ASA)"
+    },
+    {
+      "subject": "CVE-2023-20269",
+      "relation": "exists in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Cisco Firepower Thread Defense (FTD)"
+    },
+    {
+      "subject": "Sentinel One",
+      "relation": "analyzed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Megazord"
+    },
+    {
+      "subject": "Megazord",
+      "relation": "variant of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Akira"
+    },
+    {
+      "subject": "Megazord",
+      "relation": "uses extension",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "POWERRANGES"
+    },
+    {
+      "subject": "Megazord",
+      "relation": "drops note",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "powerranges.txt"
+    },
+    {
+      "subject": "Megazord",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "TOX messenger"
+    }
+  ]
+}

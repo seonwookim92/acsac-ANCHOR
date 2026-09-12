@@ -1,0 +1,178 @@
+{
+  "file": "evasive-jupyter-infostealer-campaign-dangerous-variant.json",
+  "text": "Security researchers have spotted a recent increase in attacks involving a sophisticated new variant of Jupyter, an information stealer that has been targeting users of Chrome, Edge, and Firefox browsers since at least 2020. The malware, also referred to as Yellow Cockatoo, Solarmarker, and Polazert, can backdoor machines and harvest a variety of credential information, including computer name, the user's admin privileges, cookies, Web data, browser password manager information, and other sensitive data from victim systems - such as logins for crypto-wallets and remote access apps. Researchers from VMware's Carbon Black managed detection and response (MDR) service recently observed the new version of the malware leveraging PowerShell command modifications and legitimate-looking, digitally signed payloads, infecting a steadily rising number of systems since late October. Morphisec and BlackBerry — two other vendors that have previously tracked Jupyter — have identified the malware as capable of functioning as a full-fledged backdoor. They have described its capabilities as including support for command and control (C2) communications, acting as a dropper and loader for other malware, hollowing shell code to evade detection, and executing PowerShell scripts and commands. BlackBerry has reported observing Jupyter also targeting crypto-wallets, such as Ethereum Wallet, MyMonero Wallet, and Atomic Wallet, in addition to accessing OpenVPN, Remote Desktop Protocol, and other remote access applications.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Jupyter",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Yellow Cockatoo",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Solarmarker",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Polazert",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Chrome",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Edge",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Firefox",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "PowerShell",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "VMware Carbon Black",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Morphisec",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "BlackBerry",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Ethereum Wallet",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "MyMonero Wallet",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Atomic Wallet",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "OpenVPN",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Remote Desktop Protocol (RDP)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Jupyter",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Yellow Cockatoo"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Solarmarker"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Polazert"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "information-stealer, backdoor"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Edge"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Firefox"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ethereum Wallet"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "MyMonero Wallet"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Atomic Wallet"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "OpenVPN"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Remote Desktop Protocol (RDP)"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "PowerShell"
+    },
+    {
+      "subject": "VMware Carbon Black",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Jupyter"
+    },
+    {
+      "subject": "BlackBerry",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Jupyter"
+    }
+  ]
+}

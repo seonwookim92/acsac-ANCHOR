@@ -1,0 +1,233 @@
+{
+  "file": "ukraine-remains-russias-biggest-cyber-focus-in-2023.json",
+  "text": "FROZENBARENTS (aka Sandworm), a group attributed to Russian Armed Forces’ Main Directorate of the General Staff (GRU) Unit 74455, continues to focus heavily on the war in Ukraine with campaigns spanning intelligence collection, IO, and leaking hacked data through Telegram. As we described in the Fog of War report, FROZENBARENTS remains the most versatile GRU cyber actor with offensive capabilities including credential phishing, mobile activity, malware, external exploitation of services, and beyond. They target sectors of interest for Russian intelligence collection including government, defense, energy, transportation/logistics, education and humanitarian organizations. FROZENBARENTS continues to exploit EXIM mail servers globally and use these compromised hosts as part of their operational network, a trend going back to at least August 2019. These compromised hosts have been observed accessing victim networks, interacting with victim accounts, sending malicious emails and engaged in information operations (IO) activity.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "FROZENBARENTS",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Sandworm",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "GRU Unit 74455",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Ukraine",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Fog of War report",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Report"
+    },
+    {
+      "name": "Intelligence collection",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Information operations (IO)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Leaking hacked data",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Telegram",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Credential phishing",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Mobile activity",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Malware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "External exploitation of services",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "EXIM mail servers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Compromised EXIM hosts",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Government sector",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Defense sector",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Energy sector",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Transportation/logistics sector",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Education sector",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Humanitarian organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Sandworm"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "GRU Unit 74455"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukraine"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Intelligence collection"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Information operations (IO)"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Leaking hacked data"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Telegram"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Credential phishing"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Mobile activity"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Malware"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "External exploitation of services"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "EXIM mail servers"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Compromised EXIM hosts"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Government sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Defense sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Energy sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Transportation/logistics sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Education sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Humanitarian organizations"
+    },
+    {
+      "subject": "Fog of War report",
+      "relation": "describes",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#object_refs",
+      "property_type": "ObjectProperty",
+      "object": "FROZENBARENTS"
+    }
+  ]
+}

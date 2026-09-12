@@ -1,0 +1,189 @@
+{
+  "file": "star-blizzard-increases-sophistication-and-evasion-in-ongoing-attacks.json",
+  "text": "Microsoft Threat Intelligence continues to track and disrupt malicious activity attributed to a Russian state-sponsored actor we track as Star Blizzard (formerly SEABORGIUM, also known as COLDRIVER and Callisto Group). Star Blizzard has improved their detection evasion capabilities since 2022 while remaining focused on email credential theft against the same targets. Star Blizzard, whose activities we assess to have historically supported both espionage and cyber influence objectives, continues to prolifically target individuals and organizations involved in international affairs, defense, and logistics support to Ukraine, as well as academia, information security companies, and other entities aligning with Russian state interests. Microsoft continues to refine and deploy protections against Star Blizzard's evolving spear-phishing tactics.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Star Blizzard",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "SEABORGIUM",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "COLDRIVER",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Callisto Group",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Russian state",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "email credential theft",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Detection evasion",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "spear-phishing",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Espionage",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Cyber influence",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "International affairs entities",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Defense organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Logistics support to Ukraine",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Academia",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Information security companies",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Protection deployment",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Star Blizzard",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "SEABORGIUM"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "COLDRIVER"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Callisto Group"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "belongs to",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Russian state"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "email credential theft"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Detection evasion"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "spear-phishing"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "has objective",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Espionage"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "has objective",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Cyber influence"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "International affairs entities"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Defense organizations"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Logistics support to Ukraine"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Academia"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Information security companies"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Star Blizzard"
+    },
+    {
+      "subject": "Protection deployment",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Microsoft Threat Intelligence"
+    }
+  ]
+}

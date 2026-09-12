@@ -1,0 +1,152 @@
+{
+  "file": "mispadu-banking-trojan-resurfaces.json",
+  "text": "Recent spam campaigns leading to URSA/Mispadu banking trojan (detected by Trend Micro as TrojanSpy.Win32.MISPADU.THIADBO) have been uncovered, as reported by malware analyst Pedro Tavares in a Twitter post and by Seguranca Informatica in a blog post. Mispadu malware steals credentials from users' systems. This attack targets systems with Spanish and Portuguese as system languages. It is also likely that they have targets similar to previous Mispadu attacks where users from Mexico, Spain, Portugal, and other nearby regions were targeted. This behavior is in line with past Mispadu schemes, such as the one where spam emails for fake discount coupons were used as bait.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Mispadu",
+      "class": "http://idea.rpi.edu/malont#Trojan"
+    },
+    {
+      "name": "URSA",
+      "class": "http://idea.rpi.edu/malont#Trojan"
+    },
+    {
+      "name": "TrojanSpy.Win32.MISPADU.THIADBO",
+      "class": "http://idea.rpi.edu/malont#Trojan"
+    },
+    {
+      "name": "Recent spam campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Spam emails with fake discount coupons",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Trend Micro",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Pedro Tavares",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "Seguranca Informatica",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Spanish language system",
+      "class": "http://idea.rpi.edu/malont#System"
+    },
+    {
+      "name": "Portuguese language system",
+      "class": "http://idea.rpi.edu/malont#System"
+    },
+    {
+      "name": "Mexico",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Spain",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Portugal",
+      "class": "http://idea.rpi.edu/malont#Country"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Mispadu",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "URSA"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "TrojanSpy.Win32.MISPADU.THIADBO"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "banking-trojan"
+    },
+    {
+      "subject": "Recent spam campaign",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Mispadu"
+    },
+    {
+      "subject": "Recent spam campaign",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Spam emails with fake discount coupons"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Spanish language system"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Portuguese language system"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Mexico"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Spain"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Portugal"
+    },
+    {
+      "subject": "Trend Micro",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Mispadu"
+    },
+    {
+      "subject": "Pedro Tavares",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Recent spam campaign"
+    },
+    {
+      "subject": "Seguranca Informatica",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Recent spam campaign"
+    }
+  ]
+}

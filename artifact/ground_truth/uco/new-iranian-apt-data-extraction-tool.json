@@ -1,0 +1,90 @@
+{
+  "file": "new-iranian-apt-data-extraction-tool.json",
+  "text": "As part of TAG's mission to counter serious threats to Google and our users, we've analyzed a range of persistent threats including APT35 and Charming Kitten, an Iranian government-backed group that regularly targets high risk users. For years, we have been countering this group’s efforts to hijack accounts, deploy malware, and their use of novel techniques to conduct espionage aligned with the interests of the Iranian government. Now, we’re shining light on a new tool of theirs. In December 2021, TAG discovered a novel Charming Kitten tool, named HYPERSCRAPE, used to steal user data from Gmail, Yahoo!, and Microsoft Outlook accounts. The attacker runs HYPERSCRAPE on their own machine to download victims’ inboxes using previously acquired credentials. We have seen it deployed against fewer than two dozen accounts located in Iran. The oldest known sample is from 2020, and the tool is still under active development. We have taken actions to re-secure these accounts and have notified the victims through our Government Backed Attacker Warnings.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Charming Kitten",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "APT35",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "HYPERSCRAPE",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Gmail",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Yahoo!",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Microsoft Outlook",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "TAG",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Iranian government",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Charming Kitten",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "HYPERSCRAPE"
+    },
+    {
+      "subject": "HYPERSCRAPE",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Gmail"
+    },
+    {
+      "subject": "HYPERSCRAPE",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Yahoo!"
+    },
+    {
+      "subject": "HYPERSCRAPE",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Outlook"
+    },
+    {
+      "subject": "TAG",
+      "relation": "discovered",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "HYPERSCRAPE"
+    },
+    {
+      "subject": "Charming Kitten",
+      "relation": "backed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Iranian government"
+    },
+    {
+      "subject": "APT35",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Charming Kitten"
+    }
+  ]
+}

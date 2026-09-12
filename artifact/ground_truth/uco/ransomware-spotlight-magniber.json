@@ -1,0 +1,166 @@
+{
+  "file": "ransomware-spotlight-magniber.json",
+  "text": "Despite first being detected six years ago, malicious attackers continue to use the Magniber ransomware to compromise organizations. In October 2022, phishing attacks were reported to distribute the Magniber ransomware using standalone JavaScript files digitally signed with a malformed key, exploiting the zero-day vulnerability CVE-2022-44698 to bypass Mark-of-the-Web (MOTW) security warnings, and allowing malicious files to be executed without raising alerts. Microsoft later patched this vulnerability in December 2022. Formerly known as a successor of Cerber, the Magniber ransomware was primarily distributed via the Magnitude exploit kit and exclusively targeted South Korea in 2017. In 2018, it expanded its targets across Asia using CVE-2018-8174 for initial access.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Magniber",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Cerber",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Magnitude exploit kit",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "CVE-2022-44698",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "CVE-2018-8174",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Mark-of-the-Web (MOTW)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "South Korea",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Asia",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Microsoft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Magniber October 2022 phishing campaign",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Grouping"
+    },
+    {
+      "name": "Magniber South Korea 2017 campaign",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Grouping"
+    },
+    {
+      "name": "Magniber Asia 2018 campaign",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Grouping"
+    },
+    {
+      "name": "Standalone JavaScript files",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Magniber",
+      "relation": "successor of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Cerber"
+    },
+    {
+      "subject": "Magniber",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Magnitude exploit kit",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Magniber"
+    },
+    {
+      "subject": "Magnitude exploit kit",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "exploit-kit"
+    },
+    {
+      "subject": "Magniber October 2022 phishing campaign",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Magniber"
+    },
+    {
+      "subject": "Magniber October 2022 phishing campaign",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-44698"
+    },
+    {
+      "subject": "Magniber October 2022 phishing campaign",
+      "relation": "has",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Standalone JavaScript files"
+    },
+    {
+      "subject": "CVE-2022-44698",
+      "relation": "bypasses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Mark-of-the-Web (MOTW)"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "patches",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-44698"
+    },
+    {
+      "subject": "Magniber South Korea 2017 campaign",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Magniber"
+    },
+    {
+      "subject": "Magniber South Korea 2017 campaign",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Magnitude exploit kit"
+    },
+    {
+      "subject": "Magniber South Korea 2017 campaign",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "South Korea"
+    },
+    {
+      "subject": "Magniber Asia 2018 campaign",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Magniber"
+    },
+    {
+      "subject": "Magniber Asia 2018 campaign",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Asia"
+    },
+    {
+      "subject": "Magniber Asia 2018 campaign",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2018-8174"
+    }
+  ]
+}

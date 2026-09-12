@@ -1,0 +1,174 @@
+{
+  "file": "ragnar-locker-ransomware.json",
+  "text": "Although Ragnar Locker was discovered by the FBI in April 2020, the group has actually been active since December 2019. Ragnar Locker is both the name of the ransomware group and the name of the ransomware. The gang works as a part of a ransomware family, which means they are associated with several ransomware variants or threat actor groups. Ragnar Locker is known for using the double extortion tactic, which involves threat actors exfiltrating sensitive data, then triggering the encryption attack, and ultimately threatening to leak the data if the demanded ransom isn't paid. To avoid prevention and detection, the threat actor frequently changes their obfuscation techniques. Ragnar Locker initiates their attacks by compromising the networks of companies through RDP service - using brute force to guess passwords or using stolen credentials purchased on the dark web. After compromising their target's network, the threat actor elevates their privileges by exploiting CVE-2017-0213 found in Windows COM Aggregate Marshaler. According to Microsoft, CVE-2017-0213 is an elevation of privilege that allows attackers to run arbitrary code with elevated privileges. To exploit the vulnerability, the attacker runs a specially crafted application.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Ragnar Locker group",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Ragnar Locker ransomware",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "CVE-2017-0213",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "Windows COM Aggregate Marshaler",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "RDP service",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "Stolen credentials",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Specially crafted application",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Privilege escalation",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Ransomware attack",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Initial access",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Targeted companies",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "FBI",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Double Extortion",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Dark Web",
+      "class": "http://idea.rpi.edu/malont#Network"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Ragnar Locker group",
+      "relation": "start time",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "December 2019"
+    },
+    {
+      "subject": "Ragnar Locker ransomware",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "ransomware"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker ransomware"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Targeted companies"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "description",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DataProperty",
+      "object": "Double extortion tactic involving exfiltration, encryption, and leaking threat"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "RDP service"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Stolen credentials"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "exploited",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2017-0213"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Specially crafted application"
+    },
+    {
+      "subject": "CVE-2017-0213",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Windows COM Aggregate Marshaler"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "reported",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "CVE-2017-0213"
+    },
+    {
+      "subject": "FBI",
+      "relation": "description",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DataProperty",
+      "object": "Discovered Ragnar Locker group in April 2020"
+    }
+  ]
+}

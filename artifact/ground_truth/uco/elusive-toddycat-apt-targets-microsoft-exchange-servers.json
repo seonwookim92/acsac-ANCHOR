@@ -1,0 +1,129 @@
+{
+  "file": "elusive-toddycat-apt-targets-microsoft-exchange-servers.json",
+  "text": "An advanced persistent threat (APT) group, dubbed ToddyCat, is believed behind a series of attacks targeting Microsoft Exchange servers of high-profile government and military installations in Asia and Europe. The campaigns, according to researchers, began in December 2020, and have been largely poorly understood in their complexity until now. The first wave of attacks exclusively targeted Microsoft Exchange Servers, which were compromised with Samurai, a sophisticated passive backdoor that usually works on ports 80 and 443. The APT leverages two passive backdoors within the Exchange Server environment with malware called Samurai and Ninja, which researchers say are used by the adversaries to take complete control of the victim’s hardware and network.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "ToddyCat",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "ToddyCat Microsoft Exchange Server Campaigns",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Event"
+    },
+    {
+      "name": "Samurai",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Ninja",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Microsoft Exchange Server",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Government installations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Military installations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Asia",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Europe",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "ToddyCat",
+      "relation": "is a",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "ThreatActor"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Samurai"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Ninja"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Exchange Server"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Government installations"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Military installations"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Asia"
+    },
+    {
+      "subject": "ToddyCat",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Europe"
+    },
+    {
+      "subject": "ToddyCat Microsoft Exchange Server Campaigns",
+      "relation": "attributed-to",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "ObjectProperty",
+      "object": "ToddyCat"
+    },
+    {
+      "subject": "ToddyCat Microsoft Exchange Server Campaigns",
+      "relation": "first seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2020-12"
+    },
+    {
+      "subject": "Samurai",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "passive backdoor"
+    },
+    {
+      "subject": "Ninja",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "passive backdoor"
+    }
+  ]
+}

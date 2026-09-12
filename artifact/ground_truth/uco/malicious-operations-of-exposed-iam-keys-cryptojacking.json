@@ -1,0 +1,101 @@
+{
+  "file": "malicious-operations-of-exposed-iam-keys-cryptojacking.json",
+  "text": "Unit 42 researchers have identified an active campaign we are calling EleKtra-Leak, which performs automated targeting of exposed identity and access management (IAM) credentials within public GitHub repositories. AWS detects and auto-remediates much of the threat of exposed credentials in popular source code repositories by applying a special quarantine policy — but by manually removing that automatic protection, we were able to develop deeper insights into the activities that the actor would carry out in the case where compromised credentials are obtained in some other way. In those cases, the threat actor associated with the campaign was able to create multiple AWS Elastic Compute (EC2) instances that they used for wide-ranging and long-lasting cryptojacking operations. We believe these operations have been active for at least two years and are still active today.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Unit 42",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "EleKtra-Leak",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Grouping"
+    },
+    {
+      "name": "EleKtra-Leak threat actor",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Exposed IAM credentials",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Credential"
+    },
+    {
+      "name": "public GitHub repositories",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "AWS quarantine policy",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "AWS EC2 instances",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Cryptojacking",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "AWS",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Unit 42",
+      "relation": "identified",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "EleKtra-Leak"
+    },
+    {
+      "subject": "EleKtra-Leak",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "EleKtra-Leak threat actor"
+    },
+    {
+      "subject": "EleKtra-Leak",
+      "relation": "targeted",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Exposed IAM credentials"
+    },
+    {
+      "subject": "EleKtra-Leak threat actor",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "public GitHub repositories"
+    },
+    {
+      "subject": "EleKtra-Leak threat actor",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "AWS EC2 instances"
+    },
+    {
+      "subject": "EleKtra-Leak threat actor",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Cryptojacking"
+    },
+    {
+      "subject": "AWS quarantine policy",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "EleKtra-Leak"
+    },
+    {
+      "subject": "AWS EC2 instances",
+      "relation": "hosted on",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "AWS"
+    }
+  ]
+}

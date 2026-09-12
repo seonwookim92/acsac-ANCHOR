@@ -1,0 +1,130 @@
+{
+  "file": "an-in-depth-look-at-cuba-ransomware.json",
+  "text": "Cuba ransomware first appeared in 2019 but remained relatively unnoticed until November 2021, when they reportedly targeted a minimum of 49 organizations across various sectors. The sectors included government, healthcare, information technology, manufacturing, and finance. During this time, Cuba ransomware operators were infiltrating networks by encrypting files using the '.cuba' extension. Over the years, the ransom demands from Cuba totals at least $145 million, and the group has successfully collected at least $60 million in ransom payments. By 2022, the threat actors had expanded their tactics, techniques, and procedures (TTPs), leading security researchers to suggest a potential connection between Cuba ransomware actors, RomCom Remote Access Trojan (RAT) actors, and Industrial Spy ransomware actors. This month, Cuba garnered attention when they took responsibility for a cyberattack on The Philadelphia Inquirer.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Cuba ransomware",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Cuba ransomware operators",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Encrypt files with .cuba extension",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "RomCom RAT actors",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Industrial Spy ransomware actors",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "The Philadelphia Inquirer",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "government",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "healthcare",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "information technology",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "manufacturing",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "finance",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Cuba ransomware",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "first seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/objectCreatedTime",
+      "property_type": "DatatypeProperty",
+      "object": "2019"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "InverseObjectProperty",
+      "object": "Encrypt files with .cuba extension"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "government"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "healthcare"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "information technology"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "manufacturing"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "finance"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "The Philadelphia Inquirer"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "related-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "RomCom RAT actors"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "related-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Industrial Spy ransomware actors"
+    }
+  ]
+}

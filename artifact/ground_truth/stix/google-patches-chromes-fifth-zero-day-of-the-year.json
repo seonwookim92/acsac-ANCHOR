@@ -1,0 +1,125 @@
+{
+  "file": "google-patches-chromes-fifth-zero-day-of-the-year.json",
+  "text": "Google has patched the fifth actively exploited zero-day vulnerability discovered in Chrome this year as one in a series of fixes included in a stable channel update released Wednesday. The bug, tracked as CVE-2022-2856 and rated as high on the Common Vulnerability Scoring System (CVSS), is associated with “insufficient validation of untrusted input in Intents,” according to the advisory posted by Google. Google credits Ashley Shen and Christian Resell of its Google Threat Analysis Group (TAG) for reporting the zero-day bug, which could allow for arbitrary code execution, on July 19. The advisory also unveiled 10 other patches for various other Chrome issues.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Google",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Chrome",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2022-2856",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Intents",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Google Threat Analysis Group (TAG)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Ashley Shen",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Christian Resell",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Chrome stable channel update",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#CourseOfAction"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Google",
+      "relation": "patched",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-2856"
+    },
+    {
+      "subject": "Chrome stable channel update",
+      "relation": "mitigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-2856"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Intents"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "CVSS rating",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#characterizes",
+      "property_type": "ObjectProperty",
+      "object": "high"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "enables",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "arbitrary code execution"
+    },
+    {
+      "subject": "Ashley Shen",
+      "relation": "reported",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-2856"
+    },
+    {
+      "subject": "Christian Resell",
+      "relation": "reported",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-2856"
+    },
+    {
+      "subject": "Ashley Shen",
+      "relation": "member-of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Google Threat Analysis Group (TAG)"
+    },
+    {
+      "subject": "Christian Resell",
+      "relation": "member-of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Google Threat Analysis Group (TAG)"
+    },
+    {
+      "subject": "Google Threat Analysis Group (TAG)",
+      "relation": "part-of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Google"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Insufficient validation of untrusted input in Intents."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "file": "flax-typhoon-using-legitimate-software-to-quietly-access-taiwanese-organizations.json",
+  "text": "Flax Typhoon has been active since mid-2021 and has targeted government agencies and education, critical manufacturing, and information technology organizations in Taiwan. Some victims have also been observed elsewhere in Southeast Asia, as well as in North America and Africa. Flax Typhoon focuses on persistence, lateral movement, and credential access. As with any observed nation-state actor activity, Microsoft has directly notified targeted or compromised customers, providing them with important information needed to secure their environments. Flax Typhoon is known to use the China Chopper web shell, Metasploit, Juicy Potato privilege escalation tool, Mimikatz, and SoftEther virtual private network (VPN) client. However, Flax Typhoon primarily relies on living-off-the-land techniques and hands-on-keyboard activity. Flax Typhoon achieves initial access by exploiting known vulnerabilities in public-facing servers and deploying web shells like China Chopper. Following initial access, Flax Typhoon uses command-line tools to first establish persistent access over the remote desktop protocol, then deploy a VPN connection to actor-controlled network infrastructure, and finally collect credentials from compromised systems. Flax Typhoon further uses this VPN access to scan for vulnerabilities on targeted systems and organizations from the compromised systems.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Flax Typhoon",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Taiwanese government agencies",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Taiwanese education organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Taiwan",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Southeast Asia",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "North America",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "Africa",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "China Chopper",
+      "class": "http://idea.rpi.edu/malont#Webshell"
+    },
+    {
+      "name": "Metasploit",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Juicy Potato",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Mimikatz",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "SoftEther VPN Client",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Remote Desktop Protocol (RDP)",
+      "class": "http://idea.rpi.edu/malont#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Flax Typhoon",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Taiwanese government agencies"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Taiwanese education organizations"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Taiwan"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "China Chopper"
+    },
+    {
+      "subject": "China Chopper",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "webshell"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Metasploit"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Juicy Potato"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Mimikatz"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "SoftEther VPN Client"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Remote Desktop Protocol (RDP)"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "notified victims of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Flax Typhoon"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "file": "threat-recap-darkside-crysis-negasteal-coinminer.json",
+  "text": "Crysis/Dharma ransomware (detected by Trend Micro as Ransom.Win32.CRYSIS.TIBGGS) has released a hacking toolkit named Toolbox, Sophos reports. Toolbox contains Mimikatz to harvest passwords, NirSoft Remote Desktop PassView to steal remote desktop protocol (RDP) passwords, Hash Suite Tools Free to dump hashes, and other tools to help find target computers and deploy the ransomware payload. With this kit, even rookie hackers can infiltrate networks easily. Crysis operates under a ransomware-as-a-service (RaaS) model, and this hacking tool only makes it easier for affiliates to spread the ransomware to more targets.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Crysis",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Dharma",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Ransom.Win32.CRYSIS.TIBGGS",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Toolbox",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Mimikatz",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "NirSoft Remote Desktop PassView",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Hash Suite Tools Free",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Trend Micro",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Sophos",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "RaaS",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "Affiliates",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Target computers",
+      "class": "http://idea.rpi.edu/malont#System"
+    },
+    {
+      "name": "Credential harvesting",
+      "class": "http://idea.rpi.edu/malont#AttackPattern_SmallDescription"
+    },
+    {
+      "name": "Network infiltration",
+      "class": "http://idea.rpi.edu/malont#AttackPattern_SmallDescription"
+    },
+    {
+      "name": "Ransomware deployment",
+      "class": "http://idea.rpi.edu/malont#AttackPattern_SmallDescription"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Crysis",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Dharma"
+    },
+    {
+      "subject": "Crysis",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Ransom.Win32.CRYSIS.TIBGGS"
+    },
+    {
+      "subject": "Trend Micro",
+      "relation": "detected",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Crysis"
+    },
+    {
+      "subject": "Sophos",
+      "relation": "reported on",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Toolbox"
+    },
+    {
+      "subject": "Crysis",
+      "relation": "operates as",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "RaaS"
+    },
+    {
+      "subject": "Crysis",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "ransomware"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "hacking toolkit"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "contains",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Mimikatz"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "contains",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "NirSoft Remote Desktop PassView"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "contains",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Hash Suite Tools Free"
+    },
+    {
+      "subject": "Toolbox",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Crysis"
+    },
+    {
+      "subject": "Credential harvesting",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Mimikatz"
+    },
+    {
+      "subject": "Credential harvesting",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "NirSoft Remote Desktop PassView"
+    },
+    {
+      "subject": "Network infiltration",
+      "relation": "used instrument",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Toolbox"
+    },
+    {
+      "subject": "Ransomware deployment",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Affiliates"
+    },
+    {
+      "subject": "Ransomware deployment",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Target computers"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "file": "ransomware-spotlight-lockbit.json",
+  "text": "LockBit uses a ransomware-as-a-service (RaaS) model and consistently conceived new ways to stay ahead of its competitors. Its double extortion methods also adds more pressure to victims, raising the stakes of their campaigns. One of its notable tactics was the creation and use of the malware StealBit, which automates data exfiltration. This tool was seen with the release of LockBit 2.0, which has been touted by its creators for having the fastest and most efficient encryption among its competition. In October 2021, LockBit also expanded to Linux hosts, specifically ESXi servers, in its release of Linux-ESXI Locker version 1.0. This variant is capable of targeting Linux hosts and could have a big impact on targeted organizations. Another side of LockBit's operations is its recruitment of and marketing to affiliates. It has been known to hire network access brokers, cooperate with other criminal groups (such as the now defunct Maze), recruit company insiders, and sponsor underground technical writing contests to recruit talented hackers. Using such tactics, the LockBit group has built itself into one of the most professional organized criminal gangs in the criminal underground.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "LockBit group",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "LockBit ransomware",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "RaaS",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Double Extortion",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "StealBit",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "Data Exfiltration",
+      "class": "http://idea.rpi.edu/malont#Exfiltration"
+    },
+    {
+      "name": "LockBit 2.0",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Linux-ESXI Locker v1.0",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Linux hosts",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "ESXi servers",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "Recruitment and marketing",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Affiliates",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Network Access Brokers",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Maze",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Company insiders",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "Talented hackers",
+      "class": "http://idea.rpi.edu/malont#Person"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "LockBit group",
+      "relation": "uses ransomware family",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "LockBit ransomware"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "operates as",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "RaaS"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Double Extortion"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "has variant",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "LockBit 2.0"
+    },
+    {
+      "subject": "LockBit 2.0",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "StealBit"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": "DataProperty",
+      "object": "data exfiltration tool"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "automates data exfiltration",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Data Exfiltration"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "created by",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "LockBit group"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "has variant",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Linux-ESXI Locker v1.0"
+    },
+    {
+      "subject": "Linux-ESXI Locker v1.0",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Linux hosts"
+    },
+    {
+      "subject": "Linux-ESXI Locker v1.0",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "ESXi servers"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "LockBit group"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Company insiders"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Talented hackers"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "hires / works with",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": "ObjectProperty",
+      "object": "Network Access Brokers"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "cooperates with",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": "ObjectProperty",
+      "object": "Maze"
+    }
+  ]
+}

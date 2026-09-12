@@ -1,0 +1,46 @@
+{
+  "file": "microsoft-patches-dogwalk-zero-day-and-17-critical-flaws.json",
+  "text": "Microsoft is urging users to patch a zero-day vulnerability dubbed Dogwalk that is actively being exploited in the wild. The bug (CVE-2022-34713) is tied to a Microsoft Windows Support Diagnostic Tool and allows a remote attacker to execute code on a vulnerable system. The warning is part of a massive August Patch Tuesday update that included 121 flaws, 17 of which were critical and 101 carrying a Common Vulnerability Scoring System rating of Important. Microsoft states that CVE-2022-34713 is a “variant of” Dogwalk, but different. Microsoft scored the vulnerability as Important and warns that the exploitation of the bug can only be preformed by an adversary with physical access to a vulnerable computer.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Microsoft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "DogWalk",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "CVE-2022-34713",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "attackers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Microsoft",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-34713"
+    },
+    {
+      "subject": "DogWalk",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "CVE-2022-34713"
+    },
+    {
+      "subject": "attackers",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-34713"
+    }
+  ]
+}

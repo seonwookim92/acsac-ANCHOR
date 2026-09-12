@@ -1,0 +1,112 @@
+{
+  "file": "reservation-links-prey-on-travelers.json",
+  "text": "A longtime threat group identified as TA558 has ramped up efforts to target the travel and hospitality industries. After a lull in activity, believed tied to COVID-related travel restrictions, the threat group has ramped up campaigns to exploit an uptick in travel and related airline and hotel bookings. Warnings come from security researchers who say TA558 cybercriminals have revamped their 2018 campaigns with fake reservation emails that contain links – that if clicked – deliver a malicious malware payload containing a potpourri of malware variants. What makes this most recent campaign unique, according to a report by Proofpoint, is the use of RAR and ISO file attachments linked to messages. ISO and RAR are single compressed files, that if executed, decompress the file and folder data inside of them.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "TA558",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "TA558 Reservation Email Campaign",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Grouping"
+    },
+    {
+      "name": "Travel Sector Organizations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Hospitality Sector Organizations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Fake Reservation Email Phishing",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Malicious Reservation Link",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "RAR Attachment",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"
+    },
+    {
+      "name": "ISO Attachment",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"
+    },
+    {
+      "name": "potpourri of malware variants",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Proofpoint",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "TA558",
+      "relation": "has",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "TA558 Reservation Email Campaign"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Travel Sector Organizations"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Hospitality Sector Organizations"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Fake Reservation Email Phishing"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has link",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Malicious Reservation Link"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has attachment",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "RAR Attachment"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has attachment",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ISO Attachment"
+    },
+    {
+      "subject": "Malicious Reservation Link",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "potpourri of malware variants"
+    },
+    {
+      "subject": "Proofpoint",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "TA558 Reservation Email Campaign"
+    }
+  ]
+}

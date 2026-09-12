@@ -1,0 +1,206 @@
+{
+  "file": "syrian-threat-group-peddles-destructive-silverrat.json",
+  "text": "SilverRAT shows that the region's cybercriminal groups are becoming more sophisticated, according to Cyfirma's analysis. The first version of SilverRAT, whose source code was leaked by unknown actors in October, consists of a builder that allows the user to construct a remote access Trojan with specific features. The more interesting features, according to Cyfirma's analysis, include using either an IP address or webpage for command and control, bypasses for antivirus software, the ability to erase system restore points, and the delayed execution of payloads. At least two threat actors — one using the handle \"Dangerous silver\" and a second using \"Monstermc\" — are the developers behind both SilverRAT and a previous program, S500 RAT, according to Cyfirma's analysis. The hackers operate on Telegram and through online forums where they sell malware-as-a-service, distribute cracked RATs from other developers, and offer a variety of other services. In addition, they have a blog and website called Anonymous Arabic.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "SilverRAT",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "S500 RAT",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "Dangerous silver",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Monstermc",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Cyfirma",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "SilverRAT C2",
+      "class": "http://idea.rpi.edu/malont#CommandAndControl"
+    },
+    {
+      "name": "IP-based C2",
+      "class": "http://idea.rpi.edu/malont#Address"
+    },
+    {
+      "name": "Webpage-based C2",
+      "class": "http://idea.rpi.edu/malont#URL"
+    },
+    {
+      "name": "Antivirus software",
+      "class": "http://idea.rpi.edu/malont#VirusScanner"
+    },
+    {
+      "name": "Erase system restore points",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Delayed payload execution",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Malware-as-a-Service",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Telegram",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Online forums",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Anonymous Arabic",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "MaaS and distribution operation",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Dangerous silver",
+      "relation": "authored",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "SilverRAT"
+    },
+    {
+      "subject": "Monstermc",
+      "relation": "authored",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "SilverRAT"
+    },
+    {
+      "subject": "Dangerous silver",
+      "relation": "authored",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "S500 RAT"
+    },
+    {
+      "subject": "Monstermc",
+      "relation": "authored",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "S500 RAT"
+    },
+    {
+      "subject": "Cyfirma",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "SilverRAT"
+    },
+    {
+      "subject": "SilverRAT",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "remote-access-trojan"
+    },
+    {
+      "subject": "S500 RAT",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "remote-access-trojan"
+    },
+    {
+      "subject": "SilverRAT",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "SilverRAT C2"
+    },
+    {
+      "subject": "SilverRAT C2",
+      "relation": "has",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "IP-based C2"
+    },
+    {
+      "subject": "SilverRAT C2",
+      "relation": "has",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Webpage-based C2"
+    },
+    {
+      "subject": "SilverRAT",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Antivirus software"
+    },
+    {
+      "subject": "SilverRAT",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Erase system restore points"
+    },
+    {
+      "subject": "SilverRAT",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Delayed payload execution"
+    },
+    {
+      "subject": "SilverRAT",
+      "relation": "description",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DataProperty",
+      "object": "Includes a builder; features AV bypass, erasing system restore points, and delayed execution"
+    },
+    {
+      "subject": "MaaS and distribution operation",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "Dangerous silver"
+    },
+    {
+      "subject": "MaaS and distribution operation",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "Monstermc"
+    },
+    {
+      "subject": "MaaS and distribution operation",
+      "relation": "environment",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Telegram"
+    },
+    {
+      "subject": "MaaS and distribution operation",
+      "relation": "environment",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Online forums"
+    },
+    {
+      "subject": "MaaS and distribution operation",
+      "relation": "description",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DataProperty",
+      "object": "Selling malware-as-a-service and distributing cracked RATs through Anonymous Arabic"
+    }
+  ]
+}

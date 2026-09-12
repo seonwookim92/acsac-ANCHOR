@@ -1,0 +1,166 @@
+{
+  "file": "ransomware-spotlight-magniber.json",
+  "text": "Despite first being detected six years ago, malicious attackers continue to use the Magniber ransomware to compromise organizations. In October 2022, phishing attacks were reported to distribute the Magniber ransomware using standalone JavaScript files digitally signed with a malformed key, exploiting the zero-day vulnerability CVE-2022-44698 to bypass Mark-of-the-Web (MOTW) security warnings, and allowing malicious files to be executed without raising alerts. Microsoft later patched this vulnerability in December 2022. Formerly known as a successor of Cerber, the Magniber ransomware was primarily distributed via the Magnitude exploit kit and exclusively targeted South Korea in 2017. In 2018, it expanded its targets across Asia using CVE-2018-8174 for initial access.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Magniber",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Cerber",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Magnitude exploit kit",
+      "class": "http://idea.rpi.edu/malont#Exploit-kit"
+    },
+    {
+      "name": "CVE-2022-44698",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "CVE-2018-8174",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "Mark-of-the-Web (MOTW)",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "South Korea",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Asia",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Magniber October 2022 phishing campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Magniber South Korea 2017 campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Magniber Asia 2018 campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Standalone JavaScript files",
+      "class": "http://idea.rpi.edu/malont#File"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Magniber",
+      "relation": "successor of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Cerber"
+    },
+    {
+      "subject": "Magniber",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "ransomware"
+    },
+    {
+      "subject": "Magnitude exploit kit",
+      "relation": "delivers",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Magniber"
+    },
+    {
+      "subject": "Magnitude exploit kit",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "exploit-kit"
+    },
+    {
+      "subject": "Magniber October 2022 phishing campaign",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Magniber"
+    },
+    {
+      "subject": "Magniber October 2022 phishing campaign",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-44698"
+    },
+    {
+      "subject": "Magniber October 2022 phishing campaign",
+      "relation": "has",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Standalone JavaScript files"
+    },
+    {
+      "subject": "CVE-2022-44698",
+      "relation": "bypasses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Mark-of-the-Web (MOTW)"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "patches",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-44698"
+    },
+    {
+      "subject": "Magniber South Korea 2017 campaign",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Magniber"
+    },
+    {
+      "subject": "Magniber South Korea 2017 campaign",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Magnitude exploit kit"
+    },
+    {
+      "subject": "Magniber South Korea 2017 campaign",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "South Korea"
+    },
+    {
+      "subject": "Magniber Asia 2018 campaign",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Magniber"
+    },
+    {
+      "subject": "Magniber Asia 2018 campaign",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Asia"
+    },
+    {
+      "subject": "Magniber Asia 2018 campaign",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2018-8174"
+    }
+  ]
+}

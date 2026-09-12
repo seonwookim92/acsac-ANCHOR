@@ -1,0 +1,164 @@
+{
+  "file": "in-depth-look-at-apt35-aka-charming-kitten.json",
+  "text": "The Iranian advanced persistent threat actor and cyberespionage group, APT35, also known as Charming Kitten or Phosphorus, has been making headlines since 2014. During that time, the group launched one of the most sophisticated internet based spying campaigns organized by Iranian threat actors - a campaign conducted via social media. Since then, the group has not slowed down and has been responsible for several other cyber attacks around the world. In 2019, APT35 was responsible for targeting several academic institutions in the U.S, France, and the Middle East region. In late 2020, the group targeted medical research organizations in Israel and in the U.S. By 2021, APT35 was abusing Microsoft Exchange Server vulnerabilities that were chained together (ProxyShell). As of 2022, APT35 has been observed using new tactics to attack a wide range of targets. Using a new strain of malware, the threat actors were able to use the malware for intelligence collection. The group has also been seen using a new tool called Hyperscrape to quietly extract emails from victim's mailboxes.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "APT35",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Charming Kitten",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Phosphorus",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Iran",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "social media spying campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Academic institutions",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "United States",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "France",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Middle East",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "Medical research organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Israel",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Microsoft Exchange Server",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "ProxyShell",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_Desc"
+    },
+    {
+      "name": "intelligence-collection malware",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "Hyperscrape",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Email extraction",
+      "class": "http://idea.rpi.edu/malont#Exfiltration"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "APT35",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Charming Kitten"
+    },
+    {
+      "subject": "APT35",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Phosphorus"
+    },
+    {
+      "subject": "APT35",
+      "relation": "has country affiliation",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Iran"
+    },
+    {
+      "subject": "social media spying campaign",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "APT35"
+    },
+    {
+      "subject": "APT35",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Academic institutions"
+    },
+    {
+      "subject": "APT35",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Medical research organizations"
+    },
+    {
+      "subject": "APT35",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "ProxyShell"
+    },
+    {
+      "subject": "ProxyShell",
+      "relation": "affects",
+      "property": "http://idea.rpi.edu/malont#hasVulnerability",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Exchange Server"
+    },
+    {
+      "subject": "APT35",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "2014"
+    },
+    {
+      "subject": "APT35",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "intelligence-collection malware"
+    },
+    {
+      "subject": "APT35",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Hyperscrape"
+    },
+    {
+      "subject": "Email extraction",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "APT35"
+    },
+    {
+      "subject": "Email extraction",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Hyperscrape"
+    }
+  ]
+}

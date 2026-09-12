@@ -1,0 +1,260 @@
+{
+  "file": "in-depth-look-at-iranian-apt-muddywater.json",
+  "text": "In February 2022, CISA, the Federal Bureau of Investigation (FBI), the U.S. Cyber Command Cyber National Mission Force (CNMF), the United Kingdom's National Cyber Security Centre (NCSC-UK), and the National Security Agency (NSA) released a joint statement regarding their observation of Iranian government-sponsored APT MuddyWater and their malicious cyber activity. MuddyWater is known for cyber espionage, as well as other cybercriminal operations as part of Iran's Ministry of Intelligence and Security. The threat actors have targeted several government and private sector organizations in the defense, oil and natural gas, local government, and telecommunications industries - focusing on Asia, Africa, Europe, and North America. MuddyWater conducts broad cyber campaigns, exploiting publicly reported vulnerabilities and using open-source tools and strategies to gain access to their target's systems. Also, known as MERCURY, Earth Vetala, Static Kitten, Seedworm, and TEMP.Zagros, MuddyWater is an Iranian APT and a subservient element within the Iranian Ministry of Intelligence and Security (MOIS). The group has been active since 2018 and has provided stolen data and access to the Iranian government by exploiting known vulnerabilities and using open-source tools to deploy their ransomware. In November 2021, Cisco Talos observed a campaign targeting Turkey government entities, including the Scientific and Technological Research Council of Turkey - Tubitak. MuddyWater has three goals when conducting their attacks: cyber espionage, intellectual property theft, and ransomware attacks.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "MuddyWater",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "MERCURY",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Earth Vetala",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Static Kitten",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Seedworm",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "TEMP.Zagros",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Ministry of Intelligence and Security (MOIS)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Iran",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Turkey",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Turkey Government Entities",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Scientific and Technological Research Council of Turkey - Tubitak",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "CISA",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "FBI",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "NSA",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "NCSC-UK",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "CNMF",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Cisco Talos",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Asia",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Africa",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Europe",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "North America",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Cyber espionage",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Ransomware attacks",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Intellectual property theft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "November 2021 campaign",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "MuddyWater",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "MERCURY"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Earth Vetala"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Static Kitten"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Seedworm"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "TEMP.Zagros"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "part of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Ministry of Intelligence and Security (MOIS)"
+    },
+    {
+      "subject": "Ministry of Intelligence and Security (MOIS)",
+      "relation": "located in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Iran"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "originates-from",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Iran"
+    },
+    {
+      "subject": "CISA",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "MuddyWater"
+    },
+    {
+      "subject": "FBI",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "MuddyWater"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Turkey Government Entities"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Scientific and Technological Research Council of Turkey - Tubitak"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Asia"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Africa"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Europe"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "North America"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "uses modus operandi",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Cyber espionage"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "uses modus operandi",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ransomware attacks"
+    },
+    {
+      "subject": "MuddyWater",
+      "relation": "uses modus operandi",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Intellectual property theft"
+    },
+    {
+      "subject": "November 2021 campaign",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "MuddyWater"
+    }
+  ]
+}

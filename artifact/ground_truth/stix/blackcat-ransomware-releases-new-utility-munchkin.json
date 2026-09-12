@@ -1,0 +1,100 @@
+{
+  "file": "blackcat-ransomware-releases-new-utility-munchkin.json",
+  "text": "BlackCat operators recently announced new updates to their tooling, including a utility called Munchkin that allows attackers to propagate the BlackCat payload to remote machines and shares on a victim organization network. For the past two years, the BlackCat ransomware operators have continued to evolve and iterate their tooling as part of their ransomware-as-a-service (RaaS) business model. As part of a recent investigation, Unit 42 researchers have acquired an instance of Munchkin that is unique, in that it is loaded in a customized Alpine virtual machine (VM). This new tactic of leveraging a customized VM to deploy malware has been gaining traction in recent months, allowing ransomware threat actors to use VMs to circumvent security solutions in deploying their malware payloads.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "BlackCat operators",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "BlackCat",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Munchkin",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Unit 42 researchers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Customized Alpine virtual machine",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Victim organization network",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "ransomware-as-a-service",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "BlackCat operators",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Munchkin"
+    },
+    {
+      "subject": "BlackCat operators",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "BlackCat"
+    },
+    {
+      "subject": "BlackCat operators",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Victim organization network"
+    },
+    {
+      "subject": "Munchkin",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "BlackCat"
+    },
+    {
+      "subject": "Customized Alpine virtual machine",
+      "relation": "hosts",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#hosts",
+      "property_type": "ObjectProperty",
+      "object": "Munchkin"
+    },
+    {
+      "subject": "Unit 42 researchers",
+      "relation": "investigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Munchkin"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Munchkin",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "DatatypeProperty",
+      "object": "utility"
+    },
+    {
+      "subject": "ransomware-as-a-service",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "DatatypeProperty",
+      "object": "Business model for ransomware distribution."
+    }
+  ]
+}

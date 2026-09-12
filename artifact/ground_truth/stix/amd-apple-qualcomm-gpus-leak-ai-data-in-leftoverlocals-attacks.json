@@ -1,0 +1,90 @@
+{
+  "file": "amd-apple-qualcomm-gpus-leak-ai-data-in-leftoverlocals-attacks.json",
+  "text": "The vulnerability, named LeftoverLocals, affects GPUs from AMD, Apple, and Qualcomm. It was discovered by researchers from Google. The flaw allows local attackers to leak AI data from other users' GPU memory. The discovery highlights the importance of hardware-level security in modern computing architectures.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "LeftoverLocals",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "GPUs",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "AMD",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Apple",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Qualcomm",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Google",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "AI data",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "local attackers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "LeftoverLocals",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#affects",
+      "property_type": "ObjectProperty",
+      "object": "GPUs"
+    },
+    {
+      "subject": "AMD",
+      "relation": "manufactures",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#owns",
+      "property_type": "ObjectProperty",
+      "object": "GPUs"
+    },
+    {
+      "subject": "Apple",
+      "relation": "manufactures",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#owns",
+      "property_type": "ObjectProperty",
+      "object": "GPUs"
+    },
+    {
+      "subject": "Qualcomm",
+      "relation": "manufactures",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#owns",
+      "property_type": "ObjectProperty",
+      "object": "GPUs"
+    },
+    {
+      "subject": "Google",
+      "relation": "discovered",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "LeftoverLocals"
+    },
+    {
+      "subject": "local attackers",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "LeftoverLocals"
+    },
+    {
+      "subject": "local attackers",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "AI data"
+    }
+  ]
+}

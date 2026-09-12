@@ -1,0 +1,123 @@
+{
+  "file": "ukraine-remains-russias-biggest-cyber-focus-in-2023.json",
+  "text": "Google's 'Fog of War' report provides insights into Russian cyber operations in Ukraine. One prominent group, FROZENBARENTS (aka Sandworm, attributed to GRU Unit 74455), has been heavily involved in intelligence collection and information operations (IO) against Ukraine. Their tactics include leaking hacked data via Telegram, credential phishing, and deploying malware. FROZENBARENTS also exploits external services, such as EXIM mail servers, and uses compromised EXIM hosts for their activities. The group's targets span government, defense, energy, transportation/logistics, education, and humanitarian organizations in Ukraine.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "FROZENBARENTS",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Sandworm",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "GRU Unit 74455",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Ukraine",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "EXIM mail servers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Government sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Defense sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Energy sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Transportation/logistics sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Education sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Humanitarian organizations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Sandworm"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "GRU Unit 74455"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Ukraine"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "EXIM mail servers"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Government sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Defense sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Energy sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Transportation/logistics sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Education sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Humanitarian organizations"
+    }
+  ]
+}

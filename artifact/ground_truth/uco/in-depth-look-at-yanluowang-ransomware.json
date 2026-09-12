@@ -1,0 +1,171 @@
+{
+  "file": "in-depth-look-at-yanluowang-ransomware.json",
+  "text": "United States organizations within the financial sector are currently being attacked by a recently discovered ransomware operation named, Yanluowang. The ransomware operation is highly experienced with ransomware-as-a-service (RaaS) and could be linked to veteran RaaS groups, Fivehands and Thieflock. Although the group is primarily focused on attacking organizations within the financial sector, they have also targeted companies in manufacturing, IT services, consultancy, and engineering. Let's take a look at Yanluowang's techniques, tactics, and how they may be connected to Fivehands and Thieflock. In October 2021, Symantec's Threat Hunter Team, a division of Broadcom Software, discovered that Yanluowang ransomware was actively being used by a threat actor who was seen attacking U.S. corporations since at least August 2021. What was interesting about the attack was that many of the tools, tactics, and procedures (TTPs) used were previously used by ransomware threat actor, Thieflock. Most analysts assumed that the threat actor using Yanluowang must be an affiliate of Thieflock who shifted allegiances. Although Yanluowang attempted to attack a large organization in October 2021 by deploying ransomware, they were not successful due to the ransomware being somewhat underdeveloped. According to Symantec, their Threat Hunter Team initially discovered the use of AdFind, a legitimate command-line Active Directory query tool, on the undisclosed target's network. Ransomware attackers often use AdFind as a reconnaissance tool. The tool also equipped attackers with resources that they needed for lateral movement by way of Active Directory. Days after discovering the suspicious use of AdFind, attackers attempted to deploy Yanluowang ransomware.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Yanluowang",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Unknown Threat Actor Using Yanluowang",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Yanluowang 2021 campaign",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Grouping"
+    },
+    {
+      "name": "Fivehands",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Thieflock",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "AdFind",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/Tool"
+    },
+    {
+      "name": "Active Directory",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Broadcom Software",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "United States",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "United States Financial Sector Organizations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Manufacturing sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "IT services sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Ransomware-as-a-Service (RaaS)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Reconnaissance",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Lateral movement",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "part of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Broadcom Software"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Unknown Threat Actor Using Yanluowang"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "attributed-to",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "ObjectProperty",
+      "object": "Unknown Threat Actor Using Yanluowang"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "first seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2021-08"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "United States Financial Sector Organizations"
+    },
+    {
+      "subject": "Unknown Threat Actor Using Yanluowang",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Yanluowang"
+    },
+    {
+      "subject": "Unknown Threat Actor Using Yanluowang",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "AdFind"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "linked to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Fivehands"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "linked to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Thieflock"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Ransomware-as-a-Service (RaaS)"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Reconnaissance"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Lateral movement"
+    },
+    {
+      "subject": "AdFind",
+      "relation": "interacts with",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Active Directory"
+    }
+  ]
+}

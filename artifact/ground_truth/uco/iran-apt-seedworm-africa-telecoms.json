@@ -1,0 +1,199 @@
+{
+  "file": "iran-apt-seedworm-africa-telecoms.json",
+  "text": "Iranian espionage group Seedworm (aka Muddywater) has been targeting organizations operating in the telecommunications sector in Egypt, Sudan, and Tanzania. Seedworm has been active since at least 2017, and has targeted organizations in many countries, though it is most strongly associated with attacks on organizations in the Middle East. It has been publicly stated that Seedworm is a cyberespionage group that is believed to be a subordinate part of Iran's Ministry of Intelligence and Security (MOIS). The attackers used a variety of tools in this activity, which occurred in November 2023, including leveraging the MuddyC2Go infrastructure, which was recently discovered and documented by Deep Instinct. Researchers on Symantec's Threat Hunter Team, part of Broadcom, found a MuddyC2Go PowerShell launcher in the activity we investigated. The attackers also use the SimpleHelp remote access tool and Venom Proxy, which have previously been associated with Seedworm activity, as well as using a custom keylogging tool, and other publicly available and living-off-the-land tools.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Seedworm",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Muddywater",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Ministry of Intelligence and Security (MOIS)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Iran",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Telecommunications sector organizations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Egypt",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Sudan",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Tanzania",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "MuddyC2Go",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "MuddyC2Go PowerShell launcher",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "SimpleHelp",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Venom Proxy",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "custom keylogging tool",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Deep Instinct",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Targeting activity",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Seedworm",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Muddywater"
+    },
+    {
+      "subject": "Seedworm",
+      "relation": "part of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Ministry of Intelligence and Security (MOIS)"
+    },
+    {
+      "subject": "Seedworm",
+      "relation": "originates-from",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Iran"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Seedworm"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "targeted victim",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Telecommunications sector organizations"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "occurred in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Egypt"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "occurred in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Sudan"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "occurred in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Tanzania"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "used instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "MuddyC2Go"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "used instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "SimpleHelp"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "used instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Venom Proxy"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "start time",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2023-11"
+    },
+    {
+      "subject": "Deep Instinct",
+      "relation": "discovered",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "MuddyC2Go"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Targeting activity"
+    },
+    {
+      "subject": "Seedworm",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "MuddyC2Go PowerShell launcher"
+    },
+    {
+      "subject": "Seedworm",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "custom keylogging tool"
+    },
+    {
+      "subject": "MuddyC2Go PowerShell launcher",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "launcher"
+    },
+    {
+      "subject": "custom keylogging tool",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "keylogger"
+    }
+  ]
+}

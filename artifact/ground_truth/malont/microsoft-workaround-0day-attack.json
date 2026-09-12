@@ -1,0 +1,141 @@
+{
+  "file": "microsoft-workaround-0day-attack.json",
+  "text": "Microsoft has released a workaround for a zero-day flaw that was initially flagged in April and that attackers already have used to target organizations in Russia and Tibet, researchers said. The remote control execution (RCE) flaw, tracked as CVE-2022-3019, is associated with the Microsoft Support Diagnostic Tool (MSDT), which, ironically, itself collects information about bugs in the company’s products and reports to Microsoft Support. If successfully exploited, attackers can install programs, view, change or delete data, or create new accounts in the context allowed by the user’s rights, the company said. A remote code execution vulnerability exists when MSDT is called using the URL protocol from a calling application such as Word,\" Microsoft explained in its guidance on the Microsoft Security Response Center. \"An attacker who successfully exploits this vulnerability can run arbitrary code with the privileges of the calling application.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "CVE-2022-3019",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Microsoft workaround for CVE-2022-3019",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Microsoft Support Diagnostic Tool (MSDT)",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Microsoft Word",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Unknown attackers",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Organizations in Russia",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Organizations in Tibet",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Russia",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Tibet",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "Remote code execution",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Microsoft Security Response Center",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Microsoft workaround for CVE-2022-3019",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-3019"
+    },
+    {
+      "subject": "Microsoft workaround for CVE-2022-3019",
+      "relation": "created-by",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft"
+    },
+    {
+      "subject": "Unknown attackers",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-3019"
+    },
+    {
+      "subject": "Unknown attackers",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Organizations in Russia"
+    },
+    {
+      "subject": "Unknown attackers",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Organizations in Tibet"
+    },
+    {
+      "subject": "CVE-2022-3019",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Support Diagnostic Tool (MSDT)"
+    },
+    {
+      "subject": "CVE-2022-3019",
+      "relation": "enables",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Remote code execution"
+    },
+    {
+      "subject": "Microsoft Word",
+      "relation": "triggers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-3019"
+    },
+    {
+      "subject": "Organizations in Russia",
+      "relation": "located-at",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "Organizations in Tibet",
+      "relation": "located-at",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Tibet"
+    },
+    {
+      "subject": "Microsoft Security Response Center",
+      "relation": "provided guidance for",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-3019"
+    },
+    {
+      "subject": "CVE-2022-3019",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "2022-04"
+    }
+  ]
+}

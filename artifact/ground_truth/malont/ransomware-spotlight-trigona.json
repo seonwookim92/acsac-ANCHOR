@@ -1,0 +1,188 @@
+{
+  "file": "ransomware-spotlight-trigona.json",
+  "text": "The Trigona ransomware is also linked to BlackCat (also known as AlphaVM, AlphaV, or ALPHV); however, there are currently no known similarities between the two groups. It is possible that BlackCat only utilized or collaborated with the threat actors deploying Trigona. A report by Arete confirmed that Trigona had been observed exploiting CVE-2021-40539 for initial access. Once it takes hold of a victim's system and data, threat actors behind Trigona then provide an authorization key for victims to register to the negotiation portal. Trigona published critical data stolen from victims such as documents and contracts on their leak site. The website featured bidding options to acquire access to the leaked data and contained a countdown timer, which could have served to place more pressure on victims to pay up.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Trigona",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "BlackCat",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "AlphaVM",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "AlphaV",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "ALPHV",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Trigona threat actors",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Arete",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "CVE-2021-40539",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "Authorization key",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Victims",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "Trigona negotiation portal",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "Trigona leak site",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "stolen documents and contracts",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "Data leakage and bidding",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Ransom negotiation",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Trigona",
+      "relation": "linked to",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": null,
+      "object": "BlackCat"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "AlphaVM"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "AlphaV"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "ALPHV"
+    },
+    {
+      "subject": "Trigona threat actors",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Trigona"
+    },
+    {
+      "subject": "Arete",
+      "relation": "observed",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": null,
+      "object": "Trigona"
+    },
+    {
+      "subject": "Trigona threat actors",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-40539"
+    },
+    {
+      "subject": "Trigona",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "ransomware"
+    },
+    {
+      "subject": "Ransom negotiation",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Trigona threat actors"
+    },
+    {
+      "subject": "Ransom negotiation",
+      "relation": "participant",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Victims"
+    },
+    {
+      "subject": "Ransom negotiation",
+      "relation": "instrument",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Authorization key"
+    },
+    {
+      "subject": "Trigona threat actors",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Trigona negotiation portal"
+    },
+    {
+      "subject": "Trigona threat actors",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Trigona leak site"
+    },
+    {
+      "subject": "Trigona leak site",
+      "relation": "has",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "stolen documents and contracts"
+    },
+    {
+      "subject": "Data leakage and bidding",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Trigona threat actors"
+    },
+    {
+      "subject": "Data leakage and bidding",
+      "relation": "environment",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Trigona leak site"
+    },
+    {
+      "subject": "Data leakage and bidding",
+      "relation": "description",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": "DataProperty",
+      "object": "Featured bidding options and a countdown timer to pressure victims"
+    }
+  ]
+}

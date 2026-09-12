@@ -1,0 +1,185 @@
+{
+  "file": "ransomware-spotlight-clop.json",
+  "text": "In November 2021, security researchers detected malicious activity by Clop operators that exploited a SolarWinds Serv-U vulnerability to breach corporate networks and deliver the Clop ransomware as a payload. The Serv-U Managed File Transfer and Serv-U Secure FTP remote code execution (RCE) vulnerability, tracked as CVE-2021-35211, allowed RCE on the vulnerable server with elevated privileges. A maritime services giant with headquarters in Singapore also fell prey to Clop. In November 2021, it was reported that Clop breached its IT systems to steal classified proprietary commercial information and employee data that included bank account details, payroll information, passports, email addresses, and internal correspondence, among others. In October 2022, Microsoft Security reported that DEV-0950, a ransomware group that appears to be associated with the cybercriminal group FIN11 (aka TA505), distributed Clop in a campaign that targeted one of the victims of the Raspberry Robin worm.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Clop operators",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "SolarWinds Serv-U",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Clop",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Serv-U Managed File Transfer",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Serv-U Secure FTP",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2021-35211",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "maritime services giant",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Singapore",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Data theft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Proprietary commercial information",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Employee data",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Microsoft Security",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "DEV-0950",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "FIN11",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "TA505",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Raspberry Robin",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Clop operators",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Clop"
+    },
+    {
+      "subject": "Clop operators",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-35211"
+    },
+    {
+      "subject": "SolarWinds Serv-U",
+      "relation": "has vulnerability",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-35211"
+    },
+    {
+      "subject": "Serv-U Managed File Transfer",
+      "relation": "has vulnerability",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-35211"
+    },
+    {
+      "subject": "Serv-U Secure FTP",
+      "relation": "has vulnerability",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-35211"
+    },
+    {
+      "subject": "Clop",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Clop",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "maritime services giant"
+    },
+    {
+      "subject": "maritime services giant",
+      "relation": "located in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Singapore"
+    },
+    {
+      "subject": "Data theft",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Clop operators"
+    },
+    {
+      "subject": "Data theft",
+      "relation": "stole object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Proprietary commercial information"
+    },
+    {
+      "subject": "Data theft",
+      "relation": "stole object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Employee data"
+    },
+    {
+      "subject": "Microsoft Security",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "DEV-0950"
+    },
+    {
+      "subject": "DEV-0950",
+      "relation": "associated with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "FIN11"
+    },
+    {
+      "subject": "FIN11",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "TA505"
+    },
+    {
+      "subject": "DEV-0950",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Clop"
+    },
+    {
+      "subject": "DEV-0950",
+      "relation": "targets victims of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Raspberry Robin"
+    }
+  ]
+}

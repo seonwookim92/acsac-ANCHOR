@@ -1,0 +1,104 @@
+{
+  "file": "over-5-300-gitlab-servers-exposed-to-zero-click-account-takeover-attacks.json",
+  "text": "Over 5,300 internet-exposed GitLab instances are vulnerable to CVE-2023-7028, a zero-click account takeover flaw GitLab warned about earlier this month. The critical (CVSS score: 10.0) flaw allows attackers to send password reset emails for a targeted account to an attacker-controlled email address, allowing the threat actor to change the password and take over the account. Based on GitLab's role as a software development and project planning platform and the type and severity of the flaw, these servers are at risk of supply chain attacks, proprietary code disclosure, API key leaks, and other malicious activity.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "GitLab",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "GitLab instances",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2023-7028",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Attackers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Account takeover",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Supply chain attack",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Proprietary code disclosure",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "API key leaks",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "CVE-2023-7028",
+      "relation": "CVSS score",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#characterizes",
+      "property_type": "ObjectProperty",
+      "object": "10.0"
+    },
+    {
+      "subject": "CVE-2023-7028",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Zero-click account takeover flaw in GitLab via password reset abuse."
+    },
+    {
+      "subject": "CVE-2023-7028",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "GitLab instances"
+    },
+    {
+      "subject": "Attackers",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-7028"
+    },
+    {
+      "subject": "CVE-2023-7028",
+      "relation": "enables",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Account takeover"
+    },
+    {
+      "subject": "Account takeover",
+      "relation": "potential result",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Supply chain attack"
+    },
+    {
+      "subject": "Account takeover",
+      "relation": "potential result",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Proprietary code disclosure"
+    },
+    {
+      "subject": "Account takeover",
+      "relation": "potential result",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "API key leaks"
+    },
+    {
+      "subject": "GitLab",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Warned about CVE-2023-7028; software development and project planning platform"
+    }
+  ]
+}

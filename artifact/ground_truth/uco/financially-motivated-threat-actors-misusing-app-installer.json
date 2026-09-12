@@ -1,0 +1,156 @@
+{
+  "file": "financially-motivated-threat-actors-misusing-app-installer.json",
+  "text": "Since mid-November 2023, Microsoft Threat Intelligence has observed threat actors, including financially motivated actors like Storm-0569, Storm-1113, Sangria Tempest, and Storm-1674, utilizing the ms-appinstaller URI scheme (App Installer) to distribute malware. In addition to ensuring that customers are protected from observed attacker activity, Microsoft investigated the use of App Installer in these attacks. In response to this activity, Microsoft has disabled the ms-appinstaller protocol handler by default. The observed threat actor activity abuses the current implementation of the ms-appinstaller protocol handler as an access vector for malware that may lead to ransomware distribution. Multiple cybercriminals are also selling a malware kit as a service that abuses the MSIX file format and ms-appinstaller protocol handler. These threat actors distribute signed malicious MSIX application packages using websites accessed through malicious advertisements for legitimate popular software. A second vector of phishing through Microsoft Teams is also in use by Storm-1674.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Storm-0569",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Storm-1113",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Sangria Tempest",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Storm-1674",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "ms-appinstaller URI scheme",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "ms-appinstaller URI scheme abuse",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "MSIX",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "malicious MSIX application packages",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Disable ms-appinstaller protocol handler",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "ransomware",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Microsoft Teams",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "phishing through Microsoft Teams",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "malicious advertisements",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Storm-0569"
+    },
+    {
+      "subject": "Storm-0569",
+      "relation": "motivation",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "Storm-1113",
+      "relation": "motivation",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "Sangria Tempest",
+      "relation": "motivation",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "Storm-1674",
+      "relation": "motivation",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "Storm-0569",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme"
+    },
+    {
+      "subject": "Storm-1113",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme"
+    },
+    {
+      "subject": "Sangria Tempest",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme"
+    },
+    {
+      "subject": "Storm-1674",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme"
+    },
+    {
+      "subject": "Storm-1674",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "phishing through Microsoft Teams"
+    },
+    {
+      "subject": "ms-appinstaller URI scheme abuse",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "malicious MSIX application packages"
+    },
+    {
+      "subject": "malicious MSIX application packages",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Disable ms-appinstaller protocol handler",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme abuse"
+    }
+  ]
+}

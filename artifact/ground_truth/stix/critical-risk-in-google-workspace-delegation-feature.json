@@ -1,0 +1,83 @@
+{
+  "file": "critical-risk-in-google-workspace-delegation-feature.json",
+  "text": "Unit 42 researchers discovered a security risk in the Google Workspace (formerly known as G Suite) domain-wide delegation feature. We exposed an unexpected way to gain access to the Google Workspace domain data from Google Cloud Platform (GCP). We found that a GCP identity with the necessary permission can generate an access token to a delegated user. A malicious insider or an external attacker with stolen credentials can use this access token to impersonate Google Workspace users, granting unauthorized access to their data or to perform operations on their behalf.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Unit 42",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Google Workspace",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "G Suite",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "domain-wide delegation feature",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Google Cloud Platform (GCP)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "malicious insider",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "external attacker",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Google Workspace users",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Unit 42",
+      "relation": "discovered",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "Google Workspace",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "DatatypeProperty",
+      "object": "G Suite"
+    },
+    {
+      "subject": "malicious insider",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "external attacker",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "malicious insider",
+      "relation": "impersonates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#impersonates",
+      "property_type": "ObjectProperty",
+      "object": "Google Workspace users"
+    },
+    {
+      "subject": "external attacker",
+      "relation": "impersonates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#impersonates",
+      "property_type": "ObjectProperty",
+      "object": "Google Workspace users"
+    }
+  ]
+}

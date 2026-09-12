@@ -1,0 +1,171 @@
+{
+  "file": "in-depth-look-at-yanluowang-ransomware.json",
+  "text": "United States organizations within the financial sector are currently being attacked by a recently discovered ransomware operation named, Yanluowang. The ransomware operation is highly experienced with ransomware-as-a-service (RaaS) and could be linked to veteran RaaS groups, Fivehands and Thieflock. Although the group is primarily focused on attacking organizations within the financial sector, they have also targeted companies in manufacturing, IT services, consultancy, and engineering. Let's take a look at Yanluowang's techniques, tactics, and how they may be connected to Fivehands and Thieflock. In October 2021, Symantec's Threat Hunter Team, a division of Broadcom Software, discovered that Yanluowang ransomware was actively being used by a threat actor who was seen attacking U.S. corporations since at least August 2021. What was interesting about the attack was that many of the tools, tactics, and procedures (TTPs) used were previously used by ransomware threat actor, Thieflock. Most analysts assumed that the threat actor using Yanluowang must be an affiliate of Thieflock who shifted allegiances. Although Yanluowang attempted to attack a large organization in October 2021 by deploying ransomware, they were not successful due to the ransomware being somewhat underdeveloped. According to Symantec, their Threat Hunter Team initially discovered the use of AdFind, a legitimate command-line Active Directory query tool, on the undisclosed target's network. Ransomware attackers often use AdFind as a reconnaissance tool. The tool also equipped attackers with resources that they needed for lateral movement by way of Active Directory. Days after discovering the suspicious use of AdFind, attackers attempted to deploy Yanluowang ransomware.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Yanluowang",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Unknown Threat Actor Using Yanluowang",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Yanluowang 2021 campaign",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Fivehands",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Thieflock",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "AdFind",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Active Directory",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Broadcom Software",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "United States",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "United States Financial Sector Organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Manufacturing sector",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "IT services sector",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Ransomware-as-a-Service (RaaS)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Reconnaissance",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Lateral movement",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "part of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Broadcom Software"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Unknown Threat Actor Using Yanluowang"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Unknown Threat Actor Using Yanluowang"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "first seen",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "ObjectProperty",
+      "object": "2021-08"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "United States Financial Sector Organizations"
+    },
+    {
+      "subject": "Unknown Threat Actor Using Yanluowang",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Yanluowang"
+    },
+    {
+      "subject": "Unknown Threat Actor Using Yanluowang",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "AdFind"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "linked to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Fivehands"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "linked to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Thieflock"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ransomware-as-a-Service (RaaS)"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Reconnaissance"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Lateral movement"
+    },
+    {
+      "subject": "AdFind",
+      "relation": "interacts with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Active Directory"
+    }
+  ]
+}

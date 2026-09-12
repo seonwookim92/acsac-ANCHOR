@@ -1,0 +1,130 @@
+{
+  "file": "ransomware-spotlight-blackcat.json",
+  "text": "First observed in mid-November 2021 by researchers from the MalwareHunterTeam, BlackCat (aka AlphaVM, AlphaV, or ALPHV) swiftly gained notoriety for being the first major professional ransomware family to be written in Rust, a cross-platform language that enables malicious actors to customize malware with ease for different operating systems like Windows and Linux, thus affording a wide range of enterprise environments. Since then, BlackCat ransomware has frequently made the headlines for its successive attacks on high-profile targets and its use of triple extortion which has endowed the group with a distinct competitive edge over other RaaS operators. Aside from exposing exfiltrated data, ransomware actors that use triple extortion threaten to launch distributed denial-of-service (DDoS) attacks on their victims' infrastructure to coerce them to pay the ransom.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "BlackCat",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "AlphaVM",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "AlphaV",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "ALPHV",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Rust",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "MalwareHunterTeam",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Windows",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Linux",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Triple extortion",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "DDoS",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "RaaS operators",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "AlphaVM"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "AlphaV"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "ALPHV"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "ransomware family"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "written in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#implementation_languages",
+      "property_type": "ObjectProperty",
+      "object": "Rust"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "runs-on",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "runs-on",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "Linux"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Triple extortion"
+    },
+    {
+      "subject": "Triple extortion",
+      "relation": "includes",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "DDoS"
+    },
+    {
+      "subject": "MalwareHunterTeam",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "BlackCat"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "first seen",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "ObjectProperty",
+      "object": "2021-11"
+    }
+  ]
+}

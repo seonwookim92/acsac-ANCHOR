@@ -1,0 +1,156 @@
+{
+  "file": "financially-motivated-threat-actors-misusing-app-installer.json",
+  "text": "Since mid-November 2023, Microsoft Threat Intelligence has observed threat actors, including financially motivated actors like Storm-0569, Storm-1113, Sangria Tempest, and Storm-1674, utilizing the ms-appinstaller URI scheme (App Installer) to distribute malware. In addition to ensuring that customers are protected from observed attacker activity, Microsoft investigated the use of App Installer in these attacks. In response to this activity, Microsoft has disabled the ms-appinstaller protocol handler by default. The observed threat actor activity abuses the current implementation of the ms-appinstaller protocol handler as an access vector for malware that may lead to ransomware distribution. Multiple cybercriminals are also selling a malware kit as a service that abuses the MSIX file format and ms-appinstaller protocol handler. These threat actors distribute signed malicious MSIX application packages using websites accessed through malicious advertisements for legitimate popular software. A second vector of phishing through Microsoft Teams is also in use by Storm-1674.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Storm-0569",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Storm-1113",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Sangria Tempest",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Storm-1674",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "ms-appinstaller URI scheme",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "ms-appinstaller URI scheme abuse",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "MSIX",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "malicious MSIX application packages",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Disable ms-appinstaller protocol handler",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#CourseOfAction"
+    },
+    {
+      "name": "ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Microsoft Teams",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "phishing through Microsoft Teams",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "malicious advertisements",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Storm-0569"
+    },
+    {
+      "subject": "Storm-0569",
+      "relation": "motivation",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#primary_motivation",
+      "property_type": "ObjectProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "Storm-1113",
+      "relation": "motivation",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#primary_motivation",
+      "property_type": "ObjectProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "Sangria Tempest",
+      "relation": "motivation",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#primary_motivation",
+      "property_type": "ObjectProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "Storm-1674",
+      "relation": "motivation",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#primary_motivation",
+      "property_type": "ObjectProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "Storm-0569",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme"
+    },
+    {
+      "subject": "Storm-1113",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme"
+    },
+    {
+      "subject": "Sangria Tempest",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme"
+    },
+    {
+      "subject": "Storm-1674",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme"
+    },
+    {
+      "subject": "Storm-1674",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "phishing through Microsoft Teams"
+    },
+    {
+      "subject": "ms-appinstaller URI scheme abuse",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "malicious MSIX application packages"
+    },
+    {
+      "subject": "malicious MSIX application packages",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Disable ms-appinstaller protocol handler",
+      "relation": "mitigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "ms-appinstaller URI scheme abuse"
+    }
+  ]
+}

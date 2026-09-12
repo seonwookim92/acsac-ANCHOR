@@ -1,0 +1,71 @@
+INTENDED USE AND LIMITATIONS
+
+WHAT THIS ARTIFACT IS FOR
+
+ANCHOR builds ontology-aligned threat knowledge graphs from unstructured cyber
+threat intelligence text. This package is released so that other researchers can
+run the system, inspect the implementation behind the paper, reuse the
+author-created UCO/STIX/MALOnt annotations over the 149 CTINexus reports, and
+build on the hybrid ontology discovery mechanism. The ontology discovery suite is
+exposed as an MCP server (artifact/mcp/ontology-mcp-server/) and is reusable
+independently of the rest of the pipeline, for general OWL/SHACL exploration.
+
+SCOPE OF THE ARTIFACT EVALUATION SUBMISSION
+
+Requested badges: Available and Functional. The Results Reproduced badge is NOT
+requested. The claims in claims/ assert that the pipeline installs, runs end to
+end, and emits structurally valid ontology-aligned graphs across three schemas,
+and that the distributed package is internally complete. They do NOT assert the
+numerical values in the paper's evaluation tables (Tables III-IX) or any
+ablation ordering, and no numerical tolerance is claimed. See ARTIFACT_SCOPE.md
+for the full paper-to-artifact mapping.
+
+WHAT IT IS NOT SUITABLE FOR
+
+  - Operational or production use without review. ANCHOR is LLM-based. Its
+    output is a research artifact, not verified intelligence. Extracted
+    entities, relations, and ontology type assignments can be wrong, incomplete,
+    or hallucinated. SHACL validation enforces schema conformance, which is not
+    the same as factual correctness. Every generated graph must be reviewed by a
+    human analyst before it informs any security decision.
+
+  - Use with a model that is weak at tool calling. ANCHOR's hybrid ontology
+    discovery drives the ontology MCP server through multi-step tool calling, so
+    the chosen model must sustain several dependent tool calls per entity or
+    predicate. A model that cannot will complete a run and emit a poor or empty
+    graph regardless of the code. That is a model limitation, not an artifact
+    defect: scripts/check_endpoint.py probes tool calling before each claim run
+    and warns when the model fails it, and claims/claim3 validates the package
+    with no LLM at all, so the two causes stay distinguishable.
+
+  - Bit-exact or run-to-run reproducibility. An LLM participates in extraction
+    and mapping, so entity names, counts, ordering, and URI choices vary between
+    runs even with identical inputs and settings, and vary more across models.
+
+  - Reproducing the paper's reported numbers with a substituted model. The
+    measurements in the paper come from a locally served
+    Qwen/Qwen3.5-35B-A3B-FP8 in the configuration documented in
+    VLLM_SETUP.md and HARDWARE_REQUIREMENTS.md. Any other model exercises the
+    same code path but will not reproduce those values.
+
+  - A general-purpose document understanding system. ANCHOR takes CTI text as
+    input. Converting source documents (PDF, images, web pages) into text is a
+    separate concern, is not described in the paper, and is not included here.
+
+  - Input validation of untrusted CTI. Report text is passed to an LLM. Treat
+    text from untrusted sources as untrusted input.
+
+DESTRUCTIVE ACTIONS
+
+None. The artifact writes only to artifact/.venv, artifact/output, the
+sentence-transformers embedding cache, and any model cache directory the
+reviewer configures. It modifies no system state, installs no system packages,
+opens no listening port other than the local MCP subprocess, and sends report
+text only to the LLM endpoint the reviewer configures in artifact/.env.
+
+ETHICS AND DATA PROVENANCE
+
+Data collection, sources, and licensing are documented in DATA_PROVENANCE.md.
+Ethical considerations are documented in ETHICS.md. The corpus consists of
+publicly published threat reports; it contains no personal data collected by the
+authors.

@@ -1,0 +1,165 @@
+{
+  "file": "uac-0050-group-using-new-phishing.json",
+  "text": "The threat actor known as UAC-0050 is leveraging phishing attacks to distribute Remcos RAT using new strategies to evade detection from security software. The group's weapon of choice is Remcos RAT, a notorious malware for remote surveillance and control, which has been at the forefront of its espionage arsenal. However, in their latest operational twist, the UAC-0050 group has integrated a pipe method for interprocess communication, showcasing their advanced adaptability. UAC-0050, active since 2020, has a history of targeting Ukrainian and Polish entities via social engineering campaigns that impersonate legitimate organizations to trick recipients into opening malicious attachments. In February 2023, the Computer Emergency Response Team of Ukraine (CERT-UA) attributed the adversary to a phishing campaign designed to deliver Remcos RAT.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "UAC-0050",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Remcos RAT",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "Ukrainian entities",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Polish entities",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Ukraine",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Poland",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "CERT-UA",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "pipe method for interprocess communication",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Malicious attachment",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "Action_Phishing",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Action_Attribution",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "UAC-0050",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Remcos RAT"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "pipe method for interprocess communication"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian entities"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Polish entities"
+    },
+    {
+      "subject": "Ukrainian entities",
+      "relation": "located in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Ukraine"
+    },
+    {
+      "subject": "Polish entities",
+      "relation": "located in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Poland"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "performer",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "UAC-0050"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "instrument",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Remcos RAT"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "instrument",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Malicious attachment"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "object",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian entities"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "object",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Polish entities"
+    },
+    {
+      "subject": "Action_Attribution",
+      "relation": "performer",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "CERT-UA"
+    },
+    {
+      "subject": "Action_Attribution",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "UAC-0050"
+    },
+    {
+      "subject": "Action_Attribution",
+      "relation": "start time",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "2023-02"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "tag",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "active since 2020"
+    },
+    {
+      "subject": "Remcos RAT",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Remote access Trojan"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "file": "3am-ransomware-lockbit.json",
+  "text": "A new ransomware family calling itself 3AM has emerged. To date, the ransomware has only been used in a limited fashion. Symantec's Threat Hunter Team, part of Broadcom, has seen it used in a single attack by a ransomware affiliate that attempted to deploy LockBit on a target's network and then switched to 3AM when LockBit was blocked. 3AM is written in Rust and appears to be a completely new malware family. The ransomware attempts to stop multiple services on the infected computer before it begins encrypting files. Once encryption is complete, it attempts to delete Volume Shadow (VSS) copies. It is still unclear whether its authors have any links to known cybercrime organizations.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "3AM",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "LockBit",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Broadcom",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "ransomware affiliate",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "infected computer",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Computer"
+    },
+    {
+      "name": "Volume Shadow (VSS) copies",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Snapshot"
+    },
+    {
+      "name": "Rust",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Stop services",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Encrypt files",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Delete VSS copies",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "part of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Broadcom"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "ransomware affiliate",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "LockBit"
+    },
+    {
+      "subject": "ransomware affiliate",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "3AM",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "3AM",
+      "relation": "implementation language",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Rust"
+    },
+    {
+      "subject": "3AM",
+      "relation": "is family",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "true"
+    },
+    {
+      "subject": "LockBit",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Stop services",
+      "relation": "performed by instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "Stop services",
+      "relation": "occurred in",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/location",
+      "property_type": "ObjectProperty",
+      "object": "infected computer"
+    },
+    {
+      "subject": "Encrypt files",
+      "relation": "performed by instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "Delete VSS copies",
+      "relation": "performed by instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "Delete VSS copies",
+      "relation": "acted on object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Volume Shadow (VSS) copies"
+    }
+  ]
+}

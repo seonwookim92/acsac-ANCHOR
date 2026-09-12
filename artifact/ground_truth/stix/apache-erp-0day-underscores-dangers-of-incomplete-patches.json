@@ -1,0 +1,101 @@
+{
+  "file": "apache-erp-0day-underscores-dangers-of-incomplete-patches.json",
+  "text": "Unknown groups have launched probes against a zero-day vulnerability identified in Apache's OfBiz enterprise resource planning (ERP) framework - an increasingly popular strategy of analyzing patches for ways to bypass software fixes. The 0-day vulnerability (CVE-2023-51467) in Apache OFBiz, disclosed on Dec. 26, allows an attacker to access sensitive information and remotely execute code against applications using the ERP framework, according to an analysis by cybersecurity firm SonicWall. The Apache Software Foundation had originally released a patch for a related issue, CVE-2023-49070, but the fix failed to protect against other variations of the attack.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Unknown groups",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Probe against vulnerability",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "CVE-2023-51467",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Apache OFBiz",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Analysis of vulnerability",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Report"
+    },
+    {
+      "name": "SonicWall",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Apache Software Foundation",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Patch for CVE-2023-49070",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#CourseOfAction"
+    },
+    {
+      "name": "CVE-2023-49070",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Probe against vulnerability",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Unknown groups"
+    },
+    {
+      "subject": "Probe against vulnerability",
+      "relation": "targeted object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-51467"
+    },
+    {
+      "subject": "CVE-2023-51467",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Apache OFBiz"
+    },
+    {
+      "subject": "Analysis of vulnerability",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#created_by_ref",
+      "property_type": "ObjectProperty",
+      "object": "SonicWall"
+    },
+    {
+      "subject": "Analysis of vulnerability",
+      "relation": "investigated object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#object_refs",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-51467"
+    },
+    {
+      "subject": "CVE-2023-51467",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Allows remote code execution and sensitive information access against Apache OFBiz."
+    },
+    {
+      "subject": "Apache Software Foundation",
+      "relation": "patches",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-49070"
+    },
+    {
+      "subject": "Patch for CVE-2023-49070",
+      "relation": "mitigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-49070"
+    }
+  ]
+}

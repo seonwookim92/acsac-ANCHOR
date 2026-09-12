@@ -1,0 +1,83 @@
+{
+  "file": "critical-risk-in-google-workspace-delegation-feature.json",
+  "text": "Unit 42 researchers discovered a security risk in the Google Workspace (formerly known as G Suite) domain-wide delegation feature. We exposed an unexpected way to gain access to the Google Workspace domain data from Google Cloud Platform (GCP). We found that a GCP identity with the necessary permission can generate an access token to a delegated user. A malicious insider or an external attacker with stolen credentials can use this access token to impersonate Google Workspace users, granting unauthorized access to their data or to perform operations on their behalf.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Unit 42",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Google Workspace",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "G Suite",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "domain-wide delegation feature",
+      "class": "http://idea.rpi.edu/malont#Vulnerability"
+    },
+    {
+      "name": "Google Cloud Platform (GCP)",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "malicious insider",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "external attacker",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Google Workspace users",
+      "class": "http://idea.rpi.edu/malont#Person"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Unit 42",
+      "relation": "discovered",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "Google Workspace",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "G Suite"
+    },
+    {
+      "subject": "malicious insider",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "external attacker",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "malicious insider",
+      "relation": "impersonates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Workspace users"
+    },
+    {
+      "subject": "external attacker",
+      "relation": "impersonates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Workspace users"
+    }
+  ]
+}

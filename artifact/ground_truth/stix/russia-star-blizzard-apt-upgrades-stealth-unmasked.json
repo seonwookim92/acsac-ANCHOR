@@ -1,0 +1,204 @@
+{
+  "file": "russia-star-blizzard-apt-upgrades-stealth-unmasked.json",
+  "text": "Star Blizzard (aka Seaborgium, BlueCharlie, Callisto Group, and Coldriver) has been carrying out email credential theft in service of cyberespionage and cyber influence campaigns since at least 2017. Historically, it has focused its aim on public and private organizations in NATO member countries, typically in fields related to politics, defense, and related sectors — NGOs, think tanks, journalists, academic institutions, intergovernmental organizations, and so on. In recent years, it has especially targeted individuals and organizations providing support for Ukraine. To aid in sneaking past email filters, Star Blizzard has started using password-protected PDF lure documents, or links to cloud-based file sharing platforms with the protected PDFs contained within. The passwords to these documents typically come packaged in the same phishing email, or an email sent shortly after the first.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Star Blizzard",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Seaborgium",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "BlueCharlie",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Callisto Group",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Coldriver",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Email credential theft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "cyberespionage",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "cyber influence campaigns",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "NATO member countries organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "NGOs",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Think tanks",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Journalists",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Academic institutions",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Intergovernmental organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Ukraine",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Ukraine support individuals and organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Password-protected PDF lure documents",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Cloud-based file sharing platforms",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Phishing email",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Star Blizzard",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Seaborgium"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "BlueCharlie"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Callisto Group"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Coldriver"
+    },
+    {
+      "subject": "Email credential theft",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Star Blizzard"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "conducts",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "cyberespionage"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "conducts",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "cyber influence campaigns"
+    },
+    {
+      "subject": "Email credential theft",
+      "relation": "targeted",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "NATO member countries organizations"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "NGOs"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Think tanks"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Journalists"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Academic institutions"
+    },
+    {
+      "subject": "Star Blizzard",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Intergovernmental organizations"
+    },
+    {
+      "subject": "Email credential theft",
+      "relation": "targeted",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukraine support individuals and organizations"
+    },
+    {
+      "subject": "Email credential theft",
+      "relation": "used instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Phishing email"
+    },
+    {
+      "subject": "Phishing email",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Password-protected PDF lure documents"
+    },
+    {
+      "subject": "Phishing email",
+      "relation": "links to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Cloud-based file sharing platforms"
+    }
+  ]
+}

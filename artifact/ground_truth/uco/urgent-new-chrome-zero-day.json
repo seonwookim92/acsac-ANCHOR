@@ -1,0 +1,184 @@
+{
+  "file": "urgent-new-chrome-zero-day.json",
+  "text": "Google has rolled out security updates for the Chrome web browser to address a high-severity zero-day flaw that it said has been exploited in the wild. The vulnerability, assigned the CVE identifier CVE-2023-7024, has been described as a heap-based buffer overflow bug in the WebRTC framework that could be exploited to result in program crashes or arbitrary code execution. Clément Lecigne and Vlad Stolyarov of Google's Threat Analysis Group (TAG) have been credited with discovering and reporting the flaw on December 19, 2023. No other details about the security defect have been released to prevent further abuse, with Google acknowledging that an exploit for CVE-2023-7024 exists in the wild. Given that WebRTC is an open-source project and that it's also supported by Mozilla Firefox and Apple Safari, it's currently not clear if the flaw has any impact beyond Chrome and Chromium-based browsers.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Google",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Chrome",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "CVE-2023-7024",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "WebRTC",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "heap-based buffer overflow",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "arbitrary code execution",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Mozilla Firefox",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Apple Safari",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Google Threat Analysis Group (TAG)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Clément Lecigne",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Person"
+    },
+    {
+      "name": "Vlad Stolyarov",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Person"
+    },
+    {
+      "name": "Chrome security update",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Action_Discovery",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Action_Exploitation",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Chrome",
+      "relation": "has vulnerability",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-7024"
+    },
+    {
+      "subject": "WebRTC",
+      "relation": "has vulnerability",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-7024"
+    },
+    {
+      "subject": "CVE-2023-7024",
+      "relation": "is a type of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "heap-based buffer overflow"
+    },
+    {
+      "subject": "CVE-2023-7024",
+      "relation": "allows",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "arbitrary code execution"
+    },
+    {
+      "subject": "Chrome security update",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-7024"
+    },
+    {
+      "subject": "Google Threat Analysis Group (TAG)",
+      "relation": "part-of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google"
+    },
+    {
+      "subject": "Clément Lecigne",
+      "relation": "member of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Threat Analysis Group (TAG)"
+    },
+    {
+      "subject": "Vlad Stolyarov",
+      "relation": "member of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Threat Analysis Group (TAG)"
+    },
+    {
+      "subject": "Action_Discovery",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Clément Lecigne"
+    },
+    {
+      "subject": "Action_Discovery",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Vlad Stolyarov"
+    },
+    {
+      "subject": "Action_Discovery",
+      "relation": "discovered object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-7024"
+    },
+    {
+      "subject": "Action_Discovery",
+      "relation": "start time",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2023-12-19"
+    },
+    {
+      "subject": "Action_Exploitation",
+      "relation": "exploited object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-7024"
+    },
+    {
+      "subject": "CVE-2023-7024",
+      "relation": "tag",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Zero-day"
+    },
+    {
+      "subject": "WebRTC",
+      "relation": "used by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "WebRTC",
+      "relation": "used by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Mozilla Firefox"
+    },
+    {
+      "subject": "WebRTC",
+      "relation": "used by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Apple Safari"
+    }
+  ]
+}

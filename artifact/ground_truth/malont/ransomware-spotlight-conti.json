@@ -1,0 +1,269 @@
+{
+  "file": "ransomware-spotlight-conti.json",
+  "text": "Conti can arrive in the system through BazarLoader, which is delivered via phishing emails containing a Google Drive link that downloads the malware.Alternatively, the ransomware can arrive via exploiting the the FortiGate firewall vulnerabilities CVE-2018-13379 and CVE-2018-13374. After successfully exploiting the application, the ransomware deploys Cobalt Strike to gain a foothold on the system. Conti can also arrive as a result of the exploitation of the ProxyShell Microsoft Exchange vulnerabilities. The Conti group uses tools such as Whoami, Nltest, and Net. These tools give the operators information about where they are in the system, and what rights and permissions they have. Since the operators employ double extortion tactics, they actively look for files to exfiltrate in the discovery stage. The threat actors use tools such as ShareFinder to identify the shares needed for exfiltration and ransomware deployment. Although the group mostly relies on finding the domain admin credentials to gain full access to the domain, they may also use a couple of exploits like Zerologon (CVE-2020-1472) and PrintNightmare (CVE-2021-1675), to elevate their privilege and further strengthen their foothold in the network.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Conti group",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Conti ransomware",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "BazarLoader",
+      "class": "http://idea.rpi.edu/malont#Downloader"
+    },
+    {
+      "name": "phishing delivery",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Google Drive link",
+      "class": "http://idea.rpi.edu/malont#URL"
+    },
+    {
+      "name": "FortiGate firewall",
+      "class": "http://idea.rpi.edu/malont#System"
+    },
+    {
+      "name": "CVE-2018-13379",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "CVE-2018-13374",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "Cobalt Strike",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Microsoft Exchange",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "ProxyShell",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_Desc"
+    },
+    {
+      "name": "Whoami",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Nltest",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Net",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "ShareFinder",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Double Extortion",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Zerologon",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_Desc"
+    },
+    {
+      "name": "CVE-2020-1472",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "PrintNightmare",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_Desc"
+    },
+    {
+      "name": "CVE-2021-1675",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "Initial access",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Privilege escalation",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Data exfiltration",
+      "class": "http://idea.rpi.edu/malont#Exfiltration"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Conti group",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Conti ransomware"
+    },
+    {
+      "subject": "Conti ransomware",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    },
+    {
+      "subject": "BazarLoader",
+      "relation": "delivered via",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "phishing delivery"
+    },
+    {
+      "subject": "phishing delivery",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Google Drive link"
+    },
+    {
+      "subject": "Conti ransomware",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2018-13379"
+    },
+    {
+      "subject": "Conti ransomware",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2018-13374"
+    },
+    {
+      "subject": "CVE-2018-13379",
+      "relation": "exists in",
+      "property": "http://idea.rpi.edu/malont#hasVulnerability",
+      "property_type": "ObjectProperty",
+      "object": "FortiGate firewall"
+    },
+    {
+      "subject": "CVE-2018-13374",
+      "relation": "exists in",
+      "property": "http://idea.rpi.edu/malont#hasVulnerability",
+      "property_type": "ObjectProperty",
+      "object": "FortiGate firewall"
+    },
+    {
+      "subject": "Conti ransomware",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Cobalt Strike"
+    },
+    {
+      "subject": "Conti ransomware",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "ProxyShell"
+    },
+    {
+      "subject": "ProxyShell",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#hasVulnerability",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Exchange"
+    },
+    {
+      "subject": "Conti group",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Whoami"
+    },
+    {
+      "subject": "Conti group",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Nltest"
+    },
+    {
+      "subject": "Conti group",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Net"
+    },
+    {
+      "subject": "Conti group",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "ShareFinder"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Conti group"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "exploited object",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "FortiGate firewall"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Conti group"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Zerologon"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "PrintNightmare"
+    },
+    {
+      "subject": "Data exfiltration",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Conti group"
+    },
+    {
+      "subject": "Zerologon",
+      "relation": "alias",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "CVE-2020-1472"
+    },
+    {
+      "subject": "PrintNightmare",
+      "relation": "alias",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "CVE-2021-1675"
+    }
+  ]
+}

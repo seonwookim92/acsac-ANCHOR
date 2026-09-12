@@ -1,0 +1,137 @@
+{
+  "file": "two-campaigns-by-north-korea-bad-actors-target-job-hunters.json",
+  "text": "Unit 42 researchers recently discovered two separate campaigns targeting job-seeking activities linked to state-sponsored threat actors associated with the Democratic People's Republic of Korea (DPRK), commonly known as North Korea. We call the first campaign “Contagious Interview,” where threat actors pose as employers (often anonymously or with vague identities) to lure software developers into installing malware through the interview process. This malware creates the potential for various types of theft. We attribute with moderate confidence that Contagious Interview is run by a North Korea state-sponsored threat actor. We call the second campaign “Wagemole,” where threat actors seek unauthorized employment with organizations based in the US and other parts of the world, with potential for both financial gain and espionage. We attribute with high confidence that Wagemole is a North Korea state-sponsored threat. Activity from both campaigns remains an ongoing active threat.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Contagious Interview",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Wagemole",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "North Korea state-sponsored threat actor",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "North Korea",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "United States",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Software developers",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "Unit 42",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "unauthorized employment",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "software developer lure",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Interview malware",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "Global organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Contagious Interview",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "North Korea state-sponsored threat actor"
+    },
+    {
+      "subject": "Wagemole",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "North Korea state-sponsored threat actor"
+    },
+    {
+      "subject": "North Korea state-sponsored threat actor",
+      "relation": "originates-from",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "North Korea"
+    },
+    {
+      "subject": "Unit 42",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Contagious Interview"
+    },
+    {
+      "subject": "Unit 42",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Wagemole"
+    },
+    {
+      "subject": "Contagious Interview",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Software developers"
+    },
+    {
+      "subject": "Contagious Interview",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Interview malware"
+    },
+    {
+      "subject": "Contagious Interview",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "software developer lure"
+    },
+    {
+      "subject": "Wagemole",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "unauthorized employment"
+    },
+    {
+      "subject": "Wagemole",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Global organizations"
+    },
+    {
+      "subject": "Contagious Interview",
+      "relation": "description",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DataProperty",
+      "object": "Campaign luring software developers into installing malware through fake interviews."
+    },
+    {
+      "subject": "Wagemole",
+      "relation": "description",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DataProperty",
+      "object": "Threat actors seek unauthorized employment for financial gain and espionage"
+    }
+  ]
+}

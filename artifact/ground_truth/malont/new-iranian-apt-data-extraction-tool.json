@@ -1,0 +1,108 @@
+{
+  "file": "new-iranian-apt-data-extraction-tool.json",
+  "text": "As part of TAG's mission to counter serious threats to Google and our users, we've analyzed a range of persistent threats including APT35 and Charming Kitten, an Iranian government-backed group that regularly targets high risk users. For years, we have been countering this group’s efforts to hijack accounts, deploy malware, and their use of novel techniques to conduct espionage aligned with the interests of the Iranian government. Now, we’re shining light on a new tool of theirs. In December 2021, TAG discovered a novel Charming Kitten tool, named HYPERSCRAPE, used to steal user data from Gmail, Yahoo!, and Microsoft Outlook accounts. The attacker runs HYPERSCRAPE on their own machine to download victims’ inboxes using previously acquired credentials. We have seen it deployed against fewer than two dozen accounts located in Iran. The oldest known sample is from 2020, and the tool is still under active development. We have taken actions to re-secure these accounts and have notified the victims through our Government Backed Attacker Warnings.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Charming Kitten",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "HYPERSCRAPE",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "Google Threat Analysis Group (TAG)",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Iranian government",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Iran",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Gmail",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Yahoo!",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Microsoft Outlook",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Google",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Charming Kitten",
+      "relation": "alias",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": "DataProperty",
+      "object": "APT35"
+    },
+    {
+      "subject": "Charming Kitten",
+      "relation": "attributed-to",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Iranian government"
+    },
+    {
+      "subject": "Charming Kitten",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "HYPERSCRAPE"
+    },
+    {
+      "subject": "HYPERSCRAPE",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Gmail"
+    },
+    {
+      "subject": "HYPERSCRAPE",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Yahoo!"
+    },
+    {
+      "subject": "HYPERSCRAPE",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Outlook"
+    },
+    {
+      "subject": "Google Threat Analysis Group (TAG)",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "HYPERSCRAPE"
+    },
+    {
+      "subject": "HYPERSCRAPE",
+      "relation": "description",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DataProperty",
+      "object": "Data-extraction tool used to steal user data from email accounts."
+    },
+    {
+      "subject": "HYPERSCRAPE",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "2020"
+    }
+  ]
+}

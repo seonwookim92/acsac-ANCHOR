@@ -1,0 +1,14 @@
+{
+    "mcpServers": {
+        "ontology-mcp-server": {
+            "command": "python",
+            "args": [
+                "/absolute/path/to/mcp/ontology-mcp-server/main.py"
+            ],
+            "env": {
+                "ONTOLOGY_DIR": "/absolute/path/to/your/ontology/folder",
+                "EMBEDDING_MODEL": "all-MiniLM-L6-v2"
+            }
+        }
+    }
+}

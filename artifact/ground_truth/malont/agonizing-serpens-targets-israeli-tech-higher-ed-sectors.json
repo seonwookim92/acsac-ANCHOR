@@ -1,0 +1,90 @@
+{
+  "file": "agonizing-serpens-targets-israeli-tech-higher-ed-sectors.json",
+  "text": "Unit 42 researchers have investigated a series of destructive cyberattacks beginning in January 2023 and continuing as recently as October 2023, targeting the education and technology sectors in Israel. The attacks are characterized by attempts to steal sensitive data, such as personally identifiable information (PII) and intellectual property. Once the attackers stole the information, they deployed various wipers intended to cover the attackers' tracks and to render the infected endpoints unusable.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Unit 42",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "destructive cyberattacks",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Israel",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "education sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "technology sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "personally identifiable information (PII)",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "wipers",
+      "class": "http://idea.rpi.edu/malont#Wiper"
+    },
+    {
+      "name": "attackers",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Unit 42",
+      "relation": "investigated",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "destructive cyberattacks"
+    },
+    {
+      "subject": "destructive cyberattacks",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "education sector"
+    },
+    {
+      "subject": "destructive cyberattacks",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "technology sector"
+    },
+    {
+      "subject": "destructive cyberattacks",
+      "relation": "located in",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Israel"
+    },
+    {
+      "subject": "attackers",
+      "relation": "performed",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "destructive cyberattacks"
+    },
+    {
+      "subject": "attackers",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "wipers"
+    },
+    {
+      "subject": "attackers",
+      "relation": "stole",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "personally identifiable information (PII)"
+    }
+  ]
+}

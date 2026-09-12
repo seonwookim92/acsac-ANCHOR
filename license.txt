@@ -1,0 +1,30 @@
+LICENSE SUMMARY
+
+Original ANCHOR software
+    Apache License 2.0
+    https://www.apache.org/licenses/LICENSE-2.0
+    Full text: LICENSE and LICENSES/Apache-2.0.txt
+    Attribution notices: NOTICE
+
+Author-created ground-truth annotations (artifact/ground_truth/)
+    Creative Commons Attribution 4.0 International (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/
+    Full text: LICENSES/CC-BY-4.0.txt
+
+Third-party data and ontologies retain their upstream terms:
+
+    CTINexus report texts (artifact/dataset/)
+        MIT -- LICENSES/MIT-CTINexus.txt
+    MALOnt ontology (artifact/ontology/malont/)
+        MIT -- LICENSES/MIT-MALOnt.txt
+    STIX ontology (artifact/ontology/stix/)
+        BSD-3-Clause -- LICENSES/BSD-3-Clause-STIX.txt
+    UCO ontology (artifact/ontology/uco/)
+        See THIRD_PARTY_NOTICES.md
+
+Per-component provenance, upstream sources, and redistribution terms are
+documented in DATA_PROVENANCE.md and THIRD_PARTY_NOTICES.md.
+
+Not covered by this artifact's license, and not redistributed with it: the Qwen
+model weights, any vLLM service, GPU hardware, credentials, and generated
+output.

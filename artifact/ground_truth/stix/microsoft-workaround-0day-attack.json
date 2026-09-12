@@ -1,0 +1,79 @@
+{
+  "file": "microsoft-workaround-0day-attack.json",
+  "text": "Microsoft has released a workaround for a zero-day flaw that was initially flagged in April and that attackers already have used to target organizations in Russia and Tibet, researchers said. The remote control execution (RCE) flaw, tracked as CVE-2022-3019, is associated with the Microsoft Support Diagnostic Tool (MSDT), which, ironically, itself collects information about bugs in the company’s products and reports to Microsoft Support. If successfully exploited, attackers can install programs, view, change or delete data, or create new accounts in the context allowed by the user’s rights, the company said. A remote code execution vulnerability exists when MSDT is called using the URL protocol from a calling application such as Word,” Microsoft explained in its guidance on the Microsoft Security Response Center. “An attacker who successfully exploits this vulnerability can run arbitrary code with the privileges of the calling application.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Microsoft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "CVE-2022-3019",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "zero-day flaw",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Microsoft Support Diagnostic Tool",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Word",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Russia",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Tibet",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Microsoft",
+      "relation": "mitigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-3019"
+    },
+    {
+      "subject": "CVE-2022-3019",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Support Diagnostic Tool"
+    },
+    {
+      "subject": "CVE-2022-3019",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Word"
+    },
+    {
+      "subject": "zero-day flaw",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "zero-day flaw",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Tibet"
+    },
+    {
+      "subject": "CVE-2022-3019",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "zero-day flaw"
+    }
+  ]
+}

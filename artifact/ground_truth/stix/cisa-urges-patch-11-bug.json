@@ -1,0 +1,124 @@
+{
+  "file": "cisa-urges-patch-11-bug.json",
+  "text": "A Windows 11 vulnerability, part of Microsoft’s Patch Tuesday roundup of fixes, is being exploited in the wild, prompting the U.S. Cybersecurity and Infrastructure Security Agency (CISA) to advise patching of the elevation of privileges flaw by August 2. The recommendation is directed at federal agencies and concerns CVE-2022-22047, a vulnerability that carries a CVSS score of high (7.8) and exposes Windows Client Server Runtime Subsystem (CSRSS) used in Windows 11 (and earlier versions dating back to 7) and also Windows Server 2022 (and earlier versions 2008, 2012, 2016 and 2019) to attack. The CSRSS bug is an elevation of privileges vulnerability that allows adversaries with a pre-established foothold on a targeted system to execute code as an unprivileged user. When the bug was first reported by Microsoft’s own security team earlier this month it was classified as a zero-day, or a known bug with no patch.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "CVE-2022-22047",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "CISA",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "U.S. federal agencies",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Patch CVE-2022-22047",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#CourseOfAction"
+    },
+    {
+      "name": "Windows Client Server Runtime Subsystem (CSRSS)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows 11",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows 7",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows Server 2022",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows Server 2019",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows Server 2016",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows Server 2012",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows Server 2008",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "CISA",
+      "relation": "recommends",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Patch CVE-2022-22047"
+    },
+    {
+      "subject": "Patch CVE-2022-22047",
+      "relation": "mitigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-22047"
+    },
+    {
+      "subject": "Patch CVE-2022-22047",
+      "relation": "directed at",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "U.S. federal agencies"
+    },
+    {
+      "subject": "CVE-2022-22047",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows 11"
+    },
+    {
+      "subject": "CVE-2022-22047",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows Server 2022"
+    },
+    {
+      "subject": "CVE-2022-22047",
+      "relation": "exposes",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows Client Server Runtime Subsystem (CSRSS)"
+    },
+    {
+      "subject": "CVE-2022-22047",
+      "relation": "cvss score",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "DatatypeProperty",
+      "object": "7.8"
+    },
+    {
+      "subject": "CVE-2022-22047",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "DatatypeProperty",
+      "object": "Elevation of privileges vulnerability in CSRSS, exploited in the wild."
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "discovered",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-22047"
+    }
+  ]
+}

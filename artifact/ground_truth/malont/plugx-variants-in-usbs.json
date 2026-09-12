@@ -1,0 +1,156 @@
+{
+  "file": "plugx-variants-in-usbs.json",
+  "text": "Recently, our Unit 42 incident response team was engaged in a Black Basta breach response that uncovered several tools and malware samples on the victim's machines, including GootLoader malware, Brute Ratel C4 red-teaming tool and an older PlugX malware sample. The PlugX malware stood out to us as this variant infects any attached removable USB media devices such as floppy, thumb or flash drives and any additional systems the USB is later plugged into. This PlugX malware also hides actor files in a USB device using a novel technique that works even on the most recent Windows operating systems (OS) at the time of writing this post. This means the malicious files can only be viewed on a Unix-like (*nix) OS or by mounting the USB device in a forensic tool. We also discovered a similar variant of PlugX in VirusTotal that infects USB devices and copies all Adobe PDF and Microsoft Word files from the host. It places these copies in a hidden folder on the USB device that is created by the malware. PlugX is a second-stage implant used not only by multiple groups with a Chinese nexus but also by several cybercrime groups. It has been around for over a decade and has been observed in some high-profile cyberattacks, including the U.S. Government Office of Personnel Management (OPM) breach in 2015. It is a modular malware framework, supporting an evolving set of capabilities throughout the years.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Unit 42",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Black Basta",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "GootLoader",
+      "class": "http://idea.rpi.edu/malont#Downloader"
+    },
+    {
+      "name": "Brute Ratel C4",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "PlugX",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "USB media",
+      "class": "http://idea.rpi.edu/malont#Hardware"
+    },
+    {
+      "name": "Windows",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "Unix-like OS",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "VirusTotal",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Adobe PDF",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Microsoft Word",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Chinese-nexus groups",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Cybercrime groups",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "OPM breach",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Black Basta",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "GootLoader"
+    },
+    {
+      "subject": "Black Basta",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Brute Ratel C4"
+    },
+    {
+      "subject": "Black Basta",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "PlugX"
+    },
+    {
+      "subject": "Unit 42",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "PlugX"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "infects",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "USB media"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "VirusTotal",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "PlugX"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Adobe PDF"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Word"
+    },
+    {
+      "subject": "Chinese-nexus groups",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "PlugX"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "used in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "OPM breach"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DataProperty",
+      "object": "modular malware framework"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "comment",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DataProperty",
+      "object": "The USB variant uses a novel technique to hide files on Windows, allowing them to be viewed only on Unix-like systems or via forensic tools."
+    }
+  ]
+}

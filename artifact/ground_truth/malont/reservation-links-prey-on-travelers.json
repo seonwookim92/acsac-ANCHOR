@@ -1,0 +1,112 @@
+{
+  "file": "reservation-links-prey-on-travelers.json",
+  "text": "A longtime threat group identified as TA558 has ramped up efforts to target the travel and hospitality industries. After a lull in activity, believed tied to COVID-related travel restrictions, the threat group has ramped up campaigns to exploit an uptick in travel and related airline and hotel bookings. Warnings come from security researchers who say TA558 cybercriminals have revamped their 2018 campaigns with fake reservation emails that contain links – that if clicked – deliver a malicious malware payload containing a potpourri of malware variants. What makes this most recent campaign unique, according to a report by Proofpoint, is the use of RAR and ISO file attachments linked to messages. ISO and RAR are single compressed files, that if executed, decompress the file and folder data inside of them.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "TA558",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "TA558 Reservation Email Campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Travel Sector Organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Hospitality Sector Organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Fake Reservation Email Phishing",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Malicious Reservation Link",
+      "class": "http://idea.rpi.edu/malont#URL"
+    },
+    {
+      "name": "RAR Attachment",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "ISO Attachment",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "potpourri of malware variants",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "Proofpoint",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "TA558",
+      "relation": "has",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "TA558 Reservation Email Campaign"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Travel Sector Organizations"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Hospitality Sector Organizations"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Fake Reservation Email Phishing"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has link",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Malicious Reservation Link"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has attachment",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "RAR Attachment"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has attachment",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "ISO Attachment"
+    },
+    {
+      "subject": "Malicious Reservation Link",
+      "relation": "delivers",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "potpourri of malware variants"
+    },
+    {
+      "subject": "Proofpoint",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "TA558 Reservation Email Campaign"
+    }
+  ]
+}

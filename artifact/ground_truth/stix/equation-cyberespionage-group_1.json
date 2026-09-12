@@ -1,0 +1,125 @@
+{
+  "file": "equation-cyberespionage-group_1.json",
+  "text": "Equation has employed a number of specialist tools. Among these are Trojan.Grokey a custom keylogger (also known as “Grok”) and W32.Fanni, which is also known as “Fanny worm”. This worm's chief purpose appears to be the targeting of air-gapped networks. It can receive commands and exfiltrate data through infected USB sticks. Fanny used two zero day exploits that were also used in the Stuxnet attacks. The exploits were used in Fanny prior to Stuxnet indicating that Equation had prior knowledge of the vulnerabilities. Another similarity lies in the fact that Stuxnet was also designed to attack air-gapped networks.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Equation",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Trojan.Grokey",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "W32.Fanni",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Air-gapped networks",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "USB stick",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Unnamed zero-day vulnerability 1",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Unnamed zero-day vulnerability 2",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Stuxnet",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Equation",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Trojan.Grokey"
+    },
+    {
+      "subject": "Equation",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "W32.Fanni"
+    },
+    {
+      "subject": "Trojan.Grokey",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Grok"
+    },
+    {
+      "subject": "W32.Fanni",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Fanny worm"
+    },
+    {
+      "subject": "W32.Fanni",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "worm"
+    },
+    {
+      "subject": "W32.Fanni",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Air-gapped networks"
+    },
+    {
+      "subject": "W32.Fanni",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "USB stick"
+    },
+    {
+      "subject": "W32.Fanni",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "Unnamed zero-day vulnerability 1"
+    },
+    {
+      "subject": "W32.Fanni",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "Unnamed zero-day vulnerability 2"
+    },
+    {
+      "subject": "Stuxnet",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "Unnamed zero-day vulnerability 1"
+    },
+    {
+      "subject": "Stuxnet",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "Unnamed zero-day vulnerability 2"
+    },
+    {
+      "subject": "Stuxnet",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Air-gapped networks"
+    }
+  ]
+}

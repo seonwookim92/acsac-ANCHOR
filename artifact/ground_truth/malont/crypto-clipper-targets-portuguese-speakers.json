@@ -1,0 +1,138 @@
+{
+  "file": "crypto-clipper-targets-portuguese-speakers.json",
+  "text": "Unit 42 recently discovered a malware campaign targeting Portuguese speakers, which aims to redirect cryptocurrency away from legitimate users’ wallets and into wallets controlled by threat actors instead. To do this, the campaign uses a type of malware known as a cryptocurrency clipper, which monitors the victim’s clipboard for signs that a cryptocurrency wallet address is being copied. The malware, which we call CryptoClippy, seeks to replace the user’s actual wallet address with the threat actor’s, causing the user to inadvertently send cryptocurrency to the threat actor. Unit 42 Managed Threat Hunting found victims across manufacturing, IT services, and real estate industries, though they likely impacted the personal wallet addresses of someone using their work machine. To deliver the malware to users’ computers, threat actors in this campaign used both Google Ads and traffic distribution systems (TDS) to redirect victims to malicious domains that are impersonating the legitimate WhatsApp Web application. They use this to ensure victims are real users, and also that they’re Portuguese speakers. For users who are sent to malicious domains, the threat attempts to trick them into downloading malicious files, including either .zip or .exe files, that lead to the final payload.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "CryptoClippy campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "CryptoClippy",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "cryptocurrency clipper",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "CryptoClippy operators",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Unit 42",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Portuguese speakers",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "manufacturing",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "IT services",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "real estate",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Google Ads",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "traffic distribution systems (TDS)",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Malicious WhatsApp Web impersonation domains",
+      "class": "http://idea.rpi.edu/malont#Address"
+    },
+    {
+      "name": "WhatsApp Web",
+      "class": "http://idea.rpi.edu/malont#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "CryptoClippy campaign",
+      "relation": "discovered by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Unit 42"
+    },
+    {
+      "subject": "CryptoClippy campaign",
+      "relation": "targeted victim",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Portuguese speakers"
+    },
+    {
+      "subject": "CryptoClippy campaign",
+      "relation": "targeted sector",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "manufacturing"
+    },
+    {
+      "subject": "CryptoClippy campaign",
+      "relation": "targeted sector",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "IT services"
+    },
+    {
+      "subject": "CryptoClippy campaign",
+      "relation": "targeted sector",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "real estate"
+    },
+    {
+      "subject": "CryptoClippy campaign",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "CryptoClippy"
+    },
+    {
+      "subject": "CryptoClippy",
+      "relation": "is a",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "cryptocurrency clipper"
+    },
+    {
+      "subject": "CryptoClippy operators",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "CryptoClippy"
+    },
+    {
+      "subject": "CryptoClippy",
+      "relation": "delivered via",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Ads"
+    },
+    {
+      "subject": "CryptoClippy",
+      "relation": "delivered via",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "traffic distribution systems (TDS)"
+    },
+    {
+      "subject": "Malicious WhatsApp Web impersonation domains",
+      "relation": "impersonates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "WhatsApp Web"
+    }
+  ]
+}

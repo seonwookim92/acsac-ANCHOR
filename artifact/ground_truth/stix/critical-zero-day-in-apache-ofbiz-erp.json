@@ -1,0 +1,114 @@
+{
+  "file": "critical-zero-day-in-apache-ofbiz-erp.json",
+  "text": "A new zero-day security flaw has been discovered in Apache OfBiz, an open-source Enterprise Resource Planning (ERP) system that could be exploited to bypass authentication protections.The vulnerability, tracked as CVE-2023-51467, resides in the login functionality and is the result of an incomplete patch for another critical vulnerability (CVE-2023-49070, CVSS score: 9.8) that was released earlier this month. CVE-2023-49070 refers to a pre-authenticated remote code execution flaw impacting versions prior to 18.12.10 that, when successfully exploited, could allow threat actors to gain full control over the server and siphon sensitive data. It is caused due to a deprecated XML-RPC component within Apache OFBiz. CVE-2023-51467 could be triggered using empty and invalid USERNAME and PASSWORD parameters in an HTTP request to return an authentication success message, effectively circumventing the protection and enabling a threat actor to access otherwise unauthorized internal resources.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Apache OFBiz",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2023-51467",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "CVE-2023-49070",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "XML-RPC component",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Threat actor",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Authentication bypass",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Remote code execution",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Apache OFBiz",
+      "relation": "has vulnerability",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-51467"
+    },
+    {
+      "subject": "Apache OFBiz",
+      "relation": "has vulnerability",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-49070"
+    },
+    {
+      "subject": "CVE-2023-51467",
+      "relation": "related to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#related-to",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-49070"
+    },
+    {
+      "subject": "CVE-2023-49070",
+      "relation": "caused by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "XML-RPC component"
+    },
+    {
+      "subject": "Threat actor",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-51467"
+    },
+    {
+      "subject": "Threat actor",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-49070"
+    },
+    {
+      "subject": "Threat actor",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Authentication bypass"
+    },
+    {
+      "subject": "Threat actor",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Remote code execution"
+    },
+    {
+      "subject": "CVE-2023-49070",
+      "relation": "CVSS score",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "DatatypeProperty",
+      "object": "9.8"
+    },
+    {
+      "subject": "CVE-2023-51467",
+      "relation": "comment",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "DatatypeProperty",
+      "object": "A zero-day authentication bypass vulnerability in Apache OFBiz login functionality, resulting from an incomplete patch for CVE-2023-49070. It allows unauthorized access using empty/invalid USERNAME/PASSWORD parameters."
+    },
+    {
+      "subject": "CVE-2023-49070",
+      "relation": "comment",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "DatatypeProperty",
+      "object": "A critical pre-authenticated remote code execution vulnerability (CVSS 9.8) in Apache OFBiz versions prior to 18.12.10, caused by a deprecated XML-RPC component."
+    }
+  ]
+}

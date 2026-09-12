@@ -1,0 +1,112 @@
+{
+  "file": "an-in-depth-look-at-cuba-ransomware.json",
+  "text": "Cuba ransomware has evolved significantly, with the threat actor now incorporating ROMCOM RAT and Industrial Spy malware into their attacks. They also leverage tools like Metasploit and Cobalt Strike for post-exploitation activities. In recent campaigns, the ransomware was observed exploiting CVE-2023-27532, a vulnerability in Veeam backup software. The group's activities have also been linked to other malware families, such as Zero2Dump and Hancitor, showcasing a complex and interconnected threat landscape.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Cuba ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Threat Actor",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "ROMCOM RAT",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Industrial Spy",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Metasploit",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Cobalt Strike",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Veeam",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2023-27532",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Zero2Dump",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Hancitor",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Threat Actor",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Cuba ransomware"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "ROMCOM RAT"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Industrial Spy"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Metasploit"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Cobalt Strike"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-27532"
+    },
+    {
+      "subject": "CVE-2023-27532",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#affects",
+      "property_type": "ObjectProperty",
+      "object": "Veeam"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "related to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#variant-of",
+      "property_type": "ObjectProperty",
+      "object": "Zero2Dump"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "related to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#variant-of",
+      "property_type": "ObjectProperty",
+      "object": "Hancitor"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "file": "equation-cyberespionage-group.json",
+  "text": "The Dyre financial Trojan has emerged over the past year to become one of the most potent financial fraud tools in operation. Dyre is configured to defraud the customers of more than 1,000 banks and other companies worldwide. Consumers in English-speaking countries, in particular the US and UK, are most at risk, since this is where the largest numbers of targeted banks are located.After a number of recent takedowns against major financial threats such as Gameover Zeus, Shylock, and Ramnit, the threat posed by these groups has receded but Dyre has taken their place as one of the main threats to ordinary consumers. Detected by Symantec as Infostealer.Dyre, Dyre targets Windows computers and can steal banking and other credentials by attacking all three major web browsers (Internet Explorer, Chrome, and Firefox). Dyre is a two-pronged threat. Aside from stealing credentials, it can also be used to infect victims with other types of malware, such as adding them to spam botnets.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Dyre",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Infostealer.Dyre",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Customers of banks and companies",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "United States",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "United Kingdom",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Gameover Zeus",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Shylock",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Ramnit",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Symantec",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Windows",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Internet Explorer",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Chrome",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Firefox",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "spam botnets",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Dyre",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Infostealer.Dyre"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "trojan"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Customers of banks and companies"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "United States"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "United Kingdom"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Internet Explorer"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Firefox"
+    },
+    {
+      "subject": "Symantec",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Dyre"
+    }
+  ]
+}

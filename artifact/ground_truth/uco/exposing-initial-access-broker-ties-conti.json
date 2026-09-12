@@ -1,0 +1,134 @@
+{
+  "file": "exposing-initial-access-broker-ties-conti.json",
+  "text": "In early September 2021, Threat Analysis Group (TAG) observed a financially motivated threat actor we refer to as EXOTIC LILY, exploiting a 0day in Microsoft MSHTML (CVE-2021-40444). Investigating this group's activity, we determined they are an Initial Access Broker (IAB) who appear to be working with the Russian cyber crime gang known as FIN12 (Mandiant, FireEye) / WIZARD SPIDER (CrowdStrike). Initial access brokers are the opportunistic locksmiths of the security world, and it’s a full-time job. These groups specialize in breaching a target in order to open the doors-or the Windows-to the malicious actor with the highest bid. EXOTIC LILY is a resourceful, financially motivated group whose activities appear to be closely linked with data exfiltration and deployment of human-operated ransomware such as Conti and Diavol. At the peak of EXOTIC LILY’s activity, we estimate they were sending more than 5,000 emails a day, to as many as 650 targeted organizations globally. Up until November 2021, the group seemed to be targeting specific industries such as IT, cybersecurity and healthcare, but as of late we have seen them attacking a wide variety of organizations and industries, with less specific focus.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Threat Analysis Group (TAG)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "EXOTIC LILY",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Microsoft MSHTML",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "CVE-2021-40444",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Initial Access Broker (IAB)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "FIN12",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "WIZARD SPIDER",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Conti",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Diavol",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "IT industry",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Cybersecurity industry",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Healthcare industry",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Threat Analysis Group (TAG)",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "EXOTIC LILY"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-40444"
+    },
+    {
+      "subject": "CVE-2021-40444",
+      "relation": "exists in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft MSHTML"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "is a",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Initial Access Broker (IAB)"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "works with",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "FIN12"
+    },
+    {
+      "subject": "FIN12",
+      "relation": "alias",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "WIZARD SPIDER"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "facilitates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Conti"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "facilitates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Diavol"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "IT industry"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Cybersecurity industry"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Healthcare industry"
+    }
+  ]
+}

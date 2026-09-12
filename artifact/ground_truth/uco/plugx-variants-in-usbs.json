@@ -1,0 +1,156 @@
+{
+  "file": "plugx-variants-in-usbs.json",
+  "text": "Recently, our Unit 42 incident response team was engaged in a Black Basta breach response that uncovered several tools and malware samples on the victim's machines, including GootLoader malware, Brute Ratel C4 red-teaming tool and an older PlugX malware sample. The PlugX malware stood out to us as this variant infects any attached removable USB media devices such as floppy, thumb or flash drives and any additional systems the USB is later plugged into. This PlugX malware also hides actor files in a USB device using a novel technique that works even on the most recent Windows operating systems (OS) at the time of writing this post. This means the malicious files can only be viewed on a Unix-like (*nix) OS or by mounting the USB device in a forensic tool. We also discovered a similar variant of PlugX in VirusTotal that infects USB devices and copies all Adobe PDF and Microsoft Word files from the host. It places these copies in a hidden folder on the USB device that is created by the malware. PlugX is a second-stage implant used not only by multiple groups with a Chinese nexus but also by several cybercrime groups. It has been around for over a decade and has been observed in some high-profile cyberattacks, including the U.S. Government Office of Personnel Management (OPM) breach in 2015. It is a modular malware framework, supporting an evolving set of capabilities throughout the years.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Unit 42",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Black Basta",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "GootLoader",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Brute Ratel C4",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "PlugX",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "USB media",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+    },
+    {
+      "name": "Windows",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "Unix-like OS",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "VirusTotal",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Adobe PDF",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+    },
+    {
+      "name": "Microsoft Word",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+    },
+    {
+      "name": "Chinese-nexus groups",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Cybercrime groups",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "OPM breach",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Event"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Black Basta",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "GootLoader"
+    },
+    {
+      "subject": "Black Basta",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Brute Ratel C4"
+    },
+    {
+      "subject": "Black Basta",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "PlugX"
+    },
+    {
+      "subject": "Unit 42",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "PlugX"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "infects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "USB media"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "VirusTotal",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "PlugX"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Adobe PDF"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Word"
+    },
+    {
+      "subject": "Chinese-nexus groups",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "PlugX"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "used in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "OPM breach"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "modular malware framework"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "comment",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DatatypeProperty",
+      "object": "The USB variant uses a novel technique to hide files on Windows, allowing them to be viewed only on Unix-like systems or via forensic tools."
+    }
+  ]
+}

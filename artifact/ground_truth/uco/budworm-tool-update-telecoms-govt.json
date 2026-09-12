@@ -1,0 +1,137 @@
+{
+  "file": "budworm-tool-update-telecoms-govt.json",
+  "text": "The Budworm advanced persistent threat (APT) group continues to actively develop its toolset. Most recently, the Threat Hunter Team in Symantec, part of Broadcom, discovered Budworm using an updated version of one of its key tools to target a Middle Eastern telecommunications organization and an Asian government. Both attacks occurred in August 2023. Budworm (aka LuckyMouse, Emissary Panda, APT27) deployed a previously unseen variant of its SysUpdate backdoor (SysUpdate DLL inicore_v2.3.30.dll). SysUpdate is exclusively used by Budworm. As well as its custom malware, Budworm also used a variety of living-off-the-land and publicly available tools in these attacks. It appears the activity by the group may have been stopped early in the attack chain as the only malicious activity seen on infected machines is credential harvesting.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Budworm",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "SysUpdate",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "inicore_v2.3.30.dll",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/WindowsPEBinaryFile"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Symantec",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Broadcom",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Middle Eastern telecommunications organization",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Asian government",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Living-off-the-land tools",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/Tool"
+    },
+    {
+      "name": "Publicly available tools",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/Tool"
+    },
+    {
+      "name": "Credential harvesting",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Budworm",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "LuckyMouse"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Emissary Panda"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "APT27"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "SysUpdate"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "inicore_v2.3.30.dll"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Living-off-the-land tools"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Middle Eastern telecommunications organization"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Asian government"
+    },
+    {
+      "subject": "Symantec",
+      "relation": "part of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Broadcom"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Budworm"
+    },
+    {
+      "subject": "SysUpdate",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "backdoor"
+    },
+    {
+      "subject": "SysUpdate",
+      "relation": "version",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/version",
+      "property_type": "DatatypeProperty",
+      "object": "2.3.30"
+    }
+  ]
+}

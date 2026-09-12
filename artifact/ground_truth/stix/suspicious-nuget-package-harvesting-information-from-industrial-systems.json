@@ -1,0 +1,170 @@
+{
+  "file": "suspicious-nuget-package-harvesting-information-from-industrial-systems.json",
+  "text": "A suspicious NuGet package designed to harvest data from industrial systems appears to be targeting developers who use technology from Chinese company Bozhon, ReversingLabs reports. Named SqzrFramework480 and published on the NuGet repository in January 2024, the package is a .NET library responsible for calibrating robotic movement settings, managing and creating GUIs, initializing and configuring machine vision libraries, and more.However, it can also harvest various types of information from different types of industrial systems, including cameras and robotic arms, can take screenshots, send ping packets, and open sockets for data transfer. “None of those behaviors are resolutely malicious. However, when taken together, they raise alarms. For example, we can assume that the screenshots that are being taken are sent to the remote server via the open socket. The ping serves as a heartbeat check to see if the exfiltration server is alive,” ReversingLabs notes. The function that takes screenshots, which is not explicitly declared in the code, operates in a continuous loop if successful, capturing the primary screen every minute and sending the information to a remote IP address, via the opened socket.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "SqzrFramework480",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "NuGet",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Bozhon",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "ReversingLabs",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Developers using Bozhon technology",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Industrial systems",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Camera",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Robotic arm",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Remote exfiltration server",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Harvested data",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Screenshots",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Data harvesting",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Screenshot capture",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Data exfiltration",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "ReversingLabs",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "SqzrFramework480"
+    },
+    {
+      "subject": "SqzrFramework480",
+      "relation": "published on",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "NuGet"
+    },
+    {
+      "subject": "SqzrFramework480",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "suspicious .NET library; data harvester"
+    },
+    {
+      "subject": "SqzrFramework480",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Developers using Bozhon technology"
+    },
+    {
+      "subject": "SqzrFramework480",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Camera"
+    },
+    {
+      "subject": "SqzrFramework480",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Robotic arm"
+    },
+    {
+      "subject": "SqzrFramework480",
+      "relation": "communicates with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#communicates-with",
+      "property_type": "ObjectProperty",
+      "object": "Remote exfiltration server"
+    },
+    {
+      "subject": "Data harvesting",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "SqzrFramework480"
+    },
+    {
+      "subject": "Data harvesting",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Harvested data"
+    },
+    {
+      "subject": "Data harvesting",
+      "relation": "targeted",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Industrial systems"
+    },
+    {
+      "subject": "Screenshot capture",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "SqzrFramework480"
+    },
+    {
+      "subject": "Screenshot capture",
+      "relation": "result",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Screenshots"
+    },
+    {
+      "subject": "Screenshot capture",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Captures primary screen every minute in a continuous loop"
+    },
+    {
+      "subject": "Data exfiltration",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "SqzrFramework480"
+    },
+    {
+      "subject": "Data exfiltration",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Sends harvested data and screenshots via opened sockets; ping serves as heartbeat"
+    }
+  ]
+}

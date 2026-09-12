@@ -1,0 +1,147 @@
+{
+  "file": "flea-backdoor-microsoft-graph-apt15.json",
+  "text": "Graphican is an evolution of the known Flea backdoor Ketrican, which itself was based on a previous malware — BS2005 — also used by Flea. Graphican has the same basic functionality as Ketrican, with the difference between them being Graphican's use of the Microsoft Graph API and OneDrive to obtain its command-and-control (C&C) infrastructure. This technique was used in a similar way by the Russian state-sponsored APT group Swallowtail (aka APT28, Fancy Bear, Sofacy, Strontium) in a campaign in 2022 in which it delivered the Graphite malware. In that campaign, the Graphite malware used the Microsoft Graph API and OneDrive as a C&C server. The observed Graphican samples did not have a hardcoded C&C server, rather they connected to OneDrive via the Microsoft Graph API to get the encrypted C&C server address from a child folder inside the Person folder. The malware then decoded the folder name and used it as a C&C server for the malware. All instances of this variant used the same parameters to authenticate to the Microsoft Graph API.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Graphican",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Ketrican",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "BS2005",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Flea",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Microsoft Graph API",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "OneDrive",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Swallowtail",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Graphite",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "Swallowtail Graphite 2022 campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Russia",
+      "class": "http://idea.rpi.edu/malont#Country"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Graphican",
+      "relation": "evolution of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Ketrican"
+    },
+    {
+      "subject": "Ketrican",
+      "relation": "based on",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "BS2005"
+    },
+    {
+      "subject": "Flea",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Graphican"
+    },
+    {
+      "subject": "Flea",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ketrican"
+    },
+    {
+      "subject": "Flea",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "BS2005"
+    },
+    {
+      "subject": "Graphican",
+      "relation": "uses API",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Graph API"
+    },
+    {
+      "subject": "Graphican",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "OneDrive"
+    },
+    {
+      "subject": "Swallowtail",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "APT28, Fancy Bear, Sofacy, Strontium"
+    },
+    {
+      "subject": "Swallowtail",
+      "relation": "has country affiliation",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "Swallowtail",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Graphite"
+    },
+    {
+      "subject": "Swallowtail Graphite 2022 campaign",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Swallowtail"
+    },
+    {
+      "subject": "Graphite",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Graph API"
+    },
+    {
+      "subject": "Graphite",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "OneDrive"
+    },
+    {
+      "subject": "Graphican",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "backdoor"
+    }
+  ]
+}

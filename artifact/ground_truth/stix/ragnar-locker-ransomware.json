@@ -1,0 +1,174 @@
+{
+  "file": "ragnar-locker-ransomware.json",
+  "text": "Although Ragnar Locker was discovered by the FBI in April 2020, the group has actually been active since December 2019. Ragnar Locker is both the name of the ransomware group and the name of the ransomware. The gang works as a part of a ransomware family, which means they are associated with several ransomware variants or threat actor groups. Ragnar Locker is known for using the double extortion tactic, which involves threat actors exfiltrating sensitive data, then triggering the encryption attack, and ultimately threatening to leak the data if the demanded ransom isn't paid. To avoid prevention and detection, the threat actor frequently changes their obfuscation techniques. Ragnar Locker initiates their attacks by compromising the networks of companies through RDP service - using brute force to guess passwords or using stolen credentials purchased on the dark web. After compromising their target's network, the threat actor elevates their privileges by exploiting CVE-2017-0213 found in Windows COM Aggregate Marshaler. According to Microsoft, CVE-2017-0213 is an elevation of privilege that allows attackers to run arbitrary code with elevated privileges. To exploit the vulnerability, the attacker runs a specially crafted application.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Ragnar Locker group",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Ragnar Locker ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "CVE-2017-0213",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Windows COM Aggregate Marshaler",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "RDP service",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Stolen credentials",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Specially crafted application",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Privilege escalation",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Ransomware attack",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Initial access",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Targeted companies",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "FBI",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Double Extortion",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Dark Web",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Ragnar Locker group",
+      "relation": "start time",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "ObjectProperty",
+      "object": "2019-12"
+    },
+    {
+      "subject": "Ragnar Locker ransomware",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "used instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker ransomware"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "targeted",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Targeted companies"
+    },
+    {
+      "subject": "Ransomware attack",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "Double extortion tactic involving exfiltration, encryption, and leaking threat"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "used instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "RDP service"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "used instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Stolen credentials"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Ragnar Locker group"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "exploited",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2017-0213"
+    },
+    {
+      "subject": "Privilege escalation",
+      "relation": "used instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Specially crafted application"
+    },
+    {
+      "subject": "CVE-2017-0213",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows COM Aggregate Marshaler"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "reported",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2017-0213"
+    },
+    {
+      "subject": "FBI",
+      "relation": "description",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Discovered Ragnar Locker group in April 2020"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "file": "midnight-blizzard-conducts-targeted-social-engineering-over-microsoft-teams.json",
+  "text": "Microsoft Threat Intelligence has identified highly targeted social engineering attacks using credential theft phishing lures sent as Microsoft Teams chats by the threat actor that Microsoft tracks as Midnight Blizzard (previously tracked as NOBELIUM). This latest attack, combined with past activity, further demonstrates Midnight Blizzard's ongoing execution of their objectives using both new and common techniques. In this latest activity, the threat actor uses previously compromised Microsoft 365 tenants owned by small businesses to create new domains that appear as technical support entities. Using these domains from compromised tenants, Midnight Blizzard leverages Teams messages to send lures that attempt to steal credentials from a targeted organization by engaging a user and eliciting approval of multifactor authentication (MFA) prompts. As with any social engineering lures, we encourage organizations to reinforce security best practices to all users and reinforce that any authentication requests not initiated by the user should be treated as malicious.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Midnight Blizzard",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "NOBELIUM",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Microsoft Teams",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Microsoft 365",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "small businesses",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "targeted organization",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Compromised Microsoft 365 tenants",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Technical-support-lookalike domains",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#DomainName"
+    },
+    {
+      "name": "Social engineering over Microsoft Teams",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Credential theft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "MFA prompt approval elicitation",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "NOBELIUM"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Midnight Blizzard"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Teams"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Social engineering over Microsoft Teams"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Compromised Microsoft 365 tenants"
+    },
+    {
+      "subject": "small businesses",
+      "relation": "owns",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#owns",
+      "property_type": "ObjectProperty",
+      "object": "Compromised Microsoft 365 tenants"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "targeted organization"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "MFA prompt approval elicitation"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses modus operandi",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Credential theft"
+    }
+  ]
+}

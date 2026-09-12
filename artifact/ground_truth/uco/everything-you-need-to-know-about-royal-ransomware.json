@@ -1,0 +1,149 @@
+{
+  "file": "everything-you-need-to-know-about-royal-ransomware.json",
+  "text": "After emerging in January 2022, Royal ransomware is a ransomware strain that is being distributed by ransomware threat actors from previous operations. Initially, Microsoft attributed the distribution of Royal ransomware to DEV-0569 - a temporary name given by the tech company. Now, researchers are stating that the threat actors behind Royal ransomware have officially branded themselves with the name Royal (the name left behind in recent ransomware notes) and they are primarily focused on targeting entities within the U.S. The ransomware operation uses unusual techniques to breach networks before encrypting them with malware and demanding ransom payments. Some Royal ransomware campaigns distribute the malware via malicious attachments, and some distribute the malware via malicious advertisements. Although Royal is a newer ransomware operation, researchers believe the threat actors behind it are very experienced due to evidence of previously seen tactics and techniques. In September 2022, the operators behind Royal ransomware began ramping up their malicious activities. They were observed by our technology partner, AdvIntel, utilizing other ransomware operation's encryptors, such as BlackCat. By November 2022, Royal took responsibility for a ransomware attack on one of the United Kingdom's most popular racing circuits - Silverstone Circuit. The attack held up dozens of Formula One races and motorcycle events. Details regarding the attack were not disclosed, but Emsisoft threat analyst Brett Callow stated that because Royal's ransomware is secure, its encryption cannot be broken. Callow also stated that unlike current ransomware groups, Royal uses multiple ransomware types and uses the .Royal extension for encrypted files rather than using randomly generated extensions.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Royal operators",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Royal ransomware",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "DEV-0569",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "BlackCat",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Malicious attachments",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Malicious advertisements",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Silverstone Circuit ransomware attack",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Silverstone Circuit",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "U.S. entities",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "United States",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "United Kingdom",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Microsoft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "AdvIntel",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Emsisoft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Royal operators",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "DEV-0569"
+    },
+    {
+      "subject": "Royal operators",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "BlackCat"
+    },
+    {
+      "subject": "Royal operators",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Malicious attachments"
+    },
+    {
+      "subject": "Royal operators",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "U.S. entities"
+    },
+    {
+      "subject": "Silverstone Circuit ransomware attack",
+      "relation": "attributed-to",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Royal operators"
+    },
+    {
+      "subject": "Silverstone Circuit ransomware attack",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Silverstone Circuit"
+    },
+    {
+      "subject": "U.S. entities",
+      "relation": "located-at",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "United States"
+    },
+    {
+      "subject": "Silverstone Circuit",
+      "relation": "located-at",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "United Kingdom"
+    },
+    {
+      "subject": "AdvIntel",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Royal operators"
+    },
+    {
+      "subject": "Royal ransomware",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Royal ransomware",
+      "relation": "first seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/objectCreatedTime",
+      "property_type": "DatatypeProperty",
+      "object": "2022-01"
+    },
+    {
+      "subject": "Royal ransomware",
+      "relation": "file extension",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": ".Royal"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "file": "apache-erp-0day-underscores-dangers-of-incomplete-patches.json",
+  "text": "Unknown groups have launched probes against a zero-day vulnerability identified in Apache's OfBiz enterprise resource planning (ERP) framework - an increasingly popular strategy of analyzing patches for ways to bypass software fixes. The 0-day vulnerability (CVE-2023-51467) in Apache OFBiz, disclosed on Dec. 26, allows an attacker to access sensitive information and remotely execute code against applications using the ERP framework, according to an analysis by cybersecurity firm SonicWall. The Apache Software Foundation had originally released a patch for a related issue, CVE-2023-49070, but the fix failed to protect against other variations of the attack.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Unknown groups",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Probe against vulnerability",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "CVE-2023-51467",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Apache OFBiz",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Analysis of vulnerability",
+      "class": "https://ontology.unifiedcyberontology.org/uco/analysis/Analysis"
+    },
+    {
+      "name": "SonicWall",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Apache Software Foundation",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Patch for CVE-2023-49070",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "CVE-2023-49070",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Probe against vulnerability",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Unknown groups"
+    },
+    {
+      "subject": "Probe against vulnerability",
+      "relation": "targeted object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-51467"
+    },
+    {
+      "subject": "CVE-2023-51467",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Apache OFBiz"
+    },
+    {
+      "subject": "Analysis of vulnerability",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "SonicWall"
+    },
+    {
+      "subject": "Analysis of vulnerability",
+      "relation": "investigated object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-51467"
+    },
+    {
+      "subject": "CVE-2023-51467",
+      "relation": "description",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DatatypeProperty",
+      "object": "Allows remote code execution and sensitive information access against Apache OFBiz."
+    },
+    {
+      "subject": "Apache Software Foundation",
+      "relation": "patches",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-49070"
+    },
+    {
+      "subject": "Patch for CVE-2023-49070",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-49070"
+    }
+  ]
+}

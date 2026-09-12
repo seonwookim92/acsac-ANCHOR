@@ -1,0 +1,57 @@
+{
+  "file": "cybercriminals-are-selling-access-to-chinese-surveillance-cameras.json",
+  "text": "Hikvision – short for Hangzhou Hikvision Digital Technology – is a Chinese state-owned manufacturer of video surveillance equipment. Their customers span over 100 countries (including the United States, despite the FCC labeling Hikvision “an unacceptable risk to U.S. national security” in 2019). Last Fall, a command injection flaw in Hikvision cameras was revealed to the world as CVE-2021-36260. The exploit was given a “critical” 9.8 out of 10 rating by NIST. Despite the severity of the vulnerability, and nearly a year into this story, over 80,000 affected devices remain unpatched. In the time since, the researchers have discovered “multiple instances of hackers looking to collaborate on exploiting Hikvision cameras using the command injection vulnerability,” specifically in Russian dark web forums, where leaked credentials have been put up for sale. The extent of the damage done already is unclear. The authors of the report could only speculate that “Chinese threat groups such as MISSION2025/APT41, APT10 and its affiliates, as well as unknown Russian threat actor groups could potentially exploit vulnerabilities in these devices to fulfill their motives.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Hikvision",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "CVE-2021-36260",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "United States",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "hackers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "MISSION2025/APT41",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "hackers",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-36260"
+    },
+    {
+      "subject": "CVE-2021-36260",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Hikvision"
+    },
+    {
+      "subject": "Hikvision",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "United States"
+    },
+    {
+      "subject": "MISSION2025/APT41",
+      "relation": "exploits",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Hikvision"
+    }
+  ]
+}

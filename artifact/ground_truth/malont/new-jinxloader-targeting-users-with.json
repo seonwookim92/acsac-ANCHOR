@@ -1,0 +1,142 @@
+{
+  "file": "new-jinxloader-targeting-users-with.json",
+  "text": "A new Go-based malware loader called JinxLoader is being used by threat actors to deliver next-stage payloads such as Formbook and its successor XLoader. The malware pays homage to League of Legends character Jinx, featuring the character on its ad poster and [command-and-control] login panel. The attacks begin with phishing emails impersonating Abu Dhabi National Oil Company (ADNOC), urging recipients to open password-protected RAR archive attachments that, upon opening, drop the JinxLoader executable, which subsequently acts as a gateway for Formbook or XLoader. It also comes amid a surge in campaigns distributing DarkGate and PikaBot, along with a threat actor known as TA544 (aka Narwal Spider) leveraging new variants of loader malware called IDAT Loader to deploy Remcos RAT or SystemBC malware. What's more, the threat actors behind the Meduza Stealer have released an updated version of the malware (version 2.2) on the dark web with expanded support for browser-based cryptocurrency wallets and an improved credit card (CC) grabber.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "JinxLoader",
+      "class": "http://idea.rpi.edu/malont#Downloader"
+    },
+    {
+      "name": "Formbook",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "XLoader",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "Phishing",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Abu Dhabi National Oil Company (ADNOC)",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "password-protected RAR archive",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "DarkGate",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "PikaBot",
+      "class": "http://idea.rpi.edu/malont#Bot"
+    },
+    {
+      "name": "TA544",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Narwal Spider",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "IDAT Loader",
+      "class": "http://idea.rpi.edu/malont#Downloader"
+    },
+    {
+      "name": "Remcos RAT",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "SystemBC",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "Meduza Stealer",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "JinxLoader",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "loader"
+    },
+    {
+      "subject": "JinxLoader",
+      "relation": "language",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Go"
+    },
+    {
+      "subject": "JinxLoader",
+      "relation": "delivers",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Formbook"
+    },
+    {
+      "subject": "JinxLoader",
+      "relation": "delivers",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "XLoader"
+    },
+    {
+      "subject": "Phishing",
+      "relation": "impersonates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Abu Dhabi National Oil Company (ADNOC)"
+    },
+    {
+      "subject": "password-protected RAR archive",
+      "relation": "delivers",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "JinxLoader"
+    },
+    {
+      "subject": "TA544",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Narwal Spider"
+    },
+    {
+      "subject": "TA544",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "IDAT Loader"
+    },
+    {
+      "subject": "IDAT Loader",
+      "relation": "delivers",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Remcos RAT"
+    },
+    {
+      "subject": "IDAT Loader",
+      "relation": "delivers",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "SystemBC"
+    },
+    {
+      "subject": "Meduza Stealer",
+      "relation": "version",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "2.2"
+    }
+  ]
+}

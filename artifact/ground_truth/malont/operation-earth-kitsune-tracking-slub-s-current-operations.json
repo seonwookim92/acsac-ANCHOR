@@ -1,0 +1,108 @@
+{
+  "file": "operation-earth-kitsune-tracking-slub-s-current-operations.json",
+  "text": "We found Operation Earth Kitsune using a total of five C&C servers, seven samples, and four new bugs, aiming to compromise websites to host malware. We initiated our investigation after noticing that the Korean American National Coordinating Council (KANCC) website was redirecting visitors to the Hanseattle website. Users who accessed the said site were redirected to a weaponized version of a proof of concept (POC) for the CVE-2019-5782 Google Chrome vulnerability published in the chromium tracking system. Digging deeper, we discovered that the attack does not only involve a weaponized version of the mentioned Chrome exploit; the exploit was infecting the victim machine with three separate malware samples.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Operation Earth Kitsune",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "C&C servers",
+      "class": "http://idea.rpi.edu/malont#CommandAndControl"
+    },
+    {
+      "name": "KANCC website",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "Hanseattle website",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "Weaponized POC exploit",
+      "class": "http://idea.rpi.edu/malont#Exploit-kit"
+    },
+    {
+      "name": "CVE-2019-5782",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "Google Chrome",
+      "class": "http://idea.rpi.edu/malont#Browser"
+    },
+    {
+      "name": "Malware samples",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "Exploitation and Infection",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Operation Earth Kitsune",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "C&C servers"
+    },
+    {
+      "subject": "Operation Earth Kitsune",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "KANCC website"
+    },
+    {
+      "subject": "KANCC website",
+      "relation": "redirects to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Hanseattle website"
+    },
+    {
+      "subject": "Weaponized POC exploit",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2019-5782"
+    },
+    {
+      "subject": "CVE-2019-5782",
+      "relation": "vulnerability in",
+      "property": "http://idea.rpi.edu/malont#hasVulnerability",
+      "property_type": "ObjectProperty",
+      "object": "Google Chrome"
+    },
+    {
+      "subject": "Exploitation and Infection",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Operation Earth Kitsune"
+    },
+    {
+      "subject": "Exploitation and Infection",
+      "relation": "used instrument",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Weaponized POC exploit"
+    },
+    {
+      "subject": "Exploitation and Infection",
+      "relation": "exploited",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "CVE-2019-5782"
+    },
+    {
+      "subject": "Exploitation and Infection",
+      "relation": "resulted in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Malware samples"
+    }
+  ]
+}

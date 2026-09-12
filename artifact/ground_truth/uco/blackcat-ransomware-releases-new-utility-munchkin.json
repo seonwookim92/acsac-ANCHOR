@@ -1,0 +1,100 @@
+{
+  "file": "blackcat-ransomware-releases-new-utility-munchkin.json",
+  "text": "BlackCat operators recently announced new updates to their tooling, including a utility called Munchkin that allows attackers to propagate the BlackCat payload to remote machines and shares on a victim organization network. For the past two years, the BlackCat ransomware operators have continued to evolve and iterate their tooling as part of their ransomware-as-a-service (RaaS) business model. As part of a recent investigation, Unit 42 researchers have acquired an instance of Munchkin that is unique, in that it is loaded in a customized Alpine virtual machine (VM). This new tactic of leveraging a customized VM to deploy malware has been gaining traction in recent months, allowing ransomware threat actors to use VMs to circumvent security solutions in deploying their malware payloads.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "BlackCat operators",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "BlackCat",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Munchkin",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Unit 42 researchers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Customized Alpine virtual machine",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "Victim organization network",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "ransomware-as-a-service",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "BlackCat operators",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Munchkin"
+    },
+    {
+      "subject": "BlackCat operators",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "BlackCat"
+    },
+    {
+      "subject": "BlackCat operators",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Victim organization network"
+    },
+    {
+      "subject": "Munchkin",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "BlackCat"
+    },
+    {
+      "subject": "Customized Alpine virtual machine",
+      "relation": "hosts",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Munchkin"
+    },
+    {
+      "subject": "Unit 42 researchers",
+      "relation": "investigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Munchkin"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Munchkin",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "utility"
+    },
+    {
+      "subject": "ransomware-as-a-service",
+      "relation": "description",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DatatypeProperty",
+      "object": "Business model for ransomware distribution."
+    }
+  ]
+}

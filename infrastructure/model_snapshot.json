@@ -1,0 +1,29 @@
+{
+  "model": "Qwen/Qwen3.5-35B-A3B-FP8",
+  "served_model_name": "qwen3.5-35b",
+  "revision": "9d1823d2dee688a6b25e77009dc727688c44936e",
+  "revision_checked_utc": "2026-09-09",
+  "source": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B-FP8",
+  "license": "Apache-2.0",
+  "total_parameters": "35B",
+  "activated_parameters": "3B",
+  "native_context_length": 262144,
+  "weight_format": "safetensors, FP8",
+  "weight_bytes": 37463724680,
+  "weight_shards": [
+    {"file": "model.safetensors-00001-of-00014.safetensors", "size": 2685395560, "sha256": "8eec0929a43c759abc4e230ca6c55b1a314f26b8870cb63941b674b95ce6d49e"},
+    {"file": "model.safetensors-00002-of-00014.safetensors", "size": 2685393512, "sha256": "4cb364215f617628defac9a1345c9122ab65b36d555349285f73b7595eb068a6"},
+    {"file": "model.safetensors-00003-of-00014.safetensors", "size": 2685393512, "sha256": "f94b20e10e856926b902a51c9aa575ff8beb483cef6130996e098a40e3a2a92a"},
+    {"file": "model.safetensors-00004-of-00014.safetensors", "size": 2685394536, "sha256": "c3a0d1593280aeb44ba100a1dbef643071284519b58654b14591984ae558c5d3"},
+    {"file": "model.safetensors-00005-of-00014.safetensors", "size": 2685395560, "sha256": "a754c48ee879302bbb16debedea9032010bb616aa3fe9f1fd0340f81230b5e12"},
+    {"file": "model.safetensors-00006-of-00014.safetensors", "size": 2685394536, "sha256": "b5435e836f62b7d915e84f0f327d07ed773a0939d4acd3e16b9b082c35318ce9"},
+    {"file": "model.safetensors-00007-of-00014.safetensors", "size": 2685393512, "sha256": "684840ee3af77f22ddaa5df7330384c472b7e50efdd4ba1699558152a182045c"},
+    {"file": "model.safetensors-00008-of-00014.safetensors", "size": 2685393512, "sha256": "70ac96a66c7bc85d97649e460bdfaebc5947c191bb0742d596c35d53d833060a"},
+    {"file": "model.safetensors-00009-of-00014.safetensors", "size": 3645492144, "sha256": "775cec9a6755ecddcd3d41954f14e40051a5d8306ce6d5f6ccd96af58a8d93cb"},
+    {"file": "model.safetensors-00010-of-00014.safetensors", "size": 2685398632, "sha256": "5a86d13781bb91dbfce6602095e424f9b53fe76d3bb0d1ea1800f584fc1f41ab"},
+    {"file": "model.safetensors-00011-of-00014.safetensors", "size": 2685400680, "sha256": "6f0c1b222c972fb8ce4936f861a71e6f2987db80b523d290954473d7643bf417"},
+    {"file": "model.safetensors-00012-of-00014.safetensors", "size": 2685399144, "sha256": "040c27529a66e43f3a2cfef338ac121f5897ea476984ee3ba35540a49388809b"},
+    {"file": "model.safetensors-00013-of-00014.safetensors", "size": 3011229472, "sha256": "ee1088b806b0ce6ad374eec852503efa68d70f01480bd75815f8ca7b91327df0"},
+    {"file": "model.safetensors-00014-of-00014.safetensors", "size": 1267650368, "sha256": "38842b8f3d0a4ea29c064317591c4b6529efbcc0a1f7665c41b58e6852638dc9"}
+  ]
+}

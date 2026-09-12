@@ -1,0 +1,130 @@
+{
+  "file": "ransomware-spotlight-blackcat.json",
+  "text": "First observed in mid-November 2021 by researchers from the MalwareHunterTeam, BlackCat (aka AlphaVM, AlphaV, or ALPHV) swiftly gained notoriety for being the first major professional ransomware family to be written in Rust, a cross-platform language that enables malicious actors to customize malware with ease for different operating systems like Windows and Linux, thus affording a wide range of enterprise environments. Since then, BlackCat ransomware has frequently made the headlines for its successive attacks on high-profile targets and its use of triple extortion which has endowed the group with a distinct competitive edge over other RaaS operators. Aside from exposing exfiltrated data, ransomware actors that use triple extortion threaten to launch distributed denial-of-service (DDoS) attacks on their victims' infrastructure to coerce them to pay the ransom.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "BlackCat",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "AlphaVM",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "AlphaV",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "ALPHV",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Rust",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "MalwareHunterTeam",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Windows",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "Linux",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "Triple extortion",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "DDoS",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "RaaS operators",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "AlphaVM"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "AlphaV"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "ALPHV"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware family"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "written in",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Rust"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "runs-on",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "runs-on",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Linux"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Triple extortion"
+    },
+    {
+      "subject": "Triple extortion",
+      "relation": "includes",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "DDoS"
+    },
+    {
+      "subject": "MalwareHunterTeam",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "BlackCat"
+    },
+    {
+      "subject": "BlackCat",
+      "relation": "first seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2021-11"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "file": "exposing-earth-berberoka-a-multiplatform-apt-campaign-targeting-online-gambling-sites.json",
+  "text": "We have discovered an advanced persistent threat (APT) group that primarily targets online gambling sites. This group, which we have dubbed Earth Berberoka (aka GamblingPuppet), uses old yet upgraded malware families that have been attributed to Chinese-speaking actors, including PlugX and Gh0st RAT. It also uses a brand-new multistage malware family, which we have dubbed PuppetLoader. The malware families used by Earth Berberoka are multiplatform, targeting the Windows, Linux, and macOS operating systems.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Earth Berberoka",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "GamblingPuppet",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "PlugX",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "Gh0st RAT",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "PuppetLoader",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "Online gambling sites",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Windows",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "Linux",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "macOS",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "Chinese-speaking actors",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Earth Berberoka",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "GamblingPuppet"
+    },
+    {
+      "subject": "Earth Berberoka",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Online gambling sites"
+    },
+    {
+      "subject": "Earth Berberoka",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "PlugX"
+    },
+    {
+      "subject": "Earth Berberoka",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Gh0st RAT"
+    },
+    {
+      "subject": "Earth Berberoka",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "PuppetLoader"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "attributed to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Chinese-speaking actors"
+    },
+    {
+      "subject": "PuppetLoader",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "multistage malware family"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Linux"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "macOS"
+    },
+    {
+      "subject": "PuppetLoader",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "PuppetLoader",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Linux"
+    },
+    {
+      "subject": "PuppetLoader",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "macOS"
+    }
+  ]
+}

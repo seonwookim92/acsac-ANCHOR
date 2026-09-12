@@ -1,0 +1,153 @@
+{
+  "file": "russian-hackers-stole-microsoft-corporate-emails-in-month-long-breach.json",
+  "text": "Microsoft warned Friday night that some of its corporate email accounts were breached and data stolen by a Russian state-sponsored hacking group known as Midnight Blizzard. The company detected the attack on January 12th, with Microsoft's investigation ultimately determining that the attack was conducted by Russian threat actors known more commonly as Nobelium or APT29. Microsoft says the threat actors breached their systems in November 2023 when they conducted a password spray attack to access a legacy non-production test tenant account. Microsoft says the breached email accounts included members of Microsoft's leadership team and employees in the cybersecurity and legal departments, from which the hackers stole emails and attachments.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Microsoft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Midnight Blizzard",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Nobelium",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "APT29",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Password spray attack",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Microsoft corporate email accounts",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/UserAccount"
+    },
+    {
+      "name": "Legacy non-production test tenant account",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/UserAccount"
+    },
+    {
+      "name": "Microsoft's leadership team",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "cybersecurity and legal departments",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Stolen emails",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/EmailMessage"
+    },
+    {
+      "name": "Stolen attachments",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+    },
+    {
+      "name": "Russia",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Microsoft Corporate Email Breach",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Event"
+    },
+    {
+      "name": "Incident detection and investigation",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Email data theft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Nobelium"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "APT29"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "originates-from",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Password spray attack"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft's leadership team"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "cybersecurity and legal departments"
+    },
+    {
+      "subject": "Password spray attack",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Legacy non-production test tenant account"
+    },
+    {
+      "subject": "Microsoft Corporate Email Breach",
+      "relation": "attributed-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Midnight Blizzard"
+    },
+    {
+      "subject": "Incident detection and investigation",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft"
+    },
+    {
+      "subject": "Email data theft",
+      "relation": "stole",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Stolen emails"
+    },
+    {
+      "subject": "Email data theft",
+      "relation": "stole",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Stolen attachments"
+    }
+  ]
+}

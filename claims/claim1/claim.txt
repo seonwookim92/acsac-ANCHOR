@@ -1,0 +1,40 @@
+CLAIM 1 (Functional)
+
+ANCHOR implements the schema-agnostic CTI-to-ontology pipeline described in the
+paper (Section IV, Figure 2), and the distributed executable processes an
+unstructured CTI report end to end -- schema-agnostic extraction, hybrid
+ontology discovery over the target OWL/SHACL schema via the ontology MCP server,
+and SHACL-validated knowledge graph construction -- emitting a structurally
+valid, ontology-aligned JSON graph.
+
+Paper connection: Section IV (ANCHOR Design), Figure 2 architecture.
+Artifact components: artifact/main.py, artifact/src/, artifact/mcp/ontology-mcp-server/.
+
+SCOPE NOTE. This is a FUNCTIONAL claim, submitted in support of the Available
+and Functional badges. It asserts that the pipeline executes and produces a
+structurally valid graph. It does NOT assert the numerical values in the paper's
+evaluation tables (Tables III-IX) or any ablation ordering. The Results
+Reproduced badge is NOT requested for this artifact, and no numerical tolerance
+is claimed here.
+
+Because an LLM participates in extraction and mapping, exact entity names,
+counts, ordering, and ontology URIs vary between runs and between models. They
+are not acceptance criteria. The acceptance criterion is the structural
+contract in expected/.
+
+MODEL CAPABILITY CAVEAT
+
+ANCHOR's ontology mapper drives the MCP server through multi-step tool calling,
+so this claim depends on the chosen model sustaining several dependent tool calls
+per entity and predicate. A model weak at tool calling completes the run and
+emits a poor or empty graph, failing the structural check above -- a model
+limitation, not an artifact defect. check_endpoint.py probes tool calling before
+the run and warns when the model fails it; claims/claim3 validates the package
+with no LLM at all. Together they separate the two causes. Re-run with a stronger
+tool-calling model to resolve it.
+
+RUN:      ./claims/claim1/run.sh
+EXPECTED: claims/claim1/expected/README.txt
+RUNTIME:  up to ~30 minutes on first run, including one-time download of the
+          all-MiniLM-L6-v2 embedding model. Subsequent runs are faster and
+          depend on the reviewer's chosen endpoint.

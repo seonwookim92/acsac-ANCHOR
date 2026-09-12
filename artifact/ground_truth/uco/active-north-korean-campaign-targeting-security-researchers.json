@@ -1,0 +1,57 @@
+{
+  "file": "active-north-korean-campaign-targeting-security-researchers.json",
+  "text": "In January 2021, Threat Analysis Group (TAG) publicly disclosed a campaign from government backed actors in North Korea who used 0-day exploits to target security researchers working on vulnerability research and development. Over the past two and a half years, TAG has continued to track and disrupt campaigns from these actors, finding 0-days and protecting online users. Recently, TAG became aware of a new campaign likely from the same actors based on similarities with the previous campaign.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Threat Analysis Group",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "government backed actors",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "North Korea",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "0-day exploits",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "security researchers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/Victim"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "government backed actors",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "security researchers"
+    },
+    {
+      "subject": "government backed actors",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "0-day exploits"
+    },
+    {
+      "subject": "government backed actors",
+      "relation": "located-in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "North Korea"
+    },
+    {
+      "subject": "Threat Analysis Group",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "government backed actors"
+    }
+  ]
+}

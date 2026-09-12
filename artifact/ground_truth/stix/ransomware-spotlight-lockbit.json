@@ -1,0 +1,185 @@
+{
+  "file": "ransomware-spotlight-lockbit.json",
+  "text": "LockBit uses a ransomware-as-a-service (RaaS) model and consistently conceived new ways to stay ahead of its competitors. Its double extortion methods also adds more pressure to victims, raising the stakes of their campaigns. One of its notable tactics was the creation and use of the malware StealBit, which automates data exfiltration. This tool was seen with the release of LockBit 2.0, which has been touted by its creators for having the fastest and most efficient encryption among its competition. In October 2021, LockBit also expanded to Linux hosts, specifically ESXi servers, in its release of Linux-ESXI Locker version 1.0. This variant is capable of targeting Linux hosts and could have a big impact on targeted organizations. Another side of LockBit's operations is its recruitment of and marketing to affiliates. It has been known to hire network access brokers, cooperate with other criminal groups (such as the now defunct Maze), recruit company insiders, and sponsor underground technical writing contests to recruit talented hackers. Using such tactics, the LockBit group has built itself into one of the most professional organized criminal gangs in the criminal underground.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "LockBit group",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "LockBit ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "RaaS",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Double Extortion",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "StealBit",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Data Exfiltration",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "LockBit 2.0",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Linux-ESXI Locker v1.0",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Linux hosts",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "ESXi servers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Recruitment and marketing",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Affiliates",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Network Access Brokers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Maze",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Company insiders",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Talented hackers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "LockBit group",
+      "relation": "uses ransomware family",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "LockBit ransomware"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "operates as",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "RaaS"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Double Extortion"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "has variant",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#variant-of",
+      "property_type": "ObjectProperty",
+      "object": "LockBit 2.0"
+    },
+    {
+      "subject": "LockBit 2.0",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "StealBit"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "data exfiltration tool"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "automates data exfiltration",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Data Exfiltration"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "created by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#created_by_ref",
+      "property_type": "ObjectProperty",
+      "object": "LockBit group"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "has variant",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#variant-of",
+      "property_type": "ObjectProperty",
+      "object": "Linux-ESXI Locker v1.0"
+    },
+    {
+      "subject": "Linux-ESXI Locker v1.0",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Linux hosts"
+    },
+    {
+      "subject": "Linux-ESXI Locker v1.0",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "ESXi servers"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "LockBit group"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Company insiders"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Talented hackers"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "hires / works with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Network Access Brokers"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "cooperates with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Maze"
+    }
+  ]
+}

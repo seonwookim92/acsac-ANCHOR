@@ -1,0 +1,83 @@
+{
+  "file": "critical-risk-in-google-workspace-delegation-feature.json",
+  "text": "Unit 42 researchers discovered a security risk in the Google Workspace (formerly known as G Suite) domain-wide delegation feature. We exposed an unexpected way to gain access to the Google Workspace domain data from Google Cloud Platform (GCP). We found that a GCP identity with the necessary permission can generate an access token to a delegated user. A malicious insider or an external attacker with stolen credentials can use this access token to impersonate Google Workspace users, granting unauthorized access to their data or to perform operations on their behalf.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Unit 42",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Google Workspace",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "G Suite",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "domain-wide delegation feature",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Google Cloud Platform (GCP)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "malicious insider",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "external attacker",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Google Workspace users",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Unit 42",
+      "relation": "discovered",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "Google Workspace",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "ObjectProperty",
+      "object": "G Suite"
+    },
+    {
+      "subject": "malicious insider",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "external attacker",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "domain-wide delegation feature"
+    },
+    {
+      "subject": "malicious insider",
+      "relation": "impersonates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Workspace users"
+    },
+    {
+      "subject": "external attacker",
+      "relation": "impersonates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Workspace users"
+    }
+  ]
+}

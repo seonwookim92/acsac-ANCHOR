@@ -1,0 +1,122 @@
+{
+  "file": "h0lygh0st-ransomware-north-korea.json",
+  "text": "Microsoft researchers have linked an emerging ransomware threat that already has compromised a number of small-to-mid-sized businesses to financially motivated North Korean state-sponsored actors that have been active since last year. A group tracked by researchers from Microsoft Threat Intelligence Center (MSTIC) as DEV-0530 but that calls itself H0lyGh0st has been developing and using ransomware in attacks since June 2021. H0lyGh0st’s standard modus operandi is to use a namesake ransomware to encrypt all files on the target device using the file extension .h0lyenc, then send the victim a sample of the files as proof. The group interacts with victims on a .onion site that it maintains and on which it provides a contact form for victims to get in touch, researchers said.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "H0lyGh0st",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "DEV-0530",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "H0lyGh0st ransomware",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "North Korean state-sponsored actors",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "North Korea",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "small-to-mid-sized businesses",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Microsoft Threat Intelligence Center (MSTIC)",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": ".onion site",
+      "class": "http://idea.rpi.edu/malont#Anonymization"
+    },
+    {
+      "name": "File Encryption",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "H0lyGh0st",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "DEV-0530"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "motivation",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "financially motivated"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "attributed-to",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "North Korean state-sponsored actors"
+    },
+    {
+      "subject": "North Korean state-sponsored actors",
+      "relation": "originates-from",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "North Korea"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "H0lyGh0st ransomware"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "small-to-mid-sized businesses"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence Center (MSTIC)",
+      "relation": "tracked",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "H0lyGh0st"
+    },
+    {
+      "subject": "H0lyGh0st ransomware",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "ransomware"
+    },
+    {
+      "subject": "H0lyGh0st ransomware",
+      "relation": "file extension",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": ".h0lyenc"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "maintains",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": ".onion site"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "uses modus operandi",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "File Encryption"
+    }
+  ]
+}

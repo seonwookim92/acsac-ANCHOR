@@ -1,0 +1,135 @@
+{
+  "file": "equation-cyberespionage-group.json",
+  "text": "The Dyre financial Trojan has emerged over the past year to become one of the most potent financial fraud tools in operation. Dyre is configured to defraud the customers of more than 1,000 banks and other companies worldwide. Consumers in English-speaking countries, in particular the US and UK, are most at risk, since this is where the largest numbers of targeted banks are located.After a number of recent takedowns against major financial threats such as Gameover Zeus, Shylock, and Ramnit, the threat posed by these groups has receded but Dyre has taken their place as one of the main threats to ordinary consumers. Detected by Symantec as Infostealer.Dyre, Dyre targets Windows computers and can steal banking and other credentials by attacking all three major web browsers (Internet Explorer, Chrome, and Firefox). Dyre is a two-pronged threat. Aside from stealing credentials, it can also be used to infect victims with other types of malware, such as adding them to spam botnets.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Dyre",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Infostealer.Dyre",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Customers of banks and companies",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "United States",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "United Kingdom",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Gameover Zeus",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Shylock",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Ramnit",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Symantec",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Windows",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "Internet Explorer",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Chrome",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Firefox",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "spam botnets",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Dyre",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Infostealer.Dyre"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "trojan"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Customers of banks and companies"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "United States"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "United Kingdom"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Internet Explorer"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "Dyre",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Firefox"
+    },
+    {
+      "subject": "Symantec",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Dyre"
+    }
+  ]
+}

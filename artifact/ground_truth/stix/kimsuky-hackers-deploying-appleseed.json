@@ -1,0 +1,79 @@
+{
+  "file": "kimsuky-hackers-deploying-appleseed.json",
+  "text": "Nation-state actors affiliated to North Korea have been observed using spear-phishing attacks to deliver an assortment of backdoors and tools such as AppleSeed, Meterpreter, and TinyNuke to seize control of compromised machines. South Korea-based cybersecurity company AhnLab attributed the activity to an advanced persistent threat group known as Kimsuky. A notable point about attacks that use AppleSeed is that similar methods of attack have been used for many years with no significant changes to the malware that are used together. Kimsuky, active for over a decade, is known for its targeting of a wide range of entities in South Korea, before expanding its focus to include other geographies in 2017. It was sanctioned by the U.S. government late last month for amassing intelligence to support North Korea's strategic objectives. The threat actor's espionage campaigns are realized through spear-phishing attacks containing malicious lure documents that, upon opening, culminate in the deployment of various malware families.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Kimsuky",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "North Korea",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "AppleSeed",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Meterpreter",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "TinyNuke",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "South Korea",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "AhnLab",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Kimsuky",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "AppleSeed"
+    },
+    {
+      "subject": "Kimsuky",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Meterpreter"
+    },
+    {
+      "subject": "Kimsuky",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "TinyNuke"
+    },
+    {
+      "subject": "Kimsuky",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "South Korea"
+    },
+    {
+      "subject": "Kimsuky",
+      "relation": "backed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "North Korea"
+    },
+    {
+      "subject": "AhnLab",
+      "relation": "attributed to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Kimsuky"
+    }
+  ]
+}

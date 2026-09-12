@@ -1,0 +1,34 @@
+CLAIM 2 (Functional)
+
+The same ANCHOR executable is schema-switchable across three different
+OWL/SHACL ontologies -- UCO, STIX, and MALOnt -- through a single --schema
+switch, with no change to the extraction logic. This substantiates the paper's
+central design principle that the extraction pipeline is decoupled from any
+specific ontology schema (Section IV-A, principle (i); Table I "Schema
+dependency: Any OWL/SHACL").
+
+Paper connection: Section IV-A System Overview; Table I.
+Artifact components: artifact/ontology/{uco,stix,malont}/, the --schema flag in
+artifact/main.py, artifact/src/nodes/mapper.py, artifact/src/nodes/exporter.py.
+
+SCOPE NOTE. This is a FUNCTIONAL claim. It asserts that all three packaged
+schemas load and drive the same executable to a structurally valid, schema-
+correct output. It does NOT assert the per-schema accuracy numbers reported in
+the paper. The Results Reproduced badge is NOT requested.
+
+MODEL CAPABILITY CAVEAT
+
+ANCHOR's ontology mapper drives the MCP server through multi-step tool calling,
+so this claim depends on the chosen model sustaining several dependent tool calls
+per entity and predicate. A model weak at tool calling completes the run and
+emits a poor or empty graph, failing the structural check above -- a model
+limitation, not an artifact defect. check_endpoint.py probes tool calling before
+the run and warns when the model fails it; claims/claim3 validates the package
+with no LLM at all. Together they separate the two causes. Re-run with a stronger
+tool-calling model to resolve it.
+
+RUN:      ./claims/claim2/run.sh
+EXPECTED: claims/claim2/expected/README.txt
+RUNTIME:  roughly two times the claim1 runtime, since it runs the STIX and
+          MALOnt schemas in sequence. Run claim1 first so the embedding model is
+          already cached.

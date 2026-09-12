@@ -1,0 +1,137 @@
+{
+  "file": "cadet-blizzard-emerges-as-a-novel-and-distinct-russian-threat-actor.json",
+  "text": "Today, Microsoft Threat Intelligence is sharing updated details about techniques of a threat actor formerly tracked as DEV-0586—a distinct Russian state-sponsored threat actor that has now been elevated to the name Cadet Blizzard. Microsoft assesses that Cadet Blizzard operations are associated with the Russian General Staff Main Intelligence Directorate (GRU) but are separate from other known and more established GRU-affiliated groups such as Forest Blizzard (STRONTIUM) and Seashell Blizzard (IRIDIUM). While Microsoft constantly tracks a number of activity groups with varying degrees of Russian government affiliation, the emergence of a novel GRU affiliated actor, particularly one which has conducted destructive cyber operations likely supporting broader military objectives in Ukraine, is a notable development in the Russian cyber threat landscape. A month before Russia invaded Ukraine, Cadet Blizzard foreshadowed future destructive activity when it created and deployed WhisperGate, a destructive capability that wipes Master Boot Records (MBRs), against Ukrainian government organizations. Cadet Blizzard is also linked to the defacements of several Ukrainian organization websites, as well as multiple operations, including the hack-and-leak forum known as “Free Civilian”.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Cadet Blizzard",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Russian General Staff Main Intelligence Directorate (GRU)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Forest Blizzard",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Seashell Blizzard",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Russia",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Ukraine",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "WhisperGate",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Ukrainian government organizations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Website Defacement",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Free Civilian",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Grouping"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "DEV-0586"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "attributed-to",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "ObjectProperty",
+      "object": "Russian General Staff Main Intelligence Directorate (GRU)"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "origin",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "WhisperGate"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian government organizations"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Website Defacement"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "associated with",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Free Civilian"
+    },
+    {
+      "subject": "WhisperGate",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "destructive malware"
+    },
+    {
+      "subject": "WhisperGate",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian government organizations"
+    },
+    {
+      "subject": "Forest Blizzard",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "STRONTIUM"
+    },
+    {
+      "subject": "Seashell Blizzard",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "IRIDIUM"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "investigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Cadet Blizzard"
+    }
+  ]
+}

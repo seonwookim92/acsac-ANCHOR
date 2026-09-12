@@ -1,0 +1,125 @@
+{
+  "file": "google-patches-chromes-fifth-zero-day-of-the-year.json",
+  "text": "Google has patched the fifth actively exploited zero-day vulnerability discovered in Chrome this year as one in a series of fixes included in a stable channel update released Wednesday. The bug, tracked as CVE-2022-2856 and rated as high on the Common Vulnerability Scoring System (CVSS), is associated with “insufficient validation of untrusted input in Intents,” according to the advisory posted by Google. Google credits Ashley Shen and Christian Resell of its Google Threat Analysis Group (TAG) for reporting the zero-day bug, which could allow for arbitrary code execution, on July 19. The advisory also unveiled 10 other patches for various other Chrome issues.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Google",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Chrome",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "CVE-2022-2856",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Intents",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Google Threat Analysis Group (TAG)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Ashley Shen",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Person"
+    },
+    {
+      "name": "Christian Resell",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Person"
+    },
+    {
+      "name": "Chrome stable channel update",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Google",
+      "relation": "patched",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-2856"
+    },
+    {
+      "subject": "Chrome stable channel update",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-2856"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Intents"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "CVSS rating",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "high"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "enables",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "arbitrary code execution"
+    },
+    {
+      "subject": "Ashley Shen",
+      "relation": "reported",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-2856"
+    },
+    {
+      "subject": "Christian Resell",
+      "relation": "reported",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-2856"
+    },
+    {
+      "subject": "Ashley Shen",
+      "relation": "member-of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Threat Analysis Group (TAG)"
+    },
+    {
+      "subject": "Christian Resell",
+      "relation": "member-of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Threat Analysis Group (TAG)"
+    },
+    {
+      "subject": "Google Threat Analysis Group (TAG)",
+      "relation": "part-of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google"
+    },
+    {
+      "subject": "CVE-2022-2856",
+      "relation": "description",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DatatypeProperty",
+      "object": "Insufficient validation of untrusted input in Intents."
+    }
+  ]
+}

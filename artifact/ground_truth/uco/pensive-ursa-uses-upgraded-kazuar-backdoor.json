@@ -1,0 +1,235 @@
+{
+  "file": "pensive-ursa-uses-upgraded-kazuar-backdoor.json",
+  "text": "While tracking the evolution of Pensive Ursa (aka Turla, Uroburos), Unit 42 researchers came across a new, upgraded variant of Kazuar. Not only is Kazuar another name for the enormous and dangerous cassowary bird, Kazuar is an advanced and stealthy .NET backdoor that Pensive Ursa usually uses as a second stage payload. Pensive Ursa is a Russian-based threat group operating since at least 2004, which is linked to the Russian Federal Security Service (FSB). The Ukrainian CERT reported in July 2023 that this version of Kazuar was targeting the Ukrainian defense sector. The threat group behind this variant was going after sensitive assets such as those found in Signal messages, source control and cloud platforms data. Since Unit 42's discovery of Kazuar in 2017, we have seen it in the wild only a handful of times, targeting mostly organizations in the European government and military sectors. The Sunburst backdoor has been tied to Kazuar by code resemblance, which demonstrates its complexity level. Since late 2020, we had not seen new Kazuar samples in the wild – yet reports suggested Kazuar was under constant development.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Pensive Ursa",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Turla",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Uroburos",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Kazuar",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Upgraded Kazuar",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Unit 42",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Ukrainian CERT",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Russian Federal Security Service (FSB)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Russia",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Ukrainian defense sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "European government sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "European military sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Signal messages",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Message"
+    },
+    {
+      "name": "Source control data",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"
+    },
+    {
+      "name": "Cloud platforms data",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"
+    },
+    {
+      "name": "Sunburst",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Malware targeting",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Discovery of Kazuar",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Pensive Ursa",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Turla"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "Uroburos"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "origin",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "linked to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Russian Federal Security Service (FSB)"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "first seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2004"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Kazuar"
+    },
+    {
+      "subject": "Upgraded Kazuar",
+      "relation": "variant-of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Kazuar"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "backdoor"
+    },
+    {
+      "subject": "Ukrainian CERT",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Upgraded Kazuar"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian defense sector"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "European government sector"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "European military sector"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Pensive Ursa"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "used instrument",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Kazuar"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Signal messages"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Source control data"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Cloud platforms data"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "start time",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "July 2023"
+    },
+    {
+      "subject": "Discovery of Kazuar",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Unit 42"
+    },
+    {
+      "subject": "Discovery of Kazuar",
+      "relation": "start time",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2017"
+    },
+    {
+      "subject": "Discovery of Kazuar",
+      "relation": "object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Kazuar"
+    },
+    {
+      "subject": "Sunburst",
+      "relation": "linked by code resemblance to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Kazuar"
+    }
+  ]
+}

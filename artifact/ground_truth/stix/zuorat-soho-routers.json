@@ -1,0 +1,181 @@
+{
+  "file": "zuorat-soho-routers.json",
+  "text": "A novel multistage remote access trojan (RAT) that’s been active since April 2020 is exploiting known vulnerabilities to target popular SOHO routers from Cisco Systems, Netgear, Asus and others. The malware, dubbed ZuoRAT, can access the local LAN, capture packets being transmitted on the device and stage man-in-the-middle attacks through DNS and HTTPS hijacking, according to researchers from Lumen Technologies’ threat-intelligence arm Black Lotus Labs. The ability to not only hop on a LAN from a SOHO device and then stage further attacks suggests that the RAT may be the work of a state-sponsored actor.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "ZuoRAT",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Known vulnerabilities",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "SOHO routers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Cisco SOHO routers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Netgear SOHO routers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Asus SOHO routers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Local LAN",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "packet capture",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "man-in-the-middle attack",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "DNS hijacking",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "HTTPS hijacking",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Black Lotus Labs",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Lumen Technologies",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Suspected state-sponsored actor",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Action_Exploit",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Action_Exploit",
+      "relation": "performer",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "ZuoRAT"
+    },
+    {
+      "subject": "Action_Exploit",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Known vulnerabilities"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "SOHO routers"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Cisco SOHO routers"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Netgear SOHO routers"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Asus SOHO routers"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "accesses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Local LAN"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "packet capture"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "man-in-the-middle attack"
+    },
+    {
+      "subject": "man-in-the-middle attack",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "DNS hijacking"
+    },
+    {
+      "subject": "man-in-the-middle attack",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "HTTPS hijacking"
+    },
+    {
+      "subject": "Black Lotus Labs",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "ZuoRAT"
+    },
+    {
+      "subject": "Black Lotus Labs",
+      "relation": "part-of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Lumen Technologies"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "remote-access-trojan"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "start time",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "ObjectProperty",
+      "object": "2020-04"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "attributed to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Suspected state-sponsored actor"
+    }
+  ]
+}

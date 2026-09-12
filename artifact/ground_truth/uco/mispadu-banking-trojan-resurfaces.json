@@ -1,0 +1,152 @@
+{
+  "file": "mispadu-banking-trojan-resurfaces.json",
+  "text": "Recent spam campaigns leading to URSA/Mispadu banking trojan (detected by Trend Micro as TrojanSpy.Win32.MISPADU.THIADBO) have been uncovered, as reported by malware analyst Pedro Tavares in a Twitter post and by Seguranca Informatica in a blog post. Mispadu malware steals credentials from users' systems. This attack targets systems with Spanish and Portuguese as system languages. It is also likely that they have targets similar to previous Mispadu attacks where users from Mexico, Spain, Portugal, and other nearby regions were targeted. This behavior is in line with past Mispadu schemes, such as the one where spam emails for fake discount coupons were used as bait.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Mispadu",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "URSA",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "TrojanSpy.Win32.MISPADU.THIADBO",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Recent spam campaign",
+      "class": "https://ontology.unifiedcyberontology.org/uco/core/Grouping"
+    },
+    {
+      "name": "Spam emails with fake discount coupons",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/EmailMessage"
+    },
+    {
+      "name": "Trend Micro",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Pedro Tavares",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Person"
+    },
+    {
+      "name": "Seguranca Informatica",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Spanish language system",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "Portuguese language system",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "Mexico",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Spain",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Portugal",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Mispadu",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "URSA"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "has alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "TrojanSpy.Win32.MISPADU.THIADBO"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "banking-trojan"
+    },
+    {
+      "subject": "Recent spam campaign",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Mispadu"
+    },
+    {
+      "subject": "Recent spam campaign",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Spam emails with fake discount coupons"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Spanish language system"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Portuguese language system"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Mexico"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Spain"
+    },
+    {
+      "subject": "Mispadu",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Portugal"
+    },
+    {
+      "subject": "Trend Micro",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Mispadu"
+    },
+    {
+      "subject": "Pedro Tavares",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Recent spam campaign"
+    },
+    {
+      "subject": "Seguranca Informatica",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Recent spam campaign"
+    }
+  ]
+}

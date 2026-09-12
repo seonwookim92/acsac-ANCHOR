@@ -1,0 +1,199 @@
+{
+  "file": "iran-apt-seedworm-africa-telecoms.json",
+  "text": "Iranian espionage group Seedworm (aka Muddywater) has been targeting organizations operating in the telecommunications sector in Egypt, Sudan, and Tanzania. Seedworm has been active since at least 2017, and has targeted organizations in many countries, though it is most strongly associated with attacks on organizations in the Middle East. It has been publicly stated that Seedworm is a cyberespionage group that is believed to be a subordinate part of Iran's Ministry of Intelligence and Security (MOIS). The attackers used a variety of tools in this activity, which occurred in November 2023, including leveraging the MuddyC2Go infrastructure, which was recently discovered and documented by Deep Instinct. Researchers on Symantec's Threat Hunter Team, part of Broadcom, found a MuddyC2Go PowerShell launcher in the activity we investigated. The attackers also use the SimpleHelp remote access tool and Venom Proxy, which have previously been associated with Seedworm activity, as well as using a custom keylogging tool, and other publicly available and living-off-the-land tools.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Seedworm",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Muddywater",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Ministry of Intelligence and Security (MOIS)",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Iran",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Telecommunications sector organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Egypt",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Sudan",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Tanzania",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "MuddyC2Go",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "MuddyC2Go PowerShell launcher",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "SimpleHelp",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Venom Proxy",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "custom keylogging tool",
+      "class": "http://idea.rpi.edu/malont#Keylogger"
+    },
+    {
+      "name": "Deep Instinct",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Targeting activity",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Seedworm",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Muddywater"
+    },
+    {
+      "subject": "Seedworm",
+      "relation": "part of",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Ministry of Intelligence and Security (MOIS)"
+    },
+    {
+      "subject": "Seedworm",
+      "relation": "originates-from",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Iran"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Seedworm"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "targeted victim",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Telecommunications sector organizations"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "occurred in",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Egypt"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "occurred in",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Sudan"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "occurred in",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Tanzania"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "MuddyC2Go"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "SimpleHelp"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Venom Proxy"
+    },
+    {
+      "subject": "Targeting activity",
+      "relation": "start time",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "2023-11"
+    },
+    {
+      "subject": "Deep Instinct",
+      "relation": "discovered",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "MuddyC2Go"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Targeting activity"
+    },
+    {
+      "subject": "Seedworm",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "MuddyC2Go PowerShell launcher"
+    },
+    {
+      "subject": "Seedworm",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "custom keylogging tool"
+    },
+    {
+      "subject": "MuddyC2Go PowerShell launcher",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "launcher"
+    },
+    {
+      "subject": "custom keylogging tool",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "keylogger"
+    }
+  ]
+}

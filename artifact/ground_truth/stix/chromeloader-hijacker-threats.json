@@ -1,0 +1,127 @@
+{
+  "file": "chromeloader-hijacker-threats.json",
+  "text": "ChromeLoader may seem on the surface like a run-of-the-mill browser hijacker that merely redirects victims to advertisement websites. However, its use of PowerShell could pose a greater risk by leading to further and advanced malicious activity, such as the propagation of ransomware or spyware or theft of browser-session data. Researchers are warning of the potential for ChromeLoader-which has seen a resurgence in activity recently-to pose a more sophisticated threat than typical malvertisers do, according to two separate blog posts by Malwarebytes Labs and Red Canary. ChromeLoader is a pervasive and persistent browser hijacker that eventually manifests as a browser extension, modifying victims’ Chrome settings and redirecting user traffic to advertisement websites. On Windows machines, victims become infected with the malware through ISO files that poses as a cracked video game or pirated films or TV programs.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "ChromeLoader",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "PowerShell",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Chrome",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "ISO lure file",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#File"
+    },
+    {
+      "name": "Malwarebytes Labs",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Red Canary",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "spyware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Browser Session Data",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Advertisement Website",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#URL"
+    },
+    {
+      "name": "malvertisers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "ChromeLoader",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "DatatypeProperty",
+      "object": "browser hijacker"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "PowerShell"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "can lead to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "can lead to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "spyware"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "modifies settings of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "redirects traffic to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Advertisement Website"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "runs on",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "delivered by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#related-to",
+      "property_type": "ObjectProperty",
+      "object": "ISO lure file"
+    },
+    {
+      "subject": "Malwarebytes Labs",
+      "relation": "warned about",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "ChromeLoader"
+    },
+    {
+      "subject": "Red Canary",
+      "relation": "warned about",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "ChromeLoader"
+    }
+  ]
+}

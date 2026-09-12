@@ -1,0 +1,120 @@
+{
+  "file": "midnight-blizzard-conducts-targeted-social-engineering-over-microsoft-teams.json",
+  "text": "Microsoft Threat Intelligence has identified highly targeted social engineering attacks using credential theft phishing lures sent as Microsoft Teams chats by the threat actor that Microsoft tracks as Midnight Blizzard (previously tracked as NOBELIUM). This latest attack, combined with past activity, further demonstrates Midnight Blizzard's ongoing execution of their objectives using both new and common techniques. In this latest activity, the threat actor uses previously compromised Microsoft 365 tenants owned by small businesses to create new domains that appear as technical support entities. Using these domains from compromised tenants, Midnight Blizzard leverages Teams messages to send lures that attempt to steal credentials from a targeted organization by engaging a user and eliciting approval of multifactor authentication (MFA) prompts. As with any social engineering lures, we encourage organizations to reinforce security best practices to all users and reinforce that any authentication requests not initiated by the user should be treated as malicious.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Midnight Blizzard",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "NOBELIUM",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Microsoft Teams",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Microsoft 365",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "small businesses",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "targeted organization",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Compromised Microsoft 365 tenants",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "Technical-support-lookalike domains",
+      "class": "http://idea.rpi.edu/malont#DomainName"
+    },
+    {
+      "name": "Social engineering over Microsoft Teams",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Credential theft",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "MFA prompt approval elicitation",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "NOBELIUM"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "observed",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": null,
+      "object": "Midnight Blizzard"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Teams"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Social engineering over Microsoft Teams"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Compromised Microsoft 365 tenants"
+    },
+    {
+      "subject": "small businesses",
+      "relation": "owns",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Compromised Microsoft 365 tenants"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "targeted organization"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "MFA prompt approval elicitation"
+    },
+    {
+      "subject": "Midnight Blizzard",
+      "relation": "uses modus operandi",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Credential theft"
+    }
+  ]
+}

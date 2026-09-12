@@ -1,0 +1,101 @@
+{
+  "file": "critical-bluetooth-flaw-exposes-android-apple-and-linux-devices-to-keystroke-injection-attack.json",
+  "text": "Attackers can exploit a critical Bluetooth security vulnerability that's been lurking largely unnoticed for years on macOS, iOS, Android, and Linux device platforms. The keystroke injection vulnerability allows an attacker to control the targeted device as if they were attached by a Bluetooth keyboard, performing various functions remotely depending on the endpoint. Tracked as CVE-2023-45866, the flaw exists in how in the Bluetooth protocol is implemented on various platforms. It works by tricking the Bluetooth host state-machine into pairing with a fake keyboard without user confirmation. The vulnerability enables an attacker to pair an emulated Bluetooth keyboard with a victim's phone or computer, implementing the keyboard as a Python script that runs on a Linux computer. The attacker can then inject keystrokes, typing on the target device as if they were a Bluetooth keyboard legitimately attached to the target.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Bluetooth wireless protocol",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "CVE-2023-45866",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "keystroke injection attack",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Android devices",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "Apple devices",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "Linux devices",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "unauthenticated attacker",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Google",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Apple",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Bluetooth wireless protocol",
+      "relation": "has-vulnerability",
+      "property": "http://idea.rpi.edu/malont#hasVulnerability",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-45866"
+    },
+    {
+      "subject": "CVE-2023-45866",
+      "relation": "enables",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "keystroke injection attack"
+    },
+    {
+      "subject": "unauthenticated attacker",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-45866"
+    },
+    {
+      "subject": "keystroke injection attack",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Android devices"
+    },
+    {
+      "subject": "keystroke injection attack",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Apple devices"
+    },
+    {
+      "subject": "keystroke injection attack",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Linux devices"
+    },
+    {
+      "subject": "Google",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-45866"
+    },
+    {
+      "subject": "Apple",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-45866"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "file": "comcast-xfinity-breached-citrix-bleed-35m-customers.json",
+  "text": "Since at least August, attackers have been exploiting CVE-2023-4966 (aka CitrixBleed), a 7.5 high-severity vulnerability affecting Citrix Systems' NetScaler ADC and Gateway networking products. Even after it was brought to light in October, many organizations have struggled to comprehensively shore up their systems. One such organization appears to be Comcast Xfinity. On Monday, the cable giant disclosed a CitrixBleed-enabled breach of its customer data, including usernames and hashed passwords, and, for some, names, contact information, last four digits of Social Security numbers, dates of birth, and security questions and answers.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "CVE-2023-4966",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Citrix Systems",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "NetScaler ADC",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "NetScaler Gateway",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Comcast Xfinity",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Attackers",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "CitrixBleed-enabled breach",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Incident"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "CVE-2023-4966",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "DatatypeProperty",
+      "object": "CitrixBleed"
+    },
+    {
+      "subject": "CVE-2023-4966",
+      "relation": "severity",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "DatatypeProperty",
+      "object": "7.5 high-severity"
+    },
+    {
+      "subject": "CVE-2023-4966",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "NetScaler ADC"
+    },
+    {
+      "subject": "CVE-2023-4966",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "NetScaler Gateway"
+    },
+    {
+      "subject": "Citrix Systems",
+      "relation": "has product",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#owns",
+      "property_type": "ObjectProperty",
+      "object": "NetScaler ADC"
+    },
+    {
+      "subject": "Citrix Systems",
+      "relation": "has product",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#owns",
+      "property_type": "ObjectProperty",
+      "object": "NetScaler Gateway"
+    },
+    {
+      "subject": "Attackers",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-4966"
+    },
+    {
+      "subject": "CitrixBleed-enabled breach",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-4966"
+    },
+    {
+      "subject": "CitrixBleed-enabled breach",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Comcast Xfinity"
+    }
+  ]
+}

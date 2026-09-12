@@ -1,0 +1,144 @@
+{
+  "file": "3am-ransomware-lockbit.json",
+  "text": "A new ransomware family calling itself 3AM has emerged. To date, the ransomware has only been used in a limited fashion. Symantec's Threat Hunter Team, part of Broadcom, has seen it used in a single attack by a ransomware affiliate that attempted to deploy LockBit on a target's network and then switched to 3AM when LockBit was blocked. 3AM is written in Rust and appears to be a completely new malware family. The ransomware attempts to stop multiple services on the infected computer before it begins encrypting files. Once encryption is complete, it attempts to delete Volume Shadow (VSS) copies. It is still unclear whether its authors have any links to known cybercrime organizations.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "3AM",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "LockBit",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Broadcom",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "ransomware affiliate",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "infected computer",
+      "class": "http://idea.rpi.edu/malont#System"
+    },
+    {
+      "name": "Volume Shadow (VSS) copies",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "Rust",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Stop services",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Encrypt files",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Delete VSS copies",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "part of",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Broadcom"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "ransomware affiliate",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "LockBit"
+    },
+    {
+      "subject": "ransomware affiliate",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "3AM",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "3AM",
+      "relation": "implementation language",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Rust"
+    },
+    {
+      "subject": "3AM",
+      "relation": "is family",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DatatypeProperty",
+      "object": "true"
+    },
+    {
+      "subject": "LockBit",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Stop services",
+      "relation": "performed by instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "Stop services",
+      "relation": "occurred in",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "infected computer"
+    },
+    {
+      "subject": "Encrypt files",
+      "relation": "performed by instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "Delete VSS copies",
+      "relation": "performed by instrument",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "3AM"
+    },
+    {
+      "subject": "Delete VSS copies",
+      "relation": "acted on object",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Volume Shadow (VSS) copies"
+    }
+  ]
+}

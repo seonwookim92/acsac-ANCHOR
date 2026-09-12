@@ -1,0 +1,104 @@
+{
+  "file": "google-patches-another-chrome-zero-day-as-browser-attacks-mount.json",
+  "text": "The latest zero-day, which Google is tracking as CVE-2023-6345, stems from an integer overflow issue in Skia, an open source 2D graphic library in Chrome. The bug is one of seven Chrome vulnerabilities for which Google issued a security update this week. The company's advisory contained sparse details on CVE-2023-6345 beyond mentioning the fact that an exploit for it is publicly available. A brief description on NIST's National Vulnerability Database (NVD) site described the flaw as affecting versions of Chrome prior to 119.0.6045.199 and allowing a remote attacker who has compromised the renderer process to potentially perform a sandbox escape via a malicious file.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Google",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Google Chrome",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Skia",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "CVE-2023-6345",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "NIST",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "integer overflow",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "sandbox escape",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Chrome renderer process",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Process"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Google",
+      "relation": "patched",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-6345"
+    },
+    {
+      "subject": "CVE-2023-6345",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Chrome"
+    },
+    {
+      "subject": "CVE-2023-6345",
+      "relation": "affects",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Skia"
+    },
+    {
+      "subject": "Skia",
+      "relation": "part of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Google Chrome"
+    },
+    {
+      "subject": "CVE-2023-6345",
+      "relation": "stems from",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "integer overflow"
+    },
+    {
+      "subject": "integer overflow",
+      "relation": "located in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Skia"
+    },
+    {
+      "subject": "CVE-2023-6345",
+      "relation": "allows",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "sandbox escape"
+    },
+    {
+      "subject": "sandbox escape",
+      "relation": "requires",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Chrome renderer process"
+    },
+    {
+      "subject": "NIST",
+      "relation": "described",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-6345"
+    }
+  ]
+}

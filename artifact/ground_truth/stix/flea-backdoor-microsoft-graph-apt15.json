@@ -1,0 +1,147 @@
+{
+  "file": "flea-backdoor-microsoft-graph-apt15.json",
+  "text": "Graphican is an evolution of the known Flea backdoor Ketrican, which itself was based on a previous malware — BS2005 — also used by Flea. Graphican has the same basic functionality as Ketrican, with the difference between them being Graphican's use of the Microsoft Graph API and OneDrive to obtain its command-and-control (C&C) infrastructure. This technique was used in a similar way by the Russian state-sponsored APT group Swallowtail (aka APT28, Fancy Bear, Sofacy, Strontium) in a campaign in 2022 in which it delivered the Graphite malware. In that campaign, the Graphite malware used the Microsoft Graph API and OneDrive as a C&C server. The observed Graphican samples did not have a hardcoded C&C server, rather they connected to OneDrive via the Microsoft Graph API to get the encrypted C&C server address from a child folder inside the Person folder. The malware then decoded the folder name and used it as a C&C server for the malware. All instances of this variant used the same parameters to authenticate to the Microsoft Graph API.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Graphican",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Ketrican",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "BS2005",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Flea",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Microsoft Graph API",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "OneDrive",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Swallowtail",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Graphite",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Swallowtail Graphite 2022 campaign",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Russia",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Graphican",
+      "relation": "evolution of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#variant-of",
+      "property_type": "ObjectProperty",
+      "object": "Ketrican"
+    },
+    {
+      "subject": "Ketrican",
+      "relation": "based on",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#variant-of",
+      "property_type": "ObjectProperty",
+      "object": "BS2005"
+    },
+    {
+      "subject": "Flea",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Graphican"
+    },
+    {
+      "subject": "Flea",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ketrican"
+    },
+    {
+      "subject": "Flea",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "BS2005"
+    },
+    {
+      "subject": "Graphican",
+      "relation": "uses API",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Graph API"
+    },
+    {
+      "subject": "Graphican",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "OneDrive"
+    },
+    {
+      "subject": "Swallowtail",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "APT28, Fancy Bear, Sofacy, Strontium"
+    },
+    {
+      "subject": "Swallowtail",
+      "relation": "has country affiliation",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "Swallowtail",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Graphite"
+    },
+    {
+      "subject": "Swallowtail Graphite 2022 campaign",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Swallowtail"
+    },
+    {
+      "subject": "Graphite",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Graph API"
+    },
+    {
+      "subject": "Graphite",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "OneDrive"
+    },
+    {
+      "subject": "Graphican",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "backdoor"
+    }
+  ]
+}

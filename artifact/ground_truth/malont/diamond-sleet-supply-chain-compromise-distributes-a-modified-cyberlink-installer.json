@@ -1,0 +1,68 @@
+{
+  "file": "diamond-sleet-supply-chain-compromise-distributes-a-modified-cyberlink-installer.json",
+  "text": "Microsoft Threat Intelligence has uncovered a supply chain attack by the North Korea-based threat actor Diamond Sleet (ZINC) involving a malicious variant of an application developed by CyberLink Corp., a software company that develops multimedia software products. This malicious file is a legitimate CyberLink application installer that has been modified to include malicious code that downloads, decrypts, and loads a second-stage payload. The file, which was signed using a valid certificate issued to CyberLink Corp., is hosted on legitimate update infrastructure owned by CyberLink and includes checks to limit the time window for execution and evade detection by security products. Thus far, the malicious activity has impacted over 100 devices in multiple countries, including Japan, Taiwan, Canada, and the United States.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Diamond Sleet",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "CyberLink Corp.",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Japan",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Taiwan",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "United States",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Diamond Sleet",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "CyberLink Corp."
+    },
+    {
+      "subject": "Diamond Sleet",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Japan"
+    },
+    {
+      "subject": "Diamond Sleet",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Taiwan"
+    },
+    {
+      "subject": "Diamond Sleet",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "United States"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "discovered",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Diamond Sleet"
+    }
+  ]
+}

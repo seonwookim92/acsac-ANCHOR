@@ -1,0 +1,116 @@
+External model-service access
+============================
+
+No private infrastructure access is required, and the authors do not operate a
+hosted endpoint for reviewers. This artifact distributes no model weights, no
+inference service, and no credentials. The evaluator supplies the LLM endpoint.
+
+There are two supported ways to do that, and either one satisfies every claim in
+claims/. Pick whichever matches the hardware you already have.
+
+--------------------------------------------------------------------------------
+OPTION A -- Self-hosted vLLM (the paper-reference path)
+--------------------------------------------------------------------------------
+
+Use this if you have administrative access to an NVIDIA GPU server. It is the
+configuration the paper's measurements were produced with, and it keeps the
+report text on your own hardware, which is the privacy property paper
+Challenge 3 is about.
+
+    See VLLM_SETUP.md for the full end-to-end procedure: prerequisites, image
+    preparation, the pinned model snapshot, the launch command, readiness
+    checks, and troubleshooting.
+
+Summary:
+
+    ./infrastructure/prepare_vllm_node.sh     # build/obtain the vllm-node image
+    ./infrastructure/start_vllm_qwen35.sh     # launch the pinned Qwen snapshot
+    curl -fsS http://127.0.0.1:8081/v1/models # confirm readiness
+
+Then, in artifact/.env:
+
+    LLM_PROVIDER=vllm
+    VLLM_BASE_URL=http://127.0.0.1:8081/v1
+    VLLM_API_KEY=dummy
+    VLLM_LLM_MODEL=qwen3.5-35b
+
+Any OpenAI-compatible server that supports tool calling works here, not only
+this model and not only this image. A smaller open-weights model on a modest GPU
+is fine for the functional claims, provided it sustains multi-step tool calling
+-- see the note on model capability below. Set VLLM_LLM_MODEL to whatever name
+your server serves.
+
+Servers that reject non-OpenAI body fields are handled automatically: the
+thinking toggle uses vLLM's `chat_template_kwargs` extension, and if the
+endpoint answers HTTP 400 for it, ANCHOR warns once, drops the field, and
+retries. Tolerant servers ignore the field and need no change, though on those
+the VLLM_THINKING toggle has no effect and a reasoning model may exhaust
+LLM_MAX_TOKENS on thinking tokens; raise that limit if output is truncated.
+VLLM_EXTRA_BODY=false suppresses the field from the start. If ANCHOR runs on a different machine from the
+server, replace 127.0.0.1 with that server's address and protect the endpoint
+with your normal VPN, firewall, or SSH-tunnel policy.
+
+Reference hardware for self-hosting Qwen3.5-35B-A3B-FP8 is in
+infrastructure/resources and HARDWARE_REQUIREMENTS.md. The pinned revision and
+per-shard checksums are in infrastructure/model_snapshot.json.
+
+--------------------------------------------------------------------------------
+OPTION B -- A hosted API (no GPU required)
+--------------------------------------------------------------------------------
+
+Use this if you do not have a GPU server. ANCHOR resolves its chat model at
+runtime from LLM_PROVIDER (artifact/src/utils/llm.py), so a hosted endpoint
+drives the identical pipeline from a commodity laptop.
+
+In artifact/.env, set ONE of:
+
+    LLM_PROVIDER=openai
+    OPENAI_API_KEY=<your key>
+    OPENAI_LLM_MODEL=gpt-4o
+
+    -- or --
+
+    LLM_PROVIDER=anthropic
+    ANTHROPIC_API_KEY=<your key>
+    ANTHROPIC_LLM_MODEL=claude-sonnet-4-6
+
+This sends report text to a third-party API. The packaged CTINexus reports are
+public threat reports, so that is not a disclosure concern for this evaluation.
+It does mean Option B does not exercise the local-LLM privacy property of paper
+Challenge 3 -- only Option A does. It exercises everything else.
+
+--------------------------------------------------------------------------------
+CONFIGURATION AND VERIFICATION
+--------------------------------------------------------------------------------
+
+    cp artifact/.env.example artifact/.env
+
+artifact/.env.example is a dotfile; it is present in the repository and in the
+release archive even though `ls` hides it by default. Use `ls -a artifact/`.
+Fill in only the block for the provider you chose. Never commit artifact/.env;
+it is git-ignored.
+
+Verify the configured endpoint before running a claim:
+
+    artifact/.venv/bin/python artifact/scripts/check_endpoint.py
+
+It prints the provider, base URL, and model it resolved, and reports an
+actionable error if the endpoint is unreachable, the key is missing or rejected,
+or the configured model is not served -- in which case it lists the names the
+server does serve. No model name is pinned by the check.
+
+It then asks the model to make one tool call. ANCHOR's ontology mapper depends
+on multi-step tool use, so a model without it completes a run but yields an
+empty graph after several minutes; this probe surfaces that in seconds. It is
+advisory -- a WARNING, never a hard failure, since a capable model may decline a
+single prompt. ANCHOR_SKIP_TOOL_PROBE=1 skips it.
+
+claims/claim3 requires no endpoint at all and can be run immediately after
+./install.sh.
+
+--------------------------------------------------------------------------------
+SECRETS
+--------------------------------------------------------------------------------
+
+No reusable secret, private IP address, or author-only endpoint is embedded in
+this package or its release archive.

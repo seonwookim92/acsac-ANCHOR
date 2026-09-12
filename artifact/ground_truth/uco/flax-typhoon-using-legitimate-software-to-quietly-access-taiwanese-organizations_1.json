@@ -1,0 +1,100 @@
+{
+  "file": "flax-typhoon-using-legitimate-software-to-quietly-access-taiwanese-organizations_1.json",
+  "text": "Microsoft has identified a nation-state activity group tracked as Flax Typhoon, based in China, that is targeting dozens of organizations in Taiwan with the likely intention of performing espionage. Flax Typhoon gains and maintains long-term access to Taiwanese organizations' networks with minimal use of malware, relying on tools built into the operating system, along with some normally benign software to quietly remain in these networks. Microsoft has not observed Flax Typhoon using this access to conduct additional actions. This blog aims to raise awareness of the techniques used by this threat actor and inform better defenses to protect against future attacks.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Flax Typhoon",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Microsoft",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "China",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Taiwan",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Taiwanese organizations",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Operating system built-in tools",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/Tool"
+    },
+    {
+      "name": "Normally benign software",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Flax Typhoon",
+      "relation": "has country affiliation",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "China"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Taiwanese organizations"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Operating system built-in tools"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Normally benign software"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "discovered",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Flax Typhoon"
+    },
+    {
+      "subject": "Taiwanese organizations",
+      "relation": "located-at",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Taiwan"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "threat actor type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "nation-state"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "objective",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DatatypeProperty",
+      "object": "espionage"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "characteristic",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/description",
+      "property_type": "DatatypeProperty",
+      "object": "minimal use of malware; relying on built-in OS tools"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "file": "an-in-depth-look-at-cuba-ransomware.json",
+  "text": "Cuba ransomware first appeared in 2019 but remained relatively unnoticed until November 2021, when they reportedly targeted a minimum of 49 organizations across various sectors. The sectors included government, healthcare, information technology, manufacturing, and finance. During this time, Cuba ransomware operators were infiltrating networks by encrypting files using the '.cuba' extension. Over the years, the ransom demands from Cuba totals at least $145 million, and the group has successfully collected at least $60 million in ransom payments. By 2022, the threat actors had expanded their tactics, techniques, and procedures (TTPs), leading security researchers to suggest a potential connection between Cuba ransomware actors, RomCom Remote Access Trojan (RAT) actors, and Industrial Spy ransomware actors. This month, Cuba garnered attention when they took responsibility for a cyberattack on The Philadelphia Inquirer.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Cuba ransomware",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Cuba ransomware operators",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Encrypt files with .cuba extension",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "RomCom RAT actors",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Industrial Spy ransomware actors",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "The Philadelphia Inquirer",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "government",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "healthcare",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "information technology",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "manufacturing",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "finance",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Cuba ransomware",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Cuba ransomware",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "property_type": "DatatypeProperty",
+      "object": "2019"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Encrypt files with .cuba extension"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "government"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "healthcare"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "information technology"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "manufacturing"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "finance"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "targeted",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "The Philadelphia Inquirer"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "related-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "RomCom RAT actors"
+    },
+    {
+      "subject": "Cuba ransomware operators",
+      "relation": "related-to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Industrial Spy ransomware actors"
+    }
+  ]
+}

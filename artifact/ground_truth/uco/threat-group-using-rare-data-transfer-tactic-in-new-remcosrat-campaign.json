@@ -1,0 +1,72 @@
+{
+  "file": "threat-group-using-rare-data-transfer-tactic-in-new-remcosrat-campaign.json",
+  "text": "A threat actor known for repeatedly targeting organizations in Ukraine with the RemcosRAT remote surveillance and control tool is back at it again, this time with a new tactic for transferring data without triggering endpoint detection and response systems. The adversary, tracked as UNC-0050, is focused on Ukrainian government entities in its latest campaign. Researchers at Uptycs who spotted it said the attacks may be politically motivated, with the goal of collecting specific intelligence from Ukrainian government agencies. While the possibility of state sponsorship remains speculative, the group's activities pose an undeniable risk, especially to government sectors reliant on Windows systems,",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "UNC-0050",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "RemcosRAT",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Ukraine",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Ukrainian government entities",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Uptycs",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Windows systems",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/OperatingSystem"
+    },
+    {
+      "name": "new data transfer tactic",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "UNC-0050",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "RemcosRAT"
+    },
+    {
+      "subject": "UNC-0050",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "new data transfer tactic"
+    },
+    {
+      "subject": "UNC-0050",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian government entities"
+    },
+    {
+      "subject": "Uptycs",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "UNC-0050"
+    },
+    {
+      "subject": "RemcosRAT",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "remote surveillance and control tool; RAT"
+    }
+  ]
+}

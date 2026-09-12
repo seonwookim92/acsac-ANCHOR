@@ -1,0 +1,173 @@
+{
+  "file": "crambus-middle-east-government.json",
+  "text": "The Iranian Crambus espionage group (aka OilRig, APT34) staged an eight-month-long intrusion against a government in the Middle East between February and September 2023. During the compromise, the attackers stole files and passwords and, in one case, installed a PowerShell backdoor (dubbed PowerExchange) that was used to monitor incoming mails sent from an Exchange Server in order to execute commands sent by the attackers in the form of emails, and surreptitiously forwarded results  to the attackers. Malicious activity occurred on at least 12 computers and there is evidence that the attackers deployed backdoors and keyloggers on dozens more. In addition to deploying malware, the attackers made frequent use of the publicly available network administration tool Plink to configure port-forwarding rules on compromised machines, enabling remote access via the Remote Desktop Protocol (RDP). There is also evidence the attackers modified Windows firewall rules in order to enable remote access.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Crambus",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "OilRig",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "APT34",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Iran",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "Crambus Middle East Government Intrusion 2023",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Middle East Government",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "Middle East",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "PowerExchange",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "PowerShell",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Exchange Server",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Plink",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/Tool"
+    },
+    {
+      "name": "Remote Desktop Protocol (RDP)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/NetworkProtocol"
+    },
+    {
+      "name": "Windows Firewall",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/DefensiveTool"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Crambus",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "OilRig"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "alias",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "APT34"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "has country affiliation",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Iran"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "attributed-to",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "Crambus"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Middle East Government"
+    },
+    {
+      "subject": "Middle East Government",
+      "relation": "located in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Middle East"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "PowerExchange"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "backdoor"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "language",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/tag",
+      "property_type": "DatatypeProperty",
+      "object": "PowerShell"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "monitors",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Exchange Server"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "Plink"
+    },
+    {
+      "subject": "Plink",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "network administration tool"
+    },
+    {
+      "subject": "Plink",
+      "relation": "enables",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Remote Desktop Protocol (RDP)"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "modifies",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Windows Firewall"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "first seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2023-02"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "last seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/endTime",
+      "property_type": "DatatypeProperty",
+      "object": "2023-09"
+    }
+  ]
+}

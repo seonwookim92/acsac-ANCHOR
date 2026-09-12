@@ -1,0 +1,192 @@
+{
+  "file": "sea-turtle-cyber-espionage-campaign.json",
+  "text": "Sea Turtle, also known by the names Cosmic Wolf, Marbled Dust (formerly Silicon), Teal Kurma, and UNC1326, was first documented by Cisco Talos in April 2019, detailing state-sponsored attacks targeting public and private entities in the Middle East and North Africa. Activities associated with the group are believed to have been ongoing since January 2017, primarily leveraging DNS hijacking to redirect prospective targets attempting to query a specific domain to an actor-controlled server capable of harvesting their credentials. Then last month, the adversary was revealed to be using a simple reverse TCP shell for Linux (and Unix) systems called SnappyTCP in attacks carried out between 2021 and 2023, according to the PricewaterhouseCoopers (PwC) Threat Intelligence team. The web shell is a simple reverse TCP shell for Linux/Unix that has basic [command-and-control] capabilities, and is also likely used for establishing persistence",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Sea Turtle",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Cosmic Wolf",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Marbled Dust",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Silicon",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Teal Kurma",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "UNC1326",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "DNS hijacking",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "SnappyTCP",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Actor-controlled server",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Public and Private Entities",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Middle East",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "North Africa",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Linux",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Unix",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Cisco Talos",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "PwC Threat Intelligence team",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Sea Turtle",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Cosmic Wolf"
+    },
+    {
+      "subject": "Sea Turtle",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Marbled Dust"
+    },
+    {
+      "subject": "Sea Turtle",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Silicon"
+    },
+    {
+      "subject": "Sea Turtle",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Teal Kurma"
+    },
+    {
+      "subject": "Sea Turtle",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "UNC1326"
+    },
+    {
+      "subject": "Sea Turtle",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "DNS hijacking"
+    },
+    {
+      "subject": "Sea Turtle",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "SnappyTCP"
+    },
+    {
+      "subject": "Sea Turtle",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Public and Private Entities"
+    },
+    {
+      "subject": "Public and Private Entities",
+      "relation": "located-at",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Middle East"
+    },
+    {
+      "subject": "Public and Private Entities",
+      "relation": "located-at",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "North Africa"
+    },
+    {
+      "subject": "DNS hijacking",
+      "relation": "redirects to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Actor-controlled server"
+    },
+    {
+      "subject": "SnappyTCP",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "Linux"
+    },
+    {
+      "subject": "SnappyTCP",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "Unix"
+    },
+    {
+      "subject": "SnappyTCP",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "reverse TCP shell for Linux/Unix"
+    },
+    {
+      "subject": "Cisco Talos",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "Sea Turtle"
+    },
+    {
+      "subject": "PwC Threat Intelligence team",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "SnappyTCP"
+    },
+    {
+      "subject": "Sea Turtle",
+      "relation": "first seen",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "ObjectProperty",
+      "object": "2017-01"
+    }
+  ]
+}

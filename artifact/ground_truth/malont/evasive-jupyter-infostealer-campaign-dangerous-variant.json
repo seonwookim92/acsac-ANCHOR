@@ -1,0 +1,178 @@
+{
+  "file": "evasive-jupyter-infostealer-campaign-dangerous-variant.json",
+  "text": "Security researchers have spotted a recent increase in attacks involving a sophisticated new variant of Jupyter, an information stealer that has been targeting users of Chrome, Edge, and Firefox browsers since at least 2020. The malware, also referred to as Yellow Cockatoo, Solarmarker, and Polazert, can backdoor machines and harvest a variety of credential information, including computer name, the user's admin privileges, cookies, Web data, browser password manager information, and other sensitive data from victim systems - such as logins for crypto-wallets and remote access apps. Researchers from VMware's Carbon Black managed detection and response (MDR) service recently observed the new version of the malware leveraging PowerShell command modifications and legitimate-looking, digitally signed payloads, infecting a steadily rising number of systems since late October. Morphisec and BlackBerry — two other vendors that have previously tracked Jupyter — have identified the malware as capable of functioning as a full-fledged backdoor. They have described its capabilities as including support for command and control (C2) communications, acting as a dropper and loader for other malware, hollowing shell code to evade detection, and executing PowerShell scripts and commands. BlackBerry has reported observing Jupyter also targeting crypto-wallets, such as Ethereum Wallet, MyMonero Wallet, and Atomic Wallet, in addition to accessing OpenVPN, Remote Desktop Protocol, and other remote access applications.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Jupyter",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Yellow Cockatoo",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Solarmarker",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Polazert",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Chrome",
+      "class": "http://idea.rpi.edu/malont#Browser"
+    },
+    {
+      "name": "Edge",
+      "class": "http://idea.rpi.edu/malont#Browser"
+    },
+    {
+      "name": "Firefox",
+      "class": "http://idea.rpi.edu/malont#Browser"
+    },
+    {
+      "name": "PowerShell",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "VMware Carbon Black",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Morphisec",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "BlackBerry",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Ethereum Wallet",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "MyMonero Wallet",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Atomic Wallet",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "OpenVPN",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Remote Desktop Protocol (RDP)",
+      "class": "http://idea.rpi.edu/malont#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Jupyter",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Yellow Cockatoo"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Solarmarker"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Polazert"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "information-stealer, backdoor"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Edge"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Firefox"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ethereum Wallet"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "MyMonero Wallet"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Atomic Wallet"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "OpenVPN"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Remote Desktop Protocol (RDP)"
+    },
+    {
+      "subject": "Jupyter",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "PowerShell"
+    },
+    {
+      "subject": "VMware Carbon Black",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Jupyter"
+    },
+    {
+      "subject": "BlackBerry",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Jupyter"
+    }
+  ]
+}

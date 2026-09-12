@@ -1,0 +1,112 @@
+{
+  "file": "reservation-links-prey-on-travelers.json",
+  "text": "A longtime threat group identified as TA558 has ramped up efforts to target the travel and hospitality industries. After a lull in activity, believed tied to COVID-related travel restrictions, the threat group has ramped up campaigns to exploit an uptick in travel and related airline and hotel bookings. Warnings come from security researchers who say TA558 cybercriminals have revamped their 2018 campaigns with fake reservation emails that contain links – that if clicked – deliver a malicious malware payload containing a potpourri of malware variants. What makes this most recent campaign unique, according to a report by Proofpoint, is the use of RAR and ISO file attachments linked to messages. ISO and RAR are single compressed files, that if executed, decompress the file and folder data inside of them.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "TA558",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "TA558 Reservation Email Campaign",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Travel Sector Organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Hospitality Sector Organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Fake Reservation Email Phishing",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Malicious Reservation Link",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#URL"
+    },
+    {
+      "name": "RAR Attachment",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#File"
+    },
+    {
+      "name": "ISO Attachment",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#File"
+    },
+    {
+      "name": "potpourri of malware variants",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Proofpoint",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "TA558",
+      "relation": "has",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "TA558 Reservation Email Campaign"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Travel Sector Organizations"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Hospitality Sector Organizations"
+    },
+    {
+      "subject": "TA558 Reservation Email Campaign",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Fake Reservation Email Phishing"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has link",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Malicious Reservation Link"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has attachment",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "RAR Attachment"
+    },
+    {
+      "subject": "Fake Reservation Email Phishing",
+      "relation": "has attachment",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "ISO Attachment"
+    },
+    {
+      "subject": "Malicious Reservation Link",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "potpourri of malware variants"
+    },
+    {
+      "subject": "Proofpoint",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "TA558 Reservation Email Campaign"
+    }
+  ]
+}

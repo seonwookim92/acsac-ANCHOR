@@ -1,0 +1,173 @@
+{
+  "file": "crambus-middle-east-government.json",
+  "text": "The Iranian Crambus espionage group (aka OilRig, APT34) staged an eight-month-long intrusion against a government in the Middle East between February and September 2023. During the compromise, the attackers stole files and passwords and, in one case, installed a PowerShell backdoor (dubbed PowerExchange) that was used to monitor incoming mails sent from an Exchange Server in order to execute commands sent by the attackers in the form of emails, and surreptitiously forwarded results  to the attackers. Malicious activity occurred on at least 12 computers and there is evidence that the attackers deployed backdoors and keyloggers on dozens more. In addition to deploying malware, the attackers made frequent use of the publicly available network administration tool Plink to configure port-forwarding rules on compromised machines, enabling remote access via the Remote Desktop Protocol (RDP). There is also evidence the attackers modified Windows firewall rules in order to enable remote access.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Crambus",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "OilRig",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "APT34",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Iran",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Crambus Middle East Government Intrusion 2023",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Middle East Government",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Middle East",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "PowerExchange",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "PowerShell",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Exchange Server",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Plink",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Remote Desktop Protocol (RDP)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Windows Firewall",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Crambus",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "DatatypeProperty",
+      "object": "OilRig"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "DatatypeProperty",
+      "object": "APT34"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "has country affiliation",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Iran"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Crambus"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Middle East Government"
+    },
+    {
+      "subject": "Middle East Government",
+      "relation": "located in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Middle East"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "PowerExchange"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "DatatypeProperty",
+      "object": "backdoor"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "language",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#implementation_languages",
+      "property_type": "DatatypeProperty",
+      "object": "PowerShell"
+    },
+    {
+      "subject": "PowerExchange",
+      "relation": "monitors",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Exchange Server"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Plink"
+    },
+    {
+      "subject": "Plink",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#tool_types",
+      "property_type": "DatatypeProperty",
+      "object": "network administration tool"
+    },
+    {
+      "subject": "Plink",
+      "relation": "enables",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Remote Desktop Protocol (RDP)"
+    },
+    {
+      "subject": "Crambus",
+      "relation": "modifies",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Windows Firewall"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "first seen",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "DatatypeProperty",
+      "object": "2023-02"
+    },
+    {
+      "subject": "Crambus Middle East Government Intrusion 2023",
+      "relation": "last seen",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#last_seen",
+      "property_type": "DatatypeProperty",
+      "object": "2023-09"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "file": "peer-to-peer-worm-p2pinfect.json",
+  "text": "On July 11, 2023, Unit 42 cloud researchers discovered a new peer-to-peer (P2P) worm we call P2PInfect. Written in Rust, a highly scalable and cloud-friendly programming language, this worm is capable of cross-platform infections and targets Redis, a popular open-source database application that is heavily used within cloud environments. Redis instances can be run on both Linux and Windows operating systems. Unit 42 researchers have identified over 307,000 unique Redis systems communicating publicly over the last two weeks, of which 934 may be vulnerable to this P2P worm variant. While not all of the 307,000 Redis instances will be vulnerable, the worm will still target these systems and attempt the compromise. The P2PInfect worm infects vulnerable Redis instances by exploiting the Lua sandbox escape vulnerability, CVE-2022-0543. While the vulnerability was disclosed in 2022, its scope is not fully known at this point. However, it is rated in the NIST National Vulnerability Database with a Critical CVSS score of 10.0. Additionally, the fact that P2PInfect exploits Redis servers running on both Linux and Windows operating systems makes it more scalable and potent than other worms. The P2P worm observed by Unit 42 researchers serves as an example of a serious attack threat actors could conduct using this vulnerability.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "P2PInfect",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Unit 42",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Rust",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Redis",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Linux",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Windows",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2022-0543",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "NIST National Vulnerability Database",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Discovery of P2PInfect",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Worm infection activity",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "P2PInfect",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "worm"
+    },
+    {
+      "subject": "P2PInfect",
+      "relation": "written in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#implementation_languages",
+      "property_type": "ObjectProperty",
+      "object": "Rust"
+    },
+    {
+      "subject": "P2PInfect",
+      "relation": "tag",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#labels",
+      "property_type": "ObjectProperty",
+      "object": "peer-to-peer"
+    },
+    {
+      "subject": "P2PInfect",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Redis"
+    },
+    {
+      "subject": "P2PInfect",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-0543"
+    },
+    {
+      "subject": "Redis",
+      "relation": "runs on",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Linux"
+    },
+    {
+      "subject": "Redis",
+      "relation": "runs on",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "CVE-2022-0543",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Redis"
+    },
+    {
+      "subject": "NIST National Vulnerability Database",
+      "relation": "rated",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-0543"
+    },
+    {
+      "subject": "CVE-2022-0543",
+      "relation": "cvss score",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#characterizes",
+      "property_type": "ObjectProperty",
+      "object": "10.0"
+    },
+    {
+      "subject": "Discovery of P2PInfect",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Unit 42"
+    },
+    {
+      "subject": "Discovery of P2PInfect",
+      "relation": "start time",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "ObjectProperty",
+      "object": "2023-07-11"
+    },
+    {
+      "subject": "Discovery of P2PInfect",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "P2PInfect"
+    },
+    {
+      "subject": "Worm infection activity",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "P2PInfect"
+    },
+    {
+      "subject": "Worm infection activity",
+      "relation": "used instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-0543"
+    },
+    {
+      "subject": "Worm infection activity",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Redis"
+    }
+  ]
+}

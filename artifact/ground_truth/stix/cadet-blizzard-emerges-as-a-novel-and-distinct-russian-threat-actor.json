@@ -1,0 +1,137 @@
+{
+  "file": "cadet-blizzard-emerges-as-a-novel-and-distinct-russian-threat-actor.json",
+  "text": "Today, Microsoft Threat Intelligence is sharing updated details about techniques of a threat actor formerly tracked as DEV-0586—a distinct Russian state-sponsored threat actor that has now been elevated to the name Cadet Blizzard. Microsoft assesses that Cadet Blizzard operations are associated with the Russian General Staff Main Intelligence Directorate (GRU) but are separate from other known and more established GRU-affiliated groups such as Forest Blizzard (STRONTIUM) and Seashell Blizzard (IRIDIUM). While Microsoft constantly tracks a number of activity groups with varying degrees of Russian government affiliation, the emergence of a novel GRU affiliated actor, particularly one which has conducted destructive cyber operations likely supporting broader military objectives in Ukraine, is a notable development in the Russian cyber threat landscape. A month before Russia invaded Ukraine, Cadet Blizzard foreshadowed future destructive activity when it created and deployed WhisperGate, a destructive capability that wipes Master Boot Records (MBRs), against Ukrainian government organizations. Cadet Blizzard is also linked to the defacements of several Ukrainian organization websites, as well as multiple operations, including the hack-and-leak forum known as “Free Civilian”.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Cadet Blizzard",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Microsoft Threat Intelligence",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Russian General Staff Main Intelligence Directorate (GRU)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Forest Blizzard",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Seashell Blizzard",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Russia",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Ukraine",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "WhisperGate",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Ukrainian government organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Website Defacement",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Free Civilian",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "DatatypeProperty",
+      "object": "DEV-0586"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Russian General Staff Main Intelligence Directorate (GRU)"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "origin",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "WhisperGate"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian government organizations"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Website Defacement"
+    },
+    {
+      "subject": "Cadet Blizzard",
+      "relation": "associated with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Free Civilian"
+    },
+    {
+      "subject": "WhisperGate",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "DatatypeProperty",
+      "object": "destructive malware"
+    },
+    {
+      "subject": "WhisperGate",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian government organizations"
+    },
+    {
+      "subject": "Forest Blizzard",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "DatatypeProperty",
+      "object": "STRONTIUM"
+    },
+    {
+      "subject": "Seashell Blizzard",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "DatatypeProperty",
+      "object": "IRIDIUM"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence",
+      "relation": "investigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Cadet Blizzard"
+    }
+  ]
+}

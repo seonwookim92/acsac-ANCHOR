@@ -1,0 +1,121 @@
+{
+  "file": "social-engineering-attacks-lure-indian-users-to-install-android-banking-trojans.json",
+  "text": "We discovered a recent WhatsApp phishing campaign through our telemetry that led to banking trojan activity. In this campaign, the attacker shares a malicious APK file through WhatsApp with a message asking users to enter sensitive information in the app. The widely circulated fake banking message states “Your [redacted] BANK Account will be Blocked Today please update your PANCARD immediately open [redacted]-Bank.apk for update your PANCARD. Thank You.” and includes a APK file named [redacted]-BANK[.]apk. Upon investigation, we discovered that the APK file was malicious and interacting with it installs a fraudulent application on the victim device. The installed app impersonates a legitimate bank located in India and disguises itself as the bank's official Know Your Customer (KYC) application to trick users into submitting their sensitive information, despite this particular banking organization not being affiliated with an official KYC-related app. This information is then sent to a command and control (C2) server, as well as to the attacker's hard-coded phone number used in SMS functionality.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "WhatsApp phishing campaign",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Unknown threat actor",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "WhatsApp phishing delivery",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Malicious bank APK file",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Fraudulent banking trojan app",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Impersonated Indian bank",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "India",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Command and control server",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Know Your Customer (KYC)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "WhatsApp",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Fake banking message",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Targeted users",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Victim device",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Sensitive information",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Unknown threat actor",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "WhatsApp phishing delivery"
+    },
+    {
+      "subject": "WhatsApp phishing campaign",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "WhatsApp phishing delivery"
+    },
+    {
+      "subject": "WhatsApp phishing delivery",
+      "relation": "has",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Malicious bank APK file"
+    },
+    {
+      "subject": "Malicious bank APK file",
+      "relation": "indicates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#indicates",
+      "property_type": "ObjectProperty",
+      "object": "Fraudulent banking trojan app"
+    },
+    {
+      "subject": "Fraudulent banking trojan app",
+      "relation": "communicates with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#communicates-with",
+      "property_type": "ObjectProperty",
+      "object": "Command and control server"
+    },
+    {
+      "subject": "Fraudulent banking trojan app",
+      "relation": "impersonates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#impersonates",
+      "property_type": "ObjectProperty",
+      "object": "Impersonated Indian bank"
+    },
+    {
+      "subject": "Fraudulent banking trojan app",
+      "relation": "disguises as",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#impersonates",
+      "property_type": "ObjectProperty",
+      "object": "Know Your Customer (KYC)"
+    },
+    {
+      "subject": "Impersonated Indian bank",
+      "relation": "located in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "India"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "file": "ryuk-2020-distributing-ransomware-via-trickbot-and-bazarloader.json",
+  "text": "Starting this year, Ryuk began using another dropper called BazarLoader (also known as BazarBackdoor). Like Trickbot, BazarLoader is also primarily distributed via phishing emails that contain either malicious attachments or links to websites (typically free, online file-hosting solutions) that host malware. These phishing emails use normal social engineering techniques: For example, they are usually disguised as business correspondence or other important messages. Once the payload is distributed, a command-and-control (C&C) server is used to deploy and install the backdoor. According to the advisory, the threat actor behind TrickBot is also connected to BazarLoader.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Ryuk",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "BazarLoader",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "BazarBackdoor",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Trickbot",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Threat Actor behind TrickBot",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "phishing emails",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Malicious attachment",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "Malware-hosting link",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#URL"
+    },
+    {
+      "name": "Free online file-hosting website",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "command-and-control (C&C) server",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Ryuk",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    },
+    {
+      "subject": "BazarLoader",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "BazarBackdoor"
+    },
+    {
+      "subject": "BazarLoader",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "dropper"
+    },
+    {
+      "subject": "phishing emails",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    },
+    {
+      "subject": "phishing emails",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Trickbot"
+    },
+    {
+      "subject": "phishing emails",
+      "relation": "contains",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Malicious attachment"
+    },
+    {
+      "subject": "phishing emails",
+      "relation": "contains",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Malware-hosting link"
+    },
+    {
+      "subject": "Malware-hosting link",
+      "relation": "points to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Free online file-hosting website"
+    },
+    {
+      "subject": "Free online file-hosting website",
+      "relation": "hosts",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#hosts",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    },
+    {
+      "subject": "Threat Actor behind TrickBot",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Trickbot"
+    },
+    {
+      "subject": "Threat Actor behind TrickBot",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    }
+  ]
+}

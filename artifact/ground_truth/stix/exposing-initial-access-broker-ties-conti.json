@@ -1,0 +1,134 @@
+{
+  "file": "exposing-initial-access-broker-ties-conti.json",
+  "text": "In early September 2021, Threat Analysis Group (TAG) observed a financially motivated threat actor we refer to as EXOTIC LILY, exploiting a 0day in Microsoft MSHTML (CVE-2021-40444). Investigating this group's activity, we determined they are an Initial Access Broker (IAB) who appear to be working with the Russian cyber crime gang known as FIN12 (Mandiant, FireEye) / WIZARD SPIDER (CrowdStrike). Initial access brokers are the opportunistic locksmiths of the security world, and it’s a full-time job. These groups specialize in breaching a target in order to open the doors-or the Windows-to the malicious actor with the highest bid. EXOTIC LILY is a resourceful, financially motivated group whose activities appear to be closely linked with data exfiltration and deployment of human-operated ransomware such as Conti and Diavol. At the peak of EXOTIC LILY’s activity, we estimate they were sending more than 5,000 emails a day, to as many as 650 targeted organizations globally. Up until November 2021, the group seemed to be targeting specific industries such as IT, cybersecurity and healthcare, but as of late we have seen them attacking a wide variety of organizations and industries, with less specific focus.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Threat Analysis Group (TAG)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "EXOTIC LILY",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Microsoft MSHTML",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2021-40444",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Initial Access Broker (IAB)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "FIN12",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "WIZARD SPIDER",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Conti",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Diavol",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "IT industry",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Cybersecurity industry",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Healthcare industry",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Threat Analysis Group (TAG)",
+      "relation": "observed",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "EXOTIC LILY"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-40444"
+    },
+    {
+      "subject": "CVE-2021-40444",
+      "relation": "exists in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft MSHTML"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "is a",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#characterizes",
+      "property_type": "ObjectProperty",
+      "object": "Initial Access Broker (IAB)"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "works with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "FIN12"
+    },
+    {
+      "subject": "FIN12",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "WIZARD SPIDER"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "facilitates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Conti"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "facilitates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Diavol"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "IT industry"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Cybersecurity industry"
+    },
+    {
+      "subject": "EXOTIC LILY",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Healthcare industry"
+    }
+  ]
+}

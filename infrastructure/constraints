@@ -1,0 +1,43 @@
+ANCHOR is not evaluated on public research infrastructure (CloudLab, Chameleon,
+SPHERE, FABRIC, Google Colab) for the paper's reference configuration, for one
+reason: the reported measurements were produced with a locally served
+open-weights model, Qwen/Qwen3.5-35B-A3B-FP8, on an ASUS Ascent GX10 built
+around the NVIDIA GB10 Grace Blackwell Superchip with 128 GB of coherent
+unified memory. Paper Challenge 3 is specifically about privacy-preserving CTI
+analysis with a LOCAL LLM, so the reference configuration is deliberately a
+self-hosted endpoint rather than a hosted API. Model weights, GPU hardware, and
+a running vLLM service are not redistributable as part of this artifact.
+
+This constraint does NOT block artifact evaluation. ANCHOR resolves its chat
+model at runtime from LLM_PROVIDER (artifact/src/utils/llm.py), and all three
+providers drive the identical pipeline:
+
+  1. LLM_PROVIDER=openai     A hosted OpenAI-compatible API. No GPU required.
+  2. LLM_PROVIDER=anthropic  The Anthropic Messages API. No GPU required.
+  3. LLM_PROVIDER=vllm       Any OpenAI-compatible server, including a small
+                             model on a modest GPU, a Colab-hosted vLLM, or the
+                             authors' reference deployment.
+
+Options 1 and 2 run entirely from a commodity client with no accelerator, so a
+reviewer with no GPU allocation can still execute every claim in claims/. The
+claims in this package assert that the pipeline runs end to end and emits a
+structurally valid ontology-aligned graph; they do not assert the numerical
+values in the paper's evaluation tables, and the Results Reproduced badge is not
+requested. Substituting a model therefore does not invalidate any claim made
+here: it changes the extracted content, not the structural validity that
+claims/claim1 and claims/claim2 verify.
+
+claims/claim3 is fully deterministic and needs no endpoint of any kind.
+
+One requirement does carry over to whichever endpoint is used: the model must
+support multi-step tool calling. ANCHOR's hybrid ontology discovery is an LLM
+agent driving the ontology MCP server through dependent tool calls, so a model
+weak at tool calling completes a run and emits a poor or empty graph regardless
+of the code. That is a property of the chosen model rather than a defect in the
+artifact; artifact/scripts/check_endpoint.py probes it before every claim run and
+warns when the model fails, and claim3 isolates package integrity from model
+capability.
+
+Hardware detail, including the distinction between the 128 GB reference
+configuration and the 64 GB minimum for self-hosting the reference model, is in
+HARDWARE_REQUIREMENTS.md. Reference server setup is in VLLM_SETUP.md.

@@ -1,0 +1,171 @@
+{
+  "file": "in-depth-look-at-yanluowang-ransomware.json",
+  "text": "United States organizations within the financial sector are currently being attacked by a recently discovered ransomware operation named, Yanluowang. The ransomware operation is highly experienced with ransomware-as-a-service (RaaS) and could be linked to veteran RaaS groups, Fivehands and Thieflock. Although the group is primarily focused on attacking organizations within the financial sector, they have also targeted companies in manufacturing, IT services, consultancy, and engineering. Let's take a look at Yanluowang's techniques, tactics, and how they may be connected to Fivehands and Thieflock. In October 2021, Symantec's Threat Hunter Team, a division of Broadcom Software, discovered that Yanluowang ransomware was actively being used by a threat actor who was seen attacking U.S. corporations since at least August 2021. What was interesting about the attack was that many of the tools, tactics, and procedures (TTPs) used were previously used by ransomware threat actor, Thieflock. Most analysts assumed that the threat actor using Yanluowang must be an affiliate of Thieflock who shifted allegiances. Although Yanluowang attempted to attack a large organization in October 2021 by deploying ransomware, they were not successful due to the ransomware being somewhat underdeveloped. According to Symantec, their Threat Hunter Team initially discovered the use of AdFind, a legitimate command-line Active Directory query tool, on the undisclosed target's network. Ransomware attackers often use AdFind as a reconnaissance tool. The tool also equipped attackers with resources that they needed for lateral movement by way of Active Directory. Days after discovering the suspicious use of AdFind, attackers attempted to deploy Yanluowang ransomware.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Yanluowang",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Unknown Threat Actor Using Yanluowang",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Yanluowang 2021 campaign",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Fivehands",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Thieflock",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "AdFind",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Active Directory",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Broadcom Software",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "United States",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "United States Financial Sector Organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Manufacturing sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "IT services sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Ransomware-as-a-Service (RaaS)",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "Reconnaissance",
+      "class": "http://idea.rpi.edu/malont#Reconnaissance"
+    },
+    {
+      "name": "Lateral movement",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "part of",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Broadcom Software"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Unknown Threat Actor Using Yanluowang"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "attributed-to",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "Unknown Threat Actor Using Yanluowang"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "2021-08"
+    },
+    {
+      "subject": "Yanluowang 2021 campaign",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "United States Financial Sector Organizations"
+    },
+    {
+      "subject": "Unknown Threat Actor Using Yanluowang",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Yanluowang"
+    },
+    {
+      "subject": "Unknown Threat Actor Using Yanluowang",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "AdFind"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "linked to",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "Fivehands"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "linked to",
+      "property": "http://idea.rpi.edu/malont#hasAuthor",
+      "property_type": "ObjectProperty",
+      "object": "Thieflock"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "ransomware"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Ransomware-as-a-Service (RaaS)"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Reconnaissance"
+    },
+    {
+      "subject": "Yanluowang",
+      "relation": "uses modus operandi",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Lateral movement"
+    },
+    {
+      "subject": "AdFind",
+      "relation": "interacts with",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": "ObjectProperty",
+      "object": "Active Directory"
+    }
+  ]
+}

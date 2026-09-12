@@ -1,0 +1,68 @@
+{
+  "file": "fortra-warns-of-new-critical-goanywhere-mft-auth-bypass-patch-now.json",
+  "text": "In early 2023, it was revealed that the Clop ransomware gang had breached 130 companies and organizations by leveraging a critical remote code execution flaw in GoAnywhere MFT. The flaw is tracked as CVE-2023-0669 and had been exploited as a zero-day vulnerability since January 18, 2023. Fortra discovered its exploitation on February 3, 2023, and released patches three days later. Unfortunately, the damage had already been done, with Clop conducting widespread data theft attacks that impacted organizations worldwide, causing data leaks, reputational damage, and operational disruptions. Some notable victims of those attacks include Crown Resorts, CHS, Hatch Bank, Rubrik, the City of Toronto, Hitachi Energy, Procter & Gamble, and Saks Fifth Avenue.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Clop",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "GoAnywhere MFT",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2023-0669",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Fortra",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Crown Resorts",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Procter & Gamble",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Clop",
+      "relation": "exploits",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-0669"
+    },
+    {
+      "subject": "CVE-2023-0669",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "GoAnywhere MFT"
+    },
+    {
+      "subject": "Clop",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Crown Resorts"
+    },
+    {
+      "subject": "Clop",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Procter & Gamble"
+    },
+    {
+      "subject": "Fortra",
+      "relation": "mitigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-0669"
+    }
+  ]
+}

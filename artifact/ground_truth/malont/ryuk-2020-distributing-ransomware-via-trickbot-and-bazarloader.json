@@ -1,0 +1,126 @@
+{
+  "file": "ryuk-2020-distributing-ransomware-via-trickbot-and-bazarloader.json",
+  "text": "Starting this year, Ryuk began using another dropper called BazarLoader (also known as BazarBackdoor). Like Trickbot, BazarLoader is also primarily distributed via phishing emails that contain either malicious attachments or links to websites (typically free, online file-hosting solutions) that host malware. These phishing emails use normal social engineering techniques: For example, they are usually disguised as business correspondence or other important messages. Once the payload is distributed, a command-and-control (C&C) server is used to deploy and install the backdoor. According to the advisory, the threat actor behind TrickBot is also connected to BazarLoader.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Ryuk",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "BazarLoader",
+      "class": "http://idea.rpi.edu/malont#Dropper"
+    },
+    {
+      "name": "BazarBackdoor",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Trickbot",
+      "class": "http://idea.rpi.edu/malont#Trojan"
+    },
+    {
+      "name": "Threat Actor behind TrickBot",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "phishing emails",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Malicious attachment",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "Malware-hosting link",
+      "class": "http://idea.rpi.edu/malont#URL"
+    },
+    {
+      "name": "Free online file-hosting website",
+      "class": "http://idea.rpi.edu/malont#HostingMalware"
+    },
+    {
+      "name": "command-and-control (C&C) server",
+      "class": "http://idea.rpi.edu/malont#CommandAndControl"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Ryuk",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    },
+    {
+      "subject": "BazarLoader",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "BazarBackdoor"
+    },
+    {
+      "subject": "BazarLoader",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "dropper"
+    },
+    {
+      "subject": "phishing emails",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "BazarLoader"
+    },
+    {
+      "subject": "phishing emails",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Trickbot"
+    },
+    {
+      "subject": "Phishing emails",
+      "relation": "contains",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Malicious attachment"
+    },
+    {
+      "subject": "Phishing emails",
+      "relation": "contains",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Malware-hosting link"
+    },
+    {
+      "subject": "Malware-hosting link",
+      "relation": "points to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Free online file-hosting website"
+    },
+    {
+      "subject": "Free online file-hosting website",
+      "relation": "hosts",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    },
+    {
+      "subject": "Threat Actor behind TrickBot",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Trickbot"
+    },
+    {
+      "subject": "Threat Actor behind TrickBot",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "BazarLoader"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "file": "spectralblur-new-macos-backdoor-threat.json",
+  "text": "Cybersecurity researchers have discovered a new Apple macOS backdoor called SpectralBlur that overlaps with a known malware family that has been attributed to North Korean threat actors. SpectralBlur is a moderately capable backdoor that can upload/download files, run a shell, update its configuration, delete files, hibernate, or sleep, based on commands issued from the command-and-control server. The malware shares similarities with KANDYKORN (aka SockRacket), an advanced implant that functions as a remote access trojan capable of taking control of a compromised host. It's worth noting that the KANDYKORN activity also intersects with another campaign orchestrated by the Lazarus sub-group known as BlueNoroff (aka TA444) which culminates in the deployment of a backdoor referred to as RustBucket and a late-stage payload dubbed ObjCShellz. In recent months, the threat actor has been observed combining disparate pieces of these two infection chains, leveraging RustBucket droppers to deliver KANDYKORN. The latest findings are another sign that North Korean threat actors are increasingly setting their sights on macOS to infiltrate high-value targets, particularly those within the cryptocurrency and the blockchain industries.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "SpectralBlur",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "KANDYKORN",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "SockRacket",
+      "class": "http://idea.rpi.edu/malont#RemoteAccessTrojan-RAT"
+    },
+    {
+      "name": "RustBucket",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "ObjCShellz",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "command-and-control server",
+      "class": "http://idea.rpi.edu/malont#CommandAndControl"
+    },
+    {
+      "name": "macOS",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "BlueNoroff",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "TA444",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Lazarus",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "North Korean threat actors",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "cryptocurrency industry",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "blockchain industry",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "SpectralBlur",
+      "relation": "communicates with",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": "ObjectProperty",
+      "object": "command-and-control server"
+    },
+    {
+      "subject": "SpectralBlur",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "macOS"
+    },
+    {
+      "subject": "SpectralBlur",
+      "relation": "overlaps with",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "KANDYKORN"
+    },
+    {
+      "subject": "SpectralBlur",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "backdoor"
+    },
+    {
+      "subject": "KANDYKORN",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "SockRacket"
+    },
+    {
+      "subject": "KANDYKORN",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "remote-access-trojan"
+    },
+    {
+      "subject": "North Korean threat actors",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "KANDYKORN"
+    },
+    {
+      "subject": "BlueNoroff",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "TA444"
+    },
+    {
+      "subject": "BlueNoroff",
+      "relation": "belongs to",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Lazarus"
+    },
+    {
+      "subject": "BlueNoroff",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "RustBucket"
+    },
+    {
+      "subject": "BlueNoroff",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "ObjCShellz"
+    },
+    {
+      "subject": "RustBucket",
+      "relation": "delivers",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "KANDYKORN"
+    },
+    {
+      "subject": "North Korean threat actors",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "cryptocurrency industry"
+    },
+    {
+      "subject": "North Korean threat actors",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "blockchain industry"
+    }
+  ]
+}

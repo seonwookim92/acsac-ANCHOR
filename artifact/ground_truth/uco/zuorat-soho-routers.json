@@ -1,0 +1,181 @@
+{
+  "file": "zuorat-soho-routers.json",
+  "text": "A novel multistage remote access trojan (RAT) that’s been active since April 2020 is exploiting known vulnerabilities to target popular SOHO routers from Cisco Systems, Netgear, Asus and others. The malware, dubbed ZuoRAT, can access the local LAN, capture packets being transmitted on the device and stage man-in-the-middle attacks through DNS and HTTPS hijacking, according to researchers from Lumen Technologies’ threat-intelligence arm Black Lotus Labs. The ability to not only hop on a LAN from a SOHO device and then stage further attacks suggests that the RAT may be the work of a state-sponsored actor.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "ZuoRAT",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Known vulnerabilities",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "SOHO routers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+    },
+    {
+      "name": "Cisco SOHO routers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+    },
+    {
+      "name": "Netgear SOHO routers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+    },
+    {
+      "name": "Asus SOHO routers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+    },
+    {
+      "name": "Local LAN",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "packet capture",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "man-in-the-middle attack",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "DNS hijacking",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "HTTPS hijacking",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Black Lotus Labs",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Lumen Technologies",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "Suspected state-sponsored actor",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Action_Exploit",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Action_Exploit",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "ZuoRAT"
+    },
+    {
+      "subject": "Action_Exploit",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Known vulnerabilities"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "SOHO routers"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Cisco SOHO routers"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Netgear SOHO routers"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Asus SOHO routers"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "accesses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Local LAN"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "packet capture"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "man-in-the-middle attack"
+    },
+    {
+      "subject": "man-in-the-middle attack",
+      "relation": "includes",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "DNS hijacking"
+    },
+    {
+      "subject": "man-in-the-middle attack",
+      "relation": "includes",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "HTTPS hijacking"
+    },
+    {
+      "subject": "Black Lotus Labs",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ZuoRAT"
+    },
+    {
+      "subject": "Black Lotus Labs",
+      "relation": "part-of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Lumen Technologies"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "malware type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "remote-access-trojan"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "first seen",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/startTime",
+      "property_type": "DatatypeProperty",
+      "object": "2020-04"
+    },
+    {
+      "subject": "ZuoRAT",
+      "relation": "attributed to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Suspected state-sponsored actor"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "file": "an-in-depth-look-at-quantum-ransomware.json",
+  "text": "Discovered in August 2021, Quantum ransomware is linked to the Quantum Locker operation. Quantum Locker has had a few rebrands (AstroLocker, MountLocker, and XingLocker). Our technology partner, AdvIntel, confirmed that Quantum is a splinter group from Conti and that the ransomware operation was taken over by Conti Team Two in April 2022 - keeping Quantum's original name. In June 2022, Quantum was observed employing their version of BazarCall, called Jormungandr, and hiring people who specialized in OSINT, spamming, design, and call center operations. BazarCall is a method that is also known as call-back phishing. This tactic emerged in early 2021 as an attack vector used by Ryuk ransomware (later evolving into Conti). BazarCall is used to gain initial access into a victim's network and involves emailing victims. The emails allege that a paid subscription is up for automatic renewal, but the renewal can be cancelled if the victim calls a specific number. Once the victim calls the number, the threat actor on the other end of the line convinces the victim via social engineering to start a remote access session by the use of legitimate software controlled by a network intruder. While the victim is distracted on the call, the intruder tries to figure out how to compromise the victim's network without triggering alarms. These kinds of attacks are highly targeted and make it difficult for cyber security professionals to detect due to the social engineering aspect of the attack. AdvIntel believes that the switch to social engineering is more than likely due to the predictability of ransomware attacks, causing profits to decline for adversaries. If threat actors like Quantum are able to trick people, they can have a more flexible approach to their attacks - making them difficult to defend. Quantum's BazarCall campaigns have grown more sophisticated in just two months' time. They've impersonated a large number of brands, including: Gobble, Luchechko Mortgage Team, CrowdStrike, HelloFresh, Oracle, Ginyard International US Equal Opportunity Employment Commission",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Quantum",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Quantum ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Quantum Locker operation",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "AstroLocker",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "MountLocker",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "XingLocker",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Conti",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Conti Team Two",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "BazarCall",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Jormungandr",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Ryuk",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "AdvIntel",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Quantum BazarCall Campaign",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Impersonation of brands",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "CrowdStrike",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "HelloFresh",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Oracle",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Quantum ransomware",
+      "relation": "associated with",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#related-to",
+      "property_type": "ObjectProperty",
+      "object": "Quantum Locker operation"
+    },
+    {
+      "subject": "Quantum",
+      "relation": "splinter from",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#related-to",
+      "property_type": "ObjectProperty",
+      "object": "Conti"
+    },
+    {
+      "subject": "Conti Team Two",
+      "relation": "took over",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Quantum Locker operation"
+    },
+    {
+      "subject": "Quantum",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Quantum ransomware"
+    },
+    {
+      "subject": "Quantum",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "BazarCall"
+    },
+    {
+      "subject": "Quantum BazarCall Campaign",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Quantum"
+    },
+    {
+      "subject": "Quantum BazarCall Campaign",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Jormungandr"
+    },
+    {
+      "subject": "Conti",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "BazarCall"
+    },
+    {
+      "subject": "Ryuk",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "BazarCall"
+    },
+    {
+      "subject": "Quantum ransomware",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "DatatypeProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "Quantum ransomware",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "DatatypeProperty",
+      "object": "AstroLocker, MountLocker, XingLocker"
+    },
+    {
+      "subject": "Impersonation of brands",
+      "relation": "performed by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Quantum Locker operation"
+    },
+    {
+      "subject": "Impersonation of brands",
+      "relation": "targeted object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#impersonates",
+      "property_type": "ObjectProperty",
+      "object": "HelloFresh"
+    },
+    {
+      "subject": "Impersonation of brands",
+      "relation": "targeted object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#impersonates",
+      "property_type": "ObjectProperty",
+      "object": "CrowdStrike"
+    },
+    {
+      "subject": "Impersonation of brands",
+      "relation": "targeted object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#impersonates",
+      "property_type": "ObjectProperty",
+      "object": "Oracle"
+    }
+  ]
+}

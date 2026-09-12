@@ -1,0 +1,185 @@
+{
+  "file": "ransomware-spotlight-lockbit.json",
+  "text": "LockBit uses a ransomware-as-a-service (RaaS) model and consistently conceived new ways to stay ahead of its competitors. Its double extortion methods also adds more pressure to victims, raising the stakes of their campaigns. One of its notable tactics was the creation and use of the malware StealBit, which automates data exfiltration. This tool was seen with the release of LockBit 2.0, which has been touted by its creators for having the fastest and most efficient encryption among its competition. In October 2021, LockBit also expanded to Linux hosts, specifically ESXi servers, in its release of Linux-ESXI Locker version 1.0. This variant is capable of targeting Linux hosts and could have a big impact on targeted organizations. Another side of LockBit's operations is its recruitment of and marketing to affiliates. It has been known to hire network access brokers, cooperate with other criminal groups (such as the now defunct Maze), recruit company insiders, and sponsor underground technical writing contests to recruit talented hackers. Using such tactics, the LockBit group has built itself into one of the most professional organized criminal gangs in the criminal underground.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "LockBit group",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "LockBit ransomware",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "RaaS",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "Double Extortion",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern"
+    },
+    {
+      "name": "StealBit",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Data Exfiltration",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "LockBit 2.0",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Linux-ESXI Locker v1.0",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "Linux hosts",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+    },
+    {
+      "name": "ESXi servers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+    },
+    {
+      "name": "Recruitment and marketing",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Affiliates",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Network Access Brokers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Maze",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    },
+    {
+      "name": "Company insiders",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Person"
+    },
+    {
+      "name": "Talented hackers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Person"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "LockBit group",
+      "relation": "uses ransomware family",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "LockBit ransomware"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "operates as",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "RaaS"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Double Extortion"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "has variant",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "LockBit 2.0"
+    },
+    {
+      "subject": "LockBit 2.0",
+      "relation": "uses",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "StealBit"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "tool type",
+      "property": "https://ontology.unifiedcyberontology.org/uco/tool/toolType",
+      "property_type": "DatatypeProperty",
+      "object": "data exfiltration tool"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "automates data exfiltration",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Data Exfiltration"
+    },
+    {
+      "subject": "StealBit",
+      "relation": "created by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/createdBy",
+      "property_type": "ObjectProperty",
+      "object": "LockBit group"
+    },
+    {
+      "subject": "LockBit ransomware",
+      "relation": "has variant",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Linux-ESXI Locker v1.0"
+    },
+    {
+      "subject": "Linux-ESXI Locker v1.0",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "Linux hosts"
+    },
+    {
+      "subject": "Linux-ESXI Locker v1.0",
+      "relation": "targets",
+      "property": "https://ontology.unifiedcyberontology.org/uco/core/target",
+      "property_type": "ObjectProperty",
+      "object": "ESXi servers"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "performed by",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "ObjectProperty",
+      "object": "LockBit group"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Company insiders"
+    },
+    {
+      "subject": "Recruitment and marketing",
+      "relation": "object",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "Talented hackers"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "hires / works with",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Network Access Brokers"
+    },
+    {
+      "subject": "LockBit group",
+      "relation": "cooperates with",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Maze"
+    }
+  ]
+}

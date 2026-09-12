@@ -1,0 +1,137 @@
+{
+  "file": "budworm-tool-update-telecoms-govt.json",
+  "text": "The Budworm advanced persistent threat (APT) group continues to actively develop its toolset. Most recently, the Threat Hunter Team in Symantec, part of Broadcom, discovered Budworm using an updated version of one of its key tools to target a Middle Eastern telecommunications organization and an Asian government. Both attacks occurred in August 2023. Budworm (aka LuckyMouse, Emissary Panda, APT27) deployed a previously unseen variant of its SysUpdate backdoor (SysUpdate DLL inicore_v2.3.30.dll). SysUpdate is exclusively used by Budworm. As well as its custom malware, Budworm also used a variety of living-off-the-land and publicly available tools in these attacks. It appears the activity by the group may have been stopped early in the attack chain as the only malicious activity seen on infected machines is credential harvesting.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Budworm",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "SysUpdate",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "inicore_v2.3.30.dll",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "Symantec Threat Hunter Team",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Symantec",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Broadcom",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Middle Eastern telecommunications organization",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Asian government",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Living-off-the-land tools",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Publicly available tools",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Credential harvesting",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Budworm",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "LuckyMouse"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Emissary Panda"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "APT27"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "SysUpdate"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "inicore_v2.3.30.dll"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Living-off-the-land tools"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Middle Eastern telecommunications organization"
+    },
+    {
+      "subject": "Budworm",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Asian government"
+    },
+    {
+      "subject": "Symantec",
+      "relation": "part of",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Broadcom"
+    },
+    {
+      "subject": "Symantec Threat Hunter Team",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Budworm"
+    },
+    {
+      "subject": "SysUpdate",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "backdoor"
+    },
+    {
+      "subject": "SysUpdate",
+      "relation": "version",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "2.3.30"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "file": "amd-apple-qualcomm-gpus-leak-ai-data-in-leftoverlocals-attacks.json",
+  "text": "A new vulnerability dubbed 'LeftoverLocals' affecting graphics processing units from AMD, Apple, Qualcomm, and Imagination Technologies allows retrieving data from the local memory space. Tracked as CVE-2023-4969, the security issue enables data recovery from vulnerable GPUs, especially in the context of large language models (LLMs) and machine learning (ML) processes. LeftoverLocals lets attackers launch a 'listener' - a GPU kernel that reads from uninitialized local memory and can dump the data in a persistent location, such as the global memory. If the local memory is not cleared, the attacker can use the listener to read values left behind by the 'writer' - a program that stores values to local memory. The recovered data can reveal sensitive information about the victim's computations, including model inputs, outputs, weights, and intermediate computations.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "LeftoverLocals",
+      "class": "http://idea.rpi.edu/malont#Vulnerability"
+    },
+    {
+      "name": "CVE-2023-4969",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "AMD",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Apple",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Qualcomm",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Imagination Technologies",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Affected graphics processing units",
+      "class": "http://idea.rpi.edu/malont#Hardware"
+    },
+    {
+      "name": "Large language models (LLMs)",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Machine learning (ML) processes",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Read uninitialized GPU local memory via listener kernel",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "listener kernel",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "writer program",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "GPU local memory",
+      "class": "http://idea.rpi.edu/malont#Hardware"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "LeftoverLocals",
+      "relation": "has CVE ID",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2023-4969"
+    },
+    {
+      "subject": "LeftoverLocals",
+      "relation": "affects",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "AMD",
+      "relation": "supplies",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "Apple",
+      "relation": "supplies",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "Qualcomm",
+      "relation": "supplies",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "Imagination Technologies",
+      "relation": "supplies",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "LeftoverLocals",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Large language models (LLMs)"
+    },
+    {
+      "subject": "LeftoverLocals",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Machine learning (ML) processes"
+    },
+    {
+      "subject": "Read uninitialized GPU local memory via listener kernel",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "LeftoverLocals"
+    },
+    {
+      "subject": "Read uninitialized GPU local memory via listener kernel",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Affected graphics processing units"
+    },
+    {
+      "subject": "listener kernel",
+      "relation": "reads from",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "GPU local memory"
+    },
+    {
+      "subject": "writer program",
+      "relation": "writes to",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "GPU local memory"
+    }
+  ]
+}

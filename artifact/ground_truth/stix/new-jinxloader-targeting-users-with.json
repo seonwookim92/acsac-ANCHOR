@@ -1,0 +1,142 @@
+{
+  "file": "new-jinxloader-targeting-users-with.json",
+  "text": "A new Go-based malware loader called JinxLoader is being used by threat actors to deliver next-stage payloads such as Formbook and its successor XLoader. The malware pays homage to League of Legends character Jinx, featuring the character on its ad poster and [command-and-control] login panel. The attacks begin with phishing emails impersonating Abu Dhabi National Oil Company (ADNOC), urging recipients to open password-protected RAR archive attachments that, upon opening, drop the JinxLoader executable, which subsequently acts as a gateway for Formbook or XLoader. It also comes amid a surge in campaigns distributing DarkGate and PikaBot, along with a threat actor known as TA544 (aka Narwal Spider) leveraging new variants of loader malware called IDAT Loader to deploy Remcos RAT or SystemBC malware. What's more, the threat actors behind the Meduza Stealer have released an updated version of the malware (version 2.2) on the dark web with expanded support for browser-based cryptocurrency wallets and an improved credit card (CC) grabber.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "JinxLoader",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Formbook",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "XLoader",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Phishing",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Abu Dhabi National Oil Company (ADNOC)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "password-protected RAR archive",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Artifact"
+    },
+    {
+      "name": "DarkGate",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "PikaBot",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "TA544",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Narwal Spider",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "IDAT Loader",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Remcos RAT",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "SystemBC",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Meduza Stealer",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "JinxLoader",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "loader"
+    },
+    {
+      "subject": "JinxLoader",
+      "relation": "language",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#implementation_languages",
+      "property_type": "ObjectProperty",
+      "object": "Go"
+    },
+    {
+      "subject": "JinxLoader",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Formbook"
+    },
+    {
+      "subject": "JinxLoader",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "XLoader"
+    },
+    {
+      "subject": "Phishing",
+      "relation": "impersonates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#impersonates",
+      "property_type": "ObjectProperty",
+      "object": "Abu Dhabi National Oil Company (ADNOC)"
+    },
+    {
+      "subject": "password-protected RAR archive",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "JinxLoader"
+    },
+    {
+      "subject": "TA544",
+      "relation": "has alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Narwal Spider"
+    },
+    {
+      "subject": "TA544",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "IDAT Loader"
+    },
+    {
+      "subject": "IDAT Loader",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Remcos RAT"
+    },
+    {
+      "subject": "IDAT Loader",
+      "relation": "delivers",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "SystemBC"
+    },
+    {
+      "subject": "Meduza Stealer",
+      "relation": "version",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#characterizes",
+      "property_type": "ObjectProperty",
+      "object": "2.2"
+    }
+  ]
+}

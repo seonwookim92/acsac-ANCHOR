@@ -1,0 +1,18 @@
+# Pinned direct dependencies. Verified on Python 3.11, 3.12, and 3.13.
+langgraph==0.2.76
+langchain-core==0.3.86
+langchain-text-splitters==0.3.11
+langchain-mcp-adapters==0.1.14
+python-dotenv==1.2.2
+pydantic==2.13.4
+langchain-anthropic==0.3.22
+langchain-openai==0.3.35
+rdflib==7.6.0
+sentence-transformers==5.5.1
+mcp==1.27.1
+torch==2.12.0
+transformers==5.9.0
+matplotlib==3.10.9
+networkx==3.6.1
+numpy==2.4.6
+

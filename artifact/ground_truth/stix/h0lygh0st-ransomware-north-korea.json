@@ -1,0 +1,122 @@
+{
+  "file": "h0lygh0st-ransomware-north-korea.json",
+  "text": "Microsoft researchers have linked an emerging ransomware threat that already has compromised a number of small-to-mid-sized businesses to financially motivated North Korean state-sponsored actors that have been active since last year. A group tracked by researchers from Microsoft Threat Intelligence Center (MSTIC) as DEV-0530 but that calls itself H0lyGh0st has been developing and using ransomware in attacks since June 2021. H0lyGh0st’s standard modus operandi is to use a namesake ransomware to encrypt all files on the target device using the file extension .h0lyenc, then send the victim a sample of the files as proof. The group interacts with victims on a .onion site that it maintains and on which it provides a contact form for victims to get in touch, researchers said.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "H0lyGh0st",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "DEV-0530",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "H0lyGh0st ransomware",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "North Korean state-sponsored actors",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "North Korea",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "small-to-mid-sized businesses",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Microsoft Threat Intelligence Center (MSTIC)",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": ".onion site",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "File Encryption",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "H0lyGh0st",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "DEV-0530"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "motivation",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#primary_motivation",
+      "property_type": "ObjectProperty",
+      "object": "financial-gain"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "attributed-to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "North Korean state-sponsored actors"
+    },
+    {
+      "subject": "North Korean state-sponsored actors",
+      "relation": "originates-from",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "North Korea"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "H0lyGh0st ransomware"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "small-to-mid-sized businesses"
+    },
+    {
+      "subject": "Microsoft Threat Intelligence Center (MSTIC)",
+      "relation": "tracked",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "H0lyGh0st"
+    },
+    {
+      "subject": "H0lyGh0st ransomware",
+      "relation": "malware type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "H0lyGh0st ransomware",
+      "relation": "file extension",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#characterizes",
+      "property_type": "ObjectProperty",
+      "object": ".h0lyenc"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "maintains",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": ".onion site"
+    },
+    {
+      "subject": "H0lyGh0st",
+      "relation": "uses modus operandi",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "File Encryption"
+    }
+  ]
+}

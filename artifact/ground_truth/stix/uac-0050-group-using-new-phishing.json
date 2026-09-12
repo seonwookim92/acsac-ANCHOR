@@ -1,0 +1,165 @@
+{
+  "file": "uac-0050-group-using-new-phishing.json",
+  "text": "The threat actor known as UAC-0050 is leveraging phishing attacks to distribute Remcos RAT using new strategies to evade detection from security software. The group's weapon of choice is Remcos RAT, a notorious malware for remote surveillance and control, which has been at the forefront of its espionage arsenal. However, in their latest operational twist, the UAC-0050 group has integrated a pipe method for interprocess communication, showcasing their advanced adaptability. UAC-0050, active since 2020, has a history of targeting Ukrainian and Polish entities via social engineering campaigns that impersonate legitimate organizations to trick recipients into opening malicious attachments. In February 2023, the Computer Emergency Response Team of Ukraine (CERT-UA) attributed the adversary to a phishing campaign designed to deliver Remcos RAT.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "UAC-0050",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Remcos RAT",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Ukrainian entities",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Polish entities",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Ukraine",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Poland",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "CERT-UA",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "pipe method for interprocess communication",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Malicious attachment",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Action_Phishing",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    },
+    {
+      "name": "Action_Attribution",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Campaign"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "UAC-0050",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Remcos RAT"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "pipe method for interprocess communication"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian entities"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Polish entities"
+    },
+    {
+      "subject": "Ukrainian entities",
+      "relation": "located in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Ukraine"
+    },
+    {
+      "subject": "Polish entities",
+      "relation": "located in",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Poland"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "performer",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "UAC-0050"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Remcos RAT"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "instrument",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Malicious attachment"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian entities"
+    },
+    {
+      "subject": "Action_Phishing",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Polish entities"
+    },
+    {
+      "subject": "Action_Attribution",
+      "relation": "performer",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "CERT-UA"
+    },
+    {
+      "subject": "Action_Attribution",
+      "relation": "object",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#analysis-of",
+      "property_type": "ObjectProperty",
+      "object": "UAC-0050"
+    },
+    {
+      "subject": "Action_Attribution",
+      "relation": "start time",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#first_seen",
+      "property_type": "ObjectProperty",
+      "object": "2023-02"
+    },
+    {
+      "subject": "UAC-0050",
+      "relation": "tag",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#labels",
+      "property_type": "ObjectProperty",
+      "object": "active since 2020"
+    },
+    {
+      "subject": "Remcos RAT",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "Remote access Trojan"
+    }
+  ]
+}

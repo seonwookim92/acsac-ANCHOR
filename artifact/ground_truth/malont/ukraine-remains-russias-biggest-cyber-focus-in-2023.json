@@ -1,0 +1,233 @@
+{
+  "file": "ukraine-remains-russias-biggest-cyber-focus-in-2023.json",
+  "text": "FROZENBARENTS (aka Sandworm), a group attributed to Russian Armed Forces’ Main Directorate of the General Staff (GRU) Unit 74455, continues to focus heavily on the war in Ukraine with campaigns spanning intelligence collection, IO, and leaking hacked data through Telegram. As we described in the Fog of War report, FROZENBARENTS remains the most versatile GRU cyber actor with offensive capabilities including credential phishing, mobile activity, malware, external exploitation of services, and beyond. They target sectors of interest for Russian intelligence collection including government, defense, energy, transportation/logistics, education and humanitarian organizations. FROZENBARENTS continues to exploit EXIM mail servers globally and use these compromised hosts as part of their operational network, a trend going back to at least August 2019. These compromised hosts have been observed accessing victim networks, interacting with victim accounts, sending malicious emails and engaged in information operations (IO) activity.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "FROZENBARENTS",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Sandworm",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "GRU Unit 74455",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Ukraine",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Fog of War report",
+      "class": "http://idea.rpi.edu/malont#Report"
+    },
+    {
+      "name": "Intelligence collection",
+      "class": "http://idea.rpi.edu/malont#Reconnaissance"
+    },
+    {
+      "name": "Information operations (IO)",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Leaking hacked data",
+      "class": "http://idea.rpi.edu/malont#Exfiltration"
+    },
+    {
+      "name": "Telegram",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Credential phishing",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Mobile activity",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Malware",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "External exploitation of services",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "EXIM mail servers",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Compromised EXIM hosts",
+      "class": "http://idea.rpi.edu/malont#System"
+    },
+    {
+      "name": "Government sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Defense sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Energy sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Transportation/logistics sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Education sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Humanitarian organizations",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Sandworm"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "attributed-to",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "GRU Unit 74455"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukraine"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Intelligence collection"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Information operations (IO)"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Leaking hacked data"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Telegram"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Credential phishing"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Mobile activity"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Malware"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "External exploitation of services"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "exploits",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "EXIM mail servers"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Compromised EXIM hosts"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Government sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Defense sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Energy sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Transportation/logistics sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Education sector"
+    },
+    {
+      "subject": "FROZENBARENTS",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Humanitarian organizations"
+    },
+    {
+      "subject": "Fog of War report",
+      "relation": "describes",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "FROZENBARENTS"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "file": "ransomware-spotlight-targetcompany.json",
+  "text": "In an interview in January 2023, threat actors behind TargetCompany clarified that each major update of the ransomware entailed a change in the encryption algorithm and different decryptor characteristics. These are accompanied by a change in file name extensions, hence the evolution of names by which the ransomware group is known. We will discuss this evolution further in our blog entry. TargetCompany's earlier variants provided a \".onion\" contact site for negotiations and dropped ransom notes named How to decrypt files.txt. Meanwhile, later variants of the TargetCompany ransomware no longer use the name of the targeted enterprise as file name extensions. In mid- to late 2022, the group was given the name Fargo due to the extension that it added to its encrypted files in that period. Other extensions used by the ransomware group include \".mallox,\" and \".xollam.\" These later variants were observed using a combination of Chacha20, Curve 25519, and AES-128 algorithms to encrypt the victim's files. The ransomware group eventually established a data leak site under the name Mallox, and later variants dropped ransom notes as HOW TO RECOVER!!.txt.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "TargetCompany ransomware",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "TargetCompany operators",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": ".onion contact site",
+      "class": "http://idea.rpi.edu/malont#URL"
+    },
+    {
+      "name": "Mallox data leak site",
+      "class": "http://idea.rpi.edu/malont#URL"
+    },
+    {
+      "name": "How to decrypt files.txt",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "HOW TO RECOVER!!.txt",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "Fargo extension indicator",
+      "class": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-16#Indicator"
+    },
+    {
+      "name": "Mallox extension indicator",
+      "class": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-16#Indicator"
+    },
+    {
+      "name": "Xollam extension indicator",
+      "class": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-16#Indicator"
+    },
+    {
+      "name": "Fargo",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Mallox",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Xollam",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Chacha20",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Curve 25519",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "AES-128",
+      "class": "http://idea.rpi.edu/malont#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "TargetCompany operators",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "TargetCompany ransomware"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": ".onion contact site"
+    },
+    {
+      "subject": "TargetCompany operators",
+      "relation": "has",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Mallox data leak site"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "drops",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "How to decrypt files.txt"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "drops",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "HOW TO RECOVER!!.txt"
+    },
+    {
+      "subject": "Fargo extension indicator",
+      "relation": "indicates",
+      "property": "http://idea.rpi.edu/malont#indicates",
+      "property_type": "ObjectProperty",
+      "object": "TargetCompany ransomware"
+    },
+    {
+      "subject": "Mallox extension indicator",
+      "relation": "indicates",
+      "property": "http://idea.rpi.edu/malont#indicates",
+      "property_type": "ObjectProperty",
+      "object": "TargetCompany ransomware"
+    },
+    {
+      "subject": "Xollam extension indicator",
+      "relation": "indicates",
+      "property": "http://idea.rpi.edu/malont#indicates",
+      "property_type": "ObjectProperty",
+      "object": "TargetCompany ransomware"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Fargo"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Mallox"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Xollam"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Chacha20"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Curve 25519"
+    },
+    {
+      "subject": "TargetCompany ransomware",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "AES-128"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "file": "agonizing-serpens-targets-israeli-tech-higher-ed-sectors.json",
+  "text": "Unit 42 researchers have investigated a series of destructive cyberattacks beginning in January 2023 and continuing as recently as October 2023, targeting the education and technology sectors in Israel. The attacks are characterized by attempts to steal sensitive data, such as personally identifiable information (PII) and intellectual property. Once the attackers stole the information, they deployed various wipers intended to cover the attackers' tracks and to render the infected endpoints unusable.",
+  "ontology": "uco",
+  "extracted_entities": [
+    {
+      "name": "Unit 42",
+      "class": "https://ontology.unifiedcyberontology.org/uco/identity/Organization"
+    },
+    {
+      "name": "destructive cyberattacks",
+      "class": "https://ontology.unifiedcyberontology.org/uco/action/Action"
+    },
+    {
+      "name": "Israel",
+      "class": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+    },
+    {
+      "name": "education sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "technology sector",
+      "class": "https://ontology.unifiedcyberontology.org/uco/victim/VictimTargeting"
+    },
+    {
+      "name": "personally identifiable information (PII)",
+      "class": "https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject"
+    },
+    {
+      "name": "wipers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/tool/MaliciousTool"
+    },
+    {
+      "name": "attackers",
+      "class": "https://ontology.unifiedcyberontology.org/uco/role/MaliciousRole"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Unit 42",
+      "relation": "investigated",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "destructive cyberattacks"
+    },
+    {
+      "subject": "destructive cyberattacks",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "education sector"
+    },
+    {
+      "subject": "destructive cyberattacks",
+      "relation": "targets",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "technology sector"
+    },
+    {
+      "subject": "destructive cyberattacks",
+      "relation": "located in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Israel"
+    },
+    {
+      "subject": "attackers",
+      "relation": "performed",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/performer",
+      "property_type": "InverseObjectProperty",
+      "object": "destructive cyberattacks"
+    },
+    {
+      "subject": "attackers",
+      "relation": "uses",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/instrument",
+      "property_type": "ObjectProperty",
+      "object": "wipers"
+    },
+    {
+      "subject": "attackers",
+      "relation": "stole",
+      "property": "https://ontology.unifiedcyberontology.org/uco/action/object",
+      "property_type": "ObjectProperty",
+      "object": "personally identifiable information (PII)"
+    }
+  ]
+}

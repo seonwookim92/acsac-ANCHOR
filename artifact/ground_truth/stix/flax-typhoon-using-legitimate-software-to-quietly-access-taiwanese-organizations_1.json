@@ -1,0 +1,100 @@
+{
+  "file": "flax-typhoon-using-legitimate-software-to-quietly-access-taiwanese-organizations_1.json",
+  "text": "Microsoft has identified a nation-state activity group tracked as Flax Typhoon, based in China, that is targeting dozens of organizations in Taiwan with the likely intention of performing espionage. Flax Typhoon gains and maintains long-term access to Taiwanese organizations' networks with minimal use of malware, relying on tools built into the operating system, along with some normally benign software to quietly remain in these networks. Microsoft has not observed Flax Typhoon using this access to conduct additional actions. This blog aims to raise awareness of the techniques used by this threat actor and inform better defenses to protect against future attacks.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Flax Typhoon",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "China",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Taiwan",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Location"
+    },
+    {
+      "name": "Taiwanese organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Operating system built-in tools",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Tool"
+    },
+    {
+      "name": "Normally benign software",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Flax Typhoon",
+      "relation": "has country affiliation",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "China"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Taiwanese organizations"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Operating system built-in tools"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Normally benign software"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "discovered",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Flax Typhoon"
+    },
+    {
+      "subject": "Taiwanese organizations",
+      "relation": "located-at",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#located-at",
+      "property_type": "ObjectProperty",
+      "object": "Taiwan"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "threat actor type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#threat_actor_types",
+      "property_type": "ObjectProperty",
+      "object": "nation-state"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "objective",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#goals",
+      "property_type": "ObjectProperty",
+      "object": "espionage"
+    },
+    {
+      "subject": "Flax Typhoon",
+      "relation": "characteristic",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#description",
+      "property_type": "ObjectProperty",
+      "object": "minimal use of malware; relying on built-in OS tools"
+    }
+  ]
+}

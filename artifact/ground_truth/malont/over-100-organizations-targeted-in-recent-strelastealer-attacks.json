@@ -1,0 +1,160 @@
+{
+  "file": "over-100-organizations-targeted-in-recent-strelastealer-attacks.json",
+  "text": "Over 100 organizations in the US and EU have been targeted in recent large-scale phishing campaigns distributing the information stealer malware known as StrelaStealer, Palo Alto Networks reports. First documented in November 2022, StrelaStealer harvests credentials from the well-known email clients and sends them to an attacker-controlled command-and-control (C&C) server specified in the malware’s configuration. Over the past five months, Palo Alto Networks identified multiple large-scale campaigns carrying attachments deploying the infostealer in the form of a malicious DLL. Following an initial wave of emails in November 2023, the attackers launched two more in January and February 2024, mostly targeting the same North American and European regions. Tailored to local languages, the spam messages were mainly sent to organizations in the high-tech sector, with entities across finance, professional and legal services, manufacturing, government, utilities and energy, insurance, and construction targeted as well. Unlike earlier StrelaStealer campaigns that featured ISO attachments containing LNK and HTML files designed to fetch the malware from a remote server, the recent attacks involved a ZIP attachment that contained a JScript file designed to drop the final payload in the form of a DLL.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "StrelaStealer",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "Recent StrelaStealer phishing campaigns",
+      "class": "http://idea.rpi.edu/malont#Campaign"
+    },
+    {
+      "name": "Palo Alto Networks",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "United States",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Europe",
+      "class": "http://idea.rpi.edu/malont#Region"
+    },
+    {
+      "name": "high-tech sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "finance sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "manufacturing sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "government sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Credential harvesting",
+      "class": "http://idea.rpi.edu/malont#Exfiltration"
+    },
+    {
+      "name": "Attacker-controlled C2 server",
+      "class": "http://idea.rpi.edu/malont#CommandAndControl"
+    },
+    {
+      "name": "Payload dropping",
+      "class": "http://idea.rpi.edu/malont#Dropper"
+    },
+    {
+      "name": "ZIP attachment",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "JScript file",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "DLL payload",
+      "class": "http://idea.rpi.edu/malont#File"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Recent StrelaStealer phishing campaigns",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "StrelaStealer"
+    },
+    {
+      "subject": "Recent StrelaStealer phishing campaigns",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "high-tech sector"
+    },
+    {
+      "subject": "Recent StrelaStealer phishing campaigns",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "finance sector"
+    },
+    {
+      "subject": "Recent StrelaStealer phishing campaigns",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "United States"
+    },
+    {
+      "subject": "Recent StrelaStealer phishing campaigns",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Europe"
+    },
+    {
+      "subject": "Palo Alto Networks",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Recent StrelaStealer phishing campaigns"
+    },
+    {
+      "subject": "Recent StrelaStealer phishing campaigns",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "2023-11"
+    },
+    {
+      "subject": "Recent StrelaStealer phishing campaigns",
+      "relation": "last seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "2024-02"
+    },
+    {
+      "subject": "StrelaStealer",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "infostealer"
+    },
+    {
+      "subject": "StrelaStealer",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Attacker-controlled C2 server"
+    },
+    {
+      "subject": "Credential harvesting",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "StrelaStealer"
+    },
+    {
+      "subject": "Payload dropping",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "JScript file"
+    },
+    {
+      "subject": "Payload dropping",
+      "relation": "resulted in",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "DLL payload"
+    }
+  ]
+}

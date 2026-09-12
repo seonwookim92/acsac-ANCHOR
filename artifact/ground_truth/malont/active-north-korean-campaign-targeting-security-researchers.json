@@ -1,0 +1,57 @@
+{
+  "file": "active-north-korean-campaign-targeting-security-researchers.json",
+  "text": "In January 2021, Threat Analysis Group (TAG) publicly disclosed a campaign from government backed actors in North Korea who used 0-day exploits to target security researchers working on vulnerability research and development. Over the past two and a half years, TAG has continued to track and disrupt campaigns from these actors, finding 0-days and protecting online users. Recently, TAG became aware of a new campaign likely from the same actors based on similarities with the previous campaign.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Threat Analysis Group",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "government backed actors",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "North Korea",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "0-day exploits",
+      "class": "http://idea.rpi.edu/malont#Malware"
+    },
+    {
+      "name": "security researchers",
+      "class": "http://idea.rpi.edu/malont#Person"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "government backed actors",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "security researchers"
+    },
+    {
+      "subject": "government backed actors",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "0-day exploits"
+    },
+    {
+      "subject": "government backed actors",
+      "relation": "located-in",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "North Korea"
+    },
+    {
+      "subject": "Threat Analysis Group",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "government backed actors"
+    }
+  ]
+}

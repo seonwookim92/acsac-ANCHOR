@@ -1,0 +1,62 @@
+Resources
+=========
+
+Client -- the only hard requirement for artifact evaluation
+-----------------------------------------------------------
+OS: Linux (recommended) or macOS
+Python: 3.11, 3.12, or 3.13 (all verified; install.sh auto-detects)
+RAM: 8 GB minimum, 16 GB recommended
+Disk: 5 GB free for the virtual environment and the embedding-model cache,
+      excluding model weights
+GPU: none
+Network: outbound HTTPS for Python packages and the sentence-transformers
+         embedding model, plus reachability of the configured LLM endpoint
+
+claims/claim3 runs on this client alone, with no endpoint and no network beyond
+the initial install. claims/claim1 and claims/claim2 additionally need an LLM
+endpoint, which may be a hosted API (Option B in infrastructure/access) -- still
+no GPU.
+
+Model server -- OPTIONAL, only to self-host the paper-reference model
+---------------------------------------------------------------------
+Accelerator: NVIDIA GB10 (reference)
+System memory: 128 GB coherent unified memory (reference)
+Minimum practical accelerator-addressable memory: 64 GB
+Disk: at least 100 GB free for the container image, the 37.5 GB FP8 model
+      snapshot, caches, and startup compilation artifacts
+Software: Linux, NVIDIA driver, NVIDIA Container Toolkit configured so Docker
+          accepts --gpus all, Docker, Git, outbound HTTPS to GitHub, Docker Hub,
+          and Hugging Face
+Hugging Face token: not needed; the model is public
+
+Model family: Qwen3.5-35B
+Backend root: Qwen/Qwen3.5-35B-A3B-FP8
+Served model alias: qwen3.5-35b
+Pinned model revision: 9d1823d2dee688a6b25e77009dc727688c44936e
+Model license: Apache-2.0
+Parameters: 35B total, 3B activated
+Native context length: 262144
+FP8 weight snapshot: 37,463,724,680 bytes in 14 safetensors shards
+Container image tag: vllm-node:latest
+Container image source: https://github.com/eugr/spark-vllm-docker
+
+Per-shard SHA-256 checksums are in model_snapshot.json. The reference launch
+command and its decoding, tool-calling, and prefix-cache flags are in
+start_vllm_qwen35.sh. Setup is documented in VLLM_SETUP.md.
+
+Any OpenAI-compatible server may be substituted. A different model exercises the
+same code path and satisfies the functional claims; it does not reproduce the
+paper's reported numbers, which is outside the requested badge scope.
+
+Expected allocation for the requested evaluation
+------------------------------------------------
+claims/claim3: under 2 minutes, no endpoint.
+claims/claim1: one CTINexus report. Budget up to ~30 minutes on the first run,
+               most of which is the one-time all-MiniLM-L6-v2 download.
+               Subsequent runs are faster and depend on the chosen endpoint.
+claims/claim2: two further reports, roughly twice the claim1 inference time.
+               Run claim1 first so the embedding model is already cached.
+Disk for generated results: well under 100 MB.
+
+The full 149-report evaluation and the paper's timing measurements are NOT part
+of the requested evaluation; the Results Reproduced badge is not requested.

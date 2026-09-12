@@ -1,0 +1,242 @@
+{
+  "file": "pensive-ursa-uses-upgraded-kazuar-backdoor.json",
+  "text": "While tracking the evolution of Pensive Ursa (aka Turla, Uroburos), Unit 42 researchers came across a new, upgraded variant of Kazuar. Not only is Kazuar another name for the enormous and dangerous cassowary bird, Kazuar is an advanced and stealthy .NET backdoor that Pensive Ursa usually uses as a second stage payload. Pensive Ursa is a Russian-based threat group operating since at least 2004, which is linked to the Russian Federal Security Service (FSB). The Ukrainian CERT reported in July 2023 that this version of Kazuar was targeting the Ukrainian defense sector. The threat group behind this variant was going after sensitive assets such as those found in Signal messages, source control and cloud platforms data. Since Unit 42's discovery of Kazuar in 2017, we have seen it in the wild only a handful of times, targeting mostly organizations in the European government and military sectors. The Sunburst backdoor has been tied to Kazuar by code resemblance, which demonstrates its complexity level. Since late 2020, we had not seen new Kazuar samples in the wild – yet reports suggested Kazuar was under constant development.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Pensive Ursa",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Turla",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Uroburos",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Kazuar",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Upgraded Kazuar",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Unit 42",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Ukrainian CERT",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Russian Federal Security Service (FSB)",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Russia",
+      "class": "http://idea.rpi.edu/malont#Country"
+    },
+    {
+      "name": "Ukrainian defense sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "European government sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "European military sector",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Signal messages",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Source control data",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Cloud platforms data",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Sunburst",
+      "class": "http://idea.rpi.edu/malont#Backdoor"
+    },
+    {
+      "name": "Malware targeting",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Discovery of Kazuar",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Pensive Ursa",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Turla"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Uroburos"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "origin",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Russia"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "linked to",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Russian Federal Security Service (FSB)"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "first seen",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "2004"
+    },
+    {
+      "subject": "Pensive Ursa",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Kazuar"
+    },
+    {
+      "subject": "Upgraded Kazuar",
+      "relation": "variant-of",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Kazuar"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "backdoor"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "language",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": ".NET"
+    },
+    {
+      "subject": "Ukrainian CERT",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Upgraded Kazuar"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainian defense sector"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "European government sector"
+    },
+    {
+      "subject": "Kazuar",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "European military sector"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "performed by",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Pensive Ursa"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "used instrument",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "Kazuar"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Signal messages"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Source control data"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Cloud platforms data"
+    },
+    {
+      "subject": "Malware targeting",
+      "relation": "start time",
+      "property": "http://idea.rpi.edu/malont#has",
+      "property_type": "ObjectProperty",
+      "object": "July 2023"
+    },
+    {
+      "subject": "Discovery of Kazuar",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Unit 42"
+    },
+    {
+      "subject": "Discovery of Kazuar",
+      "relation": "start time",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "2017"
+    },
+    {
+      "subject": "Discovery of Kazuar",
+      "relation": "object",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Kazuar"
+    },
+    {
+      "subject": "Sunburst",
+      "relation": "linked by code resemblance to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Kazuar"
+    }
+  ]
+}

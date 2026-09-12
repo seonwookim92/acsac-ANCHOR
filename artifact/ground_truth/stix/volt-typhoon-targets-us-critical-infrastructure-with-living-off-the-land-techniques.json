@@ -1,0 +1,185 @@
+{
+  "file": "volt-typhoon-targets-us-critical-infrastructure-with-living-off-the-land-techniques.json",
+  "text": "Volt Typhoon achieves initial access to targeted organizations through internet-facing Fortinet FortiGuard devices. Microsoft continues to investigate Volt Typhoon's methods for gaining access to these devices. The threat actor attempts to leverage any privileges afforded by the Fortinet device, extracts credentials to an Active Directory account used by the device, and then attempts to authenticate to other devices on the network with those credentials. Volt Typhoon proxies all its network traffic to its targets through compromised SOHO network edge devices (including routers). Microsoft has confirmed that many of the devices, which include those manufactured by ASUS, Cisco, D-Link, NETGEAR, and Zyxel, allow the owner to expose HTTP or SSH management interfaces to the internet. Owners of network edge devices should ensure that management interfaces are not exposed to the public internet in order to reduce their attack surface. By proxying through these devices, Volt Typhoon enhances the stealth of their operations and lowers overhead costs for acquiring infrastructure.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Volt Typhoon",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "Microsoft",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Targeted organizations",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Fortinet FortiGuard devices",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Active Directory account",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#UserAccount"
+    },
+    {
+      "name": "Compromised SOHO network edge devices",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "ASUS",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Cisco",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "D-Link",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "NETGEAR",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Zyxel",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "HTTP management interface",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "SSH management interface",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Infrastructure"
+    },
+    {
+      "name": "Initial access via internet-facing Fortinet devices",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Credential extraction",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Proxying through compromised SOHO devices",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Volt Typhoon",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Initial access via internet-facing Fortinet devices"
+    },
+    {
+      "subject": "Volt Typhoon",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Targeted organizations"
+    },
+    {
+      "subject": "Volt Typhoon",
+      "relation": "compromises",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#compromises",
+      "property_type": "ObjectProperty",
+      "object": "Fortinet FortiGuard devices"
+    },
+    {
+      "subject": "Microsoft",
+      "relation": "investigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#investigates",
+      "property_type": "ObjectProperty",
+      "object": "Volt Typhoon"
+    },
+    {
+      "subject": "Volt Typhoon",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Credential extraction"
+    },
+    {
+      "subject": "Credential extraction",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Active Directory account"
+    },
+    {
+      "subject": "Volt Typhoon",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Proxying through compromised SOHO devices"
+    },
+    {
+      "subject": "Proxying through compromised SOHO devices",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Compromised SOHO network edge devices"
+    },
+    {
+      "subject": "Volt Typhoon",
+      "relation": "compromises",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#compromises",
+      "property_type": "ObjectProperty",
+      "object": "Compromised SOHO network edge devices"
+    },
+    {
+      "subject": "Compromised SOHO network edge devices",
+      "relation": "manufactured by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "ASUS"
+    },
+    {
+      "subject": "Compromised SOHO network edge devices",
+      "relation": "manufactured by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Cisco"
+    },
+    {
+      "subject": "Compromised SOHO network edge devices",
+      "relation": "manufactured by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "D-Link"
+    },
+    {
+      "subject": "Compromised SOHO network edge devices",
+      "relation": "manufactured by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "NETGEAR"
+    },
+    {
+      "subject": "Compromised SOHO network edge devices",
+      "relation": "manufactured by",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Zyxel"
+    },
+    {
+      "subject": "Compromised SOHO network edge devices",
+      "relation": "expose",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "HTTP management interface"
+    },
+    {
+      "subject": "Compromised SOHO network edge devices",
+      "relation": "expose",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "SSH management interface"
+    }
+  ]
+}

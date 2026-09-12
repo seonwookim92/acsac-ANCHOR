@@ -1,0 +1,119 @@
+{
+  "file": "log4j-vulnerabilities-attacks.json",
+  "text": "Log4j has been making headlines recently after the public disclosure of three critical vulnerabilities in the utility which can lead to remote code execution (CVE-2021-44228 and CVE-2021-45046) and denial of service (CVE-2021-45105). The initial remote code execution vulnerability (CVE-2021-44228) has been dubbed Log4Shell and has dominated cyber-security news ever since it was publicly disclosed on December 9. The vulnerability has been exploited to deploy a plethora of payloads like coin miners, Dridex malware, and even ransomware such as Conti.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Log4j",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "CVE-2021-44228",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "CVE-2021-45046",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "CVE-2021-45105",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Remote code execution",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Denial of service",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#AttackPattern"
+    },
+    {
+      "name": "Log4Shell",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    },
+    {
+      "name": "Coin miners",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Dridex",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Conti",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Log4j",
+      "relation": "has vulnerability",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-44228"
+    },
+    {
+      "subject": "Log4j",
+      "relation": "has vulnerability",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-45046"
+    },
+    {
+      "subject": "Log4j",
+      "relation": "has vulnerability",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2021-45105"
+    },
+    {
+      "subject": "CVE-2021-44228",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "Log4Shell"
+    },
+    {
+      "subject": "CVE-2021-44228",
+      "relation": "enables",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Remote code execution"
+    },
+    {
+      "subject": "CVE-2021-45046",
+      "relation": "enables",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Remote code execution"
+    },
+    {
+      "subject": "CVE-2021-45105",
+      "relation": "enables",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Denial of service"
+    },
+    {
+      "subject": "CVE-2021-44228",
+      "relation": "facilitates deployment of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Coin miners"
+    },
+    {
+      "subject": "CVE-2021-44228",
+      "relation": "facilitates deployment of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Dridex"
+    },
+    {
+      "subject": "CVE-2021-44228",
+      "relation": "facilitates deployment of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#delivers",
+      "property_type": "ObjectProperty",
+      "object": "Conti"
+    }
+  ]
+}

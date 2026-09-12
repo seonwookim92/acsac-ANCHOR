@@ -1,0 +1,171 @@
+{
+  "file": "kasseika-ransomware-uses-antivirus-driver-to-kill-other-antiviruses.json",
+  "text": "A recently uncovered ransomware operation named 'Kasseika' has joined the club of threat actors that employs Bring Your Own Vulnerable Driver (BYOVD) tactics to disable antivirus software before encrypting files. Kasseika abuses the Martini driver (Martini.sys/viragt64.sys), part of TG Soft's VirtIT Agent System, to disable antivirus products protecting the targeted system. Kasseika attacks start with a phishing email sent to employees of the targeted organization, attempting to steal their account credentials, which will then be used for initial access to the corporate network. Next, Kasseika operators abuse the Windows PsExec tool to execute malicious .bat files on the infected system and others they have accessed through lateral movement. The batch file checks for the presence of a process named 'Martini.exe' and terminates it to avoid interference. Next, it downloads the vulnerable 'Martini.sys' driver on the machine. By using BYOVD attacks, aka exploiting flaws in the loaded driver, the malware gains the privileges to terminate 991 processes from a hardcoded list, many of which correspond to antivirus products, security tools, analysis tools, and system utilities.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Kasseika",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Kasseika operators",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Bring Your Own Vulnerable Driver (BYOVD)",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Martini driver",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Martini.sys",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "viragt64.sys",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "VirtIT Agent System",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "TG Soft",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Phishing email",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "PsExec",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "Malicious .bat files",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "Targeted organization",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Initial access",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Lateral movement",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Disable antivirus",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Antivirus products",
+      "class": "http://idea.rpi.edu/malont#VirusScanner"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Kasseika",
+      "relation": "tool type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "ransomware"
+    },
+    {
+      "subject": "Kasseika",
+      "relation": "uses modus operandi",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Bring Your Own Vulnerable Driver (BYOVD)"
+    },
+    {
+      "subject": "Kasseika",
+      "relation": "abuses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Martini driver"
+    },
+    {
+      "subject": "Martini driver",
+      "relation": "has alias",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Martini.sys"
+    },
+    {
+      "subject": "Martini driver",
+      "relation": "has alias",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "viragt64.sys"
+    },
+    {
+      "subject": "Martini driver",
+      "relation": "is part of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "VirtIT Agent System"
+    },
+    {
+      "subject": "VirtIT Agent System",
+      "relation": "belongs to",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "TG Soft"
+    },
+    {
+      "subject": "Kasseika operators",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Phishing email"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Kasseika"
+    },
+    {
+      "subject": "Initial access",
+      "relation": "targeted victim",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Targeted organization"
+    },
+    {
+      "subject": "Kasseika operators",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "PsExec"
+    },
+    {
+      "subject": "Disable antivirus",
+      "relation": "performed by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Kasseika"
+    },
+    {
+      "subject": "Disable antivirus",
+      "relation": "used instrument",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Martini driver"
+    },
+    {
+      "subject": "Martini driver",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Antivirus products"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+artifact/.env
+!.env.example
+!artifact/.env.example
+
+# Pipeline output (keep the directory placeholder itself)
+output/*
+!output/.gitkeep
+artifact/output/*
+!artifact/output/.gitkeep
+raw_output/
+results/
+
+# Embedding caches
+*.embedding_cache.pkl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# ACSAC metadata generated after public URLs are assigned
+metadata.toml

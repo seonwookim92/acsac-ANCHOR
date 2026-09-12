@@ -1,0 +1,140 @@
+{
+  "file": "exposing-earth-berberoka-a-multiplatform-apt-campaign-targeting-online-gambling-sites.json",
+  "text": "We have discovered an advanced persistent threat (APT) group that primarily targets online gambling sites. This group, which we have dubbed Earth Berberoka (aka GamblingPuppet), uses old yet upgraded malware families that have been attributed to Chinese-speaking actors, including PlugX and Gh0st RAT. It also uses a brand-new multistage malware family, which we have dubbed PuppetLoader. The malware families used by Earth Berberoka are multiplatform, targeting the Windows, Linux, and macOS operating systems.",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Earth Berberoka",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "GamblingPuppet",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    },
+    {
+      "name": "PlugX",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Gh0st RAT",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "PuppetLoader",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Malware"
+    },
+    {
+      "name": "Online gambling sites",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "Windows",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Linux",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "macOS",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Chinese-speaking actors",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Earth Berberoka",
+      "relation": "alias",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#aliases",
+      "property_type": "ObjectProperty",
+      "object": "GamblingPuppet"
+    },
+    {
+      "subject": "Earth Berberoka",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Online gambling sites"
+    },
+    {
+      "subject": "Earth Berberoka",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "PlugX"
+    },
+    {
+      "subject": "Earth Berberoka",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "Gh0st RAT"
+    },
+    {
+      "subject": "Earth Berberoka",
+      "relation": "uses",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#uses",
+      "property_type": "ObjectProperty",
+      "object": "PuppetLoader"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "attributed to",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#attributed-to",
+      "property_type": "ObjectProperty",
+      "object": "Chinese-speaking actors"
+    },
+    {
+      "subject": "PuppetLoader",
+      "relation": "tool type",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#malware_types",
+      "property_type": "ObjectProperty",
+      "object": "multistage malware family"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "Linux"
+    },
+    {
+      "subject": "PlugX",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "macOS"
+    },
+    {
+      "subject": "PuppetLoader",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "PuppetLoader",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "Linux"
+    },
+    {
+      "subject": "PuppetLoader",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#operating_system_refs",
+      "property_type": "ObjectProperty",
+      "object": "macOS"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "file": "everything-you-need-to-know-about-apt-fancy-bear.json",
+  "text": "Fancy Bear, also known as APT 28, Sofacy, or Swallowtail, is a cyberespionage group that is linked to the Russian government. The group has been in operation since 2008, targeting the energy, government, media, aerospace, and defense sectors via phishing campaigns and credential harvesting. Fancy Bear is known to target both computers and mobile devices, running multiple intrusion operations concurrently. In 2016, Fancy Bear was front and center after they attacked the Democratic National Committee (DNC). The group was also responsible for leaking confidential drug testing information after they attacked the World Anti-Doping Agency (WADA) during the same year. Fancy Bear took credit for the attack and leaked the stolen information on a site named Fancy Bears. Despite two very public attacks, Fancy Bear returned to the shadows in 2017. Since that time, the group's activities have become clandestine, motivated by intelligence gathering. Between 2017 and 2018, Fancy Bear targeted the following organizations: European military, European government, A South American country's government, An Eastern European embassy, A prominent international organization. After much attention, Fancy Bear became more discreet, and not much was heard from the APT until their recent attacks on Ukrainians. In July 2022, researchers from Malwarebytes observed malicious activity from the group. They were sending malicious documents that contained an exploit for the Microsoft zero-day, Follina (CVE-2022-30190).",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Fancy Bear",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "APT 28",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Sofacy",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Swallowtail",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "Russian government",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Democratic National Committee (DNC)",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "World Anti-Doping Agency (WADA)",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "European military",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "European government",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Ukrainians",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "Malwarebytes",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Phishing",
+      "class": "http://idea.rpi.edu/malont#Phishing"
+    },
+    {
+      "name": "Credential harvesting",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "Follina",
+      "class": "http://idea.rpi.edu/malont#Vulnerability"
+    },
+    {
+      "name": "CVE-2022-30190",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Fancy Bear",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "APT 28"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Sofacy"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "Swallowtail"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "linked to",
+      "property": "http://idea.rpi.edu/malont#belongsTo",
+      "property_type": "ObjectProperty",
+      "object": "Russian government"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "2008"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Phishing"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Credential harvesting"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Democratic National Committee (DNC)"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "World Anti-Doping Agency (WADA)"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "European military"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Ukrainians"
+    },
+    {
+      "subject": "Fancy Bear",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "Follina"
+    },
+    {
+      "subject": "Follina",
+      "relation": "has alias",
+      "property": "http://idea.rpi.edu/malont#hasAlias",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-30190"
+    },
+    {
+      "subject": "Malwarebytes",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Fancy Bear"
+    }
+  ]
+}

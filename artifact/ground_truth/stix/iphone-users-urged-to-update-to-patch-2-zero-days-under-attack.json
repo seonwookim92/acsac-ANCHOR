@@ -1,0 +1,57 @@
+{
+  "file": "iphone-users-urged-to-update-to-patch-2-zero-days-under-attack.json",
+  "text": "Apple is urging macOS, iPhone and iPad users immediately to install respective updates this week that includes fixes for two zero-days under active attack. The patches are for vulnerabilities that allow attackers to execute arbitrary code and ultimately take over devices. Patches are available for effected devices running iOS 15.6.1 and macOS Monterey 12.5.1. Patches address two flaws, which basically impact any Apple device that can run either iOS 15 or the Monterey version of its desktop OS, according to security updates released by Apple Wednesday. One of the flaws is a kernel bug (CVE-2022-32894), which is present both in iOS and macOS. According to Apple it is an “out-of-bounds write issue [that] was addressed with improved bounds checking.” The vulnerability allows an application to execute arbitrary code with kernel privileges, according to Apple, which, in usual vague fashion, said there is a report that it “may have been actively exploited.”",
+  "ontology": "stix",
+  "extracted_entities": [
+    {
+      "name": "Apple",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "macOS",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "iPhone",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Software"
+    },
+    {
+      "name": "Apple users",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Identity"
+    },
+    {
+      "name": "CVE-2022-32894",
+      "class": "http://docs.oasis-open.org/cti/ns/stix#Vulnerability"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Apple",
+      "relation": "mitigates",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#mitigates",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2022-32894"
+    },
+    {
+      "subject": "Apple",
+      "relation": "targets",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "Apple users"
+    },
+    {
+      "subject": "CVE-2022-32894",
+      "relation": "affects",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#targets",
+      "property_type": "ObjectProperty",
+      "object": "macOS"
+    },
+    {
+      "subject": "iPhone",
+      "relation": "part of",
+      "property": "http://docs.oasis-open.org/cti/ns/stix#has",
+      "property_type": "ObjectProperty",
+      "object": "Apple"
+    }
+  ]
+}

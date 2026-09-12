@@ -1,0 +1,171 @@
+{
+  "file": "new-ransomware-strains-cryptnet-mallox-and-xollam.json",
+  "text": "Mallox ransomware specifically targets computers running Microsoft Windows. This ransomware was first observed in June 2021 and is known for exploiting unsecured MS-SQL servers as a penetration vector to compromise victims' networks. The ransomware's targeted industries are manufacturing, professional and legal services, and wholesale and retail. The ransomware operators claim that their victims include worldwide organizations. According to Lior Rochberger, a senior security researcher at Palo Alto Networks, Mallox's sudden increase in activity is attributed to the deliberate actions taken by the group's leaders to expand Mallox's operations. Rochberger stated that group appeared to focus more on recruiting affiliates at the beginning of 2023. This shift in strategy explains the significant increase observed this year. Recently, researchers from Unit 42 have noticed a significant increase in Mallox ransomware activity, with a surge of almost 174% compared to 2022. This increase is primarily due to Mallox using vulnerable MS-SQL (CVE-2020-0618 and CVE-2019-1068) servers to spread the ransomware. Unit 42 also observed Mallox using tactics such as brute force, data exfiltration, and the use of network scanning tools. Researchers have also reported that the group has attempted to distribute Mallox via phishing emails - suggesting affiliates may be involved. Once the threat actors gain access, they use the command line and PowerShell to download the Mallox ransomware payload from a remote server. Like other ransomware groups, the initial payload tries to deactivate any services that might hinder data encryption on the targeted system. Also, it tries to erase shadow copies, making data recovery more challenging after encryption. The malware also attempts to eliminate all event logs, utilizing a commonly used Microsoft command utility to try and complicate forensic analysis. Like CryptNet, the threat actors behind Mallox use the double extortion method - stealing data before encrypting it. They also have a data leak site where they leak the data of victims that refuse to pay or negotiate its ransom demands. Victims negotiate with the threat actors by using a private key to authenticate themselves. As previously stated, the ransomware operators claim to have breached hundreds of organizations worldwide. Unit 42 stated that their telemetry indicates at least dozens of potential Mallox victims. In 2022, Mallox ransomware was discovered to be a variant of the TargetCompany ransomware strain.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "Mallox",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Mallox operators",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    },
+    {
+      "name": "TargetCompany",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "CryptNet",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "Microsoft Windows",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "MS-SQL Server",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "CVE-2020-0618",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "CVE-2019-1068",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "Unit 42",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Lior Rochberger",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "Palo Alto Networks",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Double extortion",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "brute force",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    },
+    {
+      "name": "data leak site",
+      "class": "http://idea.rpi.edu/malont#Infrastructure"
+    },
+    {
+      "name": "manufacturing",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Affiliates",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "Mallox",
+      "relation": "variant of",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "TargetCompany"
+    },
+    {
+      "subject": "Mallox",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Microsoft Windows"
+    },
+    {
+      "subject": "Mallox",
+      "relation": "exploits",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "MS-SQL Server"
+    },
+    {
+      "subject": "MS-SQL Server",
+      "relation": "has vulnerability",
+      "property": "http://idea.rpi.edu/malont#hasVulnerability",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2020-0618"
+    },
+    {
+      "subject": "MS-SQL Server",
+      "relation": "has vulnerability",
+      "property": "http://idea.rpi.edu/malont#hasVulnerability",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2019-1068"
+    },
+    {
+      "subject": "Mallox operators",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Mallox"
+    },
+    {
+      "subject": "Mallox operators",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "brute force"
+    },
+    {
+      "subject": "Mallox operators",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2020-0618"
+    },
+    {
+      "subject": "Mallox operators",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "CVE-2019-1068"
+    },
+    {
+      "subject": "Mallox operators",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "manufacturing"
+    },
+    {
+      "subject": "Mallox operators",
+      "relation": "hires",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Affiliates"
+    },
+    {
+      "subject": "Unit 42",
+      "relation": "observed",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": null,
+      "object": "Mallox"
+    },
+    {
+      "subject": "Mallox",
+      "relation": "first seen",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "2021-06"
+    },
+    {
+      "subject": "Mallox",
+      "relation": "uses modus operandi",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "Double extortion"
+    }
+  ]
+}

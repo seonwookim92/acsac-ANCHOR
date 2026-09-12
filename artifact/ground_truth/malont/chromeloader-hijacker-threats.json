@@ -1,0 +1,127 @@
+{
+  "file": "chromeloader-hijacker-threats.json",
+  "text": "ChromeLoader may seem on the surface like a run-of-the-mill browser hijacker that merely redirects victims to advertisement websites. However, its use of PowerShell could pose a greater risk by leading to further and advanced malicious activity, such as the propagation of ransomware or spyware or theft of browser-session data. Researchers are warning of the potential for ChromeLoader-which has seen a resurgence in activity recently-to pose a more sophisticated threat than typical malvertisers do, according to two separate blog posts by Malwarebytes Labs and Red Canary. ChromeLoader is a pervasive and persistent browser hijacker that eventually manifests as a browser extension, modifying victims’ Chrome settings and redirecting user traffic to advertisement websites. On Windows machines, victims become infected with the malware through ISO files that poses as a cracked video game or pirated films or TV programs.",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "ChromeLoader",
+      "class": "http://idea.rpi.edu/malont#Adware"
+    },
+    {
+      "name": "PowerShell",
+      "class": "http://idea.rpi.edu/malont#Software"
+    },
+    {
+      "name": "Chrome",
+      "class": "http://idea.rpi.edu/malont#Browser"
+    },
+    {
+      "name": "Windows",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "ISO lure file",
+      "class": "http://idea.rpi.edu/malont#File"
+    },
+    {
+      "name": "Malwarebytes Labs",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Red Canary",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "ransomware",
+      "class": "http://idea.rpi.edu/malont#Ransomware"
+    },
+    {
+      "name": "spyware",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "Browser Session Data",
+      "class": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "name": "Advertisement Website",
+      "class": "http://idea.rpi.edu/malont#Address"
+    },
+    {
+      "name": "malvertisers",
+      "class": "http://idea.rpi.edu/malont#ThreatActor"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "ChromeLoader",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "DatatypeProperty",
+      "object": "browser hijacker"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "uses",
+      "property": "http://idea.rpi.edu/malont#uses",
+      "property_type": "ObjectProperty",
+      "object": "PowerShell"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "can lead to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ransomware"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "can lead to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "spyware"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "modifies settings of",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "Chrome"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "redirects traffic to",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Advertisement Website"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "runs on",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "Windows"
+    },
+    {
+      "subject": "ChromeLoader",
+      "relation": "delivered by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ISO lure file"
+    },
+    {
+      "subject": "Malwarebytes Labs",
+      "relation": "warned about",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ChromeLoader"
+    },
+    {
+      "subject": "Red Canary",
+      "relation": "warned about",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": "ObjectProperty",
+      "object": "ChromeLoader"
+    }
+  ]
+}

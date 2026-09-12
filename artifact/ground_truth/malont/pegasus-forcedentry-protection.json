@@ -1,0 +1,152 @@
+{
+  "file": "pegasus-forcedentry-protection.json",
+  "text": "The recent iOS 14.8 update fixes a zero-day, zero-click exploit for a vulnerability affecting every mobile iOS device. The flaw, dubbed FORCEDENTRY (CVE-2021-30860), resided in Apple's iMessage and, according to a report by The Citizen Lab, was used to push NSO Group's Pegasus spyware to mobile iOS devices dating back to as far as February 2021. Pegasus has been around for some years now but has been back in the spotlight recently following reports from both The Citizen Lab and Amnesty International about the spyware targeting journalists, activists, and others. One of the main concerns with FORCEDENTRY is that it can be used in what is called a zero-click attack, meaning it requires no user interaction. An attacker exploiting the flaw only needs the Apple ID of a device in order to silently compromise it",
+  "ontology": "malont",
+  "extracted_entities": [
+    {
+      "name": "iOS 14.8 update",
+      "class": "http://idea.rpi.edu/malont#OperatingSystem"
+    },
+    {
+      "name": "FORCEDENTRY",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_Desc"
+    },
+    {
+      "name": "CVE-2021-30860",
+      "class": "http://idea.rpi.edu/malont#Vulnerability_CVEID"
+    },
+    {
+      "name": "mobile iOS devices",
+      "class": "http://idea.rpi.edu/malont#System"
+    },
+    {
+      "name": "Apple",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "iMessage",
+      "class": "http://idea.rpi.edu/malont#Application"
+    },
+    {
+      "name": "The Citizen Lab",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "NSO Group",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "Pegasus",
+      "class": "http://idea.rpi.edu/malont#Spyware"
+    },
+    {
+      "name": "Amnesty International",
+      "class": "http://idea.rpi.edu/malont#Organization"
+    },
+    {
+      "name": "journalists",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "activists",
+      "class": "http://idea.rpi.edu/malont#Person"
+    },
+    {
+      "name": "Zero-click attack",
+      "class": "http://idea.rpi.edu/malont#AttackPattern"
+    }
+  ],
+  "extracted_triplets": [
+    {
+      "subject": "FORCEDENTRY",
+      "relation": "alias",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "CVE-2021-30860"
+    },
+    {
+      "subject": "Apple",
+      "relation": "has application",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "iMessage"
+    },
+    {
+      "subject": "FORCEDENTRY",
+      "relation": "exists in",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "iMessage"
+    },
+    {
+      "subject": "iOS 14.8 update",
+      "relation": "mitigates",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "FORCEDENTRY"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "created by",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "NSO Group"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "malware type",
+      "property": "http://www.w3.org/2000/01/rdf-schema#label",
+      "property_type": null,
+      "object": "spyware"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "exploits",
+      "property": "http://idea.rpi.edu/malont#exploits",
+      "property_type": "ObjectProperty",
+      "object": "FORCEDENTRY"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "mobile iOS devices"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "journalists"
+    },
+    {
+      "subject": "Pegasus",
+      "relation": "targets",
+      "property": "http://www.semanticweb.org/yeed3/ontologies/2020/5/untitled-ontology-15#targets",
+      "property_type": "ObjectProperty",
+      "object": "activists"
+    },
+    {
+      "subject": "FORCEDENTRY",
+      "relation": "has attack pattern",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Zero-click attack"
+    },
+    {
+      "subject": "The Citizen Lab",
+      "relation": "observed",
+      "property": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "property_type": null,
+      "object": "Pegasus"
+    },
+    {
+      "subject": "Amnesty International",
+      "relation": "observed",
+      "property": "http://idea.rpi.edu/malont#communicatesWith",
+      "property_type": null,
+      "object": "Pegasus"
+    }
+  ]
+}

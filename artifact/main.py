@@ -64,9 +64,10 @@ def _print_measurements(measurements: list[dict]) -> None:
     print("\n── Measurement ─────────────────────────────────────────────────", file=sys.stderr)
 
     print("\n  Tool Resolution by Phase:", file=sys.stderr)
-    print(f"  {'Phase':<20} {'search':>7} {'recurse':>8} {'fallback':>9} {'timeout':>8} {'total':>6}",
+    print(f"  {'Phase':<20} {'search':>7} {'recurse':>8} {'direct':>7} "
+          f"{'semantic':>9} {'op-fail':>8} {'timeout':>8} {'total':>6}",
           file=sys.stderr)
-    print(f"  {'-'*63}", file=sys.stderr)
+    print(f"  {'-'*91}", file=sys.stderr)
 
     phase_score_data: dict[str, list[float]] = {}
     all_top_scores:   list[float] = []
@@ -76,7 +77,7 @@ def _print_measurements(measurements: list[dict]) -> None:
         items = [m for m in measurements if m["phase"] == phase_key]
         if not items:
             continue
-        counts: dict[str, int] = {"search": 0, "recurse": 0, "fallback": 0, "timeout": 0}
+        counts: dict[str, int] = {"search": 0, "recurse": 0, "direct": 0}
         top_scores: list[float] = []
         for m in items:
             ft = m.get("final_tool", "fallback")
@@ -89,9 +90,13 @@ def _print_measurements(measurements: list[dict]) -> None:
                 for c in sc.get("candidates", []):
                     all_cand_scores.append(c["score"])
         phase_score_data[phase_key] = top_scores
+        semantic = sum(bool(m.get("semantic_fallback")) for m in items)
+        operational = sum(bool(m.get("operational_fallback")) for m in items)
+        timeouts = sum(m.get("completion_status") == "timeout" for m in items)
         print(
             f"  {phase_label:<20} {counts['search']:>7} {counts['recurse']:>8}"
-            f" {counts['fallback']:>9} {counts['timeout']:>8} {len(items):>6}",
+            f" {counts['direct']:>7} {semantic:>9} {operational:>8}"
+            f" {timeouts:>8} {len(items):>6}",
             file=sys.stderr,
         )
 

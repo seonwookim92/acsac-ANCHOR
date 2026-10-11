@@ -3,9 +3,10 @@ CLAIM 1 (Functional)
 ANCHOR implements the schema-agnostic CTI-to-ontology pipeline described in the
 paper (Section IV, Figure 2), and the distributed executable processes an
 unstructured CTI report end to end -- schema-agnostic extraction, hybrid
-ontology discovery over the target OWL/SHACL schema via the ontology MCP server,
-and SHACL-validated knowledge graph construction -- emitting a structurally
-valid, ontology-aligned JSON graph.
+ontology discovery over the packaged UCO OWL/SHACL schema via the ontology MCP
+server, and validation against applicable UCO SHACL constraints -- emitting a
+structurally valid, ontology-aligned JSON graph. Claim 1 is the claim that
+exercises the SHACL-capable path.
 
 Paper connection: Section IV (ANCHOR Design), Figure 2 architecture.
 Artifact components: artifact/main.py, artifact/src/, artifact/mcp/ontology-mcp-server/.
@@ -26,12 +27,13 @@ MODEL CAPABILITY CAVEAT
 
 ANCHOR's ontology mapper drives the MCP server through multi-step tool calling,
 so this claim depends on the chosen model sustaining several dependent tool calls
-per entity and predicate. A model weak at tool calling completes the run and
-emits a poor or empty graph, failing the structural check above -- a model
-limitation, not an artifact defect. check_endpoint.py probes tool calling before
-the run and warns when the model fails it; claims/claim3 validates the package
-with no LLM at all. Together they separate the two causes. Re-run with a stronger
-tool-calling model to resolve it.
+per entity and predicate. Intentional semantic fallbacks (`owl:Thing`,
+`rdfs:label`, or `rdfs:seeAlso`) remain valid when no schema term fits. The
+output records whether each mapper item completed its final tool call, however,
+and the claim check rejects timeout-, exception-, or missing-tool-call fallbacks
+as well as an all-generic graph. check_endpoint.py probes tool calling before
+the run; claims/claim3 validates the package with no LLM at all. Together they
+separate model failure from a legitimate semantic fallback.
 
 RUN:      ./claims/claim1/run.sh
 EXPECTED: claims/claim1/expected/README.txt

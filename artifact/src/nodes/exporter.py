@@ -13,15 +13,52 @@ Output format matches reference/3am_ransomware_analysis_final.json:
   "text": "<original input text>",
   "ontology": "uco",
   "extracted_entities": [{"name": "...", "class": "..."}],
-  "extracted_triplets": [{"subject": "...", "relation": "...", "relation_class": "...", "object": "..."}]
+  "extracted_triplets": [{"subject": "...", "relation": "...", "relation_class": "...", "object": "..."}],
+  "mapping_diagnostics": {"provider": "...", "model": "...", ...}
 }
 """
 
 import json
 import os
+from collections import Counter
 from pathlib import Path
 from src.state import AnchorState
 from src.utils.cypher_export import result_to_cypher
+
+
+def _mapping_diagnostics(measurements: list[dict]) -> dict:
+    """Summarize mapper completion without treating generic URIs as failures."""
+    provider = os.getenv("LLM_PROVIDER", "anthropic").lower().strip()
+    model_key, default_model = {
+        "anthropic": ("ANTHROPIC_LLM_MODEL", "claude-sonnet-4-6"),
+        "openai": ("OPENAI_LLM_MODEL", "gpt-4o"),
+        "vllm": ("VLLM_LLM_MODEL", "default"),
+    }.get(provider, ("VLLM_LLM_MODEL", "default"))
+
+    statuses = Counter(m.get("completion_status", "missing_tool_call") for m in measurements)
+    phases = {}
+    for phase in ("entity", "dt_prop", "relation"):
+        items = [m for m in measurements if m.get("phase") == phase]
+        phases[phase] = {
+            "total": len(items),
+            "completed": sum(m.get("completion_status") == "completed" for m in items),
+            "semantic_fallbacks": sum(bool(m.get("semantic_fallback")) for m in items),
+            "operational_fallbacks": sum(bool(m.get("operational_fallback")) for m in items),
+        }
+
+    return {
+        "provider": provider,
+        "model": os.getenv(model_key, "").strip() or default_model,
+        "total_items": len(measurements),
+        "completed_items": statuses["completed"],
+        "semantic_fallbacks": sum(bool(m.get("semantic_fallback")) for m in measurements),
+        "operational_fallbacks": sum(bool(m.get("operational_fallback")) for m in measurements),
+        "timeouts": statuses["timeout"],
+        "exceptions": statuses["exception"],
+        "missing_tool_calls": statuses["missing_tool_call"],
+        "missing_entity_uris": statuses["missing_entity_uri"],
+        "by_phase": phases,
+    }
 
 
 def make_exporter_node(tools: list | None = None):
@@ -42,6 +79,7 @@ def make_exporter_node(tools: list | None = None):
         input_text = state.get("input_text", "")
         mapped_entities = state.get("mapped_entities", [])
         mapped_triplets = state.get("mapped_triplets", [])
+        measurements = state.get("measurements", [])
 
         # Determine ontology name from ONTOLOGY_DIR env
         ontology_dir = os.getenv("ONTOLOGY_DIR", "").lower()
@@ -60,6 +98,7 @@ def make_exporter_node(tools: list | None = None):
             "ontology": ontology_name,
             "extracted_entities": mapped_entities,
             "extracted_triplets": mapped_triplets,
+            "mapping_diagnostics": _mapping_diagnostics(measurements),
         }
 
         validation_warnings = state.get("validation_warnings")

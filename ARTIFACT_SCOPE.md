@@ -37,14 +37,15 @@ Anthropic endpoint. `claim3` needs no endpoint at all. Full rationale is in
 ANCHOR's hybrid ontology discovery is an LLM agent driving the ontology MCP
 server through multi-step tool calling (paper Section IV-C). claim1 and claim2
 therefore depend on the evaluator's chosen model sustaining several dependent
-tool calls per entity and predicate. A model weak at tool calling completes a run
-and emits a poor or empty graph, failing the structural check — a limitation of
-that model, not a defect in the artifact.
+tool calls per entity and predicate. Intentional generic semantic fallbacks are
+part of the design when no ontology-specific term fits. The artifact separately
+records operational fallbacks caused by timeouts, exceptions, missing final
+tool calls, or missing entity URIs; those fail the Functional claim check.
 
 The package keeps the two causes separable: `check_endpoint.py` probes tool
-calling before each run and warns when the model fails it, and `claim3` validates
-the packaged code and data with no LLM at all. If claim3 passes while claim1
-yields an empty graph, the artifact is intact and the model is the variable.
+calling before each run and warns when the model fails it, `mapping_diagnostics`
+records completion for every mapper item, and `claim3` validates the packaged
+code and data with no LLM at all.
 
 ## Explicitly outside the requested evaluation
 

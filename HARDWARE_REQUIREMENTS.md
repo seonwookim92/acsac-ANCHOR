@@ -20,12 +20,30 @@ reference model. See `infrastructure/constraints`.
 - Linux or macOS with Python 3.11, 3.12, or 3.13, Git, and outbound HTTPS
   access. `install.sh` auto-detects a supported interpreter.
 - 8 GB RAM or more.
-- 5 GB free storage for the Python environment and the embedding-model cache.
+- 5 GB free storage for the default CPU evaluation environment, installer
+  download cache, and embedding-model cache.
 - Network access to whatever LLM endpoint is configured in `artifact/.env`.
 
 The ANCHOR client and the local ontology MCP process do not require a GPU. The
 `all-MiniLM-L6-v2` embedding model runs on CPU by default
-(`EMBEDDING_DEVICE=cpu`).
+(`EMBEDDING_DEVICE=cpu`). On Linux, `install.sh` explicitly installs PyTorch's
+CPU-only wheel so that the client does not download the unused CUDA runtime.
+On a clean Ubuntu 25.10 x86-64 image with Python 3.13.7, the resulting virtual
+environment measured 1.47 GB and contained no `nvidia-*` packages; the embedding
+model added about 92 MB and pip's retained download cache measured 351 MB. The
+package, environment, pip cache, and embedding cache therefore occupied about
+1.92 GB in total. The 5 GB requirement leaves more than 3 GB of headroom for
+temporary installer files.
+
+The 5 GB figure applies only to the default CPU evaluation installation. An
+optional CUDA-enabled client can be installed on Linux with
+`ANCHOR_TORCH_VARIANT=cuda ./install.sh`, followed by
+`EMBEDDING_DEVICE=cuda` in `artifact/.env`. PyTorch then installs its CUDA
+runtime packages. In the same clean Ubuntu 25.10/Python 3.13.7 environment, the
+CUDA virtual environment measured 5.52 GB and the retained pip cache measured
+2.89 GB; including the package and embedding cache, the total was about 8.51 GB.
+Allow at least 10 GB free disk for that optional environment. This client-side
+CUDA option is distinct from the reference LLM server below.
 
 ## Reference research environment
 

@@ -6,11 +6,23 @@ Client -- the only hard requirement for artifact evaluation
 OS: Linux (recommended) or macOS
 Python: 3.11, 3.12, or 3.13 (all verified; install.sh auto-detects)
 RAM: 8 GB minimum, 16 GB recommended
-Disk: 5 GB free for the virtual environment and the embedding-model cache,
-      excluding model weights
+Disk: 5 GB free for the virtual environment, installer download cache, and
+      embedding-model cache, excluding LLM weights. On Ubuntu 25.10 x86-64
+      with Python 3.13.7, the CPU-only environment measured 1.47 GB and the
+      all-MiniLM-L6-v2 cache added about 92 MB. Including the 351 MB retained
+      pip download cache and the package itself, the measured total was about
+      1.92 GB, leaving more than 3 GB for temporary files.
 GPU: none
 Network: outbound HTTPS for Python packages and the sentence-transformers
          embedding model, plus reachability of the configured LLM endpoint
+
+install.sh selects PyTorch's CPU-only Linux wheel and verifies that no NVIDIA
+runtime packages were installed. The 5 GB requirement applies to this default
+CPU evaluation environment. An optional CUDA-enabled client installation is
+available with ANCHOR_TORCH_VARIANT=cuda ./install.sh and requires at least
+10 GB free disk. Its measured retained footprint was about 8.51 GB on the same
+Ubuntu 25.10/Python 3.13.7 test environment. It is separate from the reference
+LLM server below.
 
 claims/claim3 runs on this client alone, with no endpoint and no network beyond
 the initial install. claims/claim1 and claims/claim2 additionally need an LLM

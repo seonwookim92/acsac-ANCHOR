@@ -1,6 +1,6 @@
 # ANCHOR: Schema-Agnostic Threat Knowledge Graph Construction via Hybrid Ontology Discovery 
 
-ANCHOR (Adaptive Navigation for Cybersecurity Hybrid Ontology Reasoning) is a schema-agnostic CTI knowledge graph construction system that converts unstructured cyber threat reports into ontology-aligned knowledge graphs. It combines LLM-based extraction, hybrid ontology discovery over formal OWL/SHACL schemas, and SHACL-based validation to produce structured entities and relations across multiple cybersecurity ontologies such as UCO, STIX, and MALOnt.
+ANCHOR (Adaptive Navigation for Cybersecurity Hybrid Ontology Reasoning) is a schema-agnostic CTI knowledge graph construction system that converts unstructured cyber threat reports into ontology-aligned knowledge graphs. It combines LLM-based extraction, hybrid ontology discovery over formal ontology schemas, and SHACL-based validation when the selected schema supplies shapes. Of the packaged schemas, UCO includes SHACL shapes; STIX and MALOnt are OWL-only.
 
 ---
 
@@ -52,10 +52,10 @@ artifact/                       # this directory
 ├── mcp/
 │   └── ontology-mcp-server/    # MCP ontology server
 │
-├── ontology/                   # OWL/SHACL ontology schemas
-│   ├── uco/                    # Unified Cyber Ontology
-│   ├── stix/                   # STIX 2.1
-│   ├── malont/                 # MalOnt
+├── ontology/                   # Packaged ontology schemas
+│   ├── uco/                    # Unified Cyber Ontology (OWL + SHACL)
+│   ├── stix/                   # STIX 2.1 (OWL-only)
+│   ├── malont/                 # MalOnt (OWL-only)
 │
 ├── dataset/                    # CTINexus evaluation dataset (.txt files)
 ├── ground_truth/               # Ground truth annotations per ontology
@@ -308,11 +308,38 @@ Each run produces a JSON file (and optionally a `.cypher` file) in `OUTPUT_DIR`.
       "object": "Windows systems"
     }
   ],
+  "mapping_diagnostics": {
+    "provider": "vllm",
+    "model": "qwen3.5-35b",
+    "total_items": 2,
+    "completed_items": 2,
+    "semantic_fallbacks": 1,
+    "operational_fallbacks": 0,
+    "timeouts": 0,
+    "exceptions": 0,
+    "missing_tool_calls": 0,
+    "missing_entity_uris": 0,
+    "by_phase": {
+      "entity": {"total": 1, "completed": 1, "semantic_fallbacks": 0, "operational_fallbacks": 0},
+      "dt_prop": {"total": 0, "completed": 0, "semantic_fallbacks": 0, "operational_fallbacks": 0},
+      "relation": {"total": 1, "completed": 1, "semantic_fallbacks": 1, "operational_fallbacks": 0}
+    }
+  },
   "validation_warnings": []
 }
 ```
 
-`validation_warnings` is populated when an entity fails SHACL validation after all correction retries.
+`mapping_diagnostics` distinguishes an intentional semantic fallback selected
+through a completed final tool call from an operational fallback injected after
+a timeout, exception, missing final tool call, or missing entity URI. Generic
+URIs such as `owl:Thing`, `rdfs:label`, and `rdfs:seeAlso` remain valid semantic
+fallbacks when no ontology-specific term fits. Functional claim checks require
+zero operational fallbacks and reject an entirely generic graph.
+
+`validation_warnings` is populated when an entity fails applicable SHACL
+constraints after all correction retries. When the selected ontology contains
+no SHACL shapes, the correction stage reports that validation was skipped and
+does not describe the entities as having passed SHACL validation.
 
 **Cypher output** (`--export-cypher`):
 
@@ -391,11 +418,11 @@ Ground truth files are located at `ground_truth/{uco,stix,malont}/`.
 
 ## Supported Ontologies
 
-| Key | Name | Path |
-|---|---|---|
-| `uco` | Unified Cyber Ontology (UCO) | `ontology/uco/` |
-| `stix` | STIX 2.1 | `ontology/stix/` |
-| `malont` | MalOnt | `ontology/malont/` |
+| Key | Name | Schema content | Path |
+|---|---|---|---|
+| `uco` | Unified Cyber Ontology (UCO) | OWL + SHACL | `ontology/uco/` |
+| `stix` | STIX 2.1 | OWL-only | `ontology/stix/` |
+| `malont` | MalOnt | OWL-only | `ontology/malont/` |
 
 Switch ontologies at runtime with `--schema` or by setting `ONTOLOGY_DIR` in `.env`.
 

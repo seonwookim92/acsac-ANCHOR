@@ -39,7 +39,6 @@ tar -C "${parent_dir}" -czf "${ARCHIVE_PATH}" \
   --exclude="${root_name}/.venv" \
   --exclude="${root_name}/.env" \
   --exclude="${root_name}/results" \
-  --exclude="${root_name}/submission/metadata.toml" \
   --exclude='__pycache__' \
   --exclude='*.pyc' \
   --exclude='.DS_Store' \

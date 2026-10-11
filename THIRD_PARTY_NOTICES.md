@@ -6,7 +6,7 @@
 | UCO 1.4.0 | `ontology/uco/` | `ucoProject/UCO@8335d32...`; Apache-2.0 |
 | STIX 2.1 OWL | `ontology/stix/` | `oasis-open/tac-ontology@d93cdd9...`; BSD-3-Clause |
 | MALOnt | `ontology/malont/` | `aiforsec/MALOnt@967ce06...`; MIT |
-| Ontology MCP server | `mcp/ontology-mcp-server/` | bundled MIT license |
+| Ontology MCP server | `mcp/ontology-mcp-server/` | MIT; Copyright 2026 Seonwoo Kim, Jinwoo Kim, Daegyu Kang, Daeseong Kim, and Insup Lee |
 | Qwen3.5-35B FP8 | external, not distributed | Qwen model repository; Apache-2.0 |
 | Python packages | installed by reviewer | each package retains its own license |
 

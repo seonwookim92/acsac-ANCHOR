@@ -41,6 +41,3 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
-
-# ACSAC metadata generated after public URLs are assigned
-metadata.toml

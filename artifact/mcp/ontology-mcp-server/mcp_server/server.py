@@ -1191,11 +1191,15 @@ def validate_entity(entity_uri: str) -> str:
     """Validates entity against SHACL constraints. Returns structured JSON."""
     subj = rdflib.URIRef(entity_uri)
     types = [str(t) for t in engine.graph.objects(subj, RDF.type)]
+    schema_constraint_count = sum(len(shapes) for shapes in engine.shapes.values())
 
     if not types:
         result = {
             "valid": False,
             "entity": entity_uri,
+            "shacl_status": "failed",
+            "constraints_checked": 0,
+            "schema_constraint_count": schema_constraint_count,
             "errors": [{
                 "type": "no_type",
                 "message": "Entity has no rdf:type assigned.",
@@ -1209,11 +1213,13 @@ def validate_entity(entity_uri: str) -> str:
         all_targets.extend([t] + engine.get_transitive_superclasses(t))
 
     errors = []
+    constraints_checked = 0
     for target in set(all_targets):
         if target not in engine.shapes:
             continue
         target_short = _local_name(target)
         for shape in engine.shapes[target]:
+            constraints_checked += 1
             values = list(engine.graph.objects(subj, rdflib.URIRef(shape['path'])))
             min_count = int(shape['minCount']) if shape['minCount'] is not None else None
             max_count = int(shape['maxCount']) if shape['maxCount'] is not None else None
@@ -1257,8 +1263,32 @@ def validate_entity(entity_uri: str) -> str:
                 })
 
     if not errors:
-        return json.dumps({"valid": True, "entity": entity_uri, "message": "All SHACL constraints satisfied."})
-    return json.dumps({"valid": False, "entity": entity_uri, "error_count": len(errors), "errors": errors}, indent=2)
+        if schema_constraint_count == 0:
+            status = "not_available"
+            message = "The selected ontology defines no SHACL shapes; validation was skipped."
+        elif constraints_checked == 0:
+            status = "not_applicable"
+            message = "No SHACL shape applies to this entity's classes."
+        else:
+            status = "passed"
+            message = "All applicable SHACL constraints satisfied."
+        return json.dumps({
+            "valid": True,
+            "entity": entity_uri,
+            "shacl_status": status,
+            "constraints_checked": constraints_checked,
+            "schema_constraint_count": schema_constraint_count,
+            "message": message,
+        })
+    return json.dumps({
+        "valid": False,
+        "entity": entity_uri,
+        "shacl_status": "failed",
+        "constraints_checked": constraints_checked,
+        "schema_constraint_count": schema_constraint_count,
+        "error_count": len(errors),
+        "errors": errors,
+    }, indent=2)
 
 @mcp.tool()
 def export_graph(filename: str = "knowledge_graph.ttl") -> str:

@@ -58,6 +58,6 @@ class AnchorState(TypedDict):
     errors: Annotated[list[str], add]
 
     # ── Measurements (--measurement flag) ─────────────────────────────────────
-    # One record per mapper item: {phase, query, search_called, recurse_called,
-    #   final_tool, search_calls:[{tool, candidates:[{name,score}]}], top_score}
+    # One record per mapper item, including tool strategy, completion_status,
+    # semantic_fallback, operational_fallback, and optional search scores.
     measurements: Annotated[list[dict], add]

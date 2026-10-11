@@ -5,7 +5,9 @@
 ANCHOR builds ontology-aligned threat knowledge graphs from unstructured CTI
 text. It decouples extraction from any specific schema, discovers relevant
 ontology fragments dynamically instead of stuffing a whole schema into the
-prompt, and enforces SHACL constraints in a closed correction loop. This
+prompt, and enforces SHACL constraints in a closed correction loop when the
+selected ontology supplies shapes. The packaged UCO schema includes SHACL;
+the packaged STIX and MALOnt schemas are OWL-only. This
 repository contains the implementation, the 149-report CTINexus input corpus,
 author-created UCO/STIX/MALOnt annotations, and the packaged ontologies.
 
@@ -100,12 +102,12 @@ search, then a recursive walk down the class hierarchy, then a scoped re-search.
 This is the mechanism the paper proposes, not an implementation detail, so the
 artifact cannot avoid depending on it.
 
-The practical consequence for evaluation: **a model that is weak at tool calling
-will produce a poor or empty graph no matter how correct the code is.** Such a
-run completes without error and then fails the structural check with
-`no entities were extracted` or a near-empty graph. Typical symptoms are a model
-that answers in prose instead of emitting a tool call, that invents tool
-arguments, or that stops after the first call and never follows up.
+The practical consequence for evaluation: a model that is weak at tool calling
+may answer in prose, time out, invent tool arguments, or stop before the final
+tool call. ANCHOR records those cases as **operational fallbacks**, separately
+from intentional semantic fallbacks such as `owl:Thing`, `rdfs:label`, or
+`rdfs:seeAlso` when no schema term fits. The Functional checks allow semantic
+fallbacks but reject operational fallbacks and an entirely generic graph.
 
 This is a property of the chosen model, not a defect in the artifact, and it is
 distinguishable from one:
@@ -114,9 +116,11 @@ distinguishable from one:
   and prints `WARNING: the model did not make a tool call when asked to` when the
   model fails the probe. If you saw that warning, a subsequent claim failure is
   explained by model choice.
+- Every output includes `mapping_diagnostics` with provider, model, completed
+  mapper items, semantic fallbacks, operational fallbacks, timeouts, exceptions,
+  missing final tool calls, and missing entity URIs.
 - `claims/claim3` exercises the packaged code and data with **no LLM at all**. If
-  claim3 passes and a claim1/claim2 run yields an empty graph, the package is
-  intact and the model is the variable.
+  claim3 passes, package integrity is independent of the configured model.
 - Re-running claim1 with a stronger tool-calling model resolves it. Models this
   pipeline has been run with are listed in `artifact/PROJECT_README.md`.
 
@@ -137,7 +141,7 @@ artifact/                   main code, data, and schemas
   main.py                     ANCHOR command-line entry point
   src/                        extraction, mapping, validation, export
   mcp/ontology-mcp-server/    local ontology discovery MCP server
-  ontology/{uco,stix,malont}/ packaged OWL/SHACL schemas
+  ontology/{uco,stix,malont}/ packaged ontologies (UCO: OWL+SHACL; others: OWL)
   dataset/                    149 CTINexus report texts
   ground_truth/{uco,stix,malont}/  149 author-created records per schema
   evaluation/                 original evaluation utilities
@@ -147,7 +151,7 @@ artifact/                   main code, data, and schemas
 infrastructure/             constraints, access, resources,
                             model_snapshot.json, reference vLLM scripts
 claims/claim{1,2,3}/        claim.txt, run.sh, expected/
-submission/                 AE submission metadata and packaging helper
+submission/                 metadata.toml and the release packaging helper
 ```
 
 Deliberately **not** included: model weights, a running vLLM service, GPU
@@ -159,6 +163,18 @@ hardware, credentials, generated results, and Python environments.
 or 3.13 (auto-detected by `install.sh`), Git, outbound HTTPS, about 8 GB RAM
 and 5 GB free storage. The first run downloads
 the `all-MiniLM-L6-v2` embedding model. No GPU.
+
+On Linux, `install.sh` selects the CPU-only PyTorch wheel instead of downloading
+the unused CUDA runtime. A clean Ubuntu 25.10/Python 3.13.7 installation measured
+1.47 GB for the virtual environment and about 92 MB for the embedding-model
+cache. Including the 351 MB retained pip cache and the package itself, the total
+was about 1.92 GB; the 5 GB figure leaves more than 3 GB for temporary files.
+The 5 GB requirement applies only to this default CPU evaluation environment.
+For the optional CUDA-enabled embedding client, use
+`ANCHOR_TORCH_VARIANT=cuda ./install.sh`, allow at least 10 GB free disk, and
+then set `EMBEDDING_DEVICE=cuda` in `artifact/.env`. The measured retained
+footprint for that CUDA installation was about 8.51 GB in the same clean test
+environment.
 
 **Optional, only to self-host the paper's reference model:** an NVIDIA GPU
 server with at least 64 GB of accelerator-addressable VRAM or coherent unified

@@ -69,12 +69,12 @@ then a recursive walk down the class hierarchy, then a scoped re-search. This is
 the mechanism the paper proposes, not an implementation detail, so the artifact
 cannot avoid depending on it.
 
-The practical consequence for evaluation: A MODEL THAT IS WEAK AT TOOL CALLING
-WILL PRODUCE A POOR OR EMPTY GRAPH NO MATTER HOW CORRECT THE CODE IS. Such a run
-completes without error and then fails the structural check with "no entities
-were extracted" or a near-empty graph. Typical symptoms are a model that answers
-in prose instead of emitting a tool call, that invents tool arguments, or that
-stops after the first call and never follows up.
+The practical consequence for evaluation: a model weak at tool calling may
+answer in prose, time out, invent tool arguments, or stop before the final tool
+call. ANCHOR records these as OPERATIONAL FALLBACKS, separately from intentional
+semantic fallbacks such as owl:Thing, rdfs:label, or rdfs:seeAlso when no schema
+term fits. Functional checks allow semantic fallbacks but reject operational
+fallbacks and an entirely generic graph.
 
 This is a property of the chosen model, not a defect in the artifact, and it is
 distinguishable from one:
@@ -84,9 +84,12 @@ distinguishable from one:
     the model fails the probe. If you saw that warning, a subsequent claim
     failure is explained by model choice.
 
+  - Every output includes mapping_diagnostics with provider, model, completed
+    mapper items, semantic and operational fallback counts, timeouts, exceptions,
+    missing final tool calls, and missing entity URIs.
+
   - claims/claim3 exercises the packaged code and data with NO LLM at all. If
-    claim3 passes and a claim1/claim2 run yields an empty graph, the package is
-    intact and the model is the variable.
+    claim3 passes, package integrity is independent of the configured model.
 
   - Re-running claim1 with a stronger tool-calling model resolves it. Models this
     pipeline has been run with are listed in artifact/PROJECT_README.md.
@@ -109,7 +112,8 @@ DIRECTORY LAYOUT
         main.py                 ANCHOR command-line entry point
         src/                    extraction, mapping, validation, export
         mcp/ontology-mcp-server/  local ontology discovery MCP server
-        ontology/{uco,stix,malont}/  packaged OWL/SHACL schemas
+        ontology/{uco,stix,malont}/  packaged ontologies
+                                      (UCO: OWL+SHACL; STIX/MALOnt: OWL-only)
         dataset/                149 CTINexus report texts
         ground_truth/{uco,stix,malont}/  149 author-created records per schema
         evaluation/             original evaluation utilities
@@ -120,7 +124,7 @@ DIRECTORY LAYOUT
     infrastructure/         constraints, access, resources, model_snapshot.json,
                             and the reference vLLM setup scripts
     claims/claim{1,2,3}/    claim.txt, run.sh, expected/ per functional claim
-    submission/             AE submission metadata and packaging helper
+    submission/             metadata.toml and the release packaging helper
 
     ARTIFACT_SCOPE.md       paper-to-artifact claim mapping
     EXPECTED_OUTPUT.md      consolidated expected-output reference
@@ -164,6 +168,20 @@ Client (this is all that is required):
     About 8 GB RAM and 5 GB free storage. The first run downloads the
     all-MiniLM-L6-v2 embedding model.
     No GPU.
+
+    On Linux, install.sh selects the CPU-only PyTorch wheel instead of the
+    unused CUDA runtime. A clean Ubuntu 25.10 / Python 3.13.7 installation
+    measured 1.47 GB for the virtual environment and about 92 MB for the model
+    cache. Including the 351 MB retained pip cache and the package itself, the
+    total was about 1.92 GB; 5 GB leaves more than 3 GB for temporary files.
+    The 5 GB requirement applies only to this default CPU evaluation setup.
+    For an optional CUDA-enabled embedding client, run:
+
+        ANCHOR_TORCH_VARIANT=cuda ./install.sh
+
+    Allow at least 10 GB free disk, then set EMBEDDING_DEVICE=cuda in
+    artifact/.env. The measured retained footprint for that CUDA installation
+    was about 8.51 GB in the same clean test environment.
 
 Optional, only to self-host the paper's reference model:
     An NVIDIA GPU server with at least 64 GB of accelerator-addressable VRAM or

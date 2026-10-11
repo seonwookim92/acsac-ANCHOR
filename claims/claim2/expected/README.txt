@@ -16,10 +16,22 @@ selected on the command line ("stix" and "malont" respectively), and the entity
 classes and predicate URIs must come from that schema's vocabulary rather than
 UCO's.
 
+Before each schema-specific PASS line, the validator also reports that every
+mapper item completed and that there were zero operational fallbacks.
+
+The packaged STIX and MALOnt schemas contain OWL definitions but no SHACL
+shapes. Their runs must therefore report:
+
+    [shacl_correction] skipped: selected ontology contains no SHACL shapes
+
+This message distinguishes an unavailable SHACL ruleset from a successful
+constraint check. Claim 1's UCO run exercises the SHACL-capable path.
+
 What demonstrates the claim is that a single unmodified executable and a single
 extraction path produced ontology-aligned output against three different
-OWL/SHACL schemas, selected only by --schema. Combined with claim1 (UCO), this
-covers all three packaged ontologies.
+ontology schemas, selected only by --schema. Combined with claim1 (UCO), this
+covers all three packaged ontologies without implying that every source schema
+contains SHACL shapes.
 
 NOT AN ACCEPTANCE CRITERION
 
@@ -30,8 +42,10 @@ accuracy numbers in the paper are outside the scope of this claim.
 MODEL CAPABILITY IS A PREREQUISITE
 
 As in claim1: the mapper depends on multi-step tool calling, so a model weak at
-it yields a poor or empty graph for one or both schemas. check_endpoint.py warns
-about this before each run, and claims/claim3 isolates package integrity from
+it may time out, raise, or omit a final tool call for one or both schemas. Those
+operational fallbacks fail the check. Intentional semantic fallbacks selected
+through completed tool calls remain allowed. check_endpoint.py warns about tool
+capability before each run, and claims/claim3 isolates package integrity from
 model capability.
 
 TROUBLESHOOTING

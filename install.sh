@@ -83,6 +83,31 @@ echo "[install] using ${PYTHON_BIN} (Python ${chosen_version})"
 "${PYTHON_BIN}" -m venv "${VENV_DIR}"
 "${VENV_DIR}/bin/python" -m pip install --upgrade pip wheel 'setuptools<82'
 
+# PyPI's Linux torch wheel pulls in the complete CUDA runtime even though the
+# artifact uses CPU embeddings by default. Install the matching CPU-only wheel
+# unless the user explicitly requests the optional CUDA client environment with
+# ANCHOR_TORCH_VARIANT=cuda. The local "+cpu" version satisfies the
+# torch==2.12.0 lock entry below. macOS wheels do not carry the Linux CUDA
+# dependencies, so they use PyPI as usual.
+TORCH_VARIANT="${ANCHOR_TORCH_VARIANT:-cpu}"
+if [[ "$(uname -s)" == "Linux" ]]; then
+  case "${TORCH_VARIANT}" in
+    cpu)
+      TORCH_CPU_INDEX_URL="${ANCHOR_TORCH_CPU_INDEX_URL:-https://download.pytorch.org/whl/cpu}"
+      "${VENV_DIR}/bin/python" -m pip install \
+        --index-url "${TORCH_CPU_INDEX_URL}" \
+        'torch==2.12.0'
+      ;;
+    cuda)
+      echo "[install] optional CUDA-enabled PyTorch requested; allow at least 10 GB free disk"
+      ;;
+    *)
+      echo "ERROR: ANCHOR_TORCH_VARIANT must be 'cpu' or 'cuda', not '${TORCH_VARIANT}'" >&2
+      exit 1
+      ;;
+  esac
+fi
+
 # requirements-lock.txt pins every transitive dependency and is the exact
 # environment the artifact was tested with. If a resolver conflict appears on a
 # Python version other than the one it was generated on, fall back to the pinned
@@ -93,6 +118,39 @@ else
   echo "[install] the lock file did not resolve on Python ${chosen_version};" >&2
   echo "[install] falling back to requirements-core.txt (pinned direct dependencies)" >&2
   "${VENV_DIR}/bin/python" -m pip install -r "${ARTIFACT_DIR}/requirements-core.txt"
+fi
+
+"${VENV_DIR}/bin/python" -m pip check
+if [[ "$(uname -s)" == "Linux" ]]; then
+  ANCHOR_TORCH_VARIANT="${TORCH_VARIANT}" "${VENV_DIR}/bin/python" - <<'PY'
+from importlib.metadata import distributions, version
+import os
+
+torch_version = version("torch")
+nvidia_packages = sorted(
+    name
+    for dist in distributions()
+    if (name := dist.metadata.get("Name", "")).lower().startswith("nvidia-")
+)
+variant = os.environ["ANCHOR_TORCH_VARIANT"]
+if variant == "cpu" and (not torch_version.endswith("+cpu") or nvidia_packages):
+    raise SystemExit(
+        "ERROR: the default Linux install must use CPU-only PyTorch; "
+        f"found torch={torch_version}, NVIDIA packages={nvidia_packages or 'none'}"
+    )
+if variant == "cuda" and (torch_version.endswith("+cpu") or not nvidia_packages):
+    raise SystemExit(
+        "ERROR: the requested CUDA install did not provide a CUDA-enabled PyTorch; "
+        f"found torch={torch_version}, NVIDIA packages={nvidia_packages or 'none'}"
+    )
+if variant == "cpu":
+    print(f"[install] verified CPU-only PyTorch {torch_version}; no NVIDIA packages")
+else:
+    print(
+        f"[install] verified CUDA-enabled PyTorch {torch_version}; "
+        f"{len(nvidia_packages)} NVIDIA packages"
+    )
+PY
 fi
 
 ANCHOR_PYTHON="${VENV_DIR}/bin/python" "${ARTIFACT_DIR}/scripts/smoke_test.sh"

@@ -33,12 +33,17 @@ The generated `artifact/output/functional-uco.json` must:
 - report `"ontology": "uco"`;
 - retain nonempty input text;
 - contain `extracted_entities` and `extracted_triplets` arrays;
-- contain at least one extracted entity;
+- contain at least one extracted entity and at least one triplet;
 - give every entity a nonempty `name` and `class`; and
 - use the required `subject`, `relation`, `property`, `property_type`, and
-  `object` fields for every emitted triplet.
+  `object` fields for every emitted triplet;
+- use class/property URIs declared by the selected ontology, except for the
+  documented generic semantic fallbacks;
+- contain at least one ontology-specific class and property; and
+- report zero timeout-, exception-, missing-tool-call-, or missing-URI
+  operational fallbacks in `mapping_diagnostics`.
 
-The validator prints:
+The validator prints a mapper-completion summary and then:
 
 ```text
 PASS: valid uco ANCHOR output
@@ -67,11 +72,11 @@ Full criterion: [`claims/claim2/expected/README.txt`](claims/claim2/expected/REA
 
 ANCHOR's ontology mapper drives the MCP server through multi-step tool calling,
 so claim1 and claim2 depend on the chosen model sustaining several dependent tool
-calls per entity and predicate. A model weak at that completes the run and emits
-a poor or empty graph, failing the structural check — a model limitation, not an
-artifact defect. `check_endpoint.py` probes tool calling before each run and warns
-when the model fails; `claim3` validates the package with no LLM at all, so the
-two causes stay distinguishable.
+calls per entity and predicate. The output records whether each item completed
+its final tool call. Intentional generic semantic fallbacks remain valid, while
+timeouts, exceptions, missing final calls, and missing entity URIs are recorded
+as operational fallbacks and fail the Functional check. `check_endpoint.py`
+probes tool calling before each run; `claim3` validates the package with no LLM.
 
 ## What is *not* an acceptance criterion
 

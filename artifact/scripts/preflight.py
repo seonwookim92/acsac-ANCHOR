@@ -35,6 +35,7 @@ REQUIRED_LAYOUT = (
     "claims/claim1/claim.txt",
     "claims/claim1/run.sh",
     "claims/claim1/expected",
+    "submission/metadata.toml",
 )
 
 
@@ -110,7 +111,8 @@ def check_data() -> None:
 
 def check_ontologies() -> None:
     try:
-        from rdflib import Graph
+        from rdflib import Graph, Namespace
+        from rdflib.namespace import RDF
     except ImportError:
         fail("rdflib is not installed; run ./install.sh")
 
@@ -119,15 +121,29 @@ def check_ontologies() -> None:
         "stix": sorted((ROOT / "ontology" / "stix").rglob("*.owl")),
         "malont": sorted((ROOT / "ontology" / "malont").rglob("*.owl")),
     }
+    shape_counts = {}
+    shacl = Namespace("http://www.w3.org/ns/shacl#")
     for schema, paths in ontology_files.items():
         if not paths:
             fail(f"no ontology files found for {schema}")
+        shape_count = 0
         for path in paths:
             try:
-                Graph().parse(path)
+                graph = Graph().parse(path)
             except Exception as exc:
                 fail(f"RDF parse failed for {path.relative_to(ROOT)}: {exc}")
+            shape_count += sum(1 for _ in graph.subjects(RDF.type, shacl.NodeShape))
+            shape_count += sum(1 for _ in graph.subjects(RDF.type, shacl.PropertyShape))
+        shape_counts[schema] = shape_count
         print(f"PASS: {schema} RDF parses ({len(paths)} files)")
+
+    if shape_counts["uco"] == 0:
+        fail("expected the packaged UCO schema to contain SHACL shapes")
+    for schema in ("stix", "malont"):
+        if shape_counts[schema] != 0:
+            fail(f"expected packaged {schema} to be OWL-only, found {shape_counts[schema]} SHACL shapes")
+    print("PASS: SHACL scope explicit "
+          f"(uco={shape_counts['uco']} shapes; stix=0; malont=0)")
 
 
 def check_clean_package(strict: bool = False) -> None:

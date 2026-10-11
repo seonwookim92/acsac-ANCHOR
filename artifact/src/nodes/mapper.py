@@ -124,21 +124,21 @@ def _parse_search_scores(content: str) -> list[dict]:
 
 
 def _collect_measurements(
-    messages: list, phase: str, query: str, timed_out: bool = False
+    messages: list,
+    phase: str,
+    query: str,
+    failure_reason: str | None = None,
+    selected_uri: str | None = None,
+    generic_uri: str | None = None,
 ) -> dict:
     """Build one measurement record from a mapper agent's message history.
 
     final_tool is the last search_* or recurse_* tool called immediately before
-    the final create_entity / set_property call.
+    the final create_entity / set_property call.  A generic URI chosen through
+    a completed final tool call is a legitimate semantic fallback.  A value
+    injected because the agent timed out, raised, or omitted its final tool call
+    is an operational fallback.
     """
-    if timed_out or not messages:
-        return {
-            "phase": phase, "query": query,
-            "search_called": False, "recurse_called": False,
-            "final_tool": "timeout" if timed_out else "fallback",
-            "search_calls": [], "top_score": None,
-        }
-
     # Map tool_call_id → tool_name so ToolMessages can be identified
     call_id_to_name: dict[str, str] = {}
     for msg in messages:
@@ -148,7 +148,7 @@ def _collect_measurements(
     search_called = False
     recurse_called = False
     last_lookup: str | None = None   # "search" | "recurse"
-    final_tool = "fallback"
+    final_action_called = False
     search_calls: list[dict] = []
 
     for msg in messages:
@@ -162,7 +162,7 @@ def _collect_measurements(
                 recurse_called = True
                 last_lookup = "recurse"
             elif name in _FINAL_TOOL_NAMES:
-                final_tool = last_lookup or "fallback"
+                final_action_called = True
 
         # Parse scores from ToolMessage responses to search_* calls
         if isinstance(msg, ToolMessage):
@@ -177,10 +177,30 @@ def _collect_measurements(
             if top_score is None or c["score"] > top_score:
                 top_score = c["score"]
 
+    if failure_reason is None and not final_action_called:
+        failure_reason = "missing_tool_call"
+    completion_status = failure_reason or "completed"
+    semantic_fallback = (
+        completion_status == "completed"
+        and generic_uri is not None
+        and selected_uri == generic_uri
+    )
+    operational_fallback = completion_status != "completed"
+    if completion_status == "timeout":
+        final_tool = "timeout"
+    elif operational_fallback:
+        final_tool = "fallback"
+    else:
+        final_tool = last_lookup or "direct"
+
     return {
         "phase": phase, "query": query,
         "search_called": search_called, "recurse_called": recurse_called,
         "final_tool": final_tool,
+        "final_action_called": final_action_called,
+        "completion_status": completion_status,
+        "semantic_fallback": semantic_fallback,
+        "operational_fallback": operational_fallback,
         "search_calls": search_calls,
         "top_score": top_score,
     }
@@ -305,6 +325,29 @@ async def _run_agent(agent, prompt: str, timeout: int, verbose: bool, label: str
     return result.get("messages", [])
 
 
+def _make_lazy_agent_getter(tools: list):
+    """Create and cache a mapper agent only when its node actually executes.
+
+    Graph inspection needs the node topology but no provider or credentials.
+    Delaying construction keeps ``main.py --graph`` and Claim 3 independent of
+    the user's LLM configuration while preserving one agent per compiled node.
+    """
+    agent = None
+
+    def get_agent():
+        nonlocal agent
+        if agent is None:
+            llm = get_llm(
+                temperature=0,
+                max_tokens=int(os.getenv("MAPPER_MAX_TOKENS", 4096)),
+                thinking=True,
+            )
+            agent = create_react_agent(llm, tools)
+        return agent
+
+    return get_agent
+
+
 # ── Node: mapper_init ──────────────────────────────────────────────────────────
 
 def make_mapper_init_node(tools: list):
@@ -400,10 +443,7 @@ def make_resolve_entity_node(tools: list):
     ns_arg  = f', namespace_filter="{ns}"' if ns else ""
     timeout = int(os.getenv("MAPPER_TIMEOUT", 120))
     verbose = os.getenv("ANCHOR_VERBOSE", "").lower() in ("1", "true")
-    llm     = get_llm(temperature=0,
-                      max_tokens=int(os.getenv("MAPPER_MAX_TOKENS", 4096)),
-                      thinking=True)
-    agent = create_react_agent(llm, entity_tools)
+    get_agent = _make_lazy_agent_getter(entity_tools)
 
     async def resolve_entity_node(state: AnchorState) -> dict:
         pending = list(state.get("entities_pending", []))
@@ -442,17 +482,18 @@ CRITICAL: Use class URIs EXACTLY as they appear in tool output (lines starting w
 """
 
         print(f"[resolve_entity] '{name}'  hint='{type_hint}'")
-        timed_out = False
+        failure_reason = None
         try:
-            messages = await _run_agent(agent, prompt, timeout, verbose,
+            messages = await _run_agent(get_agent(), prompt, timeout, verbose,
                                         label=f"entity:{name}")
         except asyncio.TimeoutError:
             print(f"[resolve_entity] TIMEOUT for '{name}'")
             messages = []
-            timed_out = True
+            failure_reason = "timeout"
         except Exception as ex:
             print(f"[resolve_entity] ERROR for '{name}': {ex}")
             messages = []
+            failure_reason = "exception"
 
         # Extract results from message history
         create_args = _get_tool_call_args(messages, "create_entity")
@@ -477,7 +518,10 @@ CRITICAL: Use class URIs EXACTLY as they appear in tool output (lines starting w
         print(f"[resolve_entity] ✓ '{name}' → {_local(class_uri)}  ({entity_uri})")
 
         measurement = _collect_measurements(
-            messages, "entity", f"{name} [{type_hint}]", timed_out
+            messages, "entity", f"{name} [{type_hint}]",
+            failure_reason=failure_reason,
+            selected_uri=class_uri,
+            generic_uri=_OWL_THING,
         )
         return {
             "entities_pending":  pending,
@@ -502,10 +546,7 @@ def make_map_dt_prop_node(tools: list):
     dt_tools = _filter_tools(tools, dt_tool_names)
     timeout = int(os.getenv("MAPPER_TIMEOUT", 120))
     verbose = os.getenv("ANCHOR_VERBOSE", "").lower() in ("1", "true")
-    llm     = get_llm(temperature=0,
-                      max_tokens=int(os.getenv("MAPPER_MAX_TOKENS", 4096)),
-                      thinking=True)
-    agent = create_react_agent(llm, dt_tools)
+    get_agent = _make_lazy_agent_getter(dt_tools)
 
     async def map_dt_prop_node(state: AnchorState) -> dict:
         pending = list(state.get("dt_props_pending", []))
@@ -525,6 +566,12 @@ def make_map_dt_prop_node(tools: list):
                 "dt_props_pending": pending,
                 "dt_props_resolved": [{"entity_name": entity_name, "hint": hint,
                                        "property_uri": _RDFS_LABEL, "value": value}],
+                "measurements": [_collect_measurements(
+                    [], "dt_prop", f"{entity_name}.{hint}",
+                    failure_reason="missing_entity_uri",
+                    selected_uri=_RDFS_LABEL,
+                    generic_uri=_RDFS_LABEL,
+                )],
             }
 
         prompt = f"""\
@@ -571,24 +618,28 @@ You MUST call set_property(entity_uri="{entity_uri}", property_uri="<URI>", valu
 """
 
         print(f"[map_dt_prop] '{entity_name}'.'{hint}' = '{value}'")
-        timed_out = False
+        failure_reason = None
         try:
-            messages = await _run_agent(agent, prompt, timeout, verbose,
+            messages = await _run_agent(get_agent(), prompt, timeout, verbose,
                                         label=f"attr:{entity_name}")
         except asyncio.TimeoutError:
             print(f"[map_dt_prop] TIMEOUT for '{entity_name}'.'{hint}'")
             messages = []
-            timed_out = True
+            failure_reason = "timeout"
         except Exception as ex:
             print(f"[map_dt_prop] ERROR: {ex}")
             messages = []
+            failure_reason = "exception"
 
         sp_args      = _get_tool_call_args(messages, "set_property")
         property_uri = (sp_args.get("property_uri") if sp_args else None) or _RDFS_LABEL
         print(f"[map_dt_prop] ✓ '{entity_name}'.'{hint}' → {_local(property_uri)}")
 
         measurement = _collect_measurements(
-            messages, "dt_prop", f"{entity_name}.{hint}", timed_out
+            messages, "dt_prop", f"{entity_name}.{hint}",
+            failure_reason=failure_reason,
+            selected_uri=property_uri,
+            generic_uri=_RDFS_LABEL,
         )
         return {
             "dt_props_pending":  pending,
@@ -615,10 +666,7 @@ def make_map_relation_node(tools: list):
     create_tool = next((t for t in tools if getattr(t, "name", "") == "create_entity"), None)
     timeout = int(os.getenv("MAPPER_TIMEOUT", 120))
     verbose = os.getenv("ANCHOR_VERBOSE", "").lower() in ("1", "true")
-    llm     = get_llm(temperature=0,
-                      max_tokens=int(os.getenv("MAPPER_MAX_TOKENS", 4096)),
-                      thinking=True)
-    agent = create_react_agent(llm, rel_tools)
+    get_agent = _make_lazy_agent_getter(rel_tools)
 
     async def map_relation_node(state: AnchorState) -> dict:
         pending = list(state.get("relations_pending", []))
@@ -642,6 +690,12 @@ def make_map_relation_node(tools: list):
                 "relations_resolved": [{"subject": subject, "predicate": predicate,
                                         "property_uri": _RDFS_SEE_ALSO,
                                         "property_type": "ObjectProperty", "object": obj}],
+                "measurements": [_collect_measurements(
+                    [], "relation", f"{subject} --[{predicate}]--> {obj}",
+                    failure_reason="missing_entity_uri",
+                    selected_uri=_RDFS_SEE_ALSO,
+                    generic_uri=_RDFS_SEE_ALSO,
+                )],
             }
 
         # ── Pre-check: ensure both entities are registered in the MCP graph ──────
@@ -705,17 +759,18 @@ You MUST call set_property exactly once. Use subject URI and object URI exactly 
 """
 
         print(f"[map_relation] '{subject}' --[{predicate}]--> '{obj}'")
-        timed_out = False
+        failure_reason = None
         try:
-            messages = await _run_agent(agent, prompt, timeout, verbose,
+            messages = await _run_agent(get_agent(), prompt, timeout, verbose,
                                         label=f"rel:{predicate}")
         except asyncio.TimeoutError:
             print(f"[map_relation] TIMEOUT for '{subject}'→'{obj}'")
             messages = []
-            timed_out = True
+            failure_reason = "timeout"
         except Exception as ex:
             print(f"[map_relation] ERROR: {ex}")
             messages = []
+            failure_reason = "exception"
 
         sp_args      = _get_tool_call_args(messages, "set_property")
         property_uri = (sp_args.get("property_uri") if sp_args else None) or _RDFS_SEE_ALSO
@@ -723,7 +778,10 @@ You MUST call set_property exactly once. Use subject URI and object URI exactly 
 
         measurement = _collect_measurements(
             messages, "relation",
-            f"{subject} --[{predicate}]--> {obj}", timed_out
+            f"{subject} --[{predicate}]--> {obj}",
+            failure_reason=failure_reason,
+            selected_uri=property_uri,
+            generic_uri=_RDFS_SEE_ALSO,
         )
         return {
             "relations_pending":  pending,
@@ -798,10 +856,7 @@ def make_shacl_correction_node(tools: list):
     fix_tools = _filter_tools(tools, fix_tool_names)
     timeout = int(os.getenv("MAPPER_TIMEOUT", 120))
     verbose = os.getenv("ANCHOR_VERBOSE", "").lower() in ("1", "true")
-    llm = get_llm(temperature=0,
-                  max_tokens=int(os.getenv("MAPPER_MAX_TOKENS", 4096)),
-                  thinking=True)
-    agent = create_react_agent(llm, fix_tools)
+    get_agent = _make_lazy_agent_getter(fix_tools)
 
     async def shacl_correction_node(state: AnchorState) -> dict:
         entities_resolved = state.get("entities_resolved", [])
@@ -809,6 +864,8 @@ def make_shacl_correction_node(tools: list):
             return {"validation_warnings": []}
 
         warnings = []
+        passed = 0
+        not_applicable = 0
 
         for entity in entities_resolved:
             entity_uri = entity.get("entity_uri", "")
@@ -827,7 +884,16 @@ def make_shacl_correction_node(tools: list):
                     break
 
                 if result.get("valid"):
-                    print(f"[shacl_correction] ✓ '{name}' passed")
+                    status = result.get("shacl_status", "passed")
+                    if status == "not_available":
+                        print("[shacl_correction] skipped: selected ontology contains no SHACL shapes")
+                        return {"validation_warnings": []}
+                    if status == "not_applicable":
+                        not_applicable += 1
+                        print(f"[shacl_correction] - '{name}': no applicable SHACL shape")
+                    else:
+                        passed += 1
+                        print(f"[shacl_correction] ✓ '{name}' passed")
                     resolved = True
                     break
 
@@ -854,7 +920,7 @@ After fixing, call validate_entity("{entity_uri}") to confirm all violations are
 Fix every violation listed above before finishing.
 """
                 try:
-                    await _run_agent(agent, prompt, timeout, verbose,
+                    await _run_agent(get_agent(), prompt, timeout, verbose,
                                      label=f"shacl/{name}/attempt{attempt + 1}")
                 except Exception as exc:
                     print(f"[shacl_correction] ERROR '{name}' attempt {attempt + 1}: {exc}")
@@ -878,7 +944,8 @@ Fix every violation listed above before finishing.
 
         total = len(entities_resolved)
         flagged = len(warnings)
-        print(f"[shacl_correction] {total - flagged}/{total} entities passed SHACL validation")
+        print(f"[shacl_correction] {passed}/{total} entities passed applicable SHACL constraints; "
+              f"{not_applicable} had no applicable shape; {flagged} flagged")
         return {"validation_warnings": warnings}
 
     return shacl_correction_node

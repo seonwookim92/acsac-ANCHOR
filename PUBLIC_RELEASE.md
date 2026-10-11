@@ -12,8 +12,8 @@ released after evaluation.
 
 > The DOI above is the Zenodo concept DOI. It represents every version of the
 > deposit and always resolves to the most recent one, so the link stays valid if
-> the artifact is updated during the evaluation period. The DOI for the specific
-> release archived at the time of submission is <https://doi.org/10.5281/zenodo.22724009>.
+> the artifact is updated during the evaluation period. This source tree is the
+> corrected v1.0.3 artifact release.
 
 ## What is released
 

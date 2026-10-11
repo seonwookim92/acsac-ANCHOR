@@ -1,0 +1,418 @@
+ACSAC 2026 Artifact Evaluation Response Log
+===========================================
+
+Comment @A2
+-----------
+
+1. Linux PyTorch installation and disk requirement
+---------------------------------------------------
+
+Reviewer concern
+~~~~~~~~~~~~~~~~
+On Ubuntu 25.10 with Python 3.13.7, the original installation occupied 5.2 GB.
+Although the artifact defaults to EMBEDDING_DEVICE=cpu, the unqualified
+torch==2.12.0 package from PyPI installed the complete Linux CUDA dependency
+stack. The documented 5 GB free-disk requirement was therefore smaller than
+the installed virtual environment alone.
+
+Author response
+~~~~~~~~~~~~~~~
+Our reference deployment runs the ANCHOR client separately from the vLLM model
+server, and we had provisioned the two environments independently. As a result,
+our original client-side disk estimate reflected the CPU-only ANCHOR environment
+we used, while the distributed installer allowed pip to resolve the generic
+Linux torch wheel. On a clean Linux host, that wheel also brings in the CUDA,
+cuDNN, cuBLAS, NCCL, and Triton packages even when EMBEDDING_DEVICE=cpu. We
+confirm that this made the original 5 GB statement incorrect for the install
+path observed by the reviewer.
+
+We reproduced both configurations in a clean Ubuntu 25.10 x86-64 container with
+Python 3.13.7. With CPU-only PyTorch, the virtual environment was 1,474,273,436
+bytes, the retained pip download cache was 350,888,245 bytes, and the
+all-MiniLM-L6-v2 cache was 91,635,712 bytes. Including the package itself, the
+measured retained footprint was approximately 1.92 GB. With the generic
+CUDA-enabled Linux PyTorch installation described by the reviewer, the virtual
+environment was 5,517,943,403 bytes and the retained pip cache was
+2,890,711,459 bytes. Including the package and embedding cache, that
+configuration occupied approximately 8.51 GB. Both configurations completed
+the deterministic smoke test successfully.
+
+We therefore changed the installer so that it no longer installs the full CUDA
+stack unconditionally. The default evaluation path explicitly installs
+torch==2.12.0+cpu from PyTorch's official CPU wheel index and verifies that no
+nvidia-* packages are present. Reviewers who only need the documented CPU
+evaluation path can continue to use ./install.sh with 5 GB free disk. Users who
+intentionally want CUDA-backed client embeddings can instead run
+ANCHOR_TORCH_VARIANT=cuda ./install.sh, allow at least 10 GB free disk, and then
+set EMBEDDING_DEVICE=cuda. The installer validates the selected variant in both
+cases. We documented this distinction and the measured footprints in README.md,
+README.txt, HARDWARE_REQUIREMENTS.md, and infrastructure/resources. The optional
+CUDA client remains separate from the reference vLLM server, whose documented
+disk requirement remains 100 GB.
+
+Files changed
+~~~~~~~~~~~~~
+- install.sh
+- HARDWARE_REQUIREMENTS.md
+- README.md
+- README.txt
+- infrastructure/resources
+
+Validation
+~~~~~~~~~~
+- Ubuntu 25.10, Python 3.13.7, x86-64
+- torch version: 2.12.0+cpu
+- installed nvidia-* packages: none
+- dependency check: passed
+- deterministic smoke test / Claim 3 checks: passed
+- optional CUDA installation: passed; approximately 8.51 GB retained footprint
+
+
+2. Zenodo archive lagged behind the source release
+--------------------------------------------------
+
+Reviewer concern
+~~~~~~~~~~~~~~~~
+The Zenodo concept DOI resolved to the v1.0.1 record while the repository HEAD
+was v1.0.2. The archived PUBLIC_RELEASE.md still contained a placeholder DOI,
+and the archived README files did not show the DOI. Although code and data were
+identical, the permanent archive and source release were not self-consistent.
+
+Author response
+~~~~~~~~~~~~~~~
+We consolidated all artifact-evaluation corrections into release v1.0.3. The
+top-level README.md, README.txt, and PUBLIC_RELEASE.md all identify the permanent
+Zenodo concept DOI, https://doi.org/10.5281/zenodo.22724008. We removed the
+obsolete version-specific v1.0.1 DOI from PUBLIC_RELEASE.md so that the release
+does not identify an older snapshot as its own archive. The concept DOI remains
+the stable public citation and resolves to the latest published version of the
+deposit.
+
+The v1.0.3 GitHub release and its submission archive contain the same corrected
+source, data, metadata, documentation, and claim scripts validated below. This
+restores consistency between the public source release and the permanent
+versioned archive without changing the concept DOI used by readers.
+
+Files changed
+~~~~~~~~~~~~~
+- PUBLIC_RELEASE.md
+- README.md
+- README.txt
+
+
+3. Claim 3 depended on the configured LLM provider
+---------------------------------------------------
+
+Reviewer concern
+~~~~~~~~~~~~~~~~
+Claim 3 is documented as requiring no LLM endpoint or credentials, but its
+smoke test runs main.py --graph. Graph construction eagerly called get_llm()
+from four mapper factories. Consequently, an artifact/.env containing
+LLM_PROVIDER=openai without an API key caused Claim 3 to fail during client
+construction even though the check never contacts an endpoint.
+
+Author response
+~~~~~~~~~~~~~~~
+We confirm the issue. We changed the mapper factories to construct and cache
+their LLM agents lazily, when the corresponding node first executes, rather
+than while the graph topology is being built. Graph rendering now constructs
+the complete pipeline without resolving a provider, reading credentials, or
+creating an LLM client. Normal pipeline execution still creates one agent per
+compiled mapper node on first use and then reuses it.
+
+We added a regression check to artifact/scripts/smoke_test.sh that replaces
+get_llm() with a function that raises immediately and then calls build_graph([]).
+Claim 3 fails if graph construction ever attempts to initialize an LLM again.
+The expected Claim 3 output now records this check explicitly.
+
+Files changed
+~~~~~~~~~~~~~
+- artifact/src/nodes/mapper.py
+- artifact/scripts/smoke_test.sh
+- claims/claim3/expected/README.txt
+
+Validation
+~~~~~~~~~~
+- Ubuntu 25.10, Python 3.13.7, x86-64
+- Claim 3 with no .env/provider override: passed
+- Claim 3 with LLM_PROVIDER=openai and no OPENAI_API_KEY: passed
+- Claim 3 with an invalid provider name: passed
+- build_graph([]) with get_llm() replaced by a fail-fast stub: passed
+- self-hosted vLLM endpoint health and tool-calling probe: passed
+- model: Qwen/Qwen3.5-35B-A3B-FP8, served as qwen3.5-35b
+- Claim 1 (UCO): passed; 9 entities, 15 triples; 7 entities passed
+  applicable SHACL constraints, 2 had no applicable shape, 0 flagged;
+  218.5 s elapsed
+- Claim 2 (STIX): passed; 9 entities, 15 triples; SHACL correctly skipped;
+  163.4 s elapsed
+- Claim 2 (MALOnt): passed; 9 entities, 15 triples; SHACL correctly skipped;
+  167.1 s elapsed
+- Claim 2 schema-switch validation: passed for both STIX and MALOnt
+
+
+4. Missing artifact-evaluation metadata file
+-------------------------------------------
+
+Reviewer concern
+~~~~~~~~~~~~~~~~
+README.md described submission/ as containing artifact-evaluation metadata, but
+the directory contained only build_archive.sh. metadata.toml was deliberately
+ignored by .gitignore and excluded by the archive builder, so the distributed
+package did not contain the metadata file required by the ACSAC submission
+instructions.
+
+Author response
+~~~~~~~~~~~~~~~
+We added submission/metadata.toml using the field format produced by the
+official artmeta tool. It records the artifact and license URLs, paper citation,
+all three claims and their scripts and expected outcomes, installation and
+infrastructure instructions, hardware and software requirements, API
+requirements, data provenance, ethics statement, and README location. The
+metadata explicitly states that Claim 3 is model-free and that Claims 1 and 2
+require either a hosted tool-calling API or access to a separately hosted model
+server.
+
+The artmeta format records one requested badge value, so the file uses
+badge = "f" for Functional. The separately requested Available badge and the
+permanent Zenodo concept DOI remain stated in README.md and PUBLIC_RELEASE.md.
+
+We removed the ignore and archive-exclusion rules, so metadata.toml is now
+version-controlled and included in the release archive. The deterministic
+preflight also requires the file to be present, and the README layout now
+describes the actual contents of submission/.
+
+Files changed
+~~~~~~~~~~~~~
+- submission/metadata.toml
+- submission/build_archive.sh
+- .gitignore
+- artifact/scripts/preflight.py
+- README.md
+- README.txt
+- claims/claim3/expected/README.txt
+
+Validation
+~~~~~~~~~~
+- metadata.toml parses as TOML and contains all required artmeta fields
+- all 13 URLs recorded in metadata.toml resolve successfully
+- metadata.toml is not ignored by Git
+- build_archive.sh no longer excludes metadata.toml
+- a generated release archive contains submission/metadata.toml
+- strict package preflight passed in Python 3.13 with metadata.toml required
+
+
+5. SHACL coverage in the packaged schemas
+------------------------------------------
+
+Reviewer concern
+~~~~~~~~~~~~~~~~
+The packaged UCO ontology contains SHACL definitions, but the packaged STIX
+and MALOnt ontologies do not. Nevertheless, the original documentation called
+all three packages "OWL/SHACL schemas," and the correction stage reported that
+all STIX and MALOnt entities had passed SHACL validation. Those two Claim 2
+runs therefore could not exercise SHACL constraints as the wording implied.
+
+Author response
+~~~~~~~~~~~~~~~
+We confirm the distinction. SHACL is not inherently specific to UCO, but among
+the three ontology sources packaged with this artifact, UCO supplies SHACL
+shapes while STIX and MALOnt are OWL-only. We did not invent new constraints
+for the two source ontologies. Claim 1's UCO run exercises the SHACL-capable
+path; Claim 2 tests that the same extraction and mapping executable can switch
+among the three ontology packages.
+
+We changed validate_entity to distinguish three outcomes: applicable SHACL
+constraints passed, the schema has SHACL shapes but none applies to the mapped
+class, and the selected schema supplies no SHACL shapes. The pipeline now
+reports the last case as
+
+  [shacl_correction] skipped: selected ontology contains no SHACL shapes
+
+instead of counting every entity as having passed. We also made the schema
+scope explicit throughout the documentation and added a deterministic
+preflight assertion that UCO contains shapes and the packaged STIX and MALOnt
+sources contain none.
+
+Files changed
+~~~~~~~~~~~~~
+- artifact/mcp/ontology-mcp-server/mcp_server/server.py
+- artifact/src/nodes/mapper.py
+- artifact/scripts/preflight.py
+- README.md
+- README.txt
+- artifact/PROJECT_README.md
+- claims/claim1/claim.txt
+- claims/claim1/expected/README.txt
+- claims/claim2/claim.txt
+- claims/claim2/expected/README.txt
+- claims/claim3/expected/README.txt
+
+Validation
+~~~~~~~~~~
+- clean Ubuntu 25.10, Python 3.13.7, x86-64
+- deterministic inventory: UCO 480 SHACL shapes; STIX 0; MALOnt 0
+- Claim 3 with the new SHACL-scope assertion: passed
+- Claim 1 (UCO): passed; 7/9 entities passed applicable constraints, 2/9 had
+  no applicable shape, and 0 were flagged
+- Claim 2 (STIX): passed; SHACL correctly reported as unavailable/skipped
+- Claim 2 (MALOnt): passed; SHACL correctly reported as unavailable/skipped
+- Claim 2 schema-switch validation: passed for both STIX and MALOnt
+
+
+6. Anonymous copyright notice in the bundled MCP server
+-------------------------------------------------------
+
+Reviewer concern
+~~~~~~~~~~~~~~~~
+artifact/mcp/ontology-mcp-server/LICENSE still identified the copyright holder
+as "Anonymous Authors," a leftover from the paper's anonymized review phase.
+
+Author response
+~~~~~~~~~~~~~~~
+We removed the stale anonymized attribution and replaced it with the same five
+author names used by the package-level NOTICE. The component remains under the
+MIT License; no license terms were changed. We also made the component's MIT
+copyright attribution explicit in THIRD_PARTY_NOTICES.md.
+
+Files changed
+~~~~~~~~~~~~~
+- artifact/mcp/ontology-mcp-server/LICENSE
+- THIRD_PARTY_NOTICES.md
+
+Validation
+~~~~~~~~~~
+- repository-wide search finds no remaining anonymized copyright notice
+- the nested license differs only in the corrected copyright-holder line
+
+
+7. Functional output checks did not distinguish mapping failure from fallback
+-----------------------------------------------------------------------------
+
+Reviewer concern
+~~~~~~~~~~~~~~~~
+The original check_output.py verified only the output's basic JSON structure.
+If every mapper agent timed out, raised an exception, or failed to make its
+final tool call, mapper.py would still emit owl:Thing, rdfs:label, or
+rdfs:seeAlso defaults. Such an all-fallback graph could therefore pass even
+though no mapping operation had completed. The exported result also contained
+no provider, model, timeout, or fallback information with which a reviewer
+could distinguish a healthy run from a degraded one.
+
+Author response
+~~~~~~~~~~~~~~~
+The three generic terms are intentional parts of ANCHOR's design. A mapper may
+legitimately complete ontology discovery and select owl:Thing, rdfs:label, or
+rdfs:seeAlso when the selected schema has no more specific suitable term. We
+therefore do not treat every occurrence of a generic term as an error. The
+actual defect was that the output lost the provenance needed to distinguish
+that semantic decision from a value injected after an operational failure.
+
+We now record one completion result for every entity and property mapping. A
+generic URI returned through the mapper's required final tool call is recorded
+as a semantic fallback and remains valid. A timeout, exception, missing final
+tool call, or missing entity URI is recorded as an operational fallback. The
+exported JSON includes the provider and model, aggregate and per-phase item
+counts, semantic-fallback count, operational-fallback count, and the individual
+operational-failure counts.
+
+The Functional validator now checks that entity classes and property URIs are
+declared by the selected packaged ontology or are one of the documented generic
+terms. It requires at least one entity, one triplet, one ontology-specific
+class, and one ontology-specific property. It also verifies the diagnostic
+counts against the emitted graph and rejects every operational fallback. Thus,
+an intentional partial fallback remains acceptable, while a run in which the
+agent never completes its mapping calls can no longer pass.
+
+Files changed
+~~~~~~~~~~~~~
+- artifact/src/nodes/mapper.py
+- artifact/src/nodes/exporter.py
+- artifact/src/state.py
+- artifact/main.py
+- artifact/scripts/check_output.py
+- artifact/scripts/smoke_test.sh
+- README.md
+- README.txt
+- ARTIFACT_SCOPE.md
+- EXPECTED_OUTPUT.md
+- artifact/PROJECT_README.md
+- claims/claim1/claim.txt
+- claims/claim1/expected/README.txt
+- claims/claim2/claim.txt
+- claims/claim2/expected/README.txt
+- claims/claim3/expected/README.txt
+
+Validation
+~~~~~~~~~~
+- deterministic regression: a mixed ontology-specific/semantic-fallback graph
+  passed
+- deterministic regression: an all-generic graph was rejected
+- deterministic regression: a graph containing an operational fallback was
+  rejected
+- clean Ubuntu 25.10, Python 3.13.7, x86-64
+- provider: vLLM at the separately hosted evaluation endpoint
+- model: Qwen/Qwen3.5-35B-A3B-FP8, served as qwen3.5-35b
+- Claim 1 (UCO): passed; 24/24 mapper items completed, 0 semantic fallbacks,
+  0 operational fallbacks; 206.0 s elapsed
+- Claim 2 (STIX): passed; 24/24 mapper items completed, 0 semantic fallbacks,
+  0 operational fallbacks; 157.2 s elapsed
+- Claim 2 (MALOnt): passed; 24/24 mapper items completed, 5 legitimate semantic
+  fallbacks (all rdfs:label), 0 operational fallbacks; 162.3 s elapsed
+- Claim 2 schema-switch validation: passed for both STIX and MALOnt
+
+
+8. Claims 1 and 2 were not executed by the reviewer
+----------------------------------------------------
+
+Reviewer note
+~~~~~~~~~~~~~
+The reviewer did not execute Claims 1 and 2 because the SPHERE host had neither
+paid API access nor the accelerator capacity needed to self-host the reference
+model. The chairs had asked reviewers not to purchase API access.
+
+Author response
+~~~~~~~~~~~~~~~
+We understand this limitation. Claims 1 and 2 exercise ANCHOR's LLM-driven
+extraction and multi-step ontology-mapping path, so they necessarily require
+access to a tool-calling LLM. This can be either a hosted API endpoint, which
+does not require a GPU on the ANCHOR client, or a separately hosted local model,
+which requires suitable accelerator resources. The two are alternative
+execution paths; reviewers do not need both.
+
+Claim 3 is intentionally the model-free path and verifies installation, package
+completeness, source and ontology parsing, dataset alignment, and graph
+construction without an endpoint or credentials. It cannot replace Claims 1
+and 2, which specifically cover the end-to-end LLM-dependent functionality.
+Accordingly, we do not interpret the reviewer's inability to run those two
+claims as a software failure, and we make no assertion that the reviewer
+independently executed them.
+
+No code change was required for this note. The LLM requirement and the two
+alternative execution configurations are documented in README.md,
+HARDWARE_REQUIREMENTS.md, infrastructure/access, and infrastructure/resources.
+
+
+Final integrated validation
+---------------------------
+
+After applying the corrections above, we built the release archive and tested
+only the contents extracted from that archive in a clean Ubuntu 25.10 x86-64
+container with Python 3.13. The archive checksum matched, metadata.toml was
+present, and no .env file, virtual environment, generated output, bytecode
+cache, or macOS metadata was packaged.
+
+The default installer selected torch 2.12.0+cpu, installed no NVIDIA packages,
+passed its dependency check, and completed the deterministic smoke test. Claim
+3 passed both with no provider configuration and with LLM_PROVIDER=openai but
+no OPENAI_API_KEY. Claims 1 and 2 then passed against the separately hosted
+Qwen/Qwen3.5-35B-A3B-FP8 endpoint, served as qwen3.5-35b:
+
+- UCO: 9 entities, 15 triplets; 24/24 mapper items completed; 0 semantic and
+  0 operational fallbacks; 7 entities passed applicable SHACL constraints,
+  2 had no applicable shape, and 0 were flagged; 206.0 s
+- STIX: 9 entities, 15 triplets; 24/24 mapper items completed; 0 semantic and
+  0 operational fallbacks; SHACL correctly skipped; 157.2 s
+- MALOnt: 9 entities, 15 triplets; 24/24 mapper items completed; 5 legitimate
+  rdfs:label semantic fallbacks and 0 operational fallbacks; SHACL correctly
+  skipped; 162.3 s
+- schema-switch validation passed for both STIX and MALOnt

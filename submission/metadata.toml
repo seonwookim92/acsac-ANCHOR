@@ -1,0 +1,34 @@
+badge = "f"
+artifact_url = "https://github.com/seonwookim92/acsac-ANCHOR"
+cd = "b"
+citation = """@inproceedings{kim2026anchor,
+  title = {ANCHOR: Schema-Agnostic Threat Knowledge Graph Construction via Hybrid Ontology Discovery},
+  author = {Seonwoo Kim and Jinwoo Kim and Daegyu Kang and Daeseong Kim and Insup Lee},
+  booktitle = {Annual Computer Security Applications Conference (ACSAC)},
+  year = {2026}
+}"""
+license_url = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/license.txt"
+infrastructure_constraints = "The paper-reference configuration uses Qwen/Qwen3.5-35B-A3B-FP8 on an ASUS Ascent GX10 with 128 GB coherent unified memory. This accelerator configuration is not available on the listed public research infrastructures. Claim 3 runs without an LLM. Claims 1 and 2 instead require either a separately hosted tool-calling LLM or a hosted API."
+infrastructure_access = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/infrastructure/access"
+install_script = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/install.sh"
+use = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/use.txt"
+destructive = "None. The installer creates artifact/.venv and local caches, and claim runs write generated files only under artifact/output."
+claim1 = "ANCHOR processes an unstructured CTI report end to end against the packaged UCO ontology and emits a structurally valid, ontology-aligned JSON graph."
+script1 = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/claims/claim1/run.sh"
+expected1 = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/claims/claim1/expected/README.txt"
+claim2 = "The same ANCHOR executable switches among the packaged UCO, STIX, and MALOnt ontology schemas without changing the extraction logic."
+script2 = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/claims/claim2/run.sh"
+expected2 = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/claims/claim2/expected/README.txt"
+claim3 = "The artifact package is internally complete: 149 aligned CTINexus inputs and 149 author-created records per schema are present, all packaged ontologies parse, and deterministic package checks pass without an LLM."
+script3 = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/claims/claim3/run.sh"
+expected3 = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/claims/claim3/expected/README.txt"
+hw = """Client for installation and Claim 3: 4 CPU cores, 8 GB RAM, and 5 GB free disk; no GPU.
+Claims 1 and 2 additionally require access to a tool-calling LLM, using either a hosted API or a separate model server. Self-hosting the paper-reference Qwen model requires at least 64 GB of accelerator-addressable memory; the reference system has 128 GB coherent unified memory."""
+sw = """Linux or macOS; Python 3.11, 3.12, or 3.13; Git; and outbound HTTPS for installation and the embedding-model download.
+Docker, an NVIDIA driver, and the NVIDIA Container Toolkit are required only when self-hosting the paper-reference vLLM configuration."""
+api = """Claim 3 requires no API key.
+Claims 1 and 2 require either credentials for a hosted OpenAI/Anthropic-compatible API, which may be a paid service, or access to a separately hosted OpenAI-compatible tool-calling model server."""
+gui = "n"
+provenance = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/DATA_PROVENANCE.md"
+ethics = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/ETHICS.md"
+readme = "https://github.com/seonwookim92/acsac-ANCHOR/blob/main/README.md"

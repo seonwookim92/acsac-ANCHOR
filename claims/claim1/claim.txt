@@ -40,3 +40,21 @@ EXPECTED: claims/claim1/expected/README.txt
 RUNTIME:  up to ~30 minutes on first run, including one-time download of the
           all-MiniLM-L6-v2 embedding model. Subsequent runs are faster and
           depend on the reviewer's chosen endpoint.
+
+SHACL VIOLATION DEMONSTRATION
+
+At the end of the Claim 1 run, shacl_demo.sh creates a deliberately incomplete
+UCO ArtifactClassification entity. UCO requires at least one analysis:class
+value for this class. The demonstration prints the resulting violation, adds
+the missing value, revalidates the entity, and prints the successful result.
+This deterministic demonstration does not make another LLM call.
+
+To exercise the same LLM-based correction node used by the full ANCHOR pipeline,
+run the optional form below with a configured endpoint:
+
+    ./claims/claim1/shacl_demo.sh --llm
+
+The optional run reports either a successful correction or an explicit
+validation_warnings message if the violation remains after the correction
+retries. The endpoint and model are read from artifact/.env; they are not
+embedded in the demonstration.

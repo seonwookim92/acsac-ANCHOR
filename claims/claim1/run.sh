@@ -5,4 +5,5 @@
 #
 set -euo pipefail
 PKG_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-exec "${PKG_ROOT}/artifact/scripts/run_example.sh" uco
+"${PKG_ROOT}/artifact/scripts/run_example.sh" uco
+"${PKG_ROOT}/claims/claim1/shacl_demo.sh"

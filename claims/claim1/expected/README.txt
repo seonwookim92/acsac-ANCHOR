@@ -8,9 +8,33 @@ SHACL correction stage checks the constraints applicable to each mapped UCO
 class. A class for which UCO defines no applicable shape is reported separately
 and is not counted as having passed a SHACL constraint.
 
-ACCEPTANCE CRITERION -- the final line of ./claims/claim1/run.sh must be:
+ACCEPTANCE CRITERION -- the end of ./claims/claim1/run.sh must include:
 
     PASS: valid uco ANCHOR output
+    BEFORE: FAIL (1 SHACL violation(s))
+    AFTER: PASS - all applicable SHACL constraints satisfied
+    PASS: intentional SHACL violation detected and resolved (deterministic correction)
+
+The deliberate violation is a UCO ArtifactClassification entity with its
+required analysis:class value omitted. This makes the correction behavior
+directly observable instead of relying on a normal run to happen to produce an
+invalid entity.
+
+OPTIONAL LLM-BASED CORRECTION DEMONSTRATION
+
+    ./claims/claim1/shacl_demo.sh --llm
+
+This command invokes the same shacl_correction node used by the ANCHOR graph.
+After the deliberately introduced violation, it must end in either:
+
+    AFTER: PASS - all applicable SHACL constraints satisfied
+
+or, when the selected model does not resolve it after the configured retries:
+
+    WARNING: violation remains unresolved and was recorded in validation_warnings
+
+Both outcomes demonstrate the Section IV-D behavior requested here: correction
+when possible, and an explicit warning rather than silent acceptance otherwise.
 
 The validator enforces this structural contract on the emitted graph:
 

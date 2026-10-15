@@ -92,6 +92,24 @@ All three are *functional* claims. None asserts a paper table value. Each
 `claims/claimN/expected/README.txt` states the exact acceptance criterion and,
 just as importantly, what is **not** an acceptance criterion.
 
+Claim 1 ends with a deterministic demonstration that deliberately omits the
+required `analysis:class` value from a UCO `ArtifactClassification`, prints the
+SHACL violation, corrects it, and revalidates it. To run only that short demo:
+
+```bash
+./claims/claim1/shacl_demo.sh
+```
+
+To exercise the same LLM-based correction node used by the full pipeline, use
+the optional form below after configuring `artifact/.env`:
+
+```bash
+./claims/claim1/shacl_demo.sh --llm
+```
+
+The optional run prints either the successful correction or an explicit
+`validation_warnings` message when the selected model leaves it unresolved.
+
 
 ## Model capability is a prerequisite, and it is separable from the artifact
 

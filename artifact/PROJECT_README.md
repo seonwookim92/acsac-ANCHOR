@@ -341,6 +341,18 @@ constraints after all correction retries. When the selected ontology contains
 no SHACL shapes, the correction stage reports that validation was skipped and
 does not describe the entities as having passed SHACL validation.
 
+The artifact includes a focused demonstration that intentionally omits the
+required `analysis:class` value from a UCO `ArtifactClassification` and shows
+the violation before correction:
+
+```bash
+./claims/claim1/shacl_demo.sh         # deterministic correction, no LLM call
+./claims/claim1/shacl_demo.sh --llm   # actual pipeline correction node
+```
+
+The LLM-based form reports either successful revalidation or an explicit
+unresolved warning after the correction retries.
+
 **Cypher output** (`--export-cypher`):
 
 ```cypher

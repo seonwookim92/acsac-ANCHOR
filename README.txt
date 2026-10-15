@@ -158,6 +158,23 @@ CLAIMS
 
 All three are FUNCTIONAL claims. None asserts a paper table value.
 
+SHACL correction demonstration:
+
+Claim 1 ends by deliberately creating a UCO ArtifactClassification without its
+required analysis:class value. It prints the resulting SHACL violation, adds
+the missing value, and revalidates the entity. Run only this short demonstration
+with:
+
+    ./claims/claim1/shacl_demo.sh
+
+To exercise the same LLM-based correction node used by the full pipeline after
+configuring artifact/.env, run:
+
+    ./claims/claim1/shacl_demo.sh --llm
+
+The optional run prints either the successful correction or an explicit
+validation_warnings message when the selected model leaves it unresolved.
+
 --------------------------------------------------------------------------------
 REQUIREMENTS
 --------------------------------------------------------------------------------

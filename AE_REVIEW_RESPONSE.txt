@@ -416,3 +416,47 @@ Qwen/Qwen3.5-35B-A3B-FP8 endpoint, served as qwen3.5-35b:
   rdfs:label semantic fallbacks and 0 operational fallbacks; SHACL correctly
   skipped; 162.3 s
 - schema-switch validation passed for both STIX and MALOnt
+
+
+Follow-up: explicit SHACL correction demonstration
+--------------------------------------------------
+
+Reviewer request
+~~~~~~~~~~~~~~~~
+The reviewer asked for a short demonstration connected to Section IV-D that
+deliberately introduces a SHACL violation and shows either its correction or an
+explicit warning when the violation remains unresolved.
+
+Author response
+~~~~~~~~~~~~~~~
+Thank you for this suggestion. The previous Claim 1 run exercised the UCO SHACL
+stage, but all applicable constraints happened to pass, so the correction path
+was not directly visible. We added a focused demonstration that creates a UCO
+ArtifactClassification while deliberately omitting its required analysis:class
+value. The demonstration first prints the detected missing-property violation,
+then corrects the entity and revalidates it.
+
+The deterministic form is run automatically at the end of Claim 1 and can also
+be invoked independently without an LLM call:
+
+    ./claims/claim1/shacl_demo.sh
+
+An optional form invokes the same LLM-based shacl_correction node used by the
+full ANCHOR graph:
+
+    ./claims/claim1/shacl_demo.sh --llm
+
+That form prints either a successful correction and revalidation or, if the
+selected model does not resolve the violation after the configured retries, an
+explicit validation_warnings message. Endpoint and model settings are read from
+artifact/.env and are not embedded in the demonstration.
+
+Validation
+~~~~~~~~~~
+The deterministic demonstration detected exactly one missing_required_property
+violation for analysis:class and passed after adding the missing value. We also
+ran the optional path against the separately hosted vLLM service. The existing
+correction node used search_attributes, selected the UCO analysis:class
+property, added a value with set_property, and then passed validate_entity on
+the first correction attempt. No ANCHOR core algorithm was changed; this update
+adds a reproducible demonstration of the already implemented behavior.

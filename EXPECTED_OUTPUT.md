@@ -51,6 +51,24 @@ PASS: valid uco ANCHOR output
 
 Full criterion: [`claims/claim1/expected/README.txt`](claims/claim1/expected/README.txt).
 
+Claim 1 then runs a deliberate UCO SHACL violation demonstration. Its final
+lines are:
+
+```text
+BEFORE: FAIL (1 SHACL violation(s))
+AFTER: PASS - all applicable SHACL constraints satisfied
+PASS: intentional SHACL violation detected and resolved (deterministic correction)
+```
+
+The short demonstration can also be run independently. Adding `--llm` invokes
+the pipeline's actual LLM-based correction node and ends with either a corrected
+PASS or an explicit unresolved `validation_warnings` message:
+
+```bash
+./claims/claim1/shacl_demo.sh
+./claims/claim1/shacl_demo.sh --llm
+```
+
 ## claim2 — schema switch (STIX and MALOnt)
 
 ```bash
